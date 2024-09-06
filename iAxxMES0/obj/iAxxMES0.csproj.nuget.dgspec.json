@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sergi\\source\\repos\\iAxxMES0\\iAxxMES0\\iAxxMES0.csproj": {}
+    "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\iAxxMES0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sergi\\source\\repos\\iAxxMES0\\iAxxMES0\\iAxxMES0.csproj": {
+    "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\iAxxMES0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sergi\\source\\repos\\iAxxMES0\\iAxxMES0\\iAxxMES0.csproj",
+        "projectUniqueName": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\iAxxMES0.csproj",
         "projectName": "iAxxMES0",
-        "projectPath": "C:\\Users\\sergi\\source\\repos\\iAxxMES0\\iAxxMES0\\iAxxMES0.csproj",
+        "projectPath": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\iAxxMES0.csproj",
         "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sergi\\source\\repos\\iAxxMES0\\iAxxMES0\\obj\\",
+        "outputPath": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
