@@ -28,32 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
             btnCancelar = new Button();
             btnEntrar = new Button();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtSenha = new TextBox();
+            txtLogin = new TextBox();
             lblSenha = new Label();
             lblLogin = new Label();
-            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(btnCancelar);
-            panel1.Controls.Add(btnEntrar);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(lblSenha);
-            panel1.Controls.Add(lblLogin);
-            panel1.Location = new Point(243, 111);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(310, 216);
-            panel1.TabIndex = 0;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(200, 153);
+            btnCancelar.Location = new Point(196, 128);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 5;
@@ -63,32 +48,33 @@
             // 
             // btnEntrar
             // 
-            btnEntrar.Location = new Point(25, 153);
+            btnEntrar.Location = new Point(21, 128);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(75, 23);
             btnEntrar.TabIndex = 4;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = true;
+            btnEntrar.Click += btnEntrar_Click;
             // 
-            // textBox2
+            // txtSenha
             // 
-            textBox2.Location = new Point(97, 99);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(178, 23);
-            textBox2.TabIndex = 3;
+            txtSenha.Location = new Point(93, 74);
+            txtSenha.Name = "txtSenha";
+            txtSenha.PasswordChar = '*';
+            txtSenha.Size = new Size(178, 23);
+            txtSenha.TabIndex = 3;
             // 
-            // textBox1
+            // txtLogin
             // 
-            textBox1.Location = new Point(97, 44);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(178, 23);
-            textBox1.TabIndex = 2;
+            txtLogin.Location = new Point(93, 19);
+            txtLogin.Name = "txtLogin";
+            txtLogin.Size = new Size(178, 23);
+            txtLogin.TabIndex = 2;
             // 
             // lblSenha
             // 
             lblSenha.AutoSize = true;
-            lblSenha.Location = new Point(25, 102);
+            lblSenha.Location = new Point(21, 77);
             lblSenha.Name = "lblSenha";
             lblSenha.Size = new Size(42, 15);
             lblSenha.TabIndex = 1;
@@ -97,7 +83,7 @@
             // lblLogin
             // 
             lblLogin.AutoSize = true;
-            lblLogin.Location = new Point(25, 47);
+            lblLogin.Location = new Point(21, 22);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(40, 15);
             lblLogin.TabIndex = 0;
@@ -105,26 +91,31 @@
             // 
             // Login
             // 
+            AcceptButton = btnEntrar;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(784, 461);
-            Controls.Add(panel1);
+            BackColor = SystemColors.ControlDark;
+            CancelButton = btnCancelar;
+            ClientSize = new Size(292, 167);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnEntrar);
+            Controls.Add(txtLogin);
+            Controls.Add(txtSenha);
+            Controls.Add(lblLogin);
+            Controls.Add(lblSenha);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private Panel panel1;
         private Button btnCancelar;
         private Button btnEntrar;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtSenha;
+        private TextBox txtLogin;
         private Label lblSenha;
         private Label lblLogin;
     }

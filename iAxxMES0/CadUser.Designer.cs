@@ -32,18 +32,18 @@
             txtNome = new TextBox();
             lblCargo = new Label();
             lblCPF = new Label();
-            txtCPF = new TextBox();
             lblTurno = new Label();
             cbxCargo = new ComboBox();
             cbxTurno = new ComboBox();
             btnCadastrar = new Button();
             btnCancelar = new Button();
+            mtxtCPF = new MaskedTextBox();
             SuspendLayout();
             // 
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(37, 94);
+            lblNome.Location = new Point(28, 34);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(43, 15);
             lblNome.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(115, 91);
+            txtNome.Location = new Point(106, 31);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(121, 23);
             txtNome.TabIndex = 1;
@@ -59,7 +59,7 @@
             // lblCargo
             // 
             lblCargo.AutoSize = true;
-            lblCargo.Location = new Point(37, 138);
+            lblCargo.Location = new Point(28, 78);
             lblCargo.Name = "lblCargo";
             lblCargo.Size = new Size(42, 15);
             lblCargo.TabIndex = 2;
@@ -68,23 +68,16 @@
             // lblCPF
             // 
             lblCPF.AutoSize = true;
-            lblCPF.Location = new Point(37, 181);
+            lblCPF.Location = new Point(28, 121);
             lblCPF.Name = "lblCPF";
             lblCPF.Size = new Size(31, 15);
             lblCPF.TabIndex = 4;
             lblCPF.Text = "CPF:";
             // 
-            // txtCPF
-            // 
-            txtCPF.Location = new Point(115, 178);
-            txtCPF.Name = "txtCPF";
-            txtCPF.Size = new Size(121, 23);
-            txtCPF.TabIndex = 5;
-            // 
             // lblTurno
             // 
             lblTurno.AutoSize = true;
-            lblTurno.Location = new Point(37, 224);
+            lblTurno.Location = new Point(28, 164);
             lblTurno.Name = "lblTurno";
             lblTurno.Size = new Size(41, 15);
             lblTurno.TabIndex = 6;
@@ -93,7 +86,8 @@
             // cbxCargo
             // 
             cbxCargo.FormattingEnabled = true;
-            cbxCargo.Location = new Point(115, 135);
+            cbxCargo.Items.AddRange(new object[] { "Administrador", "Operador" });
+            cbxCargo.Location = new Point(106, 75);
             cbxCargo.Name = "cbxCargo";
             cbxCargo.Size = new Size(121, 23);
             cbxCargo.TabIndex = 8;
@@ -101,41 +95,50 @@
             // cbxTurno
             // 
             cbxTurno.FormattingEnabled = true;
-            cbxTurno.Items.AddRange(new object[] { "...", "Manhã", "Tarde", "Noite" });
-            cbxTurno.Location = new Point(115, 221);
+            cbxTurno.Items.AddRange(new object[] { "Manhã", "Tarde", "Noite" });
+            cbxTurno.Location = new Point(106, 161);
             cbxTurno.Name = "cbxTurno";
             cbxTurno.Size = new Size(121, 23);
-            cbxTurno.TabIndex = 9;
+            cbxTurno.TabIndex = 10;
             // 
             // btnCadastrar
             // 
-            btnCadastrar.Location = new Point(37, 281);
+            btnCadastrar.Location = new Point(28, 221);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(75, 23);
-            btnCadastrar.TabIndex = 10;
+            btnCadastrar.TabIndex = 11;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(161, 281);
+            btnCancelar.Location = new Point(152, 221);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 11;
+            btnCancelar.TabIndex = 12;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // mtxtCPF
+            // 
+            mtxtCPF.Location = new Point(106, 118);
+            mtxtCPF.Mask = "000,000,000-00";
+            mtxtCPF.Name = "mtxtCPF";
+            mtxtCPF.Size = new Size(121, 23);
+            mtxtCPF.TabIndex = 9;
             // 
             // CadUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(254, 270);
+            Controls.Add(mtxtCPF);
             Controls.Add(btnCancelar);
             Controls.Add(btnCadastrar);
             Controls.Add(cbxTurno);
             Controls.Add(cbxCargo);
             Controls.Add(lblTurno);
-            Controls.Add(txtCPF);
             Controls.Add(lblCPF);
             Controls.Add(lblCargo);
             Controls.Add(txtNome);
@@ -153,11 +156,11 @@
         private TextBox txtNome;
         private Label lblCargo;
         private Label lblCPF;
-        private TextBox txtCPF;
         private Label lblTurno;
         private ComboBox cbxCargo;
         private ComboBox cbxTurno;
         private Button btnCadastrar;
         private Button btnCancelar;
+        private MaskedTextBox mtxtCPF;
     }
 }

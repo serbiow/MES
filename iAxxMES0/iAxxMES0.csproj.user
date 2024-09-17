@@ -4,6 +4,9 @@
     <Compile Update="CadUser.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -21,5 +21,47 @@ namespace iAxxMES0
         {
             Application.Exit();
         }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            if (txtLogin.Text == "" || txtSenha.Text == "")
+            {
+                MessageBox.Show("Digite Login e senha para acessar o sistema!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    // Função detalhada para a conexão com o banco
+                    //bool logar = lgn.Logar(txtLogin.Text, txtSenha.Text);
+
+                    //if (logar == true)
+                    //{
+                    //    this.Hide();
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("Login e/ou senha inválidos!!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //    txtLogin.Clear();
+                    //    txtSenha.Clear();
+                    //    txtLogin.Focus();
+                    //}
+
+                    // Exemplo simples sem bando de dados
+                    if (txtLogin.Text == "a" && txtSenha.Text == "a")
+                    {
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Login e/ou senha inválidos!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
     }
 }
