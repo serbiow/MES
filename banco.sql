@@ -12,6 +12,14 @@ CREATE TABLE usuario (
     cpf VARCHAR(11) NOT NULL UNIQUE
 );
 
+CREATE TABLE login (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    login_nome VARCHAR(70) NOT NULL UNIQUE,
+    senha VARCHAR(70) NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id)
+);
+
 CREATE TABLE maquina (
     id INT AUTO_INCREMENT PRIMARY KEY,
     apelido VARCHAR(50) NOT NULL,
@@ -36,6 +44,11 @@ INSERT INTO usuario (nome, cargo, horario, cpf)
 VALUES ('João Silva', 'master', 'manha', '12345678901'),
        ('Maria Santos', 'admin', 'tarde', '23456789012'),
        ('Pedro Oliveira', 'operator', 'noite', '34567890123');
+       
+INSERT INTO login (usuario_id, login_nome, senha) 
+VALUES (1, 'joao_master', 'senha123'), -- João Silva
+       (2, 'maria_admin', 'senha456'), -- Maria Santos
+       (3, 'pedro_operator', 'senha789'); -- Pedro Oliveira
        
 INSERT INTO maquina (apelido, finura, diametro, numero_alimentadores)
 VALUES ('Maquina A', 24, 1.25, 12),
