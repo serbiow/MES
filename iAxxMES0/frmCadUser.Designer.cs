@@ -109,6 +109,7 @@
             btnCadastrar.TabIndex = 11;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // btnCancelar
             // 
@@ -128,7 +129,7 @@
             mtxtCPF.Size = new Size(121, 23);
             mtxtCPF.TabIndex = 9;
             // 
-            // CadUser
+            // frmCadUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -143,7 +144,7 @@
             Controls.Add(lblCargo);
             Controls.Add(txtNome);
             Controls.Add(lblNome);
-            Name = "CadUser";
+            Name = "frmCadUser";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Usuário";
             ResumeLayout(false);

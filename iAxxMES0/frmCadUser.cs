@@ -21,5 +21,10 @@ namespace iAxxMES0
         {
             this.Close();
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

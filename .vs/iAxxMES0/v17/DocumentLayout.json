@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\frmcaduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmcaduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\conexao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\conexao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iaxxmes0\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\frmcaduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmcaduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iaxxmes0\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\controleusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,66 +39,50 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Usuario.cs",
-              "RelativeDocumentMoniker": "iAxxMES0\\Usuario.cs",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Usuario.cs",
-              "RelativeToolTip": "iAxxMES0\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "frmCadUser.cs",
+              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCadUser.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\frmCadUser.cs",
+              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCadUser.cs",
+              "RelativeToolTip": "iAxxMES0\\frmCadUser.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwBoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T15:24:30.085Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Login.cs",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Login.cs",
-              "RelativeDocumentMoniker": "iAxxMES0\\Login.cs",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Login.cs",
-              "RelativeToolTip": "iAxxMES0\\Login.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T15:24:27.077Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Conexao.cs",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Conexao.cs",
-              "RelativeDocumentMoniker": "iAxxMES0\\Conexao.cs",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Conexao.cs",
-              "RelativeToolTip": "iAxxMES0\\Conexao.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwAwAAABrAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T14:59:17.967Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ControleUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\ControleUsuario.cs",
-              "RelativeDocumentMoniker": "iAxxMES0\\ControleUsuario.cs",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\ControleUsuario.cs",
-              "RelativeToolTip": "iAxxMES0\\ControleUsuario.cs",
-              "ViewState": "AgIAAIAAAAAAAAAAAAAiwBQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T14:57:28.519Z",
+              "WhenOpened": "2024-09-18T23:17:26.37Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "frmCadUser.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCadUser.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\frmCadUser.cs",
+              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCadUser.cs [Projeto]",
+              "RelativeToolTip": "iAxxMES0\\frmCadUser.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T22:15:46.459Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmDashboard.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmDashboard.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\frmDashboard.cs",
+              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmDashboard.cs [Projeto]",
+              "RelativeToolTip": "iAxxMES0\\frmDashboard.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T22:13:03.147Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "frmLogin.cs",
               "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmLogin.cs",
               "RelativeDocumentMoniker": "iAxxMES0\\frmLogin.cs",
               "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmLogin.cs",
               "RelativeToolTip": "iAxxMES0\\frmLogin.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAYwDAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAiwB8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T14:54:02.133Z",
+              "WhenOpened": "2024-09-18T22:07:12.416Z",
               "EditorCaption": ""
             },
             {
@@ -110,8 +94,20 @@
               "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmLogin.cs [Projeto]",
               "RelativeToolTip": "iAxxMES0\\frmLogin.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T14:53:51.612Z",
+              "WhenOpened": "2024-09-18T22:07:10.373Z",
               "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ControleUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\ControleUsuario.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\ControleUsuario.cs",
+              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\ControleUsuario.cs",
+              "RelativeToolTip": "iAxxMES0\\ControleUsuario.cs",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAIwJcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T22:02:59.882Z"
             }
           ]
         }
