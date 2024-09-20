@@ -1,4 +1,5 @@
 /*DATABASE*/
+
 create database iAxxMES;
 use iAxxMES;
 
@@ -73,3 +74,5 @@ VALUES (1, 1500, 'ligado', NULL),
        (8, 1350, 'alarme', 'Falha elétrica'),
        (9, 1500, 'desligado', 'Manutenção corretiva'),
        (10, 1650, 'ligado', NULL);
+
+select * from login;

@@ -61,6 +61,12 @@ namespace iAxxMES0
             MySqlTransaction transaction = null;
             try
             {
+                // Verifica se a conexão está fechada antes de abri-la
+                if (connection.State == System.Data.ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+
                 // Iniciar uma transação
                 transaction = connection.BeginTransaction();
 
