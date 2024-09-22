@@ -31,6 +31,7 @@
             menuStrip1 = new MenuStrip();
             cadastroDeUsuárioToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
+            flowLayoutPanelMaquinas = new FlowLayoutPanel();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -57,14 +58,22 @@
             sairToolStripMenuItem.Text = "Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
-            // Dashboard
+            // flowLayoutPanelMaquinas
+            // 
+            flowLayoutPanelMaquinas.Location = new Point(12, 27);
+            flowLayoutPanelMaquinas.Name = "flowLayoutPanelMaquinas";
+            flowLayoutPanelMaquinas.Size = new Size(776, 411);
+            flowLayoutPanelMaquinas.TabIndex = 1;
+            // 
+            // frmDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(flowLayoutPanelMaquinas);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "Dashboard";
+            Name = "frmDashboard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Dashboard";
             WindowState = FormWindowState.Maximized;
@@ -80,5 +89,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem cadastroDeUsuárioToolStripMenuItem;
         private ToolStripMenuItem sairToolStripMenuItem;
+        private FlowLayoutPanel flowLayoutPanelMaquinas;
     }
 }
