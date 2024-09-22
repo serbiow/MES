@@ -27,18 +27,26 @@ namespace iAxxMES0
                     connection.Open();
                 }
 
-                // Consulta ao banco de dados para verificar as credenciais
-                string query = "SELECT * FROM login WHERE login_nome = @login_nome AND senha = @senha";
+                // Consulta ao banco de dados para verificar o login
+                string query = "SELECT senha FROM login WHERE login_nome = @login_nome";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@login_nome", loginNome);
-                cmd.Parameters.AddWithValue("@senha", senha);
 
-                // Executando a consulta
+                // Executar a consulta e pegar o hash armazenado
                 MySqlDataReader reader = cmd.ExecuteReader();
-                bool loginValido = reader.HasRows; // Se a consulta retorna algum resultado, o login é válido
-                reader.Close();
+                if (reader.Read())
+                {
+                    string hashArmazenado = reader.GetString("senha");
+                    reader.Close();
 
-                return loginValido;
+                    // Verificar se a senha digitada corresponde ao hash armazenado
+                    return HashHelper.VerificarSenha(senha, hashArmazenado);
+                }
+                else
+                {
+                    reader.Close();
+                    return false; // Login não encontrado
+                }
             }
             catch (Exception ex)
             {
@@ -82,12 +90,15 @@ namespace iAxxMES0
                 // Obter o ID do usuário recém-criado
                 int usuarioId = (int)cmd.LastInsertedId;
 
+                // Gerar o hash da senha
+                string senhaHashed = HashHelper.GerarHashComSalt(login.Senha);
+
                 // Inserir login e senha
                 string queryLogin = "INSERT INTO login (usuario_id, login_nome, senha) VALUES (@usuario_id, @login_nome, @senha)";
                 cmd = new MySqlCommand(queryLogin, connection, transaction);
                 cmd.Parameters.AddWithValue("@usuario_id", usuarioId);
                 cmd.Parameters.AddWithValue("@login_nome", login.LoginNome);
-                cmd.Parameters.AddWithValue("@senha", login.Senha);
+                cmd.Parameters.AddWithValue("@senha", senhaHashed);
                 cmd.ExecuteNonQuery();
 
                 // Commitar a transação
@@ -124,11 +135,14 @@ namespace iAxxMES0
                 cmd.Parameters.AddWithValue("@id", usuario.Id);
                 cmd.ExecuteNonQuery();
 
+                // Gerar o hash da nova senha
+                string senhaHashed = HashHelper.GerarHashComSalt(login.Senha);
+
                 // Atualizar login e senha
                 string queryLogin = "UPDATE login SET login_nome = @login_nome, senha = @senha WHERE usuario_id = @usuario_id";
                 cmd = new MySqlCommand(queryLogin, connection, transaction);
                 cmd.Parameters.AddWithValue("@login_nome", login.LoginNome);
-                cmd.Parameters.AddWithValue("@senha", login.Senha);
+                cmd.Parameters.AddWithValue("@senha", senhaHashed);
                 cmd.Parameters.AddWithValue("@usuario_id", usuario.Id);
                 cmd.ExecuteNonQuery();
 

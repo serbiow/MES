@@ -35,10 +35,10 @@ namespace iAxxMES0
                     pnlStatus.BackColor = Color.Green;
                     break;
                 case "desligado":
-                    pnlStatus.BackColor = Color.Red;
+                    pnlStatus.BackColor = Color.Gray;
                     break;
                 case "alarme":
-                    pnlStatus.BackColor = Color.Yellow;
+                    pnlStatus.BackColor = Color.Red;
                     break;
                 default:
                     pnlStatus.BackColor = Color.Gray;

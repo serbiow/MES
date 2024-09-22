@@ -13,6 +13,7 @@ namespace iAxxMES0
     public partial class frmDashboard : Form
     {
         private ControleMaquinas controleMaquinas; // Classe para acessar as informações das máquinas
+        private List<Maquina> maquinasOriginais; // Lista para armazenar todas as máquinas sem filtro
         private List<MaquinaControl> listaMaquinas; // Lista para armazenar os controles de cada máquina
         private System.Windows.Forms.Timer updateTimer; // Especificando o namespace completo por conta de ambiguidade
 
@@ -22,11 +23,23 @@ namespace iAxxMES0
             controleMaquinas = new ControleMaquinas();
             listaMaquinas = new List<MaquinaControl>();
 
-            // Criar controles para todas as máquinas e adicionar ao painel
+            // Definir a opção padrão como "Ordenar por Apelido"
+            cbxOrdenacao.SelectedIndex = 0;
+
+            // Define a opção padrão para "Todos"
+            cbxStatusFiltro.SelectedIndex = 0;
+
+            // Configurar os eventos de alteração de seleção para os filtros e ordenação
+            cbxOrdenacao.SelectedIndexChanged += AplicarFiltros;
+            cbxStatusFiltro.SelectedIndexChanged += AplicarFiltros;
+            txtRpmMin.TextChanged += AplicarFiltros;
+            txtRpmMax.TextChanged += AplicarFiltros;
+
+            // Carregar as máquinas
             CarregarMaquinas();
 
-            // Configurar o timer para atualizações periódicas
-            updateTimer = new System.Windows.Forms.Timer(); // Especificando o namespace aqui também
+            // Configurar o Timer para atualizações periódicas
+            updateTimer = new System.Windows.Forms.Timer();
             updateTimer.Interval = 5000; // Atualizar a cada 5 segundos
             updateTimer.Tick += UpdateTimer_Tick;
             updateTimer.Start();
@@ -34,7 +47,7 @@ namespace iAxxMES0
 
         private void UpdateTimer_Tick(object sender, EventArgs e)
         {
-            // Atualizar os dados das máquinas a cada intervalo do Timer
+            // Atualizar os dados das máquinas e reaplicar os filtros
             AtualizarDadosMaquinas();
         }
 
@@ -43,15 +56,11 @@ namespace iAxxMES0
             // Obter os dados mais recentes do banco de dados
             List<Maquina> maquinasAtualizadas = await controleMaquinas.ObterDadosAtualizadosAsync();
 
-            // Atualizar os controles
-            foreach (var maquinaAtualizada in maquinasAtualizadas)
-            {
-                MaquinaControl maquinaControl = listaMaquinas.FirstOrDefault(m => m.MaquinaId == maquinaAtualizada.Id);
-                if (maquinaControl != null)
-                {
-                    maquinaControl.AtualizarDados(maquinaAtualizada.Apelido, maquinaAtualizada.RPM, maquinaAtualizada.Status);
-                }
-            }
+            // Atualizar a lista original com os dados mais recentes
+            maquinasOriginais = maquinasAtualizadas;
+
+            // Reaplicar os filtros após a atualização para garantir que os dados mais recentes sejam considerados
+            AplicarFiltros(null, null);
         }
 
         private void AbrirDetalhesMaquina(int maquinaId)
@@ -63,7 +72,19 @@ namespace iAxxMES0
 
         private void CarregarMaquinas()
         {
-            List<Maquina> maquinas = controleMaquinas.ObterTodasMaquinas();
+            // Obter todas as máquinas
+            maquinasOriginais = controleMaquinas.ObterTodasMaquinas();
+
+            // Exibir as máquinas no dashboard
+            ExibirMaquinas(maquinasOriginais);
+        }
+
+        // Método para exibir as máquinas no painel
+        private void ExibirMaquinas(List<Maquina> maquinas)
+        {
+            // Limpar o painel de layout
+            flowLayoutPanelMaquinas.Controls.Clear();
+            listaMaquinas.Clear();
 
             foreach (var maquina in maquinas)
             {
@@ -71,9 +92,6 @@ namespace iAxxMES0
                 {
                     MaquinaId = maquina.Id
                 };
-
-                // Configurar o evento de clique para abrir a tela de detalhes da máquina
-                maquinaControl.Click += (sender, e) => AbrirDetalhesMaquina(maquina.Id);
 
                 // Atualizar o controle com as informações da máquina
                 maquinaControl.AtualizarDados(maquina.Apelido, maquina.RPM, maquina.Status);
@@ -86,14 +104,63 @@ namespace iAxxMES0
             }
         }
 
-        private void Dashboard_Load(object sender, EventArgs e)
+        // Método para aplicar os filtros
+        private void AplicarFiltros(object sender, EventArgs e)
         {
+            // Usar sempre os dados mais recentes em 'maquinasOriginais'
+            List<Maquina> maquinasFiltradas = maquinasOriginais;
+
+            // Filtro de status
+            string statusFiltro = cbxStatusFiltro.SelectedItem?.ToString();
+            if (!string.IsNullOrEmpty(statusFiltro) && statusFiltro != "Todos")
+            {
+                maquinasFiltradas = maquinasFiltradas
+                    .Where(m => m.Status.Equals(statusFiltro, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+            }
+
+            // Filtro de RPM mínimo
+            if (int.TryParse(txtRpmMin.Text, out int rpmMin))
+            {
+                maquinasFiltradas = maquinasFiltradas
+                    .Where(m => m.RPM >= rpmMin)
+                    .ToList();
+            }
+
+            // Filtro de RPM máximo
+            if (int.TryParse(txtRpmMax.Text, out int rpmMax))
+            {
+                maquinasFiltradas = maquinasFiltradas
+                    .Where(m => m.RPM <= rpmMax)
+                    .ToList();
+            }
+
+            // Aplica a ordenação conforme a escolha do ComboBox de ordenação
+            string ordenacao = cbxOrdenacao.SelectedItem.ToString();
+            switch (ordenacao)
+            {
+                case "Apelido":
+                    maquinasFiltradas = maquinasFiltradas.OrderBy(m => m.Apelido).ToList();
+                    break;
+
+                case "Status":
+                    maquinasFiltradas = maquinasFiltradas.OrderBy(m => m.Status).ToList();
+                    break;
+
+                case "RPM":
+                    maquinasFiltradas = maquinasFiltradas.OrderByDescending(m => m.RPM).ToList();
+                    break;
+            }
+
+            // Exibir as máquinas filtradas e ordenadas
+            ExibirMaquinas(maquinasFiltradas);
+        }
+
+        private void frmDashboard_Load_1(object sender, EventArgs e)
+        {
+            // Chama o formulário de Login no início
             frmLogin TelaLogin = new frmLogin();
             TelaLogin.ShowDialog();
-
-            //chama a conexão com o banco no início do código
-            //cl_conexao c = new cl_conexao();
-            //MessageBox.Show(c.conectar());
         }
 
         private void cadastroDeUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,5 +173,7 @@ namespace iAxxMES0
         {
             Application.Exit();
         }
+
+        
     }
 }

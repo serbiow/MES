@@ -23,8 +23,13 @@ namespace iAxxMES0
             List<Maquina> maquinas = new List<Maquina>();
             string query = @"
             SELECT m.id, m.apelido, md.rpm, md.status 
-            FROM maquina m 
-            JOIN maquina_dados md ON m.id = md.maquina_id";
+            FROM maquina m
+            JOIN maquina_dados md ON m.id = md.maquina_id
+            WHERE md.data_hora = (
+                SELECT MAX(md2.data_hora) 
+                FROM maquina_dados md2 
+                WHERE md2.maquina_id = m.id
+            )";
 
             MySqlCommand cmd = new MySqlCommand(query, connection);
 
@@ -64,9 +69,14 @@ namespace iAxxMES0
         {
             List<Maquina> maquinasAtualizadas = new List<Maquina>();
             string query = @"
-            SELECT m.id, m.apelido, md.rpm, md.status
+            SELECT m.id, m.apelido, md.rpm, md.status 
             FROM maquina m
-            JOIN maquina_dados md ON m.id = md.maquina_id";
+            JOIN maquina_dados md ON m.id = md.maquina_id
+            WHERE md.data_hora = (
+                SELECT MAX(md2.data_hora) 
+                FROM maquina_dados md2 
+                WHERE md2.maquina_id = m.id
+            )";
 
             MySqlCommand cmd = new MySqlCommand(query, connection);
 
@@ -75,7 +85,7 @@ namespace iAxxMES0
             if (connection.State == System.Data.ConnectionState.Closed)
             {
                 connection.Open();
-                shouldCloseConnection = true; // Marcar que a conexão foi aberta aqui
+                shouldCloseConnection = true;
             }
 
             MySqlDataReader reader = (MySqlDataReader)await cmd.ExecuteReaderAsync();
@@ -84,10 +94,10 @@ namespace iAxxMES0
             {
                 Maquina maquina = new Maquina
                 {
-                    Id = reader.GetInt32("id"),         // Vem da tabela 'maquina'
+                    Id = reader.GetInt32("id"),            // Vem da tabela 'maquina'
                     Apelido = reader.GetString("apelido"), // Vem da tabela 'maquina'
-                    RPM = reader.GetInt32("rpm"),       // Vem da tabela 'maquina_dados'
-                    Status = reader.GetString("status") // Vem da tabela 'maquina_dados'
+                    RPM = reader.GetInt32("rpm"),          // Vem da tabela 'maquina_dados'
+                    Status = reader.GetString("status")    // Vem da tabela 'maquina_dados'
                 };
                 maquinasAtualizadas.Add(maquina);
             }
@@ -102,6 +112,5 @@ namespace iAxxMES0
 
             return maquinasAtualizadas;
         }
-
     }
 }
