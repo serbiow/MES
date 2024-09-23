@@ -44,6 +44,7 @@
             txtLogin = new TextBox();
             txtSenha = new TextBox();
             txtConfirmaSenha = new TextBox();
+            panel1 = new Panel();
             SuspendLayout();
             // 
             // lblNome
@@ -185,10 +186,19 @@
             txtConfirmaSenha.Size = new Size(121, 23);
             txtConfirmaSenha.TabIndex = 13;
             // 
+            // panel1
+            // 
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(293, 386);
+            panel1.TabIndex = 16;
+            // 
             // frmCadUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlDark;
             ClientSize = new Size(293, 386);
             Controls.Add(txtConfirmaSenha);
             Controls.Add(txtSenha);
@@ -206,6 +216,7 @@
             Controls.Add(lblCargo);
             Controls.Add(txtNome);
             Controls.Add(lblNome);
+            Controls.Add(panel1);
             Name = "frmCadUser";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Usuário";
@@ -231,5 +242,6 @@
         private TextBox txtLogin;
         private TextBox txtSenha;
         private TextBox txtConfirmaSenha;
+        private Panel panel1;
     }
 }

@@ -40,7 +40,7 @@ namespace iAxxMES0
 
             // Configurar o Timer para atualizações periódicas
             updateTimer = new System.Windows.Forms.Timer();
-            updateTimer.Interval = 5000; // Atualizar a cada 5 segundos
+            updateTimer.Interval = 60000; // Atualizar a cada 1 minuto
             updateTimer.Tick += UpdateTimer_Tick;
             updateTimer.Start();
         }

@@ -1,9 +1,12 @@
 # iAxxMES0
 
 # TODO
-# 1- Implementar conexão com o banco de dados
-# 2- CRUD usuário
-# 3- Login usuário
-# 4- Read and Update Máquinas
+# 1- Opção de Refresh no botão ou automático
+# 2- CRUD usuário (Falta Update e Delete)
+# 3- Tela de detalhes da máquina com opção de update
+# 4- Read and Update Máquinas (Falta Update)
+# 5- Gerar relatórios
+# 6- Gerar gráficos (DEIXAR POR ÚLTIMO)
+# 7- Privilégios
 
 # 5- Design geral
