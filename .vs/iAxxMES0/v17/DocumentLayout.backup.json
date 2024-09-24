@@ -3,32 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\controlemaquinas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\controlemaquinas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\maquinacontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\maquinacontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\frmcaduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmcaduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\conexao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\conexao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,90 +19,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "README.md",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\README.md",
-              "RelativeDocumentMoniker": "iAxxMES0\\README.md",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\README.md",
-              "RelativeToolTip": "iAxxMES0\\README.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-09-23T23:48:51.883Z",
+              "Title": "Conexao.cs",
+              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Conexao.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\Conexao.cs",
+              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Conexao.cs",
+              "RelativeToolTip": "iAxxMES0\\Conexao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T00:04:25.379Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Usuario.cs",
-              "RelativeDocumentMoniker": "iAxxMES0\\Usuario.cs",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Usuario.cs",
-              "RelativeToolTip": "iAxxMES0\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T23:48:50.403Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ControleMaquinas.cs",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\ControleMaquinas.cs",
-              "RelativeDocumentMoniker": "iAxxMES0\\ControleMaquinas.cs",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\ControleMaquinas.cs",
-              "RelativeToolTip": "iAxxMES0\\ControleMaquinas.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAwwGUAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T23:43:14.636Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmDashboard.cs",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmDashboard.cs",
-              "RelativeDocumentMoniker": "iAxxMES0\\frmDashboard.cs",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmDashboard.cs",
-              "RelativeToolTip": "iAxxMES0\\frmDashboard.cs",
-              "ViewState": "AgIAALMAAAAAAAAAAAAAAEQAAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T23:39:23.127Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "frmDashboard.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmDashboard.cs",
-              "RelativeDocumentMoniker": "iAxxMES0\\frmDashboard.cs",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmDashboard.cs [Projeto]",
-              "RelativeToolTip": "iAxxMES0\\frmDashboard.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T23:39:18.293Z",
-              "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmCadUser.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCadUser.cs",
-              "RelativeDocumentMoniker": "iAxxMES0\\frmCadUser.cs",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCadUser.cs [Projeto]",
-              "RelativeToolTip": "iAxxMES0\\frmCadUser.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T23:33:11.95Z",
-              "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MaquinaControl.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\MaquinaControl.cs",
-              "RelativeDocumentMoniker": "iAxxMES0\\MaquinaControl.cs",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\MaquinaControl.cs [Projeto]",
-              "RelativeToolTip": "iAxxMES0\\MaquinaControl.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T23:29:47.298Z",
-              "EditorCaption": " [Projeto]"
             }
           ]
         }
