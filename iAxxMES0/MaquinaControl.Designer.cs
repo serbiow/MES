@@ -40,29 +40,32 @@
             // lblApelidoTitle
             // 
             lblApelidoTitle.AutoSize = true;
+            lblApelidoTitle.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblApelidoTitle.Location = new Point(3, 46);
             lblApelidoTitle.Name = "lblApelidoTitle";
-            lblApelidoTitle.Size = new Size(51, 15);
+            lblApelidoTitle.Size = new Size(56, 17);
             lblApelidoTitle.TabIndex = 0;
             lblApelidoTitle.Text = "Apelido:";
             // 
             // lblRPMTitle
             // 
             lblRPMTitle.AutoSize = true;
+            lblRPMTitle.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblRPMTitle.Location = new Point(3, 86);
             lblRPMTitle.Name = "lblRPMTitle";
-            lblRPMTitle.Size = new Size(35, 15);
+            lblRPMTitle.Size = new Size(38, 17);
             lblRPMTitle.TabIndex = 1;
             lblRPMTitle.Text = "RPM:";
             // 
             // lblStatus
             // 
             lblStatus.AutoSize = true;
-            lblStatus.Location = new Point(56, 5);
+            lblStatus.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblStatus.Location = new Point(46, 2);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(38, 15);
+            lblStatus.Size = new Size(59, 20);
             lblStatus.TabIndex = 2;
-            lblStatus.Text = "status";
+            lblStatus.Text = "STATUS";
             // 
             // pnlStatus
             // 
@@ -75,18 +78,20 @@
             // lblApelido
             // 
             lblApelido.AutoSize = true;
-            lblApelido.Location = new Point(60, 46);
+            lblApelido.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblApelido.Location = new Point(60, 45);
             lblApelido.Name = "lblApelido";
-            lblApelido.Size = new Size(48, 15);
+            lblApelido.Size = new Size(62, 20);
             lblApelido.TabIndex = 4;
             lblApelido.Text = "Apelido";
             // 
             // lblRPM
             // 
             lblRPM.AutoSize = true;
-            lblRPM.Location = new Point(44, 86);
+            lblRPM.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRPM.Location = new Point(44, 84);
             lblRPM.Name = "lblRPM";
-            lblRPM.Size = new Size(32, 15);
+            lblRPM.Size = new Size(39, 20);
             lblRPM.TabIndex = 5;
             lblRPM.Text = "RPM";
             // 
@@ -94,6 +99,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DarkGray;
             Controls.Add(lblRPM);
             Controls.Add(lblApelido);
             Controls.Add(pnlStatus);
