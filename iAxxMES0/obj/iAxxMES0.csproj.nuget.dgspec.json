@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thaylor\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\iAxxMES0.csproj": {}
+    "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\iAxxMES0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thaylor\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\iAxxMES0.csproj": {
+    "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\iAxxMES0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thaylor\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\iAxxMES0.csproj",
+        "projectUniqueName": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\iAxxMES0.csproj",
         "projectName": "iAxxMES0",
-        "projectPath": "C:\\Users\\thaylor\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\iAxxMES0.csproj",
-        "packagesPath": "C:\\Users\\thaylor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thaylor\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\obj\\",
+        "projectPath": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\iAxxMES0.csproj",
+        "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\thaylor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
