@@ -84,7 +84,7 @@
             // 
             cbxStatusFiltro.FormattingEnabled = true;
             cbxStatusFiltro.Items.AddRange(new object[] { "Todos", "Ligado", "Desligado", "Alarme" });
-            cbxStatusFiltro.Location = new Point(6, 18);
+            cbxStatusFiltro.Location = new Point(441, 74);
             cbxStatusFiltro.Name = "cbxStatusFiltro";
             cbxStatusFiltro.Size = new Size(121, 23);
             cbxStatusFiltro.TabIndex = 2;
@@ -110,7 +110,7 @@
             // 
             cbxOrdenacao.FormattingEnabled = true;
             cbxOrdenacao.Items.AddRange(new object[] { "Apelido", "RPM", "Status" });
-            cbxOrdenacao.Location = new Point(158, 18);
+            cbxOrdenacao.Location = new Point(441, 29);
             cbxOrdenacao.Name = "cbxOrdenacao";
             cbxOrdenacao.Size = new Size(121, 23);
             cbxOrdenacao.TabIndex = 10;
@@ -118,25 +118,27 @@
             // lblOderBy
             // 
             lblOderBy.AutoSize = true;
-            lblOderBy.Location = new Point(158, 0);
+            lblOderBy.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblOderBy.Location = new Point(440, 8);
             lblOderBy.Name = "lblOderBy";
-            lblOderBy.Size = new Size(74, 15);
+            lblOderBy.Size = new Size(93, 20);
             lblOderBy.TabIndex = 9;
             lblOderBy.Text = "Ordenar por:";
             // 
             // lblStatusFiltro
             // 
             lblStatusFiltro.AutoSize = true;
-            lblStatusFiltro.Location = new Point(3, 0);
+            lblStatusFiltro.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblStatusFiltro.Location = new Point(438, 53);
             lblStatusFiltro.Name = "lblStatusFiltro";
-            lblStatusFiltro.Size = new Size(42, 15);
+            lblStatusFiltro.Size = new Size(52, 20);
             lblStatusFiltro.TabIndex = 8;
             lblStatusFiltro.Text = "Status:";
             // 
             // lblRpmMax
             // 
             lblRpmMax.AutoSize = true;
-            lblRpmMax.Location = new Point(158, 75);
+            lblRpmMax.Location = new Point(664, 72);
             lblRpmMax.Name = "lblRpmMax";
             lblRpmMax.Size = new Size(33, 15);
             lblRpmMax.TabIndex = 7;
@@ -145,7 +147,7 @@
             // lblRpmMin
             // 
             lblRpmMin.AutoSize = true;
-            lblRpmMin.Location = new Point(6, 75);
+            lblRpmMin.Location = new Point(666, 43);
             lblRpmMin.Name = "lblRpmMin";
             lblRpmMin.Size = new Size(31, 15);
             lblRpmMin.TabIndex = 6;
@@ -154,22 +156,23 @@
             // lblRpmFiltro
             // 
             lblRpmFiltro.AutoSize = true;
-            lblRpmFiltro.Location = new Point(6, 54);
+            lblRpmFiltro.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRpmFiltro.Location = new Point(703, 14);
             lblRpmFiltro.Name = "lblRpmFiltro";
-            lblRpmFiltro.Size = new Size(35, 15);
+            lblRpmFiltro.Size = new Size(42, 20);
             lblRpmFiltro.TabIndex = 5;
             lblRpmFiltro.Text = "RPM:";
             // 
             // txtRpmMin
             // 
-            txtRpmMin.Location = new Point(43, 72);
+            txtRpmMin.Location = new Point(703, 40);
             txtRpmMin.Name = "txtRpmMin";
             txtRpmMin.Size = new Size(100, 23);
             txtRpmMin.TabIndex = 4;
             // 
             // txtRpmMax
             // 
-            txtRpmMax.Location = new Point(197, 72);
+            txtRpmMax.Location = new Point(703, 69);
             txtRpmMax.Name = "txtRpmMax";
             txtRpmMax.Size = new Size(100, 23);
             txtRpmMax.TabIndex = 3;

@@ -1,10 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\",
+  "WorkspaceRootPath": "C:\\Users\\thaylor\\Documents\\GitHub\\iAxxMES\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\conexao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\conexao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\thaylor\\documents\\github\\iaxxmes\\iaxxmes0\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\thaylor\\documents\\github\\iaxxmes\\iaxxmes0\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\thaylor\\documents\\github\\iaxxmes\\iaxxmes0\\maquina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\maquina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Conexao.cs",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Conexao.cs",
-              "RelativeDocumentMoniker": "iAxxMES0\\Conexao.cs",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Conexao.cs",
-              "RelativeToolTip": "iAxxMES0\\Conexao.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\thaylor\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Usuario.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\Usuario.cs",
+              "ToolTip": "C:\\Users\\thaylor\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Usuario.cs",
+              "RelativeToolTip": "iAxxMES0\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T00:04:25.379Z",
+              "WhenOpened": "2024-09-24T01:18:14.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\thaylor\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Program.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\Program.cs",
+              "ToolTip": "C:\\Users\\thaylor\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Program.cs",
+              "RelativeToolTip": "iAxxMES0\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T01:18:11.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Maquina.cs",
+              "DocumentMoniker": "C:\\Users\\thaylor\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Maquina.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\Maquina.cs",
+              "ToolTip": "C:\\Users\\thaylor\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Maquina.cs",
+              "RelativeToolTip": "iAxxMES0\\Maquina.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T01:18:04.259Z",
               "EditorCaption": ""
             }
           ]

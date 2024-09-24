@@ -50,9 +50,10 @@
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(28, 34);
+            lblNome.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNome.Location = new Point(1, 34);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(43, 15);
+            lblNome.Size = new Size(60, 19);
             lblNome.TabIndex = 0;
             lblNome.Text = "Nome:";
             // 
@@ -66,27 +67,30 @@
             // lblCargo
             // 
             lblCargo.AutoSize = true;
-            lblCargo.Location = new Point(28, 78);
+            lblCargo.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCargo.Location = new Point(1, 78);
             lblCargo.Name = "lblCargo";
-            lblCargo.Size = new Size(42, 15);
+            lblCargo.Size = new Size(62, 19);
             lblCargo.TabIndex = 2;
             lblCargo.Text = "Cargo:";
             // 
             // lblCPF
             // 
             lblCPF.AutoSize = true;
-            lblCPF.Location = new Point(28, 121);
+            lblCPF.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCPF.Location = new Point(1, 121);
             lblCPF.Name = "lblCPF";
-            lblCPF.Size = new Size(31, 15);
+            lblCPF.Size = new Size(48, 19);
             lblCPF.TabIndex = 4;
             lblCPF.Text = "CPF:";
             // 
             // lblTurno
             // 
             lblTurno.AutoSize = true;
-            lblTurno.Location = new Point(28, 164);
+            lblTurno.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTurno.Location = new Point(1, 164);
             lblTurno.Name = "lblTurno";
-            lblTurno.Size = new Size(41, 15);
+            lblTurno.Size = new Size(60, 19);
             lblTurno.TabIndex = 6;
             lblTurno.Text = "Turno:";
             // 
@@ -110,9 +114,10 @@
             // 
             // btnCadastrar
             // 
-            btnCadastrar.Location = new Point(44, 351);
+            btnCadastrar.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCadastrar.Location = new Point(41, 340);
             btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(75, 23);
+            btnCadastrar.Size = new Size(77, 32);
             btnCadastrar.TabIndex = 14;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
@@ -120,9 +125,10 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(168, 351);
+            btnCancelar.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCancelar.Location = new Point(165, 340);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.Size = new Size(77, 32);
             btnCancelar.TabIndex = 15;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -139,27 +145,30 @@
             // lblLogin
             // 
             lblLogin.AutoSize = true;
-            lblLogin.Location = new Point(28, 207);
+            lblLogin.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogin.Location = new Point(1, 207);
             lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(40, 15);
+            lblLogin.Size = new Size(59, 19);
             lblLogin.TabIndex = 13;
             lblLogin.Text = "Login:";
             // 
             // lblSenha
             // 
             lblSenha.AutoSize = true;
-            lblSenha.Location = new Point(28, 251);
+            lblSenha.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSenha.Location = new Point(1, 251);
             lblSenha.Name = "lblSenha";
-            lblSenha.Size = new Size(42, 15);
+            lblSenha.Size = new Size(64, 19);
             lblSenha.TabIndex = 14;
             lblSenha.Text = "Senha:";
             // 
             // lblConfirmaSenha
             // 
             lblConfirmaSenha.AutoSize = true;
-            lblConfirmaSenha.Location = new Point(28, 294);
+            lblConfirmaSenha.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblConfirmaSenha.Location = new Point(1, 292);
             lblConfirmaSenha.Name = "lblConfirmaSenha";
-            lblConfirmaSenha.Size = new Size(99, 15);
+            lblConfirmaSenha.Size = new Size(131, 18);
             lblConfirmaSenha.TabIndex = 15;
             lblConfirmaSenha.Text = "Confirmar Senha:";
             // 
