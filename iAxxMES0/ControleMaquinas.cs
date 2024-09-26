@@ -29,7 +29,8 @@ namespace iAxxMES0
                 SELECT MAX(md2.data_hora) 
                 FROM maquina_dados md2 
                 WHERE md2.maquina_id = m.id
-            )";
+            )
+            ORDER BY m.apelido";
 
             MySqlCommand cmd = new MySqlCommand(query, connection);
 
@@ -76,7 +77,8 @@ namespace iAxxMES0
                 SELECT MAX(md2.data_hora) 
                 FROM maquina_dados md2 
                 WHERE md2.maquina_id = m.id
-            )";
+            )
+            ORDER BY m.apelido";
 
             MySqlCommand cmd = new MySqlCommand(query, connection);
 

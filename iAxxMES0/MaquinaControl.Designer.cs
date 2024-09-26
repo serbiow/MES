@@ -40,46 +40,48 @@
             // lblApelidoTitle
             // 
             lblApelidoTitle.AutoSize = true;
-            lblApelidoTitle.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblApelidoTitle.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblApelidoTitle.Location = new Point(3, 46);
             lblApelidoTitle.Name = "lblApelidoTitle";
-            lblApelidoTitle.Size = new Size(56, 17);
+            lblApelidoTitle.Size = new Size(60, 17);
             lblApelidoTitle.TabIndex = 0;
             lblApelidoTitle.Text = "Apelido:";
             // 
             // lblRPMTitle
             // 
             lblRPMTitle.AutoSize = true;
-            lblRPMTitle.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRPMTitle.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblRPMTitle.Location = new Point(3, 86);
             lblRPMTitle.Name = "lblRPMTitle";
-            lblRPMTitle.Size = new Size(38, 17);
+            lblRPMTitle.Size = new Size(40, 17);
             lblRPMTitle.TabIndex = 1;
             lblRPMTitle.Text = "RPM:";
             // 
             // lblStatus
             // 
-            lblStatus.AutoSize = true;
-            lblStatus.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatus.Location = new Point(46, 2);
+            lblStatus.Dock = DockStyle.Fill;
+            lblStatus.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblStatus.Location = new Point(0, 0);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(59, 20);
+            lblStatus.Size = new Size(160, 25);
             lblStatus.TabIndex = 2;
             lblStatus.Text = "STATUS";
+            lblStatus.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pnlStatus
             // 
+            pnlStatus.Anchor = AnchorStyles.None;
             pnlStatus.Controls.Add(lblStatus);
             pnlStatus.Location = new Point(0, 0);
             pnlStatus.Name = "pnlStatus";
-            pnlStatus.Size = new Size(150, 25);
+            pnlStatus.Size = new Size(160, 25);
             pnlStatus.TabIndex = 3;
             // 
             // lblApelido
             // 
             lblApelido.AutoSize = true;
             lblApelido.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblApelido.Location = new Point(60, 45);
+            lblApelido.Location = new Point(59, 44);
             lblApelido.Name = "lblApelido";
             lblApelido.Size = new Size(62, 20);
             lblApelido.TabIndex = 4;
@@ -89,7 +91,7 @@
             // 
             lblRPM.AutoSize = true;
             lblRPM.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblRPM.Location = new Point(44, 84);
+            lblRPM.Location = new Point(40, 84);
             lblRPM.Name = "lblRPM";
             lblRPM.Size = new Size(39, 20);
             lblRPM.TabIndex = 5;
@@ -106,8 +108,8 @@
             Controls.Add(lblRPMTitle);
             Controls.Add(lblApelidoTitle);
             Name = "MaquinaControl";
+            Size = new Size(160, 160);
             pnlStatus.ResumeLayout(false);
-            pnlStatus.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }

@@ -27,6 +27,7 @@ namespace iAxxMES0
             lblApelido.Text = apelido;
             lblRPM.Text = $"{rpm} RPM";
             lblStatus.Text = status;
+            lblStatus.Text = lblStatus.Text.ToUpper();
 
             // Alterar a cor do Status para fácil visualização
             switch (status.ToLower())

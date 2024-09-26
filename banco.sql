@@ -39,6 +39,16 @@ CREATE TABLE maquina_dados (
     FOREIGN KEY (maquina_id) REFERENCES maquina(id)
 );
 
+SELECT m.id, m.apelido, md.rpm, md.status 
+FROM maquina m
+JOIN maquina_dados md ON m.id = md.maquina_id
+WHERE md.data_hora = (
+    SELECT MAX(md2.data_hora) 
+    FROM maquina_dados md2 
+    WHERE md2.maquina_id = m.id
+)
+ORDER BY m.apelido;
+
 /*INSERTS*/
 
 INSERT INTO usuario (nome, cargo, horario, cpf)
@@ -194,9 +204,9 @@ INSERT INTO maquina (apelido, finura, diametro, numero_alimentadores) VALUES ('M
 INSERT INTO maquina (apelido, finura, diametro, numero_alimentadores) VALUES ('Maquina_140', 121, 39.94, 6);
 
 -- Inserts para a tabela 'maquina_dados'
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_desligamento, data_hora) VALUES (1, 1001, 'ligado', NULL, NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_desligamento, data_hora) VALUES (2, 953, 'ligado', NULL, NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_desligamento, data_hora) VALUES (3, 1202, 'alarme', NULL, NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_desligamento, data_hora) VALUES (1, 900, 'ligado', NULL, NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_desligamento, data_hora) VALUES (2, 1953, 'ligado', NULL, NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_desligamento, data_hora) VALUES (3, 0, 'desligado', 'Motivo_7', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_desligamento, data_hora) VALUES (4, 0, 'desligado', 'Motivo_4', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_desligamento, data_hora) VALUES (5, 721, 'ligado', NULL, NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_desligamento, data_hora) VALUES (6, 0, 'desligado', 'Motivo_6', NOW());

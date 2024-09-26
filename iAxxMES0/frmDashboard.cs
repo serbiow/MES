@@ -32,8 +32,9 @@ namespace iAxxMES0
             // Configurar os eventos de alteração de seleção para os filtros e ordenação
             cbxOrdenacao.SelectedIndexChanged += AplicarFiltros;
             cbxStatusFiltro.SelectedIndexChanged += AplicarFiltros;
-            txtRpmMin.TextChanged += AplicarFiltros;
-            txtRpmMax.TextChanged += AplicarFiltros;
+            //txtRpmMin.TextChanged += AplicarFiltros;
+            //txtRpmMax.TextChanged += AplicarFiltros;
+            btnAplicarFiltro.Click += AplicarFiltros;
 
             // Carregar as máquinas
             CarregarMaquinas();
@@ -135,6 +136,16 @@ namespace iAxxMES0
                     .ToList();
             }
 
+            // Filtro de Apelido
+            string apelidoFiltro = txtFiltroApelido.Text;
+            if (!string.IsNullOrEmpty(apelidoFiltro))
+            {
+                // Usando Contains para permitir a busca parcial e ignorando diferenças de maiúsculas/minúsculas
+                maquinasFiltradas = maquinasFiltradas
+                    .Where(m => m.Apelido.IndexOf(apelidoFiltro, StringComparison.OrdinalIgnoreCase) >= 0)
+                    .ToList();
+            }
+
             // Aplica a ordenação conforme a escolha do ComboBox de ordenação
             string ordenacao = cbxOrdenacao.SelectedItem.ToString();
             switch (ordenacao)
@@ -156,6 +167,28 @@ namespace iAxxMES0
             ExibirMaquinas(maquinasFiltradas);
         }
 
+        private void chkAutoRefresh_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkAutoRefresh.Checked)
+            {
+                // Ativa o refresh automático e oculta o botão de atualização manual
+                updateTimer.Start();
+                btnRefresh.Visible = false;
+            }
+            else
+            {
+                // Desativa o refresh automático e exibe o botão de atualização manual
+                updateTimer.Stop();
+                btnRefresh.Visible = true;
+            }
+        }
+
+        private void btnRefresh_Click_1(object sender, EventArgs e)
+        {
+            // Atualizar os dados das máquinas manualmente
+            AtualizarDadosMaquinas();
+        }
+
         private void frmDashboard_Load_1(object sender, EventArgs e)
         {
             // Chama o formulário de Login no início
@@ -174,6 +207,31 @@ namespace iAxxMES0
             Application.Exit();
         }
 
-        
+        private void txtFiltroApelido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Return))
+            {
+                // Chama o método AplicarFiltros
+                AplicarFiltros(null, null);
+            }
+        }
+
+        private void txtRpmMin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Return))
+            {
+                // Chama o método AplicarFiltros
+                AplicarFiltros(null, null);
+            }
+        }
+
+        private void txtRpmMax_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Return))
+            {
+                // Chama o método AplicarFiltros
+                AplicarFiltros(null, null);
+            }
+        }
     }
 }

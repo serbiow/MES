@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadUser));
             lblNome = new Label();
             txtNome = new TextBox();
             lblCargo = new Label();
@@ -200,7 +201,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(293, 386);
+            panel1.Size = new Size(273, 382);
             panel1.TabIndex = 16;
             // 
             // frmCadUser
@@ -208,7 +209,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
-            ClientSize = new Size(293, 386);
+            ClientSize = new Size(273, 382);
             Controls.Add(txtConfirmaSenha);
             Controls.Add(txtSenha);
             Controls.Add(txtLogin);
@@ -226,6 +227,7 @@
             Controls.Add(txtNome);
             Controls.Add(lblNome);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmCadUser";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Usuário";
