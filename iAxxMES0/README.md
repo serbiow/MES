@@ -1,12 +1,11 @@
 # iAxxMES0
 
 # TODO
-# 1- Opção de Refresh no botão ou automático
-# 2- CRUD usuário (Falta Update e Delete)
-# 3- Tela de detalhes da máquina com opção de update
-# 4- Read and Update Máquinas (Falta Update)
-# 5- Gerar relatórios
-# 6- Gerar gráficos (DEIXAR POR ÚLTIMO)
-# 7- Privilégios
+# 1- CRUD usuário (Falta Update e Delete)
+# 2- Tela de detalhes da máquina com opção de update
+# 3- Read and Update Máquinas (Falta Update)
+# 4- Gerar relatórios
+# 5- Gerar gráficos (DEIXAR POR ÚLTIMO)
+# 6- Privilégios
 
-# 5- Design geral
+# 7- Design geral
