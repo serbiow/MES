@@ -8,9 +8,8 @@ use iAxxMES;
 CREATE TABLE usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
-    cargo ENUM('master', 'admin', 'operator') NOT NULL,
-    horario ENUM('manha', 'tarde', 'noite') NOT NULL,
-    cpf VARCHAR(11) NOT NULL UNIQUE
+    nivel_permissao ENUM('master', 'admin', 'operator') NOT NULL,
+    registro_matricula VARCHAR(10) NOT NULL UNIQUE
 );
 
 CREATE TABLE login (
@@ -51,15 +50,15 @@ ORDER BY m.apelido;
 
 /*INSERTS*/
 
-INSERT INTO usuario (nome, cargo, horario, cpf)
-VALUES ('João Silva', 'master', 'manha', '12345678901'),
-       ('Maria Santos', 'admin', 'tarde', '23456789012'),
-       ('Pedro Oliveira', 'operator', 'noite', '34567890123');
+INSERT INTO usuario (nome, nivel_permissao, registro_matricula)
+VALUES ('João Silva', 'master', '1234567890'),
+       ('Maria Santos', 'admin', '2345678901'),
+       ('Pedro Oliveira', 'operator', '3456789012');
        
 INSERT INTO login (usuario_id, login_nome, senha) 
-VALUES (1, 'joao_master', 'senha123'), -- João Silva
-       (2, 'maria_admin', 'senha456'), -- Maria Santos
-       (3, 'pedro_operator', 'senha789'); -- Pedro Oliveira
+VALUES (1, 'joao_master', 'd/yTvHDt8x3Qt0QA9f+kyKJqbsRmq+Mw1mNxjNub8BOmcvzQtTF3Djky3Ub59sFJ'), -- João Silva
+       (2, 'maria_admin', 'p6AfVsR4wC7y0FbN3rd2e+s4CMelO0xvtsPe5Loffx8tNGdlZZmoMl3aBeBHNt/W'), -- Maria Santos
+       (3, 'pedro_operator', 'nH7Ay/gMjZE3WSPw7QEGF8OVkVRsFOBmPb/NKiLDyzg2S3ATgf2rJzSwdHeuB+u0'); -- Pedro Oliveira
 
 -- Inserts para a tabela 'maquina'
 INSERT INTO maquina (apelido, finura, diametro, numero_alimentadores) VALUES ('Maquina_001', 76, 30.53, 2);
@@ -203,8 +202,10 @@ INSERT INTO maquina (apelido, finura, diametro, numero_alimentadores) VALUES ('M
 INSERT INTO maquina (apelido, finura, diametro, numero_alimentadores) VALUES ('Maquina_139', 144, 48.62, 5);
 INSERT INTO maquina (apelido, finura, diametro, numero_alimentadores) VALUES ('Maquina_140', 121, 39.94, 6);
 
+select * from maquina_dados;
+
 -- Inserts para a tabela 'maquina_dados'
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_desligamento, data_hora) VALUES (1, 900, 'ligado', NULL, NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_desligamento, data_hora) VALUES (1, 0, 'desligado', NULL, NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_desligamento, data_hora) VALUES (2, 1953, 'ligado', NULL, NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_desligamento, data_hora) VALUES (3, 0, 'desligado', 'Motivo_7', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_desligamento, data_hora) VALUES (4, 0, 'desligado', 'Motivo_4', NOW());

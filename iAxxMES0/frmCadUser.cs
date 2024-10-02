@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,19 +31,14 @@ namespace iAxxMES0
                 MessageBox.Show("O campo Nome não pode estar vazio.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (cbxCargo.SelectedIndex == -1)
+            if (cbxNivelPermissao.SelectedIndex == -1)
             {
-                MessageBox.Show("Selecione um cargo.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Selecione a permissão.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (string.IsNullOrWhiteSpace(mtxtCPF.Text) || mtxtCPF.Text.Length < 11)
+            if (string.IsNullOrWhiteSpace(mtxtMatricula.Text) || mtxtMatricula.Text.Length < 10)
             {
-                MessageBox.Show("O campo CPF não pode estar vazio e deve conter 11 dígitos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (cbxTurno.SelectedIndex == -1)
-            {
-                MessageBox.Show("Selecione um turno.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("O campo Matricula não pode estar vazio e deve conter 10 dígitos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (string.IsNullOrWhiteSpace(txtLogin.Text))
@@ -63,9 +59,8 @@ namespace iAxxMES0
 
             // Capturando as informações dos TextBoxes e ComboBoxes
             string nome = txtNome.Text;
-            int cargo = cbxCargo.SelectedIndex; // Índices: 0 para master, 1 para admin, 2 para operator
-            string cpf = mtxtCPF.Text;
-            int horario = cbxTurno.SelectedIndex; // Índices: 0 para manhã, 1 para tarde, 2 para noite
+            int nivel_permissao = cbxNivelPermissao.SelectedIndex; // Índices: 0 para master, 1 para admin, 2 para operator
+            string registro_matricula = mtxtMatricula.Text;
             string login_nome = txtLogin.Text;
             string senha = txtSenha.Text;
 
@@ -73,9 +68,8 @@ namespace iAxxMES0
             Usuario novoUsuario = new Usuario
             {
                 Nome = nome,
-                Cargo = ConvertCargoIndexToString(cargo),
-                CPF = cpf,
-                Horario = ConvertTurnoIndexToString(horario)
+                Nivel_Permissao = ConvertNivelPermissaoIndexToString(nivel_permissao),
+                Registro_Matricula = registro_matricula
             };
 
             Login novoLogin = new Login
@@ -90,9 +84,8 @@ namespace iAxxMES0
 
             // Limpar formulário e focar no primeiro txt
             txtNome.Clear();
-            cbxCargo.SelectedIndex = -1;
-            mtxtCPF.Clear();
-            cbxTurno.SelectedIndex = -1;
+            cbxNivelPermissao.SelectedIndex = -1;
+            mtxtMatricula.Clear();
             txtLogin.Clear();
             txtSenha.Clear();
             txtConfirmaSenha.Clear();
@@ -100,10 +93,10 @@ namespace iAxxMES0
             txtNome.Focus();
         }
 
-        // Método auxiliar para converter o índice do cargo em string
-        private string ConvertCargoIndexToString(int cargoIndex)
+        // Método auxiliar para converter o índice do nível de permissão em string
+        private string ConvertNivelPermissaoIndexToString(int NivelPermissaoIndex)
         {
-            switch (cargoIndex)
+            switch (NivelPermissaoIndex)
             {
                 case 0:
                     return "master";
@@ -113,22 +106,6 @@ namespace iAxxMES0
                     return "operator";
                 default:
                     return "operator"; // Valor padrão
-            }
-        }
-
-        // Método auxiliar para converter o índice do turno em string
-        private string ConvertTurnoIndexToString(int turnoIndex)
-        {
-            switch (turnoIndex)
-            {
-                case 0:
-                    return "manha";
-                case 1:
-                    return "tarde";
-                case 2:
-                    return "noite";
-                default:
-                    return "manha"; // Valor padrão
             }
         }
     }

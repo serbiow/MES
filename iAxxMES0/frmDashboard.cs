@@ -41,7 +41,7 @@ namespace iAxxMES0
 
             // Configurar o Timer para atualizações periódicas
             updateTimer = new System.Windows.Forms.Timer();
-            updateTimer.Interval = 60000; // Atualizar a cada 1 minuto
+            updateTimer.Interval = 30000; // Atualizar a cada 30 segundos
             updateTimer.Tick += UpdateTimer_Tick;
             updateTimer.Start();
         }
@@ -150,16 +150,12 @@ namespace iAxxMES0
             string ordenacao = cbxOrdenacao.SelectedItem.ToString();
             switch (ordenacao)
             {
-                case "Apelido":
+                case "Maquina":
                     maquinasFiltradas = maquinasFiltradas.OrderBy(m => m.Apelido).ToList();
                     break;
 
                 case "Status":
                     maquinasFiltradas = maquinasFiltradas.OrderBy(m => m.Status).ToList();
-                    break;
-
-                case "RPM":
-                    maquinasFiltradas = maquinasFiltradas.OrderByDescending(m => m.RPM).ToList();
                     break;
             }
 
@@ -171,15 +167,13 @@ namespace iAxxMES0
         {
             if (chkAutoRefresh.Checked)
             {
-                // Ativa o refresh automático e oculta o botão de atualização manual
+                // Ativa o refresh automático
                 updateTimer.Start();
-                btnRefresh.Visible = false;
             }
             else
             {
-                // Desativa o refresh automático e exibe o botão de atualização manual
+                // Desativa o refresh automático
                 updateTimer.Stop();
-                btnRefresh.Visible = true;
             }
         }
 
@@ -207,6 +201,7 @@ namespace iAxxMES0
             Application.Exit();
         }
 
+        // Keypress do txtFiltro (Enter)
         private void txtFiltroApelido_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Return))
@@ -216,6 +211,7 @@ namespace iAxxMES0
             }
         }
 
+        // Keypress do txtRpmMin (Enter)
         private void txtRpmMin_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Return))
@@ -225,6 +221,7 @@ namespace iAxxMES0
             }
         }
 
+        // Keypress do txtRpmMax (Enter)
         private void txtRpmMax_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Return))

@@ -79,12 +79,11 @@ namespace iAxxMES0
                 transaction = connection.BeginTransaction();
 
                 // Inserir o usuário
-                string queryUsuario = "INSERT INTO usuario (nome, cargo, horario, cpf) VALUES (@nome, @cargo, @horario, @cpf)";
+                string queryUsuario = "INSERT INTO usuario (nome, nivel_permissao, registro_matricula) VALUES (@nome, @nivel_permissao, @registro_matricula)";
                 MySqlCommand cmd = new MySqlCommand(queryUsuario, connection, transaction);
                 cmd.Parameters.AddWithValue("@nome", usuario.Nome);
-                cmd.Parameters.AddWithValue("@cargo", usuario.Cargo);
-                cmd.Parameters.AddWithValue("@horario", usuario.Horario);
-                cmd.Parameters.AddWithValue("@cpf", usuario.CPF);
+                cmd.Parameters.AddWithValue("@nivel_permissao", usuario.Nivel_Permissao);
+                cmd.Parameters.AddWithValue("@registro_matricula", usuario.Registro_Matricula);
                 cmd.ExecuteNonQuery();
 
                 // Obter o ID do usuário recém-criado
@@ -126,12 +125,11 @@ namespace iAxxMES0
                 transaction = connection.BeginTransaction();
 
                 // Atualizar dados do usuário
-                string queryUsuario = "UPDATE usuario SET nome = @nome, cargo = @cargo, horario = @horario, cpf = @cpf WHERE id = @id";
+                string queryUsuario = "UPDATE usuario SET nome = @nome, nivel_permissao = @nivel_permissao, registro_matricula = @registro_matricula WHERE id = @id";
                 MySqlCommand cmd = new MySqlCommand(queryUsuario, connection, transaction);
                 cmd.Parameters.AddWithValue("@nome", usuario.Nome);
-                cmd.Parameters.AddWithValue("@cargo", usuario.Cargo);
-                cmd.Parameters.AddWithValue("@horario", usuario.Horario);
-                cmd.Parameters.AddWithValue("@cpf", usuario.CPF);
+                cmd.Parameters.AddWithValue("@nivel_permissao", usuario.Nivel_Permissao);
+                cmd.Parameters.AddWithValue("@registro_matricula", usuario.Registro_Matricula);
                 cmd.Parameters.AddWithValue("@id", usuario.Id);
                 cmd.ExecuteNonQuery();
 

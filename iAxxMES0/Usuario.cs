@@ -10,18 +10,16 @@ namespace iAxxMES0
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public string Cargo { get; set; }
-        public string Horario { get; set; }
-        public string CPF { get; set; }
+        public string Nivel_Permissao { get; set; }
+        public string Registro_Matricula { get; set; }
 
         // Construtor opcional
-        public Usuario(int id, string nome, string cargo, string horario, string cpf)
+        public Usuario(int id, string nome, string nivel_permissao, string registro_matricula)
         {
             Id = id;
             Nome = nome;
-            Cargo = cargo;
-            Horario = horario;
-            CPF = cpf;
+            Nivel_Permissao = nivel_permissao;
+            Registro_Matricula = registro_matricula;
         }
 
         // Construtor vazio

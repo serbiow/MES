@@ -36,13 +36,15 @@
             lblSenha = new Label();
             lblLogin = new Label();
             pictureBox1 = new PictureBox();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnCancelar
             // 
             btnCancelar.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCancelar.Location = new Point(196, 250);
+            btnCancelar.Location = new Point(164, 238);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(77, 32);
             btnCancelar.TabIndex = 5;
@@ -53,7 +55,7 @@
             // btnEntrar
             // 
             btnEntrar.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEntrar.Location = new Point(21, 250);
+            btnEntrar.Location = new Point(50, 238);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(77, 32);
             btnEntrar.TabIndex = 4;
@@ -63,7 +65,7 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(93, 196);
+            txtSenha.Location = new Point(79, 184);
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
             txtSenha.Size = new Size(178, 23);
@@ -71,7 +73,7 @@
             // 
             // txtLogin
             // 
-            txtLogin.Location = new Point(93, 141);
+            txtLogin.Location = new Point(79, 133);
             txtLogin.Name = "txtLogin";
             txtLogin.Size = new Size(178, 23);
             txtLogin.TabIndex = 2;
@@ -80,7 +82,7 @@
             // 
             lblSenha.AutoSize = true;
             lblSenha.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSenha.Location = new Point(21, 199);
+            lblSenha.Location = new Point(9, 188);
             lblSenha.Name = "lblSenha";
             lblSenha.Size = new Size(64, 19);
             lblSenha.TabIndex = 1;
@@ -90,7 +92,7 @@
             // 
             lblLogin.AutoSize = true;
             lblLogin.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogin.Location = new Point(21, 144);
+            lblLogin.Location = new Point(9, 133);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(59, 19);
             lblLogin.TabIndex = 0;
@@ -99,12 +101,27 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(87, 6);
+            pictureBox1.Location = new Point(81, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(120, 120);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.None;
+            panel1.Controls.Add(txtLogin);
+            panel1.Controls.Add(btnCancelar);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(btnEntrar);
+            panel1.Controls.Add(lblLogin);
+            panel1.Controls.Add(lblSenha);
+            panel1.Controls.Add(txtSenha);
+            panel1.Location = new Point(11, 11);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(285, 288);
+            panel1.TabIndex = 7;
             // 
             // frmLogin
             // 
@@ -113,21 +130,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             CancelButton = btnCancelar;
-            ClientSize = new Size(292, 306);
-            Controls.Add(btnCancelar);
-            Controls.Add(btnEntrar);
-            Controls.Add(txtLogin);
-            Controls.Add(txtSenha);
-            Controls.Add(lblLogin);
-            Controls.Add(lblSenha);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(310, 311);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -138,5 +151,6 @@
         private Label lblSenha;
         private Label lblLogin;
         private PictureBox pictureBox1;
+        private Panel panel1;
     }
 }

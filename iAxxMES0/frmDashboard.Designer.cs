@@ -171,7 +171,7 @@
             // cbxOrdenacao
             // 
             cbxOrdenacao.FormattingEnabled = true;
-            cbxOrdenacao.Items.AddRange(new object[] { "Apelido", "RPM", "Status" });
+            cbxOrdenacao.Items.AddRange(new object[] { "Maquina", "Status" });
             cbxOrdenacao.Location = new Point(0, 38);
             cbxOrdenacao.Name = "cbxOrdenacao";
             cbxOrdenacao.Size = new Size(121, 23);
@@ -195,7 +195,6 @@
             btnRefresh.TabIndex = 2;
             btnRefresh.Text = "Refresh";
             btnRefresh.UseVisualStyleBackColor = true;
-            btnRefresh.Visible = false;
             btnRefresh.Click += btnRefresh_Click_1;
             // 
             // panel4
@@ -267,9 +266,9 @@
             lblFiltroNome.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblFiltroNome.Location = new Point(0, 166);
             lblFiltroNome.Name = "lblFiltroNome";
-            lblFiltroNome.Size = new Size(65, 20);
+            lblFiltroNome.Size = new Size(70, 20);
             lblFiltroNome.TabIndex = 15;
-            lblFiltroNome.Text = "Apelido:";
+            lblFiltroNome.Text = "Maquina:";
             // 
             // lblRpmMin
             // 

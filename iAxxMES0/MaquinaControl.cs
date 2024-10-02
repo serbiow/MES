@@ -35,11 +35,17 @@ namespace iAxxMES0
                 case "ligado":
                     pnlStatus.BackColor = Color.Green;
                     break;
-                case "desligado":
+                case "sem programação":
                     pnlStatus.BackColor = Color.Gray;
                     break;
-                case "alarme":
+                case "parada":
                     pnlStatus.BackColor = Color.Red;
+                    break;
+                case "carga de fio":
+                    pnlStatus.BackColor = Color.Orange;
+                    break;
+                case "setup":
+                    pnlStatus.BackColor = Color.LightBlue;
                     break;
                 default:
                     pnlStatus.BackColor = Color.Gray;
