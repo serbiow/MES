@@ -28,42 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblApelidoTitle = new Label();
-            lblRPMTitle = new Label();
             lblStatus = new Label();
             pnlStatus = new Panel();
             lblApelido = new Label();
-            lblRPM = new Label();
+            lblDesc = new Label();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            lblGrupo = new Label();
             pnlStatus.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
-            // 
-            // lblApelidoTitle
-            // 
-            lblApelidoTitle.AutoSize = true;
-            lblApelidoTitle.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblApelidoTitle.Location = new Point(3, 46);
-            lblApelidoTitle.Name = "lblApelidoTitle";
-            lblApelidoTitle.Size = new Size(60, 17);
-            lblApelidoTitle.TabIndex = 0;
-            lblApelidoTitle.Text = "Apelido:";
-            // 
-            // lblRPMTitle
-            // 
-            lblRPMTitle.AutoSize = true;
-            lblRPMTitle.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRPMTitle.Location = new Point(3, 86);
-            lblRPMTitle.Name = "lblRPMTitle";
-            lblRPMTitle.Size = new Size(40, 17);
-            lblRPMTitle.TabIndex = 1;
-            lblRPMTitle.Text = "RPM:";
             // 
             // lblStatus
             // 
             lblStatus.Dock = DockStyle.Fill;
-            lblStatus.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblStatus.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblStatus.Location = new Point(0, 0);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(160, 25);
+            lblStatus.Size = new Size(160, 26);
             lblStatus.TabIndex = 2;
             lblStatus.Text = "STATUS";
             lblStatus.TextAlign = ContentAlignment.MiddleCenter;
@@ -71,7 +56,7 @@
             // pnlStatus
             // 
             pnlStatus.Anchor = AnchorStyles.None;
-            pnlStatus.Controls.Add(lblStatus);
+            pnlStatus.Controls.Add(lblApelido);
             pnlStatus.Location = new Point(0, 0);
             pnlStatus.Name = "pnlStatus";
             pnlStatus.Size = new Size(160, 25);
@@ -79,48 +64,86 @@
             // 
             // lblApelido
             // 
-            lblApelido.AutoSize = true;
-            lblApelido.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblApelido.Location = new Point(59, 44);
+            lblApelido.Dock = DockStyle.Fill;
+            lblApelido.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblApelido.Location = new Point(0, 0);
             lblApelido.Name = "lblApelido";
-            lblApelido.Size = new Size(62, 20);
+            lblApelido.Size = new Size(160, 25);
             lblApelido.TabIndex = 4;
-            lblApelido.Text = "Apelido";
+            lblApelido.Text = "MAQUINA";
+            lblApelido.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblRPM
+            // lblDesc
             // 
-            lblRPM.AutoSize = true;
-            lblRPM.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblRPM.Location = new Point(40, 84);
-            lblRPM.Name = "lblRPM";
-            lblRPM.Size = new Size(39, 20);
-            lblRPM.TabIndex = 5;
-            lblRPM.Text = "RPM";
+            lblDesc.Dock = DockStyle.Fill;
+            lblDesc.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDesc.Location = new Point(0, 0);
+            lblDesc.Name = "lblDesc";
+            lblDesc.Size = new Size(160, 80);
+            lblDesc.TabIndex = 5;
+            lblDesc.Text = "Descrição";
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(lblStatus);
+            panel1.Location = new Point(0, 28);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(160, 26);
+            panel1.TabIndex = 6;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(lblDesc);
+            panel2.Location = new Point(0, 80);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(160, 80);
+            panel2.TabIndex = 7;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(lblGrupo);
+            panel3.Location = new Point(0, 51);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(160, 26);
+            panel3.TabIndex = 7;
+            // 
+            // lblGrupo
+            // 
+            lblGrupo.Dock = DockStyle.Fill;
+            lblGrupo.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGrupo.Location = new Point(0, 0);
+            lblGrupo.Name = "lblGrupo";
+            lblGrupo.Size = new Size(160, 26);
+            lblGrupo.TabIndex = 2;
+            lblGrupo.Text = "Grupo";
+            lblGrupo.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // MaquinaControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGray;
-            Controls.Add(lblRPM);
-            Controls.Add(lblApelido);
+            Controls.Add(panel3);
             Controls.Add(pnlStatus);
-            Controls.Add(lblRPMTitle);
-            Controls.Add(lblApelidoTitle);
+            Controls.Add(panel1);
+            Controls.Add(panel2);
             Name = "MaquinaControl";
             Size = new Size(160, 160);
             pnlStatus.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label lblApelidoTitle;
-        private Label lblRPMTitle;
         private Label lblStatus;
         private Panel pnlStatus;
         private Label lblApelido;
-        private Label lblRPM;
+        private Label lblDesc;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel3;
+        private Label lblGrupo;
     }
 }

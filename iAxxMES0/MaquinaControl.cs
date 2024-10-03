@@ -14,41 +14,50 @@ namespace iAxxMES0
     {
         public int MaquinaId { get; set; }
         public string Apelido { get; set; }
+        public string Grupo { get; set; }
         public int RPM { get; set; }
         public string Status { get; set; }
+        public string Motivo_Parada { get; set; }
 
         public MaquinaControl()
         {
             InitializeComponent();
         }
 
-        public void AtualizarDados(string apelido, int rpm, string status)
+        public void AtualizarDados(string apelido, string grupo, int rpm, string status, string motivo_parada)
         {
             lblApelido.Text = apelido;
-            lblRPM.Text = $"{rpm} RPM";
+            lblApelido.Text = lblApelido.Text.ToUpper();
             lblStatus.Text = status;
             lblStatus.Text = lblStatus.Text.ToUpper();
+            lblGrupo.Text = grupo;
 
             // Alterar a cor do Status para fácil visualização
             switch (status.ToLower())
             {
-                case "ligado":
+                case "rodando":
                     pnlStatus.BackColor = Color.Green;
-                    break;
-                case "sem programação":
-                    pnlStatus.BackColor = Color.Gray;
+                    lblDesc.Text = $"{rpm} RPM";
                     break;
                 case "parada":
                     pnlStatus.BackColor = Color.Red;
+                    lblDesc.Text = motivo_parada;
+                    break;
+                case "sem programação":
+                    pnlStatus.BackColor = Color.Gray;
+                    lblDesc.Visible = false;
                     break;
                 case "carga de fio":
                     pnlStatus.BackColor = Color.Orange;
+                    lblDesc.Visible = false;
                     break;
                 case "setup":
                     pnlStatus.BackColor = Color.LightBlue;
+                    lblDesc.Visible = false;
                     break;
                 default:
                     pnlStatus.BackColor = Color.Gray;
+                    lblDesc.Visible = false;
                     break;
             }
         }

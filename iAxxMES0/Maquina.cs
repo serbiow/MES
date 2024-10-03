@@ -12,5 +12,7 @@ namespace iAxxMES0
         public string Apelido { get; set; }
         public int RPM { get; set; }
         public string Status { get; set; }
+        public string Motivo_Parada { get; set; }
+        public string Grupo { get; set; }
     }
 }

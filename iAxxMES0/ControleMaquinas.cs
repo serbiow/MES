@@ -22,7 +22,7 @@ namespace iAxxMES0
         {
             List<Maquina> maquinas = new List<Maquina>();
             string query = @"
-            SELECT m.id, m.apelido, md.rpm, md.status 
+            SELECT m.id, m.apelido, m.grupo, md.rpm, md.status, md.motivo_parada
             FROM maquina m
             JOIN maquina_dados md ON m.id = md.maquina_id
             WHERE md.data_hora = (
@@ -47,10 +47,13 @@ namespace iAxxMES0
             {
                 Maquina maquina = new Maquina
                 {
-                    Id = reader.GetInt32("id"),
-                    Apelido = reader.GetString("apelido"),
-                    RPM = reader.GetInt32("rpm"),
-                    Status = reader.GetString("status")
+                    Id = reader.GetInt32("id"),                       // Vem da tabela 'maquina'
+                    Apelido = reader.GetString("apelido"),            // Vem da tabela 'maquina'
+                    Grupo = reader.GetString("grupo"),                // Vem da tabela 'maquina'
+                    RPM = reader.GetInt32("rpm"),                     // Vem da tabela 'maquina_dados'
+                    Status = reader.GetString("status"),              // Vem da tabela 'maquina_dados'
+                    // Verifica se 'motivo_parada' é NULL e atribui "parada não apontada" caso seja
+                    Motivo_Parada = reader.IsDBNull(reader.GetOrdinal("motivo_parada")) ? "Parada não apontada" : reader.GetString("motivo_parada")
                 };
                 maquinas.Add(maquina);
             }
@@ -70,7 +73,7 @@ namespace iAxxMES0
         {
             List<Maquina> maquinasAtualizadas = new List<Maquina>();
             string query = @"
-            SELECT m.id, m.apelido, md.rpm, md.status 
+            SELECT m.id, m.apelido, m.grupo, md.rpm, md.status, md.motivo_parada
             FROM maquina m
             JOIN maquina_dados md ON m.id = md.maquina_id
             WHERE md.data_hora = (
@@ -96,10 +99,13 @@ namespace iAxxMES0
             {
                 Maquina maquina = new Maquina
                 {
-                    Id = reader.GetInt32("id"),            // Vem da tabela 'maquina'
-                    Apelido = reader.GetString("apelido"), // Vem da tabela 'maquina'
-                    RPM = reader.GetInt32("rpm"),          // Vem da tabela 'maquina_dados'
-                    Status = reader.GetString("status")    // Vem da tabela 'maquina_dados'
+                    Id = reader.GetInt32("id"),                       // Vem da tabela 'maquina'
+                    Apelido = reader.GetString("apelido"),            // Vem da tabela 'maquina'
+                    Grupo = reader.GetString("grupo"),                // Vem da tabela 'maquina'
+                    RPM = reader.GetInt32("rpm"),                     // Vem da tabela 'maquina_dados'
+                    Status = reader.GetString("status"),              // Vem da tabela 'maquina_dados'
+                    // Verifica se 'motivo_parada' é NULL e atribui "parada não apontada" caso seja
+                    Motivo_Parada = reader.IsDBNull(reader.GetOrdinal("motivo_parada")) ? "Parada não apontada" : reader.GetString("motivo_parada")
                 };
                 maquinasAtualizadas.Add(maquina);
             }

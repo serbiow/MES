@@ -54,6 +54,8 @@
             lblRpmFiltro = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             flowLayoutPanelMaquinas = new FlowLayoutPanel();
+            cbxGrupo = new ComboBox();
+            lblGrupos = new Label();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -90,7 +92,7 @@
             // cbxStatusFiltro
             // 
             cbxStatusFiltro.FormattingEnabled = true;
-            cbxStatusFiltro.Items.AddRange(new object[] { "Todos", "Ligado", "Desligado", "Alarme" });
+            cbxStatusFiltro.Items.AddRange(new object[] { "Todos", "Rodando", "Parada", "Setup", "Carga de fio", "Sem programação" });
             cbxStatusFiltro.Location = new Point(3, 27);
             cbxStatusFiltro.Name = "cbxStatusFiltro";
             cbxStatusFiltro.Size = new Size(121, 23);
@@ -199,6 +201,8 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(lblGrupos);
+            panel4.Controls.Add(cbxGrupo);
             panel4.Controls.Add(btnAplicarFiltro);
             panel4.Controls.Add(txtRpmMax);
             panel4.Controls.Add(lblStatusFiltro);
@@ -322,6 +326,25 @@
             flowLayoutPanelMaquinas.Size = new Size(1030, 1031);
             flowLayoutPanelMaquinas.TabIndex = 1;
             // 
+            // cbxGrupo
+            // 
+            cbxGrupo.FormattingEnabled = true;
+            cbxGrupo.Items.AddRange(new object[] { "Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4", "Grupo 5" });
+            cbxGrupo.Location = new Point(3, 257);
+            cbxGrupo.Name = "cbxGrupo";
+            cbxGrupo.Size = new Size(121, 23);
+            cbxGrupo.TabIndex = 16;
+            // 
+            // lblGrupos
+            // 
+            lblGrupos.AutoSize = true;
+            lblGrupos.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGrupos.Location = new Point(3, 234);
+            lblGrupos.Name = "lblGrupos";
+            lblGrupos.Size = new Size(53, 20);
+            lblGrupos.TabIndex = 17;
+            lblGrupos.Text = "Grupo:";
+            // 
             // frmDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -378,5 +401,7 @@
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
+        private Label lblGrupos;
+        private ComboBox cbxGrupo;
     }
 }

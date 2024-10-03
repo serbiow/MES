@@ -32,6 +32,7 @@ namespace iAxxMES0
             // Configurar os eventos de alteração de seleção para os filtros e ordenação
             cbxOrdenacao.SelectedIndexChanged += AplicarFiltros;
             cbxStatusFiltro.SelectedIndexChanged += AplicarFiltros;
+            cbxGrupo.SelectedIndexChanged += AplicarFiltros;
             //txtRpmMin.TextChanged += AplicarFiltros;
             //txtRpmMax.TextChanged += AplicarFiltros;
             btnAplicarFiltro.Click += AplicarFiltros;
@@ -95,7 +96,7 @@ namespace iAxxMES0
                 };
 
                 // Atualizar o controle com as informações da máquina
-                maquinaControl.AtualizarDados(maquina.Apelido, maquina.RPM, maquina.Status);
+                maquinaControl.AtualizarDados(maquina.Apelido, maquina.Grupo, maquina.RPM, maquina.Status, maquina.Motivo_Parada);
 
                 // Adicionar ao painel de layout
                 flowLayoutPanelMaquinas.Controls.Add(maquinaControl);
@@ -143,6 +144,15 @@ namespace iAxxMES0
                 // Usando Contains para permitir a busca parcial e ignorando diferenças de maiúsculas/minúsculas
                 maquinasFiltradas = maquinasFiltradas
                     .Where(m => m.Apelido.IndexOf(apelidoFiltro, StringComparison.OrdinalIgnoreCase) >= 0)
+                    .ToList();
+            }
+
+            // Filtro de Grupo
+            string grupoFiltro = cbxGrupo.SelectedItem?.ToString();
+            if (!string.IsNullOrEmpty(grupoFiltro) && grupoFiltro != "Todos")
+            {
+                maquinasFiltradas = maquinasFiltradas
+                    .Where(m => m.Grupo.Equals(grupoFiltro, StringComparison.OrdinalIgnoreCase))
                     .ToList();
             }
 
