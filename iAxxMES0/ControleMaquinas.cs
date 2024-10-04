@@ -22,14 +22,16 @@ namespace iAxxMES0
         {
             List<Maquina> maquinas = new List<Maquina>();
             string query = @"
-            SELECT m.id, m.apelido, m.grupo, md.rpm, md.status, md.motivo_parada
+            SELECT m.id, m.apelido, m.grupo, md.rpm, ms.descricao AS status, mp.descricao AS motivo_parada, md.comentario
             FROM maquina m
-            JOIN maquina_dados md ON m.id = md.maquina_id
-            WHERE md.data_hora = (
-                SELECT MAX(md2.data_hora) 
-                FROM maquina_dados md2 
-                WHERE md2.maquina_id = m.id
-            )
+            JOIN (
+                SELECT maquina_id, MAX(data_hora) AS max_data_hora
+                FROM maquina_dados
+                GROUP BY maquina_id
+            ) md_recent ON m.id = md_recent.maquina_id
+            JOIN maquina_dados md ON m.id = md.maquina_id AND md.data_hora = md_recent.max_data_hora
+            LEFT JOIN maquina_status ms ON md.status = ms.id
+            LEFT JOIN motivos_parada mp ON md.motivo_parada = mp.id
             ORDER BY m.apelido";
 
             MySqlCommand cmd = new MySqlCommand(query, connection);
@@ -73,14 +75,16 @@ namespace iAxxMES0
         {
             List<Maquina> maquinasAtualizadas = new List<Maquina>();
             string query = @"
-            SELECT m.id, m.apelido, m.grupo, md.rpm, md.status, md.motivo_parada
+            SELECT m.id, m.apelido, m.grupo, md.rpm, ms.descricao AS status, mp.descricao AS motivo_parada, md.comentario
             FROM maquina m
-            JOIN maquina_dados md ON m.id = md.maquina_id
-            WHERE md.data_hora = (
-                SELECT MAX(md2.data_hora) 
-                FROM maquina_dados md2 
-                WHERE md2.maquina_id = m.id
-            )
+            JOIN (
+                SELECT maquina_id, MAX(data_hora) AS max_data_hora
+                FROM maquina_dados
+                GROUP BY maquina_id
+            ) md_recent ON m.id = md_recent.maquina_id
+            JOIN maquina_dados md ON m.id = md.maquina_id AND md.data_hora = md_recent.max_data_hora
+            LEFT JOIN maquina_status ms ON md.status = ms.id
+            LEFT JOIN motivos_parada mp ON md.motivo_parada = mp.id
             ORDER BY m.apelido";
 
             MySqlCommand cmd = new MySqlCommand(query, connection);
