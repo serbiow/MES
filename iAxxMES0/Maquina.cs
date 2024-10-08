@@ -10,9 +10,10 @@ namespace iAxxMES0
     {
         public int Id { get; set; }
         public string Apelido { get; set; }
+        public string Grupo { get; set; }
         public int RPM { get; set; }
         public string Status { get; set; }
         public string Motivo_Parada { get; set; }
-        public string Grupo { get; set; }
+        public DateTime DataHoraStatus { get; set; }
     }
 }

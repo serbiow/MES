@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             btnCancelar = new Button();
             btnEntrar = new Button();
             txtSenha = new TextBox();
@@ -100,8 +99,8 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(81, 0);
+            pictureBox1.Image = Properties.Resources.iAxxLogo;
+            pictureBox1.Location = new Point(85, 2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(120, 120);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;

@@ -24,7 +24,7 @@ namespace iAxxMES0
             InitializeComponent();
         }
 
-        public void AtualizarDados(string apelido, string grupo, int rpm, string status, string motivo_parada)
+        public void AtualizarDados(string apelido, string grupo, int rpm, string status, string motivo_parada, DateTime dataHoraStatus)
         {
             lblApelido.Text = apelido;
             lblApelido.Text = lblApelido.Text.ToUpper();
@@ -59,6 +59,19 @@ namespace iAxxMES0
                     pnlStatus.BackColor = Color.Gray;
                     lblDesc.Visible = false;
                     break;
+            }
+
+            // Calcular o tempo em que a máquina está no status atual
+            TimeSpan tempoStatus = DateTime.Now - dataHoraStatus;
+
+            // Exibir "1d" se passou mais de 1 dia, caso contrário exibir horas e minutos
+            if (tempoStatus.TotalDays >= 1)
+            {
+                lblTempoStatus.Text = $"{Math.Floor(tempoStatus.TotalDays)}d {tempoStatus.Hours}h";
+            }
+            else
+            {
+                lblTempoStatus.Text = $"{tempoStatus.Hours}h {tempoStatus.Minutes}m";
             }
         }
     }

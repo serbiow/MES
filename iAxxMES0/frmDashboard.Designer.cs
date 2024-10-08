@@ -37,12 +37,13 @@
             pictureBox1 = new PictureBox();
             chkAutoRefresh = new CheckBox();
             tableLayoutPanel2 = new TableLayoutPanel();
-            panel2 = new Panel();
-            lblOderBy = new Label();
-            cbxOrdenacao = new ComboBox();
             panel3 = new Panel();
             btnRefresh = new Button();
             panel4 = new Panel();
+            lblOderBy = new Label();
+            cbxOrdenacao = new ComboBox();
+            lblGrupos = new Label();
+            cbxGrupo = new ComboBox();
             btnAplicarFiltro = new Button();
             txtRpmMax = new TextBox();
             lblStatusFiltro = new Label();
@@ -54,16 +55,15 @@
             lblRpmFiltro = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             flowLayoutPanelMaquinas = new FlowLayoutPanel();
-            cbxGrupo = new ComboBox();
-            lblGrupos = new Label();
+            lblStatusBanco = new Label();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel2.SuspendLayout();
-            panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
+            flowLayoutPanelMaquinas.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -136,48 +136,17 @@
             // 
             tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Controls.Add(panel2, 0, 1);
             tableLayoutPanel2.Controls.Add(panel3, 0, 0);
-            tableLayoutPanel2.Controls.Add(panel4, 0, 2);
+            tableLayoutPanel2.Controls.Add(panel4, 0, 1);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 3;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
+            tableLayoutPanel2.RowCount = 2;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 75F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Size = new Size(252, 1031);
             tableLayoutPanel2.TabIndex = 18;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(lblOderBy);
-            panel2.Controls.Add(cbxOrdenacao);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(3, 209);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(246, 200);
-            panel2.TabIndex = 0;
-            // 
-            // lblOderBy
-            // 
-            lblOderBy.AutoSize = true;
-            lblOderBy.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblOderBy.Location = new Point(3, 15);
-            lblOderBy.Name = "lblOderBy";
-            lblOderBy.Size = new Size(93, 20);
-            lblOderBy.TabIndex = 9;
-            lblOderBy.Text = "Ordenar por:";
-            // 
-            // cbxOrdenacao
-            // 
-            cbxOrdenacao.FormattingEnabled = true;
-            cbxOrdenacao.Items.AddRange(new object[] { "Maquina", "Status" });
-            cbxOrdenacao.Location = new Point(0, 38);
-            cbxOrdenacao.Name = "cbxOrdenacao";
-            cbxOrdenacao.Size = new Size(121, 23);
-            cbxOrdenacao.TabIndex = 3;
             // 
             // panel3
             // 
@@ -185,7 +154,7 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(3, 3);
             panel3.Name = "panel3";
-            panel3.Size = new Size(246, 200);
+            panel3.Size = new Size(246, 251);
             panel3.TabIndex = 1;
             // 
             // btnRefresh
@@ -201,6 +170,8 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(lblOderBy);
+            panel4.Controls.Add(cbxOrdenacao);
             panel4.Controls.Add(lblGrupos);
             panel4.Controls.Add(cbxGrupo);
             panel4.Controls.Add(btnAplicarFiltro);
@@ -214,10 +185,48 @@
             panel4.Controls.Add(txtRpmMin);
             panel4.Controls.Add(lblRpmFiltro);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(3, 415);
+            panel4.Location = new Point(3, 260);
             panel4.Name = "panel4";
-            panel4.Size = new Size(246, 613);
+            panel4.Size = new Size(246, 768);
             panel4.TabIndex = 2;
+            // 
+            // lblOderBy
+            // 
+            lblOderBy.AutoSize = true;
+            lblOderBy.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblOderBy.Location = new Point(9, 306);
+            lblOderBy.Name = "lblOderBy";
+            lblOderBy.Size = new Size(93, 20);
+            lblOderBy.TabIndex = 9;
+            lblOderBy.Text = "Ordenar por:";
+            // 
+            // cbxOrdenacao
+            // 
+            cbxOrdenacao.FormattingEnabled = true;
+            cbxOrdenacao.Items.AddRange(new object[] { "Maquina", "Status" });
+            cbxOrdenacao.Location = new Point(3, 329);
+            cbxOrdenacao.Name = "cbxOrdenacao";
+            cbxOrdenacao.Size = new Size(121, 23);
+            cbxOrdenacao.TabIndex = 3;
+            // 
+            // lblGrupos
+            // 
+            lblGrupos.AutoSize = true;
+            lblGrupos.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGrupos.Location = new Point(6, 69);
+            lblGrupos.Name = "lblGrupos";
+            lblGrupos.Size = new Size(53, 20);
+            lblGrupos.TabIndex = 17;
+            lblGrupos.Text = "Grupo:";
+            // 
+            // cbxGrupo
+            // 
+            cbxGrupo.FormattingEnabled = true;
+            cbxGrupo.Items.AddRange(new object[] { "Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4", "Grupo 5" });
+            cbxGrupo.Location = new Point(3, 92);
+            cbxGrupo.Name = "cbxGrupo";
+            cbxGrupo.Size = new Size(121, 23);
+            cbxGrupo.TabIndex = 16;
             // 
             // btnAplicarFiltro
             // 
@@ -231,7 +240,7 @@
             // 
             // txtRpmMax
             // 
-            txtRpmMax.Location = new Point(40, 124);
+            txtRpmMax.Location = new Point(49, 255);
             txtRpmMax.Name = "txtRpmMax";
             txtRpmMax.Size = new Size(100, 23);
             txtRpmMax.TabIndex = 6;
@@ -241,7 +250,7 @@
             // 
             lblStatusFiltro.AutoSize = true;
             lblStatusFiltro.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatusFiltro.Location = new Point(6, 4);
+            lblStatusFiltro.Location = new Point(9, 4);
             lblStatusFiltro.Name = "lblStatusFiltro";
             lblStatusFiltro.Size = new Size(52, 20);
             lblStatusFiltro.TabIndex = 8;
@@ -249,7 +258,7 @@
             // 
             // txtFiltroApelido
             // 
-            txtFiltroApelido.Location = new Point(6, 189);
+            txtFiltroApelido.Location = new Point(3, 153);
             txtFiltroApelido.Name = "txtFiltroApelido";
             txtFiltroApelido.Size = new Size(100, 23);
             txtFiltroApelido.TabIndex = 7;
@@ -258,7 +267,7 @@
             // lblRpmMax
             // 
             lblRpmMax.AutoSize = true;
-            lblRpmMax.Location = new Point(3, 127);
+            lblRpmMax.Location = new Point(12, 258);
             lblRpmMax.Name = "lblRpmMax";
             lblRpmMax.Size = new Size(33, 15);
             lblRpmMax.TabIndex = 7;
@@ -268,7 +277,7 @@
             // 
             lblFiltroNome.AutoSize = true;
             lblFiltroNome.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblFiltroNome.Location = new Point(0, 166);
+            lblFiltroNome.Location = new Point(6, 130);
             lblFiltroNome.Name = "lblFiltroNome";
             lblFiltroNome.Size = new Size(70, 20);
             lblFiltroNome.TabIndex = 15;
@@ -277,7 +286,7 @@
             // lblRpmMin
             // 
             lblRpmMin.AutoSize = true;
-            lblRpmMin.Location = new Point(3, 98);
+            lblRpmMin.Location = new Point(12, 229);
             lblRpmMin.Name = "lblRpmMin";
             lblRpmMin.Size = new Size(31, 15);
             lblRpmMin.TabIndex = 6;
@@ -285,7 +294,7 @@
             // 
             // txtRpmMin
             // 
-            txtRpmMin.Location = new Point(40, 95);
+            txtRpmMin.Location = new Point(49, 226);
             txtRpmMin.Name = "txtRpmMin";
             txtRpmMin.Size = new Size(100, 23);
             txtRpmMin.TabIndex = 5;
@@ -295,7 +304,7 @@
             // 
             lblRpmFiltro.AutoSize = true;
             lblRpmFiltro.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblRpmFiltro.Location = new Point(0, 72);
+            lblRpmFiltro.Location = new Point(9, 203);
             lblRpmFiltro.Name = "lblRpmFiltro";
             lblRpmFiltro.Size = new Size(42, 20);
             lblRpmFiltro.TabIndex = 5;
@@ -320,30 +329,23 @@
             // 
             flowLayoutPanelMaquinas.AutoScroll = true;
             flowLayoutPanelMaquinas.BackColor = SystemColors.Control;
+            flowLayoutPanelMaquinas.Controls.Add(lblStatusBanco);
             flowLayoutPanelMaquinas.Dock = DockStyle.Fill;
             flowLayoutPanelMaquinas.Location = new Point(261, 3);
             flowLayoutPanelMaquinas.Name = "flowLayoutPanelMaquinas";
             flowLayoutPanelMaquinas.Size = new Size(1030, 1031);
             flowLayoutPanelMaquinas.TabIndex = 1;
             // 
-            // cbxGrupo
+            // lblStatusBanco
             // 
-            cbxGrupo.FormattingEnabled = true;
-            cbxGrupo.Items.AddRange(new object[] { "Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4", "Grupo 5" });
-            cbxGrupo.Location = new Point(3, 257);
-            cbxGrupo.Name = "cbxGrupo";
-            cbxGrupo.Size = new Size(121, 23);
-            cbxGrupo.TabIndex = 16;
-            // 
-            // lblGrupos
-            // 
-            lblGrupos.AutoSize = true;
-            lblGrupos.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblGrupos.Location = new Point(3, 234);
-            lblGrupos.Name = "lblGrupos";
-            lblGrupos.Size = new Size(53, 20);
-            lblGrupos.TabIndex = 17;
-            lblGrupos.Text = "Grupo:";
+            lblStatusBanco.AutoSize = true;
+            lblStatusBanco.ForeColor = Color.Red;
+            lblStatusBanco.Location = new Point(3, 0);
+            lblStatusBanco.Name = "lblStatusBanco";
+            lblStatusBanco.Size = new Size(75, 15);
+            lblStatusBanco.TabIndex = 0;
+            lblStatusBanco.Text = "Status Banco";
+            lblStatusBanco.Visible = false;
             // 
             // frmDashboard
             // 
@@ -364,12 +366,12 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel2.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanelMaquinas.ResumeLayout(false);
+            flowLayoutPanelMaquinas.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -398,10 +400,10 @@
         private Button btnAplicarFiltro;
         private FlowLayoutPanel flowLayoutPanelMaquinas;
         private TableLayoutPanel tableLayoutPanel2;
-        private Panel panel2;
         private Panel panel3;
         private Panel panel4;
         private Label lblGrupos;
         private ComboBox cbxGrupo;
+        private Label lblStatusBanco;
     }
 }
