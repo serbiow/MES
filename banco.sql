@@ -92,6 +92,7 @@ INSERT INTO motivos_parada (descricao) VALUES ('Quebra de lycra');
 INSERT INTO motivos_parada (descricao) VALUES ('Quebra de fio');
 INSERT INTO motivos_parada (descricao) VALUES ('Quebra de agulha');
 INSERT INTO motivos_parada (descricao) VALUES ('Inspeção de defeito');
+INSERT INTO motivos_parada (descricao) VALUES ('Outros');
 
 -- Inserts para tabela maquina_status
 INSERT INTO maquina_status (descricao) VALUES ('Rodando');
@@ -244,7 +245,7 @@ INSERT INTO maquina (apelido, finura, diametro, numero_alimentadores, grupo) VAL
 INSERT INTO maquina (apelido, finura, diametro, numero_alimentadores, grupo) VALUES ('Maquina_140', 125, 64.14, 9, 'Grupo 2');
 
 -- Inserts para a tabela maquina_dados
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (1, 0, 5, NULL, 'Comentário 1', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (1, 35, 1, NULL, 'Comentário 1', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (2, 0, 2, 5, 'Comentário 2', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (3, 0, 4, NULL, 'Comentário 3', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (4, 0, 3, NULL, 'Comentário 4', NOW());
