@@ -39,3 +39,29 @@
 07/10/2024 22:54:40: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
 07/10/2024 22:54:40: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
 07/10/2024 22:54:40: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+10/10/2024 10:06:35: Erro ao obter todas as máquinas: Unable to connect to any of the specified MySQL hosts.
+10/10/2024 10:06:38: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+10/10/2024 10:06:40: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+10/10/2024 10:06:42: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+10/10/2024 10:06:44: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+10/10/2024 10:06:46: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+10/10/2024 10:06:48: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+10/10/2024 10:06:50: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+10/10/2024 10:06:52: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+10/10/2024 10:06:54: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+10/10/2024 10:06:57: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+10/10/2024 10:06:59: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+10/10/2024 10:07:01: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+10/10/2024 10:07:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+10/10/2024 10:07:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+10/10/2024 10:07:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+10/10/2024 10:07:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+10/10/2024 10:07:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+10/10/2024 10:07:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+10/10/2024 10:07:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+10/10/2024 10:07:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+10/10/2024 10:07:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+10/10/2024 10:07:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+10/10/2024 10:07:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+10/10/2024 10:07:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+10/10/2024 10:07:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.

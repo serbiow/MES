@@ -19,4 +19,4 @@
 # - (FEITO) adicionar o motivo_parada "Outros" no banco
 # - (FEITO) mostrar o tempo que está em cada status (segundos são irrelevantes, 24h exibe 1d)
 # - tratativas de máquina e todas as máquinas (campos em branco, campos nulos, sem conexão)
-# - adicionar "TODOS" no filtro por grupo
+# - (FEITO) adicionar "TODOS" no filtro por grupo

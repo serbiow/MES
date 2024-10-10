@@ -26,8 +26,11 @@ namespace iAxxMES0
             // Definir a opção padrão como "Ordenar por Apelido"
             cbxOrdenacao.SelectedIndex = 0;
 
-            // Define a opção padrão para "Todos"
+            // Define a opção padrão do Filtro de Status para "Todos"
             cbxStatusFiltro.SelectedIndex = 0;
+
+            // Define a opção padrão do Filtro de Grupos para "Todos"
+            cbxGrupo.SelectedIndex = 0;
 
             // Configurar os eventos de alteração de seleção para os filtros e ordenação
             cbxOrdenacao.SelectedIndexChanged += AplicarFiltros;

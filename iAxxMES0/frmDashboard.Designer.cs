@@ -35,10 +35,10 @@
             cbxStatusFiltro = new ComboBox();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            chkAutoRefresh = new CheckBox();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel3 = new Panel();
             btnRefresh = new Button();
+            chkAutoRefresh = new CheckBox();
             panel4 = new Panel();
             lblOderBy = new Label();
             cbxOrdenacao = new ComboBox();
@@ -71,7 +71,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroDeUsuárioToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1294, 24);
+            menuStrip1.Size = new Size(1270, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -101,12 +101,11 @@
             // panel1
             // 
             panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(chkAutoRefresh);
             panel1.Controls.Add(tableLayoutPanel2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(252, 1031);
+            panel1.Size = new Size(264, 518);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -119,54 +118,55 @@
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
             // 
-            // chkAutoRefresh
-            // 
-            chkAutoRefresh.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            chkAutoRefresh.Checked = true;
-            chkAutoRefresh.CheckState = CheckState.Checked;
-            chkAutoRefresh.Location = new Point(164, 3);
-            chkAutoRefresh.Name = "chkAutoRefresh";
-            chkAutoRefresh.Size = new Size(88, 38);
-            chkAutoRefresh.TabIndex = 1;
-            chkAutoRefresh.Text = "Atualização Automática";
-            chkAutoRefresh.UseVisualStyleBackColor = true;
-            chkAutoRefresh.CheckedChanged += chkAutoRefresh_CheckedChanged;
-            // 
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.ColumnCount = 1;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel2.Controls.Add(panel3, 0, 0);
             tableLayoutPanel2.Controls.Add(panel4, 0, 1);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.MinimumSize = new Size(250, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 75F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Size = new Size(252, 1031);
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 150F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Size = new Size(264, 518);
             tableLayoutPanel2.TabIndex = 18;
             // 
             // panel3
             // 
             panel3.Controls.Add(btnRefresh);
+            panel3.Controls.Add(chkAutoRefresh);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(3, 3);
             panel3.Name = "panel3";
-            panel3.Size = new Size(246, 251);
+            panel3.Size = new Size(258, 144);
             panel3.TabIndex = 1;
             // 
             // btnRefresh
             // 
             btnRefresh.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnRefresh.Location = new Point(168, 44);
+            btnRefresh.Location = new Point(180, 44);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(75, 23);
             btnRefresh.TabIndex = 2;
             btnRefresh.Text = "Refresh";
             btnRefresh.UseVisualStyleBackColor = true;
             btnRefresh.Click += btnRefresh_Click_1;
+            // 
+            // chkAutoRefresh
+            // 
+            chkAutoRefresh.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            chkAutoRefresh.Checked = true;
+            chkAutoRefresh.CheckState = CheckState.Checked;
+            chkAutoRefresh.Location = new Point(170, 3);
+            chkAutoRefresh.Name = "chkAutoRefresh";
+            chkAutoRefresh.Size = new Size(88, 38);
+            chkAutoRefresh.TabIndex = 1;
+            chkAutoRefresh.Text = "Atualização Automática";
+            chkAutoRefresh.UseVisualStyleBackColor = true;
+            chkAutoRefresh.CheckedChanged += chkAutoRefresh_CheckedChanged;
             // 
             // panel4
             // 
@@ -185,9 +185,9 @@
             panel4.Controls.Add(txtRpmMin);
             panel4.Controls.Add(lblRpmFiltro);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(3, 260);
+            panel4.Location = new Point(3, 153);
             panel4.Name = "panel4";
-            panel4.Size = new Size(246, 768);
+            panel4.Size = new Size(258, 362);
             panel4.TabIndex = 2;
             // 
             // lblOderBy
@@ -222,7 +222,7 @@
             // cbxGrupo
             // 
             cbxGrupo.FormattingEnabled = true;
-            cbxGrupo.Items.AddRange(new object[] { "Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4", "Grupo 5" });
+            cbxGrupo.Items.AddRange(new object[] { "Todos", "Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4", "Grupo 5" });
             cbxGrupo.Location = new Point(3, 92);
             cbxGrupo.Name = "cbxGrupo";
             cbxGrupo.Size = new Size(121, 23);
@@ -231,7 +231,7 @@
             // btnAplicarFiltro
             // 
             btnAplicarFiltro.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnAplicarFiltro.Location = new Point(153, 4);
+            btnAplicarFiltro.Location = new Point(154, 27);
             btnAplicarFiltro.Name = "btnAplicarFiltro";
             btnAplicarFiltro.Size = new Size(90, 23);
             btnAplicarFiltro.TabIndex = 8;
@@ -260,7 +260,7 @@
             // 
             txtFiltroApelido.Location = new Point(3, 153);
             txtFiltroApelido.Name = "txtFiltroApelido";
-            txtFiltroApelido.Size = new Size(100, 23);
+            txtFiltroApelido.Size = new Size(118, 23);
             txtFiltroApelido.TabIndex = 7;
             txtFiltroApelido.KeyPress += txtFiltroApelido_KeyPress;
             // 
@@ -313,8 +313,8 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 270F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(panel1, 0, 0);
             tableLayoutPanel1.Controls.Add(flowLayoutPanelMaquinas, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
@@ -322,7 +322,7 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(1294, 1037);
+            tableLayoutPanel1.Size = new Size(1270, 524);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // flowLayoutPanelMaquinas
@@ -331,9 +331,9 @@
             flowLayoutPanelMaquinas.BackColor = SystemColors.Control;
             flowLayoutPanelMaquinas.Controls.Add(lblStatusBanco);
             flowLayoutPanelMaquinas.Dock = DockStyle.Fill;
-            flowLayoutPanelMaquinas.Location = new Point(261, 3);
+            flowLayoutPanelMaquinas.Location = new Point(273, 3);
             flowLayoutPanelMaquinas.Name = "flowLayoutPanelMaquinas";
-            flowLayoutPanelMaquinas.Size = new Size(1030, 1031);
+            flowLayoutPanelMaquinas.Size = new Size(994, 518);
             flowLayoutPanelMaquinas.TabIndex = 1;
             // 
             // lblStatusBanco
@@ -351,7 +351,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1294, 1061);
+            ClientSize = new Size(1270, 548);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
