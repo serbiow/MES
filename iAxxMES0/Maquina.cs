@@ -14,6 +14,9 @@ namespace iAxxMES0
         public int RPM { get; set; }
         public string Status { get; set; }
         public string Motivo_Parada { get; set; }
+        public int Finura { get; set; }
+        public int Diametro { get; set; }
+        public int NumeroAlimentadores { get; set; }
         public DateTime DataHoraStatus { get; set; }
     }
 }

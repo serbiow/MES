@@ -37,7 +37,8 @@ namespace iAxxMES0
         {
             List<Maquina> maquinas = new List<Maquina>();
             string query = @"
-            SELECT m.id, m.apelido, m.grupo, md.rpm, ms.descricao AS status, mp.descricao AS motivo_parada, md.comentario, md.data_hora
+            SELECT m.id, m.apelido, m.grupo, m.finura, m.diametro, m.numero_alimentadores, md.rpm, ms.descricao AS status,
+            mp.descricao AS motivo_parada, md.comentario, md.data_hora
             FROM maquina m
             JOIN (
                 SELECT maquina_id, MAX(id) AS max_id
@@ -79,6 +80,9 @@ namespace iAxxMES0
                         RPM = reader.GetInt32("rpm"),
                         Status = reader.GetString("status"),
                         Motivo_Parada = reader.IsDBNull(reader.GetOrdinal("motivo_parada")) ? "Parada não apontada" : reader.GetString("motivo_parada"),
+                        Diametro = reader.GetInt32("diametro"),
+                        Finura = reader.GetInt32("finura"),
+                        NumeroAlimentadores = reader.GetInt32("numero_alimentadores"),
                         DataHoraStatus = reader.GetDateTime("data_hora")
                     };
                     maquinas.Add(maquina);
@@ -106,7 +110,8 @@ namespace iAxxMES0
         {
             List<Maquina> maquinasAtualizadas = new List<Maquina>();
             string query = @"
-            SELECT m.id, m.apelido, m.grupo, md.rpm, ms.descricao AS status, mp.descricao AS motivo_parada, md.comentario, md.data_hora
+            SELECT m.id, m.apelido, m.grupo, m.finura, m.diametro, m.numero_alimentadores, md.rpm, ms.descricao AS status,
+            mp.descricao AS motivo_parada, md.comentario, md.data_hora
             FROM maquina m
             JOIN (
                 SELECT maquina_id, MAX(id) AS max_id
@@ -148,6 +153,9 @@ namespace iAxxMES0
                         RPM = reader.GetInt32("rpm"),
                         Status = reader.GetString("status"),
                         Motivo_Parada = reader.IsDBNull(reader.GetOrdinal("motivo_parada")) ? "Parada não apontada" : reader.GetString("motivo_parada"),
+                        Diametro = reader.GetInt32("diametro"),
+                        Finura = reader.GetInt32("finura"),
+                        NumeroAlimentadores = reader.GetInt32("numero_alimentadores"),
                         DataHoraStatus = reader.GetDateTime("data_hora")
                     };
                     maquinasAtualizadas.Add(maquina);

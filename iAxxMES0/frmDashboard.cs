@@ -76,6 +76,9 @@ namespace iAxxMES0
                                                       maquinaAtualizada.RPM,
                                                       maquinaAtualizada.Status,
                                                       maquinaAtualizada.Motivo_Parada,
+                                                      maquinaAtualizada.Diametro,
+                                                      maquinaAtualizada.Finura,
+                                                      maquinaAtualizada.NumeroAlimentadores,
                                                       maquinaAtualizada.DataHoraStatus);
                     }
                 }
@@ -97,6 +100,9 @@ namespace iAxxMES0
                                                           maquinaEmCache.RPM,
                                                           maquinaEmCache.Status,
                                                           maquinaEmCache.Motivo_Parada,
+                                                          maquinaEmCache.Diametro,
+                                                          maquinaEmCache.Finura,
+                                                          maquinaEmCache.NumeroAlimentadores,
                                                           maquinaEmCache.DataHoraStatus);
                         }
                     }
@@ -188,7 +194,8 @@ namespace iAxxMES0
                 };
 
                 // Atualizar o controle com as informações da máquina
-                maquinaControl.AtualizarDados(maquina.Apelido, maquina.Grupo, maquina.RPM, maquina.Status, maquina.Motivo_Parada, maquina.DataHoraStatus);
+                maquinaControl.AtualizarDados(maquina.Apelido, maquina.Grupo, maquina.RPM, maquina.Status, maquina.Motivo_Parada,
+                                              maquina.Diametro, maquina.Finura, maquina.NumeroAlimentadores, maquina.DataHoraStatus);
 
                 // Adicionar ao painel de layout
                 flowLayoutPanelMaquinas.Controls.Add(maquinaControl);

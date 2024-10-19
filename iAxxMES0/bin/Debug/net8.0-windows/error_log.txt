@@ -65,3 +65,29 @@
 10/10/2024 10:07:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
 10/10/2024 10:07:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
 10/10/2024 10:07:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+18/10/2024 19:55:14: Erro ao obter todas as máquinas: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:17: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:19: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:21: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:23: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:25: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:27: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:29: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:32: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:34: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:36: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:38: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:40: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:42: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:44: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:46: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:48: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:50: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:55:52: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:59:25: Erro ao obter todas as máquinas: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:59:28: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:59:30: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/10/2024 19:59:32: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+18/10/2024 19:59:32: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+18/10/2024 19:59:32: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+18/10/2024 19:59:32: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.

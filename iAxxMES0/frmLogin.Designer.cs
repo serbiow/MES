@@ -43,7 +43,7 @@
             // btnCancelar
             // 
             btnCancelar.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCancelar.Location = new Point(164, 238);
+            btnCancelar.Location = new Point(280, 425);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(77, 32);
             btnCancelar.TabIndex = 5;
@@ -54,7 +54,7 @@
             // btnEntrar
             // 
             btnEntrar.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEntrar.Location = new Point(50, 238);
+            btnEntrar.Location = new Point(166, 425);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(77, 32);
             btnEntrar.TabIndex = 4;
@@ -64,24 +64,24 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(79, 184);
+            txtSenha.Location = new Point(139, 380);
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
-            txtSenha.Size = new Size(178, 23);
+            txtSenha.Size = new Size(248, 23);
             txtSenha.TabIndex = 3;
             // 
             // txtLogin
             // 
-            txtLogin.Location = new Point(79, 133);
+            txtLogin.Location = new Point(139, 322);
             txtLogin.Name = "txtLogin";
-            txtLogin.Size = new Size(178, 23);
+            txtLogin.Size = new Size(248, 23);
             txtLogin.TabIndex = 2;
             // 
             // lblSenha
             // 
             lblSenha.AutoSize = true;
             lblSenha.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSenha.Location = new Point(9, 188);
+            lblSenha.Location = new Point(139, 358);
             lblSenha.Name = "lblSenha";
             lblSenha.Size = new Size(64, 19);
             lblSenha.TabIndex = 1;
@@ -91,7 +91,7 @@
             // 
             lblLogin.AutoSize = true;
             lblLogin.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogin.Location = new Point(9, 133);
+            lblLogin.Location = new Point(139, 300);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(59, 19);
             lblLogin.TabIndex = 0;
@@ -100,9 +100,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.iAxxLogo;
-            pictureBox1.Location = new Point(85, 2);
+            pictureBox1.Location = new Point(139, 27);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(120, 120);
+            pictureBox1.Size = new Size(248, 248);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
@@ -117,9 +117,9 @@
             panel1.Controls.Add(lblLogin);
             panel1.Controls.Add(lblSenha);
             panel1.Controls.Add(txtSenha);
-            panel1.Location = new Point(11, 11);
+            panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(285, 288);
+            panel1.Size = new Size(539, 505);
             panel1.TabIndex = 7;
             // 
             // frmLogin
@@ -129,7 +129,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             CancelButton = btnCancelar;
-            ClientSize = new Size(310, 311);
+            ClientSize = new Size(563, 529);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmLogin";

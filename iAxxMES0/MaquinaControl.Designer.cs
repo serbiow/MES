@@ -34,7 +34,6 @@
             lblDesc = new Label();
             panel1 = new Panel();
             panel2 = new Panel();
-            panel4 = new Panel();
             panel3 = new Panel();
             lblGrupo = new Label();
             lblTempoStatus = new Label();
@@ -56,6 +55,7 @@
             lblStatus.TabIndex = 2;
             lblStatus.Text = "STATUS";
             lblStatus.TextAlign = ContentAlignment.MiddleCenter;
+            lblStatus.Click += lblStatus_Click;
             // 
             // pnlStatus
             // 
@@ -76,6 +76,7 @@
             lblApelido.TabIndex = 4;
             lblApelido.Text = "MAQUINA";
             lblApelido.TextAlign = ContentAlignment.MiddleCenter;
+            lblApelido.Click += lblApelido_Click;
             // 
             // lblDesc
             // 
@@ -86,6 +87,7 @@
             lblDesc.Size = new Size(160, 55);
             lblDesc.TabIndex = 5;
             lblDesc.Text = "Descrição";
+            lblDesc.Click += lblDesc_Click;
             // 
             // panel1
             // 
@@ -97,19 +99,12 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(panel4);
             panel2.Controls.Add(lblDesc);
             panel2.Location = new Point(0, 80);
             panel2.Name = "panel2";
             panel2.Size = new Size(160, 55);
             panel2.TabIndex = 7;
-            // 
-            // panel4
-            // 
-            panel4.Location = new Point(0, 58);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(200, 100);
-            panel4.TabIndex = 8;
+            panel2.Click += panel2_Click;
             // 
             // panel3
             // 
@@ -129,6 +124,7 @@
             lblGrupo.TabIndex = 2;
             lblGrupo.Text = "Grupo";
             lblGrupo.TextAlign = ContentAlignment.MiddleLeft;
+            lblGrupo.Click += lblGrupo_Click;
             // 
             // lblTempoStatus
             // 
@@ -139,6 +135,7 @@
             lblTempoStatus.Size = new Size(160, 22);
             lblTempoStatus.TabIndex = 8;
             lblTempoStatus.Text = "TempoStatus";
+            lblTempoStatus.Click += lblTempoStatus_Click;
             // 
             // panel5
             // 
@@ -160,6 +157,7 @@
             Controls.Add(panel2);
             Name = "MaquinaControl";
             Size = new Size(160, 160);
+            Click += MaquinaControl_Click;
             pnlStatus.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
@@ -177,7 +175,6 @@
         private Panel panel2;
         private Panel panel3;
         private Label lblGrupo;
-        private Panel panel4;
         private Label lblTempoStatus;
         private Panel panel5;
     }

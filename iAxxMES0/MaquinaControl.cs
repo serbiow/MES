@@ -18,14 +18,44 @@ namespace iAxxMES0
         public int RPM { get; set; }
         public string Status { get; set; }
         public string Motivo_Parada { get; set; }
+        public int Finura { get; set; }
+        public int Diametro { get; set; }
+        public int NumeroAlimentadores { get; set; }
 
         public MaquinaControl()
         {
             InitializeComponent();
+            this.Click += MaquinaControl_Click;
+            // Para detectar cliques em qualquer parte do controle
+            foreach (Control control in this.Controls)
+            {
+                control.Click += MaquinaControl_Click;
+            }
         }
 
-        public void AtualizarDados(string apelido, string grupo, int rpm, string status, string motivo_parada, DateTime dataHoraStatus)
+        private void ExibirDetalhesMaquina()
         {
+            // Garante que Apelido e Grupo estão preenchidos corretamente
+            if (string.IsNullOrEmpty(this.Apelido) || string.IsNullOrEmpty(this.Grupo))
+            {
+                MessageBox.Show("Os dados da máquina não estão disponíveis corretamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Chama o frmMaquina e passa os dados da máquina
+            frmMaquina detalhesMaquina = new frmMaquina(this.Apelido, this.Finura, this.Diametro, this.NumeroAlimentadores, this.Grupo);
+            detalhesMaquina.ShowDialog();
+        }
+
+        public void AtualizarDados(string apelido, string grupo, int rpm, string status, string motivo_parada, int diametro,
+                                   int finura, int numero_alimentadores, DateTime dataHoraStatus)
+        {
+            this.Apelido = apelido.ToUpper();
+            this.Grupo = grupo;
+            this.Diametro = diametro;
+            this.Finura = finura;
+            this.NumeroAlimentadores = numero_alimentadores;
+
             lblApelido.Text = apelido;
             lblApelido.Text = lblApelido.Text.ToUpper();
             lblStatus.Text = status;
@@ -73,6 +103,41 @@ namespace iAxxMES0
             {
                 lblTempoStatus.Text = $"{tempoStatus.Hours}h {tempoStatus.Minutes}m";
             }
+        }
+
+        private void MaquinaControl_Click(object sender, EventArgs e)
+        {
+            ExibirDetalhesMaquina();
+        }
+
+        private void lblApelido_Click(object sender, EventArgs e)
+        {
+            ExibirDetalhesMaquina();
+        }
+
+        private void lblStatus_Click(object sender, EventArgs e)
+        {
+            ExibirDetalhesMaquina();
+        }
+
+        private void lblGrupo_Click(object sender, EventArgs e)
+        {
+            ExibirDetalhesMaquina();
+        }
+
+        private void lblDesc_Click(object sender, EventArgs e)
+        {
+            ExibirDetalhesMaquina();
+        }
+
+        private void lblTempoStatus_Click(object sender, EventArgs e)
+        {
+            ExibirDetalhesMaquina();
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            ExibirDetalhesMaquina();
         }
     }
 }
