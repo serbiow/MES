@@ -43,7 +43,7 @@ namespace iAxxMES0
             }
 
             // Chama o frmMaquina e passa os dados da máquina
-            frmMaquina detalhesMaquina = new frmMaquina(this.Apelido, this.Finura, this.Diametro, this.NumeroAlimentadores, this.Grupo);
+            frmMaquina detalhesMaquina = new frmMaquina(this.Apelido, this.Finura, this.Diametro, this.NumeroAlimentadores, this.Grupo, this.MaquinaId);
             detalhesMaquina.ShowDialog();
         }
 
@@ -86,7 +86,7 @@ namespace iAxxMES0
                     lblDesc.Visible = false;
                     break;
                 default:
-                    pnlStatus.BackColor = Color.Gray;
+                    pnlStatus.BackColor = Color.White;
                     lblDesc.Visible = false;
                     break;
             }

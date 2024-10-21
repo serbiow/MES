@@ -48,6 +48,10 @@
             "MySql.Data": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "WinForms.DataVisualization": {
+              "target": "Package",
+              "version": "[1.9.2, )"
             }
           },
           "imports": [

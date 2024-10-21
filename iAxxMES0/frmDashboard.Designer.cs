@@ -92,7 +92,7 @@
             // cbxStatusFiltro
             // 
             cbxStatusFiltro.FormattingEnabled = true;
-            cbxStatusFiltro.Items.AddRange(new object[] { "Todos", "Rodando", "Parada", "Setup", "Carga de fio", "Sem programação" });
+            cbxStatusFiltro.Items.AddRange(new object[] { "Todos", "Rodando", "Parada", "Setup", "Carga de fio", "Sem programação", "Sem status" });
             cbxStatusFiltro.Location = new Point(3, 27);
             cbxStatusFiltro.Name = "cbxStatusFiltro";
             cbxStatusFiltro.Size = new Size(121, 23);

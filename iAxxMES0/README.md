@@ -5,7 +5,7 @@
 # 2- (Tela está exibindo, mas sem update) Tela de detalhes da máquina com opção de update
 # 3- (Falta Update) Read and Update Máquinas
 # 4- Gerar relatórios
-# 5- (DEIXAR POR ÚLTIMO) Gerar gráficos
+# 5- (Parcilmanete feito) Gerar gráficos
 # 6- Privilégios
 # 7- Design geral
 

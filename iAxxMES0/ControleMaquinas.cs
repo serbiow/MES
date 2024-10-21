@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -176,6 +177,54 @@ namespace iAxxMES0
             }
 
             return maquinasAtualizadas;
+        }
+
+        public List<Tuple<DateTime, int>> ObterHistoricoStatusMaquina(int maquinaId)
+        {
+            List<Tuple<DateTime, int>> dadosHistorico = new List<Tuple<DateTime, int>>();
+
+            string query = @"
+            SELECT data_hora, status
+            FROM maquina_dados
+            WHERE maquina_id = @maquinaId
+            AND data_hora >= NOW() - INTERVAL 7 DAY
+            ORDER BY data_hora ASC";
+
+            try
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@maquinaId", maquinaId);
+
+                    if (connection.State == ConnectionState.Closed)
+                    {
+                        connection.Open();
+                    }
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            DateTime dataHora = reader.GetDateTime("data_hora");
+                            int status = reader.GetInt32("status"); // Presumindo que status é armazenado como INT
+                            dadosHistorico.Add(new Tuple<DateTime, int>(dataHora, status));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erro ao obter o histórico de status: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+
+            return dadosHistorico;
         }
 
         // Método para testar se a conexão com o banco está ativa
