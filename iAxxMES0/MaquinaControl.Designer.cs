@@ -30,28 +30,25 @@
         {
             lblStatus = new Label();
             pnlStatus = new Panel();
+            lblTempoStatus = new Label();
             lblApelido = new Label();
             lblDesc = new Label();
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
             lblGrupo = new Label();
-            lblTempoStatus = new Label();
-            panel5 = new Panel();
             pnlStatus.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // lblStatus
             // 
-            lblStatus.Dock = DockStyle.Fill;
             lblStatus.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblStatus.Location = new Point(0, 0);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(160, 25);
+            lblStatus.Size = new Size(160, 28);
             lblStatus.TabIndex = 2;
             lblStatus.Text = "STATUS";
             lblStatus.TextAlign = ContentAlignment.MiddleCenter;
@@ -60,11 +57,23 @@
             // pnlStatus
             // 
             pnlStatus.Anchor = AnchorStyles.None;
+            pnlStatus.Controls.Add(lblTempoStatus);
             pnlStatus.Controls.Add(lblStatus);
             pnlStatus.Location = new Point(0, 23);
             pnlStatus.Name = "pnlStatus";
-            pnlStatus.Size = new Size(160, 25);
+            pnlStatus.Size = new Size(160, 50);
             pnlStatus.TabIndex = 3;
+            // 
+            // lblTempoStatus
+            // 
+            lblTempoStatus.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTempoStatus.Location = new Point(0, 28);
+            lblTempoStatus.Name = "lblTempoStatus";
+            lblTempoStatus.Size = new Size(160, 22);
+            lblTempoStatus.TabIndex = 8;
+            lblTempoStatus.Text = "TempoStatus";
+            lblTempoStatus.TextAlign = ContentAlignment.TopCenter;
+            lblTempoStatus.Click += lblTempoStatus_Click;
             // 
             // lblApelido
             // 
@@ -100,7 +109,7 @@
             // panel2
             // 
             panel2.Controls.Add(lblDesc);
-            panel2.Location = new Point(0, 80);
+            panel2.Location = new Point(0, 105);
             panel2.Name = "panel2";
             panel2.Size = new Size(160, 55);
             panel2.TabIndex = 7;
@@ -109,7 +118,7 @@
             // panel3
             // 
             panel3.Controls.Add(lblGrupo);
-            panel3.Location = new Point(0, 51);
+            panel3.Location = new Point(0, 79);
             panel3.Name = "panel3";
             panel3.Size = new Size(160, 26);
             panel3.TabIndex = 7;
@@ -126,25 +135,6 @@
             lblGrupo.TextAlign = ContentAlignment.MiddleLeft;
             lblGrupo.Click += lblGrupo_Click;
             // 
-            // lblTempoStatus
-            // 
-            lblTempoStatus.Dock = DockStyle.Fill;
-            lblTempoStatus.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTempoStatus.Location = new Point(0, 0);
-            lblTempoStatus.Name = "lblTempoStatus";
-            lblTempoStatus.Size = new Size(160, 22);
-            lblTempoStatus.TabIndex = 8;
-            lblTempoStatus.Text = "TempoStatus";
-            lblTempoStatus.Click += lblTempoStatus_Click;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(lblTempoStatus);
-            panel5.Location = new Point(0, 138);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(160, 22);
-            panel5.TabIndex = 9;
-            // 
             // MaquinaControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -152,7 +142,6 @@
             BackColor = Color.DarkGray;
             Controls.Add(panel3);
             Controls.Add(pnlStatus);
-            Controls.Add(panel5);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Name = "MaquinaControl";
@@ -162,7 +151,6 @@
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
-            panel5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -176,6 +164,5 @@
         private Panel panel3;
         private Label lblGrupo;
         private Label lblTempoStatus;
-        private Panel panel5;
     }
 }

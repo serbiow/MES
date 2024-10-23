@@ -83,6 +83,20 @@ namespace iAxxMES0
                     }
                 }
 
+                // Contar o número de máquinas em cada status
+                int numParada = maquinasAtualizadas.Count(m => m.Status == "Parada");
+                int numRodando = maquinasAtualizadas.Count(m => m.Status == "Rodando");
+                int numCarga = maquinasAtualizadas.Count(m => m.Status == "Carga de fio");
+                int numSetup = maquinasAtualizadas.Count(m => m.Status == "Setup");
+                int numSemProg = maquinasAtualizadas.Count(m => m.Status == "Sem programação");
+
+                // Atualizar os Labels com os valores contados
+                lblNumParada.Text = "Parada(a): " + numParada.ToString();
+                lblNumRodando.Text = "Rodando: " + numRodando.ToString();
+                lblNumCarga.Text = "Carga de fio: " + numCarga.ToString();
+                lblNumSetup.Text = "Setup: " + numSetup.ToString();
+                lblNumSemProg.Text = "Sem programação: " + numSemProg.ToString();
+
                 lblStatusBanco.Visible = false; // Esconde o aviso de erro se tudo estiver ok
             }
             catch (Exception ex)
@@ -270,26 +284,6 @@ namespace iAxxMES0
 
             // Exibir as máquinas filtradas e ordenadas
             ExibirMaquinas(maquinasFiltradas);
-        }
-
-        private void chkAutoRefresh_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkAutoRefresh.Checked)
-            {
-                // Ativa o refresh automático
-                updateTimer.Start();
-            }
-            else
-            {
-                // Desativa o refresh automático
-                updateTimer.Stop();
-            }
-        }
-
-        private void btnRefresh_Click_1(object sender, EventArgs e)
-        {
-            // Atualizar os dados das máquinas manualmente
-            AtualizarDadosMaquinas();
         }
 
         private void frmDashboard_Load_1(object sender, EventArgs e)

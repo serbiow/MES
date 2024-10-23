@@ -37,8 +37,6 @@
             pictureBox1 = new PictureBox();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel3 = new Panel();
-            btnRefresh = new Button();
-            chkAutoRefresh = new CheckBox();
             panel4 = new Panel();
             lblOderBy = new Label();
             cbxOrdenacao = new ComboBox();
@@ -53,6 +51,13 @@
             lblRpmMin = new Label();
             txtRpmMin = new TextBox();
             lblRpmFiltro = new Label();
+            panel2 = new Panel();
+            panel5 = new Panel();
+            lblNumRodando = new Label();
+            lblNumSemProg = new Label();
+            lblNumParada = new Label();
+            lblNumCarga = new Label();
+            lblNumSetup = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             flowLayoutPanelMaquinas = new FlowLayoutPanel();
             lblStatusBanco = new Label();
@@ -60,8 +65,9 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel2.SuspendLayout();
-            panel3.SuspendLayout();
             panel4.SuspendLayout();
+            panel2.SuspendLayout();
+            panel5.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             flowLayoutPanelMaquinas.SuspendLayout();
             SuspendLayout();
@@ -71,7 +77,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroDeUsuárioToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1270, 24);
+            menuStrip1.Size = new Size(1289, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -92,7 +98,7 @@
             // cbxStatusFiltro
             // 
             cbxStatusFiltro.FormattingEnabled = true;
-            cbxStatusFiltro.Items.AddRange(new object[] { "Todos", "Rodando", "Parada", "Setup", "Carga de fio", "Sem programação", "Sem status" });
+            cbxStatusFiltro.Items.AddRange(new object[] { "Todos", "Rodando", "Parada", "Setup", "Carga de fio", "Sem programação" });
             cbxStatusFiltro.Location = new Point(3, 27);
             cbxStatusFiltro.Name = "cbxStatusFiltro";
             cbxStatusFiltro.Size = new Size(121, 23);
@@ -105,7 +111,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(264, 518);
+            panel1.Size = new Size(264, 793);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -124,49 +130,25 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel2.Controls.Add(panel3, 0, 0);
             tableLayoutPanel2.Controls.Add(panel4, 0, 1);
+            tableLayoutPanel2.Controls.Add(panel2, 0, 2);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.MinimumSize = new Size(250, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 2;
+            tableLayoutPanel2.RowCount = 3;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 150F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(264, 518);
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 150F));
+            tableLayoutPanel2.Size = new Size(264, 793);
             tableLayoutPanel2.TabIndex = 18;
             // 
             // panel3
             // 
-            panel3.Controls.Add(btnRefresh);
-            panel3.Controls.Add(chkAutoRefresh);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(3, 3);
             panel3.Name = "panel3";
             panel3.Size = new Size(258, 144);
             panel3.TabIndex = 1;
-            // 
-            // btnRefresh
-            // 
-            btnRefresh.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnRefresh.Location = new Point(180, 44);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(75, 23);
-            btnRefresh.TabIndex = 2;
-            btnRefresh.Text = "Refresh";
-            btnRefresh.UseVisualStyleBackColor = true;
-            btnRefresh.Click += btnRefresh_Click_1;
-            // 
-            // chkAutoRefresh
-            // 
-            chkAutoRefresh.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            chkAutoRefresh.Checked = true;
-            chkAutoRefresh.CheckState = CheckState.Checked;
-            chkAutoRefresh.Location = new Point(170, 3);
-            chkAutoRefresh.Name = "chkAutoRefresh";
-            chkAutoRefresh.Size = new Size(88, 38);
-            chkAutoRefresh.TabIndex = 1;
-            chkAutoRefresh.Text = "Atualização Automática";
-            chkAutoRefresh.UseVisualStyleBackColor = true;
-            chkAutoRefresh.CheckedChanged += chkAutoRefresh_CheckedChanged;
             // 
             // panel4
             // 
@@ -187,7 +169,7 @@
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(3, 153);
             panel4.Name = "panel4";
-            panel4.Size = new Size(258, 362);
+            panel4.Size = new Size(258, 487);
             panel4.TabIndex = 2;
             // 
             // lblOderBy
@@ -310,6 +292,79 @@
             lblRpmFiltro.TabIndex = 5;
             lblRpmFiltro.Text = "RPM:";
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(panel5);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(3, 646);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(258, 144);
+            panel2.TabIndex = 3;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(lblNumRodando);
+            panel5.Controls.Add(lblNumSemProg);
+            panel5.Controls.Add(lblNumParada);
+            panel5.Controls.Add(lblNumCarga);
+            panel5.Controls.Add(lblNumSetup);
+            panel5.Dock = DockStyle.Bottom;
+            panel5.Location = new Point(0, 15);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(258, 129);
+            panel5.TabIndex = 5;
+            // 
+            // lblNumRodando
+            // 
+            lblNumRodando.BackColor = Color.Green;
+            lblNumRodando.Font = new Font("Segoe UI", 11.25F);
+            lblNumRodando.Location = new Point(0, 18);
+            lblNumRodando.Name = "lblNumRodando";
+            lblNumRodando.Size = new Size(161, 22);
+            lblNumRodando.TabIndex = 0;
+            lblNumRodando.Text = "Rodando: 0";
+            // 
+            // lblNumSemProg
+            // 
+            lblNumSemProg.BackColor = Color.Gray;
+            lblNumSemProg.Font = new Font("Segoe UI", 11.25F);
+            lblNumSemProg.Location = new Point(0, 106);
+            lblNumSemProg.Name = "lblNumSemProg";
+            lblNumSemProg.Size = new Size(161, 22);
+            lblNumSemProg.TabIndex = 4;
+            lblNumSemProg.Text = "Sem programação: 0";
+            // 
+            // lblNumParada
+            // 
+            lblNumParada.BackColor = Color.Red;
+            lblNumParada.Font = new Font("Segoe UI", 11.25F);
+            lblNumParada.ForeColor = Color.White;
+            lblNumParada.Location = new Point(0, 40);
+            lblNumParada.Name = "lblNumParada";
+            lblNumParada.Size = new Size(161, 22);
+            lblNumParada.TabIndex = 1;
+            lblNumParada.Text = "Parada(s): 0";
+            // 
+            // lblNumCarga
+            // 
+            lblNumCarga.BackColor = Color.Orange;
+            lblNumCarga.Font = new Font("Segoe UI", 11.25F);
+            lblNumCarga.Location = new Point(0, 84);
+            lblNumCarga.Name = "lblNumCarga";
+            lblNumCarga.Size = new Size(161, 22);
+            lblNumCarga.TabIndex = 3;
+            lblNumCarga.Text = "Carga de Fio: 0";
+            // 
+            // lblNumSetup
+            // 
+            lblNumSetup.BackColor = Color.LightBlue;
+            lblNumSetup.Font = new Font("Segoe UI", 11.25F);
+            lblNumSetup.Location = new Point(0, 62);
+            lblNumSetup.Name = "lblNumSetup";
+            lblNumSetup.Size = new Size(161, 22);
+            lblNumSetup.TabIndex = 2;
+            lblNumSetup.Text = "Setup: 0";
+            // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
@@ -322,7 +377,7 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(1270, 524);
+            tableLayoutPanel1.Size = new Size(1289, 799);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // flowLayoutPanelMaquinas
@@ -333,7 +388,7 @@
             flowLayoutPanelMaquinas.Dock = DockStyle.Fill;
             flowLayoutPanelMaquinas.Location = new Point(273, 3);
             flowLayoutPanelMaquinas.Name = "flowLayoutPanelMaquinas";
-            flowLayoutPanelMaquinas.Size = new Size(994, 518);
+            flowLayoutPanelMaquinas.Size = new Size(1013, 793);
             flowLayoutPanelMaquinas.TabIndex = 1;
             // 
             // lblStatusBanco
@@ -351,7 +406,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1270, 548);
+            ClientSize = new Size(1289, 823);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -366,9 +421,10 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel5.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             flowLayoutPanelMaquinas.ResumeLayout(false);
             flowLayoutPanelMaquinas.PerformLayout();
@@ -392,8 +448,6 @@
         private Label lblStatusFiltro;
         private ComboBox cbxOrdenacao;
         private Label lblOderBy;
-        private CheckBox chkAutoRefresh;
-        private Button btnRefresh;
         private PictureBox pictureBox1;
         private TextBox txtFiltroApelido;
         private Label lblFiltroNome;
@@ -405,5 +459,12 @@
         private Label lblGrupos;
         private ComboBox cbxGrupo;
         private Label lblStatusBanco;
+        private Panel panel2;
+        private Label lblNumSemProg;
+        private Label lblNumCarga;
+        private Label lblNumSetup;
+        private Label lblNumParada;
+        private Label lblNumRodando;
+        private Panel panel5;
     }
 }

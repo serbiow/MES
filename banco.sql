@@ -56,19 +56,11 @@ CREATE TABLE maquina_dados (
     FOREIGN KEY (status) REFERENCES maquina_status(id)
 );
 
--- Select para as os dados mais atualizados de cada máquina
--- TODO: ajeitar esse insert
-SELECT m.id, m.apelido, m.grupo, md.rpm, ms.descricao AS status, mp.descricao AS motivo_parada, md.comentario
-FROM maquina m
-JOIN (
-    SELECT maquina_id, MAX(data_hora) AS max_data_hora
-    FROM maquina_dados
-    GROUP BY maquina_id
-) md_recent ON m.id = md_recent.maquina_id
-JOIN maquina_dados md ON m.id = md.maquina_id AND md.data_hora = md_recent.max_data_hora
-LEFT JOIN maquina_status ms ON md.status = ms.id
-LEFT JOIN motivos_parada mp ON md.motivo_parada = mp.id
-ORDER BY m.apelido;
+SELECT data_hora, status
+FROM maquina_dados
+WHERE maquina_id = 1
+AND data_hora >= NOW() - INTERVAL 30 DAY
+ORDER BY data_hora ASC;
 
 /*INSERTS*/
 
@@ -100,7 +92,6 @@ INSERT INTO maquina_status (descricao) VALUES ('Parada');
 INSERT INTO maquina_status (descricao) VALUES ('Setup');
 INSERT INTO maquina_status (descricao) VALUES ('Carga de fio');
 INSERT INTO maquina_status (descricao) VALUES ('Sem programação');
-INSERT INTO maquina_status (descricao) VALUES ('Sem status');
 
 -- Inserts para a tabela maquina
 INSERT INTO maquina (apelido, finura, diametro, numero_alimentadores, grupo) VALUES ('Maquina_001', 121, 62.94, 4, 'Grupo 3');
@@ -246,7 +237,7 @@ INSERT INTO maquina (apelido, finura, diametro, numero_alimentadores, grupo) VAL
 
 -- Inserts para a tabela maquina_dados
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (1, 35, 1, NULL, 'Comentário 1', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (2, 0, 2, 5, 'Comentário 2', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (2, 0, 5, NULL, 'Comentário 2', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (3, 0, 4, NULL, 'Comentário 3', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (4, 0, 3, NULL, 'Comentário 4', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (5, 0, 3, NULL, 'Comentário 5', NOW());
@@ -258,14 +249,14 @@ INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, d
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (11, 0, 4, NULL, 'Comentário 11', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (12, 0, 2, 4, 'Comentário 12', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (13, 0, 5, NULL, 'Comentário 13', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (14, 0, 6, NULL, 'Comentário 14', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (14, 0, 4, NULL, 'Comentário 14', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (15, 0, 3, NULL, 'Comentário 15', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (16, 758, 1, NULL, 'Comentário 16', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (17, 0, 5, NULL, 'Comentário 17', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (18, 879, 1, NULL, 'Comentário 18', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (19, 1139, 1, NULL, 'Comentário 19', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (20, 0, 6, NULL, 'Comentário 20', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (21, 0, 6, NULL, 'Comentário 21', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (20, 0, 5, NULL, 'Comentário 20', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (21, 0, 3, NULL, 'Comentário 21', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (22, 0, 3, NULL, 'Comentário 22', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (23, 0, 2, 3, 'Comentário 23', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (24, 0, 4, NULL, 'Comentário 24', NOW());
@@ -276,13 +267,13 @@ INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, d
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (29, 0, 5, NULL, 'Comentário 29', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (30, 0, 3, NULL, 'Comentário 30', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (31, 0, 3, NULL, 'Comentário 31', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (32, 0, 6, NULL, 'Comentário 32', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (32, 0, 2, 1, 'Comentário 32', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (33, 1733, 1, NULL, 'Comentário 33', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (34, 0, 6, NULL, 'Comentário 34', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (34, 0, 3, NULL, 'Comentário 34', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (35, 0, 5, NULL, 'Comentário 35', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (36, 0, 5, NULL, 'Comentário 36', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (37, 961, 1, NULL, 'Comentário 37', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (38, 0, 6, NULL, 'Comentário 38', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (38, 37, 1, NULL, 'Comentário 38', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (39, 0, 3, NULL, 'Comentário 39', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (40, 0, 4, NULL, 'Comentário 40', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (41, 0, 4, NULL, 'Comentário 41', NOW());
@@ -292,15 +283,15 @@ INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, d
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (45, 0, 5, NULL, 'Comentário 45', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (46, 0, 5, NULL, 'Comentário 46', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (47, 0, 2, 6, 'Comentário 47', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (48, 0, 6, NULL, 'Comentário 48', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (48, 0, 5, NULL, 'Comentário 48', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (49, 0, 3, NULL, 'Comentário 49', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (50, 0, 2, 6, 'Comentário 50', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (51, 1416, 1, NULL, 'Comentário 51', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (52, 0, 2, 5, 'Comentário 52', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (53, 0, 3, NULL, 'Comentário 53', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (54, 0, 5, NULL, 'Comentário 54', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (55, 0, 6, NULL, 'Comentário 55', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (56, 0, 6, NULL, 'Comentário 56', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (55, 0, 2, 3, 'Comentário 55', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (56, 22, 1, NULL, 'Comentário 56', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (57, 0, 5, NULL, 'Comentário 57', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (58, 0, 3, NULL, 'Comentário 58', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (59, 0, 2, 4, 'Comentário 59', NOW());
@@ -309,37 +300,37 @@ INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, d
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (62, 1747, 1, NULL, 'Comentário 62', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (63, 0, 5, NULL, 'Comentário 63', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (64, 1264, 1, NULL, 'Comentário 64', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (65, 0, 6, NULL, 'Comentário 65', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (65, 0, 5, NULL, 'Comentário 65', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (66, 0, 4, NULL, 'Comentário 66', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (67, 670, 1, NULL, 'Comentário 67', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (68, 0, 5, NULL, 'Comentário 68', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (69, 0, 3, NULL, 'Comentário 69', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (70, 0, 6, NULL, 'Comentário 70', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (70, 0, 4, NULL, 'Comentário 70', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (71, 832, 1, NULL, 'Comentário 71', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (72, 0, 6, NULL, 'Comentário 72', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (72, 72, 1, NULL, 'Comentário 72', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (73, 0, 4, NULL, 'Comentário 73', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (74, 0, 4, NULL, 'Comentário 74', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (75, 0, 5, NULL, 'Comentário 75', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (76, 0, 4, NULL, 'Comentário 76', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (77, 0, 6, NULL, 'Comentário 77', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (77, 0, 2, 2, 'Comentário 77', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (78, 0, 4, NULL, 'Comentário 78', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (79, 0, 2, 6, 'Comentário 79', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (80, 0, 6, NULL, 'Comentário 80', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (80, 41, 1, NULL, 'Comentário 80', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (81, 851, 1, NULL, 'Comentário 81', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (82, 0, 4, NULL, 'Comentário 82', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (83, 0, 6, NULL, 'Comentário 83', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (83, 0, 4, NULL, 'Comentário 83', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (84, 0, 2, 3, 'Comentário 84', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (85, 1285, 1, NULL, 'Comentário 85', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (86, 1175, 1, NULL, 'Comentário 86', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (87, 0, 4, NULL, 'Comentário 87', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (88, 0, 2, 5, 'Comentário 88', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (89, 0, 6, NULL, 'Comentário 89', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (89, 0, 3, NULL, 'Comentário 89', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (90, 1367, 1, NULL, 'Comentário 90', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (91, 0, 2, 6, 'Comentário 91', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (92, 0, 6, NULL, 'Comentário 92', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (92, 0, 2, 5, 'Comentário 92', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (93, 0, 3, NULL, 'Comentário 93', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (94, 0, 2, 2, 'Comentário 94', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (95, 0, 6, NULL, 'Comentário 95', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (95, 55, 1, NULL, 'Comentário 95', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (96, 0, 5, NULL, 'Comentário 96', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (97, 0, 3, NULL, 'Comentário 97', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (98, 0, 4, NULL, 'Comentário 98', NOW());
@@ -352,13 +343,13 @@ INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, d
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (105, 1916, 1, NULL, 'Comentário 105', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (106, 0, 3, NULL, 'Comentário 106', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (107, 958, 1, NULL, 'Comentário 107', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (108, 0, 6, NULL, 'Comentário 108', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (108, 0, 4, NULL, 'Comentário 108', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (109, 0, 3, NULL, 'Comentário 109', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (110, 0, 6, NULL, 'Comentário 110', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (110, 0, 5, NULL, 'Comentário 110', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (111, 0, 2, 5, 'Comentário 111', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (112, 564, 1, NULL, 'Comentário 112', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (113, 867, 1, NULL, 'Comentário 113', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (114, 0, 6, NULL, 'Comentário 114', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (114, 0, 3, NULL, 'Comentário 114', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (115, 0, 5, NULL, 'Comentário 115', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (116, 0, 2, 1, 'Comentário 116', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (117, 0, 2, 1, 'Comentário 117', NOW());
@@ -366,7 +357,7 @@ INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, d
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (119, 0, 4, NULL, 'Comentário 119', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (120, 0, 3, NULL, 'Comentário 120', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (121, 0, 5, NULL, 'Comentário 121', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (122, 0, 6, NULL, 'Comentário 122', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (122, 43, 1, NULL, 'Comentário 122', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (123, 0, 2, 6, 'Comentário 123', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (124, 0, 2, 1, 'Comentário 124', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (125, 0, 5, NULL, 'Comentário 125', NOW());

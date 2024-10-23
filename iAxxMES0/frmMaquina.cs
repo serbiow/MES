@@ -69,7 +69,7 @@ namespace iAxxMES0
             axisX.LabelStyle.Format = "dd/MM HH:mm"; // Exibir dia e horas no eixo X
             axisX.Title = "Tempo";
             axisX.IntervalType = DateTimeIntervalType.Hours;
-            axisX.Interval = 0.1; // Exibir um rótulo a cada 1 hora, ajuste conforme necessário
+            axisX.Interval = 1; // Exibir um rótulo a cada 1 hora, ajuste conforme necessário
             axisX.MajorGrid.LineDashStyle = ChartDashStyle.Solid; // Exibe uma linha no grid para cada rótulo
             axisX.LabelStyle.Angle = -45; // Rotaciona os rótulos para evitar sobreposição
             axisX.LabelStyle.IsEndLabelVisible = true; // Garante que o último rótulo seja exibido

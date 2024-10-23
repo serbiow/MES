@@ -71,6 +71,8 @@ namespace iAxxMES0
                     break;
                 case "parada":
                     pnlStatus.BackColor = Color.Red;
+                    lblStatus.ForeColor = Color.White;
+                    lblTempoStatus.ForeColor = Color.White;
                     lblDesc.Text = motivo_parada;
                     break;
                 case "sem programação":
@@ -97,11 +99,11 @@ namespace iAxxMES0
             // Exibir "1d" se passou mais de 1 dia, caso contrário exibir horas e minutos
             if (tempoStatus.TotalDays >= 1)
             {
-                lblTempoStatus.Text = $"{Math.Floor(tempoStatus.TotalDays)}d {tempoStatus.Hours}h";
+                lblTempoStatus.Text = $"{Math.Floor(tempoStatus.TotalDays)}d {tempoStatus.Hours}h {tempoStatus.Minutes}min";
             }
             else
             {
-                lblTempoStatus.Text = $"{tempoStatus.Hours}h {tempoStatus.Minutes}m";
+                lblTempoStatus.Text = $"{tempoStatus.Hours}h {tempoStatus.Minutes}min";
             }
         }
 
