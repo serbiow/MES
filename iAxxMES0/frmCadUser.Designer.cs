@@ -35,7 +35,6 @@
             lblCPF = new Label();
             cbxNivelPermissao = new ComboBox();
             btnCadastrar = new Button();
-            btnCancelar = new Button();
             mtxtMatricula = new MaskedTextBox();
             lblLogin = new Label();
             lblSenha = new Label();
@@ -44,6 +43,12 @@
             txtSenha = new TextBox();
             txtConfirmaSenha = new TextBox();
             panel1 = new Panel();
+            btnLimpar = new Button();
+            btnAlterar = new Button();
+            btnExcluir = new Button();
+            lblCodigo = new Label();
+            btnBuscar = new Button();
+            txtCodigo = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,7 +56,8 @@
             // 
             lblNome.AutoSize = true;
             lblNome.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNome.Location = new Point(1, 34);
+            lblNome.ForeColor = Color.White;
+            lblNome.Location = new Point(30, 145);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(60, 19);
             lblNome.TabIndex = 0;
@@ -59,16 +65,17 @@
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(180, 34);
+            txtNome.Location = new Point(207, 145);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(121, 23);
-            txtNome.TabIndex = 1;
+            txtNome.Size = new Size(254, 23);
+            txtNome.TabIndex = 3;
             // 
             // lblCargo
             // 
             lblCargo.AutoSize = true;
             lblCargo.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCargo.Location = new Point(1, 78);
+            lblCargo.ForeColor = Color.White;
+            lblCargo.Location = new Point(30, 189);
             lblCargo.Name = "lblCargo";
             lblCargo.Size = new Size(161, 19);
             lblCargo.TabIndex = 2;
@@ -78,7 +85,8 @@
             // 
             lblCPF.AutoSize = true;
             lblCPF.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCPF.Location = new Point(1, 121);
+            lblCPF.ForeColor = Color.White;
+            lblCPF.Location = new Point(30, 232);
             lblCPF.Name = "lblCPF";
             lblCPF.Size = new Size(84, 19);
             lblCPF.TabIndex = 4;
@@ -88,46 +96,39 @@
             // 
             cbxNivelPermissao.FormattingEnabled = true;
             cbxNivelPermissao.Items.AddRange(new object[] { "Master", "Administrador", "Operador" });
-            cbxNivelPermissao.Location = new Point(180, 78);
+            cbxNivelPermissao.Location = new Point(207, 189);
             cbxNivelPermissao.Name = "cbxNivelPermissao";
             cbxNivelPermissao.Size = new Size(121, 23);
-            cbxNivelPermissao.TabIndex = 8;
+            cbxNivelPermissao.TabIndex = 4;
             // 
             // btnCadastrar
             // 
+            btnCadastrar.BackColor = Color.FromArgb(46, 53, 60);
+            btnCadastrar.FlatStyle = FlatStyle.Flat;
             btnCadastrar.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCadastrar.Location = new Point(45, 301);
+            btnCadastrar.ForeColor = Color.White;
+            btnCadastrar.Location = new Point(51, 436);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(77, 32);
-            btnCadastrar.TabIndex = 14;
+            btnCadastrar.TabIndex = 9;
             btnCadastrar.Text = "Cadastrar";
-            btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.UseVisualStyleBackColor = false;
             btnCadastrar.Click += btnCadastrar_Click;
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCancelar.Location = new Point(166, 301);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(77, 32);
-            btnCancelar.TabIndex = 15;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
             // 
             // mtxtMatricula
             // 
-            mtxtMatricula.Location = new Point(180, 121);
+            mtxtMatricula.Location = new Point(207, 232);
             mtxtMatricula.Mask = "0000000000";
             mtxtMatricula.Name = "mtxtMatricula";
             mtxtMatricula.Size = new Size(121, 23);
-            mtxtMatricula.TabIndex = 9;
+            mtxtMatricula.TabIndex = 5;
             // 
             // lblLogin
             // 
             lblLogin.AutoSize = true;
             lblLogin.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogin.Location = new Point(3, 163);
+            lblLogin.ForeColor = Color.White;
+            lblLogin.Location = new Point(30, 274);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(59, 19);
             lblLogin.TabIndex = 13;
@@ -137,7 +138,8 @@
             // 
             lblSenha.AutoSize = true;
             lblSenha.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSenha.Location = new Point(3, 207);
+            lblSenha.ForeColor = Color.White;
+            lblSenha.Location = new Point(30, 318);
             lblSenha.Name = "lblSenha";
             lblSenha.Size = new Size(64, 19);
             lblSenha.TabIndex = 14;
@@ -147,7 +149,8 @@
             // 
             lblConfirmaSenha.AutoSize = true;
             lblConfirmaSenha.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblConfirmaSenha.Location = new Point(3, 251);
+            lblConfirmaSenha.ForeColor = Color.White;
+            lblConfirmaSenha.Location = new Point(30, 362);
             lblConfirmaSenha.Name = "lblConfirmaSenha";
             lblConfirmaSenha.Size = new Size(131, 18);
             lblConfirmaSenha.TabIndex = 15;
@@ -155,33 +158,42 @@
             // 
             // txtLogin
             // 
-            txtLogin.Location = new Point(180, 163);
+            txtLogin.Location = new Point(207, 274);
             txtLogin.Name = "txtLogin";
-            txtLogin.Size = new Size(121, 23);
-            txtLogin.TabIndex = 11;
+            txtLogin.Size = new Size(254, 23);
+            txtLogin.TabIndex = 6;
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(180, 207);
+            txtSenha.Location = new Point(207, 318);
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
-            txtSenha.Size = new Size(121, 23);
-            txtSenha.TabIndex = 12;
+            txtSenha.Size = new Size(254, 23);
+            txtSenha.TabIndex = 7;
             // 
             // txtConfirmaSenha
             // 
-            txtConfirmaSenha.Location = new Point(180, 250);
+            txtConfirmaSenha.Location = new Point(207, 361);
             txtConfirmaSenha.Name = "txtConfirmaSenha";
             txtConfirmaSenha.PasswordChar = '*';
-            txtConfirmaSenha.Size = new Size(121, 23);
-            txtConfirmaSenha.TabIndex = 13;
+            txtConfirmaSenha.Size = new Size(254, 23);
+            txtConfirmaSenha.TabIndex = 8;
             // 
             // panel1
             // 
+            panel1.BackColor = Color.FromArgb(89, 105, 120);
+            panel1.Controls.Add(btnLimpar);
+            panel1.Controls.Add(btnAlterar);
+            panel1.Controls.Add(btnExcluir);
+            panel1.Controls.Add(lblCodigo);
+            panel1.Controls.Add(btnBuscar);
+            panel1.Controls.Add(txtCodigo);
+            panel1.Controls.Add(lblCPF);
             panel1.Controls.Add(mtxtMatricula);
+            panel1.Controls.Add(lblCargo);
             panel1.Controls.Add(lblConfirmaSenha);
+            panel1.Controls.Add(lblNome);
             panel1.Controls.Add(cbxNivelPermissao);
-            panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(txtConfirmaSenha);
             panel1.Controls.Add(txtNome);
             panel1.Controls.Add(btnCadastrar);
@@ -192,18 +204,90 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(313, 353);
+            panel1.Size = new Size(487, 528);
             panel1.TabIndex = 16;
+            // 
+            // btnLimpar
+            // 
+            btnLimpar.BackColor = Color.FromArgb(46, 53, 60);
+            btnLimpar.FlatStyle = FlatStyle.Flat;
+            btnLimpar.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLimpar.ForeColor = Color.White;
+            btnLimpar.Location = new Point(238, 436);
+            btnLimpar.Name = "btnLimpar";
+            btnLimpar.Size = new Size(77, 32);
+            btnLimpar.TabIndex = 11;
+            btnLimpar.Text = "Limpar";
+            btnLimpar.UseVisualStyleBackColor = false;
+            btnLimpar.Click += btnLimpar_Click;
+            // 
+            // btnAlterar
+            // 
+            btnAlterar.BackColor = Color.FromArgb(46, 53, 60);
+            btnAlterar.FlatStyle = FlatStyle.Flat;
+            btnAlterar.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAlterar.ForeColor = Color.White;
+            btnAlterar.Location = new Point(145, 436);
+            btnAlterar.Name = "btnAlterar";
+            btnAlterar.Size = new Size(77, 32);
+            btnAlterar.TabIndex = 10;
+            btnAlterar.Text = "Alterar";
+            btnAlterar.UseVisualStyleBackColor = false;
+            btnAlterar.Click += btnAlterar_Click;
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.BackColor = Color.FromArgb(46, 53, 60);
+            btnExcluir.FlatStyle = FlatStyle.Flat;
+            btnExcluir.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExcluir.ForeColor = Color.White;
+            btnExcluir.Location = new Point(330, 436);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(77, 32);
+            btnExcluir.TabIndex = 12;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = false;
+            btnExcluir.Click += btnExcluir_Click;
+            // 
+            // lblCodigo
+            // 
+            lblCodigo.AutoSize = true;
+            lblCodigo.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCodigo.ForeColor = Color.White;
+            lblCodigo.Location = new Point(30, 35);
+            lblCodigo.Name = "lblCodigo";
+            lblCodigo.Size = new Size(69, 19);
+            lblCodigo.TabIndex = 19;
+            lblCodigo.Text = "User Id:";
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.BackColor = Color.FromArgb(46, 53, 60);
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBuscar.ForeColor = Color.White;
+            btnBuscar.Location = new Point(30, 64);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(177, 32);
+            btnBuscar.TabIndex = 2;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
+            // 
+            // txtCodigo
+            // 
+            txtCodigo.Location = new Point(105, 35);
+            txtCodigo.Name = "txtCodigo";
+            txtCodigo.Size = new Size(102, 23);
+            txtCodigo.TabIndex = 1;
+            txtCodigo.KeyPress += txtCodigo_KeyPress;
             // 
             // frmCadUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
-            ClientSize = new Size(313, 353);
-            Controls.Add(lblCPF);
-            Controls.Add(lblCargo);
-            Controls.Add(lblNome);
+            ClientSize = new Size(487, 528);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmCadUser";
@@ -212,7 +296,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -223,7 +306,6 @@
         private Label lblCPF;
         private ComboBox cbxNivelPermissao;
         private Button btnCadastrar;
-        private Button btnCancelar;
         private MaskedTextBox mtxtMatricula;
         private Label lblLogin;
         private Label lblSenha;
@@ -232,5 +314,11 @@
         private TextBox txtSenha;
         private TextBox txtConfirmaSenha;
         private Panel panel1;
+        private Button btnAlterar;
+        private Button btnExcluir;
+        private Label lblCodigo;
+        private Button btnBuscar;
+        private TextBox txtCodigo;
+        private Button btnLimpar;
     }
 }

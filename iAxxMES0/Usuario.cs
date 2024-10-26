@@ -12,6 +12,7 @@ namespace iAxxMES0
         public string Nome { get; set; }
         public string Nivel_Permissao { get; set; }
         public string Registro_Matricula { get; set; }
+        public string Login_Nome { get; set; }
 
         // Construtor opcional
         public Usuario(int id, string nome, string nivel_permissao, string registro_matricula)

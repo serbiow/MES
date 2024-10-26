@@ -29,38 +29,29 @@
         private void InitializeComponent()
         {
             btnCancelar = new Button();
-            btnEntrar = new Button();
             txtSenha = new TextBox();
             txtLogin = new TextBox();
             lblSenha = new Label();
             lblLogin = new Label();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
+            btnEntrar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnCancelar
             // 
+            btnCancelar.BackColor = Color.FromArgb(169, 177, 185);
+            btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCancelar.Location = new Point(280, 425);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(77, 32);
-            btnCancelar.TabIndex = 5;
+            btnCancelar.Size = new Size(77, 33);
+            btnCancelar.TabIndex = 4;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
-            // 
-            // btnEntrar
-            // 
-            btnEntrar.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEntrar.Location = new Point(166, 425);
-            btnEntrar.Name = "btnEntrar";
-            btnEntrar.Size = new Size(77, 32);
-            btnEntrar.TabIndex = 4;
-            btnEntrar.Text = "Entrar";
-            btnEntrar.UseVisualStyleBackColor = true;
-            btnEntrar.Click += btnEntrar_Click;
             // 
             // txtSenha
             // 
@@ -68,14 +59,14 @@
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
             txtSenha.Size = new Size(248, 23);
-            txtSenha.TabIndex = 3;
+            txtSenha.TabIndex = 2;
             // 
             // txtLogin
             // 
             txtLogin.Location = new Point(139, 322);
             txtLogin.Name = "txtLogin";
             txtLogin.Size = new Size(248, 23);
-            txtLogin.TabIndex = 2;
+            txtLogin.TabIndex = 1;
             // 
             // lblSenha
             // 
@@ -110,10 +101,10 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.None;
+            panel1.Controls.Add(btnEntrar);
             panel1.Controls.Add(txtLogin);
             panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(btnEntrar);
             panel1.Controls.Add(lblLogin);
             panel1.Controls.Add(lblSenha);
             panel1.Controls.Add(txtSenha);
@@ -122,12 +113,24 @@
             panel1.Size = new Size(539, 505);
             panel1.TabIndex = 7;
             // 
+            // btnEntrar
+            // 
+            btnEntrar.BackColor = Color.FromArgb(169, 177, 185);
+            btnEntrar.FlatStyle = FlatStyle.Flat;
+            btnEntrar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEntrar.Location = new Point(164, 425);
+            btnEntrar.Name = "btnEntrar";
+            btnEntrar.Size = new Size(77, 33);
+            btnEntrar.TabIndex = 3;
+            btnEntrar.Text = "Entrar";
+            btnEntrar.UseVisualStyleBackColor = false;
+            btnEntrar.Click += btnEntrar_Click_1;
+            // 
             // frmLogin
             // 
-            AcceptButton = btnEntrar;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDark;
+            BackColor = Color.FromArgb(197, 202, 208);
             CancelButton = btnCancelar;
             ClientSize = new Size(563, 529);
             Controls.Add(panel1);
@@ -144,12 +147,12 @@
 
         #endregion
         private Button btnCancelar;
-        private Button btnEntrar;
         private TextBox txtSenha;
         private TextBox txtLogin;
         private Label lblSenha;
         private Label lblLogin;
         private PictureBox pictureBox1;
         private Panel panel1;
+        private Button btnEntrar;
     }
 }

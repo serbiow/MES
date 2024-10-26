@@ -27,7 +27,7 @@ namespace iAxxMES0
             Application.Exit();
         }
 
-        private void btnEntrar_Click(object sender, EventArgs e)
+        private void btnEntrar_Click_1(object sender, EventArgs e)
         {
             // Capturando o texto dos TextBoxes
             string loginNome = txtLogin.Text;

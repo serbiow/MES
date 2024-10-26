@@ -237,7 +237,7 @@ INSERT INTO maquina (apelido, finura, diametro, numero_alimentadores, grupo) VAL
 
 -- Inserts para a tabela maquina_dados
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (1, 35, 1, NULL, 'Comentário 1', NOW());
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (2, 0, 5, NULL, 'Comentário 2', NOW());
+INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (2, 42, 1, NULL, 'Comentário 2', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (3, 0, 4, NULL, 'Comentário 3', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (4, 0, 3, NULL, 'Comentário 4', NOW());
 INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, comentario, data_hora) VALUES (5, 0, 3, NULL, 'Comentário 5', NOW());

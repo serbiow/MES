@@ -74,6 +74,7 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.BackColor = Color.FromArgb(197, 202, 208);
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroDeUsuárioToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
@@ -83,6 +84,8 @@
             // 
             // cadastroDeUsuárioToolStripMenuItem
             // 
+            cadastroDeUsuárioToolStripMenuItem.BackColor = Color.FromArgb(197, 202, 208);
+            cadastroDeUsuárioToolStripMenuItem.ForeColor = Color.Black;
             cadastroDeUsuárioToolStripMenuItem.Name = "cadastroDeUsuárioToolStripMenuItem";
             cadastroDeUsuárioToolStripMenuItem.Size = new Size(125, 20);
             cadastroDeUsuárioToolStripMenuItem.Text = "Cadastro de Usuário";
@@ -90,6 +93,8 @@
             // 
             // sairToolStripMenuItem
             // 
+            sairToolStripMenuItem.BackColor = Color.FromArgb(197, 202, 208);
+            sairToolStripMenuItem.ForeColor = Color.Black;
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             sairToolStripMenuItem.Size = new Size(38, 20);
             sairToolStripMenuItem.Text = "Sair";
@@ -126,6 +131,7 @@
             // 
             // tableLayoutPanel2
             // 
+            tableLayoutPanel2.BackColor = Color.FromArgb(197, 202, 208);
             tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel2.Controls.Add(panel3, 0, 0);
@@ -144,6 +150,7 @@
             // 
             // panel3
             // 
+            panel3.BackColor = Color.FromArgb(197, 202, 208);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(3, 3);
             panel3.Name = "panel3";
@@ -152,6 +159,7 @@
             // 
             // panel4
             // 
+            panel4.BackColor = Color.FromArgb(197, 202, 208);
             panel4.Controls.Add(lblOderBy);
             panel4.Controls.Add(cbxOrdenacao);
             panel4.Controls.Add(lblGrupos);
@@ -176,6 +184,7 @@
             // 
             lblOderBy.AutoSize = true;
             lblOderBy.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblOderBy.ForeColor = Color.Black;
             lblOderBy.Location = new Point(9, 306);
             lblOderBy.Name = "lblOderBy";
             lblOderBy.Size = new Size(93, 20);
@@ -195,6 +204,7 @@
             // 
             lblGrupos.AutoSize = true;
             lblGrupos.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGrupos.ForeColor = Color.Black;
             lblGrupos.Location = new Point(6, 69);
             lblGrupos.Name = "lblGrupos";
             lblGrupos.Size = new Size(53, 20);
@@ -213,12 +223,14 @@
             // btnAplicarFiltro
             // 
             btnAplicarFiltro.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnAplicarFiltro.Location = new Point(154, 27);
+            btnAplicarFiltro.BackColor = Color.FromArgb(169, 177, 185);
+            btnAplicarFiltro.FlatStyle = FlatStyle.Flat;
+            btnAplicarFiltro.Location = new Point(156, 22);
             btnAplicarFiltro.Name = "btnAplicarFiltro";
-            btnAplicarFiltro.Size = new Size(90, 23);
+            btnAplicarFiltro.Size = new Size(90, 30);
             btnAplicarFiltro.TabIndex = 8;
             btnAplicarFiltro.Text = "Aplicar Filtros";
-            btnAplicarFiltro.UseVisualStyleBackColor = true;
+            btnAplicarFiltro.UseVisualStyleBackColor = false;
             // 
             // txtRpmMax
             // 
@@ -232,6 +244,7 @@
             // 
             lblStatusFiltro.AutoSize = true;
             lblStatusFiltro.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblStatusFiltro.ForeColor = Color.Black;
             lblStatusFiltro.Location = new Point(9, 4);
             lblStatusFiltro.Name = "lblStatusFiltro";
             lblStatusFiltro.Size = new Size(52, 20);
@@ -249,6 +262,7 @@
             // lblRpmMax
             // 
             lblRpmMax.AutoSize = true;
+            lblRpmMax.ForeColor = Color.Black;
             lblRpmMax.Location = new Point(12, 258);
             lblRpmMax.Name = "lblRpmMax";
             lblRpmMax.Size = new Size(33, 15);
@@ -259,6 +273,7 @@
             // 
             lblFiltroNome.AutoSize = true;
             lblFiltroNome.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblFiltroNome.ForeColor = Color.Black;
             lblFiltroNome.Location = new Point(6, 130);
             lblFiltroNome.Name = "lblFiltroNome";
             lblFiltroNome.Size = new Size(70, 20);
@@ -268,6 +283,7 @@
             // lblRpmMin
             // 
             lblRpmMin.AutoSize = true;
+            lblRpmMin.ForeColor = Color.Black;
             lblRpmMin.Location = new Point(12, 229);
             lblRpmMin.Name = "lblRpmMin";
             lblRpmMin.Size = new Size(31, 15);
@@ -286,6 +302,7 @@
             // 
             lblRpmFiltro.AutoSize = true;
             lblRpmFiltro.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRpmFiltro.ForeColor = Color.Black;
             lblRpmFiltro.Location = new Point(9, 203);
             lblRpmFiltro.Name = "lblRpmFiltro";
             lblRpmFiltro.Size = new Size(42, 20);
@@ -318,6 +335,7 @@
             // 
             lblNumRodando.BackColor = Color.Green;
             lblNumRodando.Font = new Font("Segoe UI", 11.25F);
+            lblNumRodando.ForeColor = Color.White;
             lblNumRodando.Location = new Point(0, 18);
             lblNumRodando.Name = "lblNumRodando";
             lblNumRodando.Size = new Size(161, 22);
@@ -367,6 +385,7 @@
             // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.BackColor = Color.FromArgb(197, 202, 208);
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 270F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
@@ -383,7 +402,7 @@
             // flowLayoutPanelMaquinas
             // 
             flowLayoutPanelMaquinas.AutoScroll = true;
-            flowLayoutPanelMaquinas.BackColor = SystemColors.Control;
+            flowLayoutPanelMaquinas.BackColor = Color.FromArgb(197, 202, 208);
             flowLayoutPanelMaquinas.Controls.Add(lblStatusBanco);
             flowLayoutPanelMaquinas.Dock = DockStyle.Fill;
             flowLayoutPanelMaquinas.Location = new Point(273, 3);

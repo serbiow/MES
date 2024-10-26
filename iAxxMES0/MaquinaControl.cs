@@ -67,6 +67,8 @@ namespace iAxxMES0
             {
                 case "rodando":
                     pnlStatus.BackColor = Color.Green;
+                    lblStatus.ForeColor = Color.White;
+                    lblTempoStatus.ForeColor = Color.White;
                     lblDesc.Text = $"{rpm} RPM";
                     break;
                 case "parada":

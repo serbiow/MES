@@ -16,6 +16,65 @@ namespace iAxxMES0
             connection = Conexao.GetConnection();
         }
 
+        // Método para buscar o usuário
+        public Usuario BuscarUsuario(int usuarioId)
+        {
+            Usuario usuario = null;
+
+            try
+            {
+                // Verifica se a conexão está fechada antes de abri-la
+                if (connection.State == System.Data.ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+
+                // Consulta para obter as informações do usuário (exceto senha)
+                string query = @"
+                SELECT u.id, u.nome, u.nivel_permissao, u.registro_matricula, l.login_nome 
+                FROM usuario u
+                JOIN login l ON u.id = l.usuario_id
+                WHERE u.id = @usuarioId";
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@usuarioId", usuarioId);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        usuario = new Usuario
+                        {
+                            Id = reader.GetInt32("id"),
+                            Nome = reader.GetString("nome"),
+                            Nivel_Permissao = reader.GetString("nivel_permissao"),
+                            Registro_Matricula = reader.GetString("registro_matricula"),
+                            Login_Nome = reader.GetString("login_nome")
+                        };
+                    }
+                    else
+                    {
+                        connection.Close();
+                        return null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao buscar informações do usuário: {ex.Message}");
+            }
+            finally
+            {
+                // Garantir que a conexão seja fechada após a operação
+                if (connection.State == System.Data.ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+
+            return usuario;
+        }
+
         // Método para validar o login
         public bool ValidarLogin(string loginNome, string senha)
         {
@@ -121,6 +180,12 @@ namespace iAxxMES0
             MySqlTransaction transaction = null;
             try
             {
+                // Verifica se a conexão está fechada antes de abri-la
+                if (connection.State == System.Data.ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+
                 // Iniciar a transação
                 transaction = connection.BeginTransaction();
 
@@ -165,6 +230,12 @@ namespace iAxxMES0
             MySqlTransaction transaction = null;
             try
             {
+                // Verifica se a conexão está fechada antes de abri-la
+                if (connection.State == System.Data.ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+
                 // Iniciar a transação
                 transaction = connection.BeginTransaction();
 
