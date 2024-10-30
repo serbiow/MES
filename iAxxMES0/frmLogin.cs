@@ -30,18 +30,43 @@ namespace iAxxMES0
         private void btnEntrar_Click_1(object sender, EventArgs e)
         {
             // Capturando o texto dos TextBoxes
-            string loginNome = txtLogin.Text;
-            string senha = txtSenha.Text;
+            string loginNome = txtLogin.Text.Trim();
+            string senha = txtSenha.Text.Trim();
 
-            // Chamando o método de validação de login da classe ControleUsuario
-            if (controleUsuario.ValidarLogin(loginNome, senha))
+            // Verificação de campos vazios
+            if (string.IsNullOrEmpty(loginNome) || string.IsNullOrEmpty(senha))
             {
-                MessageBox.Show("Login realizado com sucesso!");
-                this.Close();
+                MessageBox.Show("Por favor, preencha todos os campos.", "Campos Vazios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else
+
+            try
             {
-                MessageBox.Show("Login ou senha incorretos.");
+                // Chamando o método de validação de login da classe ControleUsuario
+                if (controleUsuario.ValidarLogin(loginNome, senha))
+                {
+                    MessageBox.Show("Login realizado com sucesso!", "Bem-vindo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Chamar o Dashboard e fechar o formulário de login
+                    using (frmDashboard dashboard = new frmDashboard())
+                    {
+                        this.Hide();
+                        dashboard.ShowDialog();
+                    }
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Login ou senha incorretos.", "Erro de Autenticação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtSenha.Clear();
+                    txtSenha.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro durante o login. Tente novamente mais tarde.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine($"Erro: {ex.Message}");
             }
         }
     }

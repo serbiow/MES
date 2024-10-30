@@ -61,6 +61,7 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             flowLayoutPanelMaquinas = new FlowLayoutPanel();
             lblStatusBanco = new Label();
+            consultarUsuáriosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -75,7 +76,7 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.FromArgb(197, 202, 208);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroDeUsuárioToolStripMenuItem, sairToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroDeUsuárioToolStripMenuItem, consultarUsuáriosToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1289, 24);
@@ -107,7 +108,7 @@
             cbxStatusFiltro.Location = new Point(3, 27);
             cbxStatusFiltro.Name = "cbxStatusFiltro";
             cbxStatusFiltro.Size = new Size(121, 23);
-            cbxStatusFiltro.TabIndex = 4;
+            cbxStatusFiltro.TabIndex = 1;
             // 
             // panel1
             // 
@@ -198,7 +199,7 @@
             cbxOrdenacao.Location = new Point(3, 329);
             cbxOrdenacao.Name = "cbxOrdenacao";
             cbxOrdenacao.Size = new Size(121, 23);
-            cbxOrdenacao.TabIndex = 3;
+            cbxOrdenacao.TabIndex = 6;
             // 
             // lblGrupos
             // 
@@ -218,7 +219,7 @@
             cbxGrupo.Location = new Point(3, 92);
             cbxGrupo.Name = "cbxGrupo";
             cbxGrupo.Size = new Size(121, 23);
-            cbxGrupo.TabIndex = 16;
+            cbxGrupo.TabIndex = 2;
             // 
             // btnAplicarFiltro
             // 
@@ -228,7 +229,7 @@
             btnAplicarFiltro.Location = new Point(156, 22);
             btnAplicarFiltro.Name = "btnAplicarFiltro";
             btnAplicarFiltro.Size = new Size(90, 30);
-            btnAplicarFiltro.TabIndex = 8;
+            btnAplicarFiltro.TabIndex = 7;
             btnAplicarFiltro.Text = "Aplicar Filtros";
             btnAplicarFiltro.UseVisualStyleBackColor = false;
             // 
@@ -237,7 +238,7 @@
             txtRpmMax.Location = new Point(49, 255);
             txtRpmMax.Name = "txtRpmMax";
             txtRpmMax.Size = new Size(100, 23);
-            txtRpmMax.TabIndex = 6;
+            txtRpmMax.TabIndex = 5;
             txtRpmMax.KeyPress += txtRpmMax_KeyPress;
             // 
             // lblStatusFiltro
@@ -256,7 +257,7 @@
             txtFiltroApelido.Location = new Point(3, 153);
             txtFiltroApelido.Name = "txtFiltroApelido";
             txtFiltroApelido.Size = new Size(118, 23);
-            txtFiltroApelido.TabIndex = 7;
+            txtFiltroApelido.TabIndex = 3;
             txtFiltroApelido.KeyPress += txtFiltroApelido_KeyPress;
             // 
             // lblRpmMax
@@ -295,7 +296,7 @@
             txtRpmMin.Location = new Point(49, 226);
             txtRpmMin.Name = "txtRpmMin";
             txtRpmMin.Size = new Size(100, 23);
-            txtRpmMin.TabIndex = 5;
+            txtRpmMin.TabIndex = 4;
             txtRpmMin.KeyPress += txtRpmMin_KeyPress;
             // 
             // lblRpmFiltro
@@ -421,6 +422,13 @@
             lblStatusBanco.Text = "Status Banco";
             lblStatusBanco.Visible = false;
             // 
+            // consultarUsuáriosToolStripMenuItem
+            // 
+            consultarUsuáriosToolStripMenuItem.Name = "consultarUsuáriosToolStripMenuItem";
+            consultarUsuáriosToolStripMenuItem.Size = new Size(118, 20);
+            consultarUsuáriosToolStripMenuItem.Text = "Consultar Usuários";
+            consultarUsuáriosToolStripMenuItem.Click += consultarUsuáriosToolStripMenuItem_Click;
+            // 
             // frmDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -434,7 +442,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Dashboard";
             WindowState = FormWindowState.Maximized;
-            Load += frmDashboard_Load_1;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
@@ -485,5 +492,6 @@
         private Label lblNumParada;
         private Label lblNumRodando;
         private Panel panel5;
+        private ToolStripMenuItem consultarUsuáriosToolStripMenuItem;
     }
 }

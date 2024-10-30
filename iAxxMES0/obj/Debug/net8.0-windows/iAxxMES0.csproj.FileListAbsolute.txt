@@ -37,3 +37,4 @@ C:\Users\sergi\Documents\GitHub\iAxxMES\iAxxMES0\obj\Debug\net8.0-windows\iAxxME
 C:\Users\sergi\Documents\GitHub\iAxxMES\iAxxMES0\obj\Debug\net8.0-windows\iAxxMES0.frmMaquina.resources
 C:\Users\sergi\Documents\GitHub\iAxxMES\iAxxMES0\bin\Debug\net8.0-windows\WinForms.DataVisualization.Utilities.dll
 C:\Users\sergi\Documents\GitHub\iAxxMES\iAxxMES0\bin\Debug\net8.0-windows\WinForms.DataVisualization.dll
+C:\Users\sergi\Documents\GitHub\iAxxMES\iAxxMES0\obj\Debug\net8.0-windows\iAxxMES0.frmViewUser.resources

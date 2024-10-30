@@ -286,17 +286,16 @@ namespace iAxxMES0
             ExibirMaquinas(maquinasFiltradas);
         }
 
-        private void frmDashboard_Load_1(object sender, EventArgs e)
-        {
-            // Chama o formulário de Login no início
-            frmLogin TelaLogin = new frmLogin();
-            TelaLogin.ShowDialog();
-        }
-
         private void cadastroDeUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCadUser cadastro = new frmCadUser();
             cadastro.ShowDialog();
+        }
+
+        private void consultarUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmViewUser consultar = new frmViewUser();
+            consultar.ShowDialog();
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)

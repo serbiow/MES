@@ -162,7 +162,7 @@
             Controls.Add(lblApelido);
             Name = "frmMaquina";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmMaquina";
+            Text = "Detalhes";
             WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)chartStatus).EndInit();

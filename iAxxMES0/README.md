@@ -10,8 +10,7 @@
 # 7- Design geral
 
 # - (FEITO) símbolo iAxx na tela de login (tirar o cadeado)
-# - Após login, exibir tela das opções Supervisorio e Relatórios
-# - Tela de relatórios com exportação em excel e pdf
+# - (FAZER EM PYTHON) Tela de relatórios com exportação em excel e pdf
 # - (FEITO) Ajeitar o select (Limit 1)
 # - (FEITO) Barra colorida atrás do status
 # - (FEITO) Fazer a atualização dinâmica para diminuir o tempo entre as atualizações

@@ -265,5 +265,79 @@ namespace iAxxMES0
                 MessageBox.Show($"Erro ao deletar o usuário: {ex.Message}");
             }
         }
+
+        public List<Usuario> BuscarUsuarios(string opcao, string valor)
+        {
+            List<Usuario> usuarios = new List<Usuario>();
+
+            try
+            {
+                if (connection.State == System.Data.ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+
+                // Define a query com base na opção selecionada
+                string query = "";
+                switch (opcao)
+                {
+                    case "Registro da Matrícula":
+                        query = "SELECT u.id, u.nome, u.nivel_permissao, u.registro_matricula, l.login_nome " +
+                                "FROM usuario u JOIN login l ON u.id = l.usuario_id " +
+                                "WHERE u.registro_matricula LIKE @valor";
+                        break;
+                    case "Nome":
+                        query = "SELECT u.id, u.nome, u.nivel_permissao, u.registro_matricula, l.login_nome " +
+                                "FROM usuario u JOIN login l ON u.id = l.usuario_id " +
+                                "WHERE u.nome LIKE @valor";
+                        break;
+                    case "Login":
+                        query = "SELECT u.id, u.nome, u.nivel_permissao, u.registro_matricula, l.login_nome " +
+                                "FROM usuario u JOIN login l ON u.id = l.usuario_id " +
+                                "WHERE l.login_nome LIKE @valor";
+                        break;
+                    default:
+                        throw new Exception("Opção de busca inválida.");
+                }
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@valor", "%" + valor + "%");
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Usuario usuario = new Usuario
+                        {
+                            Id = reader.GetInt32("id"),
+                            Nome = reader.GetString("nome"),
+                            Nivel_Permissao = reader.GetString("nivel_permissao"),
+                            Registro_Matricula = reader.GetString("registro_matricula"),
+                            Login_Nome = reader.GetString("login_nome")
+                        };
+                        usuarios.Add(usuario);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao buscar usuários: {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == System.Data.ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+
+            return usuarios;
+        }
+
+        public List<Usuario> ListarTodosUsuarios()
+        {
+            return BuscarUsuarios("Nome", ""); // Retorna todos os usuários, independentemente do filtro
+        }
+
     }
 }
