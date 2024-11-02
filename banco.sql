@@ -56,12 +56,6 @@ CREATE TABLE maquina_dados (
     FOREIGN KEY (status) REFERENCES maquina_status(id)
 );
 
-SELECT data_hora, status
-FROM maquina_dados
-WHERE maquina_id = 1
-AND data_hora >= NOW() - INTERVAL 30 DAY
-ORDER BY data_hora ASC;
-
 /*INSERTS*/
 
 INSERT INTO usuario (nome, nivel_permissao, registro_matricula)
@@ -73,9 +67,6 @@ INSERT INTO login (usuario_id, login_nome, senha)
 VALUES (1, 'joao_master', 'd/yTvHDt8x3Qt0QA9f+kyKJqbsRmq+Mw1mNxjNub8BOmcvzQtTF3Djky3Ub59sFJ'), -- João Silva
        (2, 'maria_admin', 'p6AfVsR4wC7y0FbN3rd2e+s4CMelO0xvtsPe5Loffx8tNGdlZZmoMl3aBeBHNt/W'), -- Maria Santos
        (3, 'pedro_operator', 'nH7Ay/gMjZE3WSPw7QEGF8OVkVRsFOBmPb/NKiLDyzg2S3ATgf2rJzSwdHeuB+u0'); -- Pedro Oliveira
-
--- Insert de exemplo de máquina
-INSERT INTO maquina_dados (maquina_id, rpm, status, motivo_parada, data_hora) VALUES (2, 0, 2, 0, NOW());
 
 -- Inserts para tabela motivos_parada
 INSERT INTO motivos_parada (descricao) VALUES ('Não apontada');

@@ -60,6 +60,7 @@
             txtSenha.PasswordChar = '*';
             txtSenha.Size = new Size(248, 23);
             txtSenha.TabIndex = 2;
+            txtSenha.KeyPress += txtSenha_KeyPress;
             // 
             // txtLogin
             // 

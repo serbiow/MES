@@ -69,5 +69,18 @@ namespace iAxxMES0
                 Console.WriteLine($"Erro: {ex.Message}");
             }
         }
+
+        private void txtSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica se a tecla pressionada é "Enter"
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Executa o método de login
+                btnEntrar_Click_1(sender, e);
+
+                // Evita que o som de "beep" seja emitido ao pressionar Enter
+                e.Handled = true;
+            }
+        }
     }
 }
