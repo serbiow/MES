@@ -141,7 +141,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             chartStatus.Series.Add(series1);
-            chartStatus.Size = new Size(656, 294);
+            chartStatus.Size = new Size(669, 580);
             chartStatus.TabIndex = 15;
             chartStatus.Text = "chart1";
             // 
@@ -149,7 +149,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(885, 326);
+            ClientSize = new Size(898, 604);
             Controls.Add(chartStatus);
             Controls.Add(pictureBox1);
             Controls.Add(lblGrupo);

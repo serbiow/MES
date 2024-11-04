@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace iAxxMES0
 {
-    internal class Maquina
+    public class Maquina
     {
         public int Id { get; set; }
         public string Apelido { get; set; }

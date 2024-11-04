@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace iAxxMES0
@@ -21,6 +17,10 @@ namespace iAxxMES0
         public int Finura { get; set; }
         public int Diametro { get; set; }
         public int NumeroAlimentadores { get; set; }
+
+        // Variáveis para armazenar o status anterior e o horário de início do status atual
+        private string statusAnterior;
+        private DateTime dataHoraStatusAnterior;
 
         public MaquinaControl()
         {
@@ -56,13 +56,18 @@ namespace iAxxMES0
             this.Finura = finura;
             this.NumeroAlimentadores = numero_alimentadores;
 
-            lblApelido.Text = apelido;
-            lblApelido.Text = lblApelido.Text.ToUpper();
-            lblStatus.Text = status;
-            lblStatus.Text = lblStatus.Text.ToUpper();
+            lblApelido.Text = apelido.ToUpper();
+            lblStatus.Text = status.ToUpper();
             lblGrupo.Text = grupo;
 
-            // Alterar a cor do Status para fácil visualização
+            // Verifica se o status mudou. Se mudou, atualiza o horário de início do novo status.
+            if (statusAnterior != status)
+            {
+                statusAnterior = status;
+                dataHoraStatusAnterior = dataHoraStatus;
+            }
+
+            // Ajusta a cor e descrição do status
             switch (status.ToLower())
             {
                 case "rodando":
@@ -95,10 +100,10 @@ namespace iAxxMES0
                     break;
             }
 
-            // Calcular o tempo em que a máquina está no status atual
-            TimeSpan tempoStatus = DateTime.Now - dataHoraStatus;
+            // Calcula o tempo em que a máquina está no status atual
+            TimeSpan tempoStatus = DateTime.Now - dataHoraStatusAnterior;
 
-            // Exibir "1d" se passou mais de 1 dia, caso contrário exibir horas e minutos
+            // Exibe "1d" se passou mais de 1 dia, caso contrário exibe horas e minutos
             if (tempoStatus.TotalDays >= 1)
             {
                 lblTempoStatus.Text = $"{Math.Floor(tempoStatus.TotalDays)}d {tempoStatus.Hours}h {tempoStatus.Minutes}min";
@@ -109,39 +114,12 @@ namespace iAxxMES0
             }
         }
 
-        private void MaquinaControl_Click(object sender, EventArgs e)
-        {
-            ExibirDetalhesMaquina();
-        }
-
-        private void lblApelido_Click(object sender, EventArgs e)
-        {
-            ExibirDetalhesMaquina();
-        }
-
-        private void lblStatus_Click(object sender, EventArgs e)
-        {
-            ExibirDetalhesMaquina();
-        }
-
-        private void lblGrupo_Click(object sender, EventArgs e)
-        {
-            ExibirDetalhesMaquina();
-        }
-
-        private void lblDesc_Click(object sender, EventArgs e)
-        {
-            ExibirDetalhesMaquina();
-        }
-
-        private void lblTempoStatus_Click(object sender, EventArgs e)
-        {
-            ExibirDetalhesMaquina();
-        }
-
-        private void panel2_Click(object sender, EventArgs e)
-        {
-            ExibirDetalhesMaquina();
-        }
+        private void MaquinaControl_Click(object sender, EventArgs e) => ExibirDetalhesMaquina();
+        private void lblApelido_Click(object sender, EventArgs e) => ExibirDetalhesMaquina();
+        private void lblStatus_Click(object sender, EventArgs e) => ExibirDetalhesMaquina();
+        private void lblGrupo_Click(object sender, EventArgs e) => ExibirDetalhesMaquina();
+        private void lblDesc_Click(object sender, EventArgs e) => ExibirDetalhesMaquina();
+        private void lblTempoStatus_Click(object sender, EventArgs e) => ExibirDetalhesMaquina();
+        private void panel2_Click(object sender, EventArgs e) => ExibirDetalhesMaquina();
     }
 }

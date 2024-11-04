@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -27,11 +23,11 @@ namespace iAxxMES0
             // Exibe as informações da máquina nos controles da tela
             lblApelido.Text = apelido;
             lblFinura.Text = finura.ToString();
-            lblDiametro.Text = diametro.ToString("F2"); // Exibe com 2 casas decimais
+            lblDiametro.Text = diametro.ToString("F2");
             lblAlimentadores.Text = numeroAlimentadores.ToString();
             lblGrupo.Text = grupo;
 
-            // Inicializa o gráfico de status
+            // Inicializa o gráfico de RPM
             InicializarGrafico(maquinaId);
 
             // Inicia o Timer para atualizar o gráfico periodicamente
@@ -41,89 +37,75 @@ namespace iAxxMES0
         private void InicializarGrafico(int maquinaId)
         {
             // Configura o gráfico
-            chartStatus.Series.Clear(); // Limpa séries anteriores
+            chartStatus.Series.Clear();
             chartStatus.Titles.Clear();
-            chartStatus.Titles.Add("Status da Máquina em Função do Tempo");
+            chartStatus.Titles.Add("RPM da Máquina em Função do Tempo");
 
             // Adiciona a série para o gráfico de linha
-            Series serieStatus = new Series("Status")
+            Series serieRPM = new Series("RPM")
             {
                 ChartType = SeriesChartType.Line,
-                XValueType = ChartValueType.DateTime, // Eixo X será o tempo
-                YValueType = ChartValueType.Int32     // Eixo Y será o status mapeado como número
+                XValueType = ChartValueType.DateTime,
+                YValueType = ChartValueType.Int32, // Eixo Y será o RPM (valores contínuos)
+                BorderWidth = 3
             };
-            chartStatus.Series.Add(serieStatus);
+            chartStatus.Series.Add(serieRPM);
 
             // Obtém os dados reais do banco
-            List<Tuple<DateTime, int>> dadosHistorico = controleMaquinas.ObterHistoricoStatusMaquina(maquinaId);
+            List<Tuple<DateTime, int>> dadosHistorico = controleMaquinas.ObterHistoricoRPMMaquina(maquinaId);
 
-            // Adiciona os dados ao gráfico
-            foreach (var dado in dadosHistorico)
+            // Filtra os dados para a última 1 hora
+            DateTime agora = DateTime.Now;
+            var dadosUltimaHora = dadosHistorico.Where(d => d.Item1 >= agora.AddHours(-1)).ToList();
+
+            // Adiciona os dados filtrados ao gráfico
+            foreach (var dado in dadosUltimaHora)
             {
-                serieStatus.Points.AddXY(dado.Item1, dado.Item2);
+                serieRPM.Points.AddXY(dado.Item1, dado.Item2);
             }
 
-            // Configura o eixo X (tempo)
             // Configura o eixo X (tempo)
             var axisX = chartStatus.ChartAreas[0].AxisX;
-            axisX.LabelStyle.Format = "dd/MM HH:mm"; // Exibir dia e horas no eixo X
+            axisX.LabelStyle.Format = "HH:mm"; // Formato mais enxuto para intervalos menores
             axisX.Title = "Tempo";
-            axisX.IntervalType = DateTimeIntervalType.Hours;
-            axisX.Interval = 1; // Exibir um rótulo a cada 1 hora, ajuste conforme necessário
-            axisX.MajorGrid.LineDashStyle = ChartDashStyle.Solid; // Exibe uma linha no grid para cada rótulo
-            axisX.LabelStyle.Angle = -45; // Rotaciona os rótulos para evitar sobreposição
-            axisX.LabelStyle.IsEndLabelVisible = true; // Garante que o último rótulo seja exibido
+            axisX.IntervalType = DateTimeIntervalType.Minutes;
+            axisX.Interval = 10;
+            axisX.MajorGrid.LineDashStyle = ChartDashStyle.Solid;
+            axisX.LabelStyle.Angle = -45;
+            axisX.LabelStyle.IsEndLabelVisible = true;
 
-            // Verifica a data mínima e máxima nos dados obtidos
-            if (dadosHistorico.Count > 0)
-            {
-                DateTime minDate = dadosHistorico.Min(d => d.Item1);
-                DateTime maxDate = dadosHistorico.Max(d => d.Item1);
+            // Define a visualização mínima e máxima do eixo X para a última 1 hora
+            axisX.Minimum = agora.AddHours(-1).ToOADate();
+            axisX.Maximum = agora.ToOADate();
 
-                // Define a visualização mínima e máxima do eixo X com base nos dados
-                axisX.Minimum = minDate.ToOADate();
-                axisX.Maximum = maxDate.ToOADate();
-            }
+            // Configurações de zoom e rolagem
+            axisX.ScaleView.Zoomable = true;
+            axisX.ScrollBar.Enabled = true;
+            axisX.ScaleView.SmallScrollSizeType = DateTimeIntervalType.Minutes;
+            axisX.ScaleView.SmallScrollSize = 10;
 
-            // Habilitar a barra de rolagem e zoom
-            axisX.ScaleView.Zoomable = true; // Habilitar zoom para o eixo X
-            axisX.ScrollBar.Enabled = true; // Habilitar a barra de rolagem para o eixo X
-            axisX.ScaleView.SmallScrollSizeType = DateTimeIntervalType.Hours; // Rolagem mais fluida com pequenos intervalos
-            axisX.ScaleView.SmallScrollSize = 1; // Deslocar a visualização em incrementos de 1 hora
-
-            // Configura o eixo Y (status)
+            // Configura o eixo Y (RPM)
             var axisY = chartStatus.ChartAreas[0].AxisY;
-            axisY.Title = "Status";
-            axisY.Interval = 1; // Intervalo entre valores no eixo Y
+            axisY.Title = "RPM";
+            axisY.IntervalAutoMode = IntervalAutoMode.VariableCount;
             axisY.Minimum = 0;
-            axisY.Maximum = 5; // Número de status diferentes (ajustar conforme necessário)
+            axisY.Maximum = 100; // Ajuste conforme o valor máximo do RPM
 
-            // Define rótulos customizados para o eixo Y
-            axisY.CustomLabels.Clear();
-            axisY.CustomLabels.Add(0.5, 1.5, "Rodando");
-            axisY.CustomLabels.Add(1.5, 2.5, "Parada");
-            axisY.CustomLabels.Add(2.5, 3.5, "Setup");
-            axisY.CustomLabels.Add(3.5, 4.5, "Carga de fio");
-            axisY.CustomLabels.Add(4.5, 5.5, "Sem programação");
-
-            // Habilitar pan (arrastar) no gráfico
+            // Habilitar pan e zoom no gráfico
             chartStatus.ChartAreas[0].CursorX.IsUserEnabled = true;
             chartStatus.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
             chartStatus.ChartAreas[0].CursorY.IsUserEnabled = true;
             chartStatus.ChartAreas[0].CursorY.IsUserSelectionEnabled = true;
-
-            // Definir o modo de seleção para ajustar zoom
             chartStatus.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
             chartStatus.ChartAreas[0].AxisY.ScaleView.Zoomable = true;
 
-            // Ativar a funcionalidade de zoom com o mouse (clique e arraste para zoom)
             chartStatus.MouseWheel += ChartStatus_MouseWheel;
         }
 
         private void AdicionarDados(Series serie, int maquinaId)
         {
-            // Obtém os dados do banco de dados
-            List<Tuple<DateTime, int>> dadosHistorico = controleMaquinas.ObterHistoricoStatusMaquina(maquinaId);
+            // Obtém os dados de RPM do banco de dados
+            List<Tuple<DateTime, int>> dadosHistorico = controleMaquinas.ObterHistoricoRPMMaquina(maquinaId);
 
             // Limpa pontos anteriores no gráfico
             serie.Points.Clear();
@@ -139,12 +121,12 @@ namespace iAxxMES0
         {
             try
             {
-                if (e.Delta < 0) // Scroll para fora (zoom out)
+                if (e.Delta < 0)
                 {
-                    chartStatus.ChartAreas[0].AxisX.ScaleView.ZoomReset(); // Reseta o zoom no eixo X
-                    chartStatus.ChartAreas[0].AxisY.ScaleView.ZoomReset(); // Reseta o zoom no eixo Y
+                    chartStatus.ChartAreas[0].AxisX.ScaleView.ZoomReset();
+                    chartStatus.ChartAreas[0].AxisY.ScaleView.ZoomReset();
                 }
-                else if (e.Delta > 0) // Scroll para dentro (zoom in)
+                else if (e.Delta > 0)
                 {
                     double xMin = chartStatus.ChartAreas[0].AxisX.ScaleView.ViewMinimum;
                     double xMax = chartStatus.ChartAreas[0].AxisX.ScaleView.ViewMaximum;
@@ -158,16 +140,16 @@ namespace iAxxMES0
 
         private void IniciarTimer()
         {
-            // Inicializa o timer
-            timer = new System.Windows.Forms.Timer();
-            timer.Interval = 60000; // Atualiza o gráfico a cada 60 segundos
+            timer = new System.Windows.Forms.Timer
+            {
+                Interval = 60000
+            };
             timer.Tick += Timer_Tick;
             timer.Start();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            // Atualiza os dados do gráfico periodicamente
             AdicionarDados(chartStatus.Series[0], maquinaId);
         }
     }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace iAxxMES0
 {
-    internal class ControleMaquinas
+    public class ControleMaquinas
     {
         private MySqlConnection connection;
 
@@ -38,23 +38,48 @@ namespace iAxxMES0
         {
             List<Maquina> maquinas = new List<Maquina>();
             string query = @"
-            SELECT m.id, m.apelido, m.grupo, m.finura, m.diametro, m.numero_alimentadores, md.rpm, ms.descricao AS status,
-            mp.descricao AS motivo_parada, md.comentario, md.data_hora
-            FROM maquina m
+            SELECT 
+                m.id, 
+                m.apelido, 
+                GROUP_CONCAT(g.nome SEPARATOR ', ') AS grupos, -- Concatenar todos os grupos em uma única coluna
+                m.finura, 
+                m.diametro, 
+                m.numero_alimentadores, 
+                md.rpm, 
+                ms.descricao AS status,
+                mp.descricao AS motivo_parada, 
+                md.comentario, 
+                md.data_hora
+            FROM 
+                maquina m
+            JOIN grupo_maquina gm ON m.id = gm.maquina_id
+            JOIN grupo g ON gm.grupo_id = g.id
             JOIN (
-                SELECT maquina_id, MAX(id) AS max_id
-                FROM maquina_dados
-                WHERE (maquina_id, data_hora) IN (
-                    SELECT maquina_id, MAX(data_hora)
-                    FROM maquina_dados
-                    GROUP BY maquina_id
-                )
-                GROUP BY maquina_id
+                SELECT 
+                    maquina_id, 
+                    MAX(id) AS max_id
+                FROM 
+                    maquina_dados
+                WHERE 
+                    (maquina_id, data_hora) IN (
+                        SELECT 
+                            maquina_id, 
+                            MAX(data_hora)
+                        FROM 
+                            maquina_dados
+                        GROUP BY 
+                            maquina_id
+                    )
+                GROUP BY 
+                    maquina_id
             ) md_recent ON m.id = md_recent.maquina_id
             JOIN maquina_dados md ON md.id = md_recent.max_id
             LEFT JOIN maquina_status ms ON md.status = ms.id
             LEFT JOIN motivos_parada mp ON md.motivo_parada = mp.id
-            ORDER BY m.apelido;";
+            GROUP BY 
+                m.id -- Agrupar por ID da máquina para evitar duplicatas
+            ORDER BY 
+                m.apelido;";
 
             MySqlCommand cmd = new MySqlCommand(query, connection);
             cmd.CommandTimeout = 5; // Timeout da consulta para evitar congelamentos
@@ -77,7 +102,7 @@ namespace iAxxMES0
                     {
                         Id = reader.GetInt32("id"),
                         Apelido = reader.GetString("apelido"),
-                        Grupo = reader.GetString("grupo"),
+                        Grupo = reader.GetString("grupos"),
                         RPM = reader.GetInt32("rpm"),
                         Status = reader.GetString("status"),
                         Motivo_Parada = reader.IsDBNull(reader.GetOrdinal("motivo_parada")) ? "Parada não apontada" : reader.GetString("motivo_parada"),
@@ -106,28 +131,91 @@ namespace iAxxMES0
             return maquinas;
         }
 
+        // Método para obter as máquina de forma simplificada (apenas id e apelido)
+        public List<Maquina> ObterMaquinasSimplificado()
+        {
+            List<Maquina> maquinas = new List<Maquina>();
+            string query = "SELECT id, apelido FROM maquina";
+
+            try
+            {
+                if (connection.State == System.Data.ConnectionState.Closed)
+                    connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Maquina maquina = new Maquina
+                        {
+                            Id = reader.GetInt32("id"),
+                            Apelido = reader.GetString("apelido")
+                        };
+                        maquinas.Add(maquina);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                LogError($"Erro ao obter lista simplificada de máquinas: {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == System.Data.ConnectionState.Open)
+                    connection.Close();
+            }
+
+            return maquinas;
+        }
+
         // Método assíncrono para obter os dados atualizados de cada máquina
         public async Task<List<Maquina>> ObterDadosAtualizadosAsync()
         {
             List<Maquina> maquinasAtualizadas = new List<Maquina>();
             string query = @"
-            SELECT m.id, m.apelido, m.grupo, m.finura, m.diametro, m.numero_alimentadores, md.rpm, ms.descricao AS status,
-            mp.descricao AS motivo_parada, md.comentario, md.data_hora
-            FROM maquina m
+            SELECT 
+                m.id, 
+                m.apelido, 
+                GROUP_CONCAT(g.nome SEPARATOR ', ') AS grupos, -- Concatenar todos os grupos em uma única coluna
+                m.finura, 
+                m.diametro, 
+                m.numero_alimentadores, 
+                md.rpm, 
+                ms.descricao AS status,
+                mp.descricao AS motivo_parada, 
+                md.comentario, 
+                md.data_hora
+            FROM 
+                maquina m
+            JOIN grupo_maquina gm ON m.id = gm.maquina_id
+            JOIN grupo g ON gm.grupo_id = g.id
             JOIN (
-                SELECT maquina_id, MAX(id) AS max_id
-                FROM maquina_dados
-                WHERE (maquina_id, data_hora) IN (
-                    SELECT maquina_id, MAX(data_hora)
-                    FROM maquina_dados
-                    GROUP BY maquina_id
-                )
-                GROUP BY maquina_id
+                SELECT 
+                    maquina_id, 
+                    MAX(id) AS max_id
+                FROM 
+                    maquina_dados
+                WHERE 
+                    (maquina_id, data_hora) IN (
+                        SELECT 
+                            maquina_id, 
+                            MAX(data_hora)
+                        FROM 
+                            maquina_dados
+                        GROUP BY 
+                            maquina_id
+                    )
+                GROUP BY 
+                    maquina_id
             ) md_recent ON m.id = md_recent.maquina_id
             JOIN maquina_dados md ON md.id = md_recent.max_id
             LEFT JOIN maquina_status ms ON md.status = ms.id
             LEFT JOIN motivos_parada mp ON md.motivo_parada = mp.id
-            ORDER BY m.apelido;";
+            GROUP BY 
+                m.id -- Agrupar por ID da máquina para evitar duplicatas
+            ORDER BY 
+                m.apelido;";
 
             MySqlCommand cmd = new MySqlCommand(query, connection);
             cmd.CommandTimeout = 5; // Timeout da consulta assíncrona
@@ -150,7 +238,7 @@ namespace iAxxMES0
                     {
                         Id = reader.GetInt32("id"),
                         Apelido = reader.GetString("apelido"),
-                        Grupo = reader.GetString("grupo"),
+                        Grupo = reader.GetString("grupos"),
                         RPM = reader.GetInt32("rpm"),
                         Status = reader.GetString("status"),
                         Motivo_Parada = reader.IsDBNull(reader.GetOrdinal("motivo_parada")) ? "Parada não apontada" : reader.GetString("motivo_parada"),
@@ -179,15 +267,15 @@ namespace iAxxMES0
             return maquinasAtualizadas;
         }
 
-        public List<Tuple<DateTime, int>> ObterHistoricoStatusMaquina(int maquinaId)
+        public List<Tuple<DateTime, int>> ObterHistoricoRPMMaquina(int maquinaId)
         {
             List<Tuple<DateTime, int>> dadosHistorico = new List<Tuple<DateTime, int>>();
 
             string query = @"
-            SELECT data_hora, status
+            SELECT data_hora, rpm
             FROM maquina_dados
             WHERE maquina_id = @maquinaId
-            AND data_hora >= NOW() - INTERVAL 7 DAY
+            AND data_hora >= NOW() - INTERVAL 1 HOUR
             ORDER BY data_hora ASC";
 
             try
@@ -206,15 +294,15 @@ namespace iAxxMES0
                         while (reader.Read())
                         {
                             DateTime dataHora = reader.GetDateTime("data_hora");
-                            int status = reader.GetInt32("status"); // Presumindo que status é armazenado como INT
-                            dadosHistorico.Add(new Tuple<DateTime, int>(dataHora, status));
+                            int rpm = reader.GetInt32("rpm");
+                            dadosHistorico.Add(new Tuple<DateTime, int>(dataHora, rpm));
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Erro ao obter o histórico de status: " + ex.Message);
+                Console.WriteLine("Erro ao obter o histórico de rpm: " + ex.Message);
             }
             finally
             {
@@ -248,6 +336,307 @@ namespace iAxxMES0
                 {
                     connection.Close();
                 }
+            }
+        }
+
+        // Controle dos Grupos
+
+        // Método para obter todos os grupos
+        public List<Grupo> ObterTodosGrupos()
+        {
+            List<Grupo> grupos = new List<Grupo>();
+            string query = "SELECT id, nome, descricao FROM grupo";
+
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Grupo grupo = new Grupo
+                        {
+                            Id = reader.GetInt32("id"),
+                            Nome = reader.GetString("nome"),
+                            Descricao = reader.IsDBNull(reader.GetOrdinal("descricao")) ? null : reader.GetString("descricao")
+                        };
+                        grupos.Add(grupo);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                LogError($"Erro ao obter todos os grupos: {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+
+            return grupos;
+        }
+
+        //Método para obter a máquina pelo apelido dela
+        public Maquina ObterMaquinaPorApelido(string apelido)
+        {
+            Maquina maquina = null;
+            string query = "SELECT id, apelido, finura, diametro, numero_alimentadores FROM maquina WHERE apelido = @apelido LIMIT 1";
+
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@apelido", apelido);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            maquina = new Maquina
+                            {
+                                Id = reader.GetInt32("id"),
+                                Apelido = reader.GetString("apelido"),
+                                Finura = reader.GetInt32("finura"),
+                                Diametro = reader.GetInt32("diametro"),
+                                NumeroAlimentadores = reader.GetInt32("numero_alimentadores")
+                            };
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                LogError($"Erro ao obter máquina com apelido '{apelido}': {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+
+            return maquina;
+        }
+
+        // Método para adicionar um grupo
+        public void AdicionarGrupo(string nome, string descricao = null)
+        {
+            string query = "INSERT INTO grupo (nome, descricao) VALUES (@nome, @descricao)";
+
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@nome", nome);
+                    cmd.Parameters.AddWithValue("@descricao", descricao ?? (object)DBNull.Value);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                LogError($"Erro ao adicionar grupo: {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+        }
+
+        // Método para editar um grupo
+        public void EditarGrupo(int id, string novoNome, string novaDescricao = null)
+        {
+            string query = "UPDATE grupo SET nome = @novoNome, descricao = @novaDescricao WHERE id = @id";
+
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@novoNome", novoNome);
+                    cmd.Parameters.AddWithValue("@novaDescricao", novaDescricao ?? (object)DBNull.Value);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                LogError($"Erro ao editar grupo com ID {id}: {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+        }
+
+        // Método para excluir um grupo
+        public void ExcluirGrupo(int id)
+        {
+            string query = "DELETE FROM grupo WHERE id = @id";
+
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                LogError($"Erro ao excluir grupo com ID {id}: {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+        }
+
+        // Método para associar uma máquina a um grupo
+        public void AssociarMaquinaAoGrupo(int grupoId, int maquinaId)
+        {
+            string query = "INSERT IGNORE INTO grupo_maquina (grupo_id, maquina_id) VALUES (@grupoId, @maquinaId)";
+
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@grupoId", grupoId);
+                    cmd.Parameters.AddWithValue("@maquinaId", maquinaId);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                LogError($"Erro ao associar máquina {maquinaId} ao grupo {grupoId}: {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+        }
+
+        // Método para remover uma máquina de um grupo
+        public void RemoverMaquinaDoGrupo(int grupoId, int maquinaId)
+        {
+            string query = "DELETE FROM grupo_maquina WHERE grupo_id = @grupoId AND maquina_id = @maquinaId";
+
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@grupoId", grupoId);
+                    cmd.Parameters.AddWithValue("@maquinaId", maquinaId);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                LogError($"Erro ao remover máquina {maquinaId} do grupo {grupoId}: {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+        }
+
+        // Método para obter todas as máquinas de um grupo específico
+        public List<Maquina> ObterMaquinasDoGrupo(int grupoId)
+        {
+            List<Maquina> maquinas = new List<Maquina>();
+            string query = @"
+            SELECT m.id, m.apelido, m.finura, m.diametro, m.numero_alimentadores
+            FROM maquina m
+            JOIN grupo_maquina gm ON m.id = gm.maquina_id
+            WHERE gm.grupo_id = @grupoId";
+
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@grupoId", grupoId);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Maquina maquina = new Maquina
+                            {
+                                Id = reader.GetInt32("id"),
+                                Apelido = reader.GetString("apelido"),
+                                Finura = reader.GetInt32("finura"),
+                                Diametro = reader.GetInt32("diametro"),
+                                NumeroAlimentadores = reader.GetInt32("numero_alimentadores")
+                            };
+                            maquinas.Add(maquina);
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                LogError($"Erro ao obter máquinas do grupo {grupoId}: {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+
+            return maquinas;
+        }
+
+        // Método para remover todas as maáquinas de um grupo selecionado
+        public void RemoverTodasMaquinasDoGrupo(int grupoId)
+        {
+            string query = "DELETE FROM grupo_maquina WHERE grupo_id = @grupoId";
+
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@grupoId", grupoId);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                LogError($"Erro ao remover todas as máquinas do grupo {grupoId}: {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
             }
         }
     }

@@ -13,6 +13,7 @@ namespace iAxxMES0
         private List<Maquina> maquinasOriginais; // Lista para armazenar todas as máquinas sem filtro
         private List<MaquinaControl> listaMaquinas; // Lista para armazenar os controles de cada máquina
         private System.Windows.Forms.Timer updateTimer; // Timer para atualizações periódicas
+        private bool needsRefresh = false; // Controle para atualização ao retornar do gerenciamento de grupos
 
         // Cache para armazenar os dados anteriores
         private List<Maquina> cacheMaquinas = new List<Maquina>();
@@ -22,6 +23,9 @@ namespace iAxxMES0
             InitializeComponent();
             controleMaquinas = new ControleMaquinas();
             listaMaquinas = new List<MaquinaControl>();
+
+            // Atualizar lista de grupos ao abrir o dashboard
+            AtualizarListaGrupos();
 
             // Definir a opção padrão como "Ordenar por Apelido"
             cbxOrdenacao.SelectedIndex = 0;
@@ -265,7 +269,7 @@ namespace iAxxMES0
             if (!string.IsNullOrEmpty(grupoFiltro) && grupoFiltro != "Todos")
             {
                 maquinasFiltradas = maquinasFiltradas
-                    .Where(m => m.Grupo.Equals(grupoFiltro, StringComparison.OrdinalIgnoreCase))
+                    .Where(m => m.Grupo.Contains(grupoFiltro))
                     .ToList();
             }
 
@@ -286,6 +290,14 @@ namespace iAxxMES0
             ExibirMaquinas(maquinasFiltradas);
         }
 
+        private void AtualizarListaGrupos()
+        {
+            var grupos = controleMaquinas.ObterTodosGrupos();
+            cbxGrupo.Items.Clear();
+            cbxGrupo.Items.Add("Todos");
+            cbxGrupo.Items.AddRange(grupos.Select(g => g.Nome).ToArray());
+        }
+
         private void cadastroDeUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCadUser cadastro = new frmCadUser();
@@ -296,6 +308,13 @@ namespace iAxxMES0
         {
             frmViewUser consultar = new frmViewUser();
             consultar.ShowDialog();
+        }
+
+        private void gerenciarGruposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGerenciarGrupos gerenciarGrupos = new frmGerenciarGrupos(controleMaquinas);
+            gerenciarGrupos.FormClosing += (s, args) => needsRefresh = true;
+            gerenciarGrupos.ShowDialog();
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -330,6 +349,17 @@ namespace iAxxMES0
             {
                 // Chama o método AplicarFiltros
                 AplicarFiltros(null, null);
+            }
+        }
+
+        private void frmDashboard_Activated(object sender, EventArgs e)
+        {
+            if (needsRefresh)
+            {
+                needsRefresh = false; // Resetar o controle para evitar múltiplas atualizações
+                AtualizarListaGrupos();
+                CarregarMaquinas();
+                //AplicarFiltros(null, null);
             }
         }
     }

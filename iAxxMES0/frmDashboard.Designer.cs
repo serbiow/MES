@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             menuStrip1 = new MenuStrip();
             cadastroDeUsuárioToolStripMenuItem = new ToolStripMenuItem();
+            consultarUsuáriosToolStripMenuItem = new ToolStripMenuItem();
+            gerenciarGruposToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             cbxStatusFiltro = new ComboBox();
             panel1 = new Panel();
@@ -61,7 +63,6 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             flowLayoutPanelMaquinas = new FlowLayoutPanel();
             lblStatusBanco = new Label();
-            consultarUsuáriosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -76,7 +77,7 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.FromArgb(197, 202, 208);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroDeUsuárioToolStripMenuItem, consultarUsuáriosToolStripMenuItem, sairToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroDeUsuárioToolStripMenuItem, consultarUsuáriosToolStripMenuItem, gerenciarGruposToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1289, 24);
@@ -91,6 +92,20 @@
             cadastroDeUsuárioToolStripMenuItem.Size = new Size(125, 20);
             cadastroDeUsuárioToolStripMenuItem.Text = "Cadastro de Usuário";
             cadastroDeUsuárioToolStripMenuItem.Click += cadastroDeUsuárioToolStripMenuItem_Click;
+            // 
+            // consultarUsuáriosToolStripMenuItem
+            // 
+            consultarUsuáriosToolStripMenuItem.Name = "consultarUsuáriosToolStripMenuItem";
+            consultarUsuáriosToolStripMenuItem.Size = new Size(118, 20);
+            consultarUsuáriosToolStripMenuItem.Text = "Consultar Usuários";
+            consultarUsuáriosToolStripMenuItem.Click += consultarUsuáriosToolStripMenuItem_Click;
+            // 
+            // gerenciarGruposToolStripMenuItem
+            // 
+            gerenciarGruposToolStripMenuItem.Name = "gerenciarGruposToolStripMenuItem";
+            gerenciarGruposToolStripMenuItem.Size = new Size(110, 20);
+            gerenciarGruposToolStripMenuItem.Text = "Gerenciar Grupos";
+            gerenciarGruposToolStripMenuItem.Click += gerenciarGruposToolStripMenuItem_Click;
             // 
             // sairToolStripMenuItem
             // 
@@ -215,7 +230,7 @@
             // cbxGrupo
             // 
             cbxGrupo.FormattingEnabled = true;
-            cbxGrupo.Items.AddRange(new object[] { "Todos", "Grupo 1", "Grupo 2", "Grupo 3", "Grupo 4", "Grupo 5" });
+            cbxGrupo.Items.AddRange(new object[] { "Todos" });
             cbxGrupo.Location = new Point(3, 92);
             cbxGrupo.Name = "cbxGrupo";
             cbxGrupo.Size = new Size(121, 23);
@@ -422,13 +437,6 @@
             lblStatusBanco.Text = "Status Banco";
             lblStatusBanco.Visible = false;
             // 
-            // consultarUsuáriosToolStripMenuItem
-            // 
-            consultarUsuáriosToolStripMenuItem.Name = "consultarUsuáriosToolStripMenuItem";
-            consultarUsuáriosToolStripMenuItem.Size = new Size(118, 20);
-            consultarUsuáriosToolStripMenuItem.Text = "Consultar Usuários";
-            consultarUsuáriosToolStripMenuItem.Click += consultarUsuáriosToolStripMenuItem_Click;
-            // 
             // frmDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -442,6 +450,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Dashboard";
             WindowState = FormWindowState.Maximized;
+            Activated += frmDashboard_Activated;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
@@ -493,5 +502,6 @@
         private Label lblNumRodando;
         private Panel panel5;
         private ToolStripMenuItem consultarUsuáriosToolStripMenuItem;
+        private ToolStripMenuItem gerenciarGruposToolStripMenuItem;
     }
 }
