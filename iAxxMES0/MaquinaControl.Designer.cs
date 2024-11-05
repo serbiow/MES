@@ -35,12 +35,9 @@
             lblDesc = new Label();
             panel1 = new Panel();
             panel2 = new Panel();
-            panel3 = new Panel();
-            lblGrupo = new Label();
             pnlStatus.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // lblStatus
@@ -93,7 +90,7 @@
             lblDesc.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblDesc.Location = new Point(0, 0);
             lblDesc.Name = "lblDesc";
-            lblDesc.Size = new Size(160, 55);
+            lblDesc.Size = new Size(160, 81);
             lblDesc.TabIndex = 5;
             lblDesc.Text = "Descrição";
             lblDesc.Click += lblDesc_Click;
@@ -109,38 +106,17 @@
             // panel2
             // 
             panel2.Controls.Add(lblDesc);
-            panel2.Location = new Point(0, 105);
+            panel2.Location = new Point(0, 79);
             panel2.Name = "panel2";
-            panel2.Size = new Size(160, 55);
+            panel2.Size = new Size(160, 81);
             panel2.TabIndex = 7;
             panel2.Click += panel2_Click;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(lblGrupo);
-            panel3.Location = new Point(0, 79);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(160, 26);
-            panel3.TabIndex = 7;
-            // 
-            // lblGrupo
-            // 
-            lblGrupo.Dock = DockStyle.Fill;
-            lblGrupo.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblGrupo.Location = new Point(0, 0);
-            lblGrupo.Name = "lblGrupo";
-            lblGrupo.Size = new Size(160, 26);
-            lblGrupo.TabIndex = 2;
-            lblGrupo.Text = "Grupo";
-            lblGrupo.TextAlign = ContentAlignment.MiddleLeft;
-            lblGrupo.Click += lblGrupo_Click;
             // 
             // MaquinaControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(169, 177, 185);
-            Controls.Add(panel3);
             Controls.Add(pnlStatus);
             Controls.Add(panel1);
             Controls.Add(panel2);
@@ -150,7 +126,6 @@
             pnlStatus.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -161,8 +136,6 @@
         private Label lblDesc;
         private Panel panel1;
         private Panel panel2;
-        private Panel panel3;
-        private Label lblGrupo;
         private Label lblTempoStatus;
     }
 }

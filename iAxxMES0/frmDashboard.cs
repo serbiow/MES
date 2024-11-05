@@ -13,7 +13,6 @@ namespace iAxxMES0
         private List<Maquina> maquinasOriginais; // Lista para armazenar todas as máquinas sem filtro
         private List<MaquinaControl> listaMaquinas; // Lista para armazenar os controles de cada máquina
         private System.Windows.Forms.Timer updateTimer; // Timer para atualizações periódicas
-        private bool needsRefresh = false; // Controle para atualização ao retornar do gerenciamento de grupos
 
         // Cache para armazenar os dados anteriores
         private List<Maquina> cacheMaquinas = new List<Maquina>();
@@ -312,9 +311,14 @@ namespace iAxxMES0
 
         private void gerenciarGruposToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmGerenciarGrupos gerenciarGrupos = new frmGerenciarGrupos(controleMaquinas);
-            gerenciarGrupos.FormClosing += (s, args) => needsRefresh = true;
-            gerenciarGrupos.ShowDialog();
+            // Chamar o Gerenciar Grupos e fechar o Dashboard
+            using (frmGerenciarGrupos gerenciarGrupos = new frmGerenciarGrupos(controleMaquinas))
+            {
+                this.Hide();
+                gerenciarGrupos.ShowDialog();
+            }
+
+            this.Close();
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -349,17 +353,6 @@ namespace iAxxMES0
             {
                 // Chama o método AplicarFiltros
                 AplicarFiltros(null, null);
-            }
-        }
-
-        private void frmDashboard_Activated(object sender, EventArgs e)
-        {
-            if (needsRefresh)
-            {
-                needsRefresh = false; // Resetar o controle para evitar múltiplas atualizações
-                AtualizarListaGrupos();
-                CarregarMaquinas();
-                //AplicarFiltros(null, null);
             }
         }
     }

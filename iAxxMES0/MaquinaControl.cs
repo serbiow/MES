@@ -58,7 +58,6 @@ namespace iAxxMES0
 
             lblApelido.Text = apelido.ToUpper();
             lblStatus.Text = status.ToUpper();
-            lblGrupo.Text = grupo;
 
             // Verifica se o status mudou. Se mudou, atualiza o horário de início do novo status.
             if (statusAnterior != status)

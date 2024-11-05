@@ -19,6 +19,9 @@
     <Compile Update="frmMaquina.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmViewUser.cs">
       <SubType>Form</SubType>
     </Compile>

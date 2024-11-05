@@ -109,9 +109,14 @@ namespace iAxxMES0
         {
             if (dgvGrupos.SelectedRows.Count > 0)
             {
-                int grupoId = (int)dgvGrupos.SelectedRows[0].Cells["Id"].Value;
-                controleMaquinas.ExcluirGrupo(grupoId);
-                CarregarGrupos(); // Atualizar lista
+                DialogResult resultado = MessageBox.Show($"Tem certeza que deseja excluir este grupo?", "Deletar Grupo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    int grupoId = (int)dgvGrupos.SelectedRows[0].Cells["Id"].Value;
+                    controleMaquinas.ExcluirGrupo(grupoId);
+                    CarregarGrupos(); // Atualizar lista
+                }
             }
         }
 
@@ -126,8 +131,45 @@ namespace iAxxMES0
             txtGrupo.Clear();
             txtDescGrupo.Clear();
             dgvGrupos.DataSource = null;
+            clbMaquinas.Items.Clear();
 
             txtGrupo.Focus();
+        }
+
+        // TODO: Terminar este método de busca
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtGrupo.Text))
+            {
+                MessageBox.Show("Por favor, digite um valor para buscar.", "Busca", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string valor = txtGrupo.Text.Trim();
+        }
+
+        private void supervisaoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Chamar o Dashboard e fechar o formulário de login
+            using (frmDashboard dashboard = new frmDashboard())
+            {
+                this.Hide();
+                dashboard.ShowDialog();
+            }
+
+            this.Close();
+        }
+
+        private void cadastroDeUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCadUser cadastro = new frmCadUser();
+            cadastro.ShowDialog();
+        }
+
+        private void consultarUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmViewUser consultar = new frmViewUser();
+            consultar.ShowDialog();
         }
     }
 }

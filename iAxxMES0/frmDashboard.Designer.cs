@@ -77,7 +77,7 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.FromArgb(197, 202, 208);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroDeUsuárioToolStripMenuItem, consultarUsuáriosToolStripMenuItem, gerenciarGruposToolStripMenuItem, sairToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { gerenciarGruposToolStripMenuItem, cadastroDeUsuárioToolStripMenuItem, consultarUsuáriosToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1289, 24);
@@ -199,11 +199,11 @@
             // lblOderBy
             // 
             lblOderBy.AutoSize = true;
-            lblOderBy.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblOderBy.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lblOderBy.ForeColor = Color.Black;
             lblOderBy.Location = new Point(9, 306);
             lblOderBy.Name = "lblOderBy";
-            lblOderBy.Size = new Size(93, 20);
+            lblOderBy.Size = new Size(99, 20);
             lblOderBy.TabIndex = 9;
             lblOderBy.Text = "Ordenar por:";
             // 
@@ -219,11 +219,11 @@
             // lblGrupos
             // 
             lblGrupos.AutoSize = true;
-            lblGrupos.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGrupos.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lblGrupos.ForeColor = Color.Black;
             lblGrupos.Location = new Point(6, 69);
             lblGrupos.Name = "lblGrupos";
-            lblGrupos.Size = new Size(53, 20);
+            lblGrupos.Size = new Size(57, 20);
             lblGrupos.TabIndex = 17;
             lblGrupos.Text = "Grupo:";
             // 
@@ -239,8 +239,10 @@
             // btnAplicarFiltro
             // 
             btnAplicarFiltro.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnAplicarFiltro.BackColor = Color.FromArgb(169, 177, 185);
+            btnAplicarFiltro.BackColor = Color.FromArgb(46, 53, 60);
             btnAplicarFiltro.FlatStyle = FlatStyle.Flat;
+            btnAplicarFiltro.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAplicarFiltro.ForeColor = Color.White;
             btnAplicarFiltro.Location = new Point(156, 22);
             btnAplicarFiltro.Name = "btnAplicarFiltro";
             btnAplicarFiltro.Size = new Size(90, 30);
@@ -259,11 +261,11 @@
             // lblStatusFiltro
             // 
             lblStatusFiltro.AutoSize = true;
-            lblStatusFiltro.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblStatusFiltro.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lblStatusFiltro.ForeColor = Color.Black;
             lblStatusFiltro.Location = new Point(9, 4);
             lblStatusFiltro.Name = "lblStatusFiltro";
-            lblStatusFiltro.Size = new Size(52, 20);
+            lblStatusFiltro.Size = new Size(57, 20);
             lblStatusFiltro.TabIndex = 8;
             lblStatusFiltro.Text = "Status:";
             // 
@@ -288,11 +290,11 @@
             // lblFiltroNome
             // 
             lblFiltroNome.AutoSize = true;
-            lblFiltroNome.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblFiltroNome.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lblFiltroNome.ForeColor = Color.Black;
             lblFiltroNome.Location = new Point(6, 130);
             lblFiltroNome.Name = "lblFiltroNome";
-            lblFiltroNome.Size = new Size(70, 20);
+            lblFiltroNome.Size = new Size(74, 20);
             lblFiltroNome.TabIndex = 15;
             lblFiltroNome.Text = "Maquina:";
             // 
@@ -317,11 +319,11 @@
             // lblRpmFiltro
             // 
             lblRpmFiltro.AutoSize = true;
-            lblRpmFiltro.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRpmFiltro.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             lblRpmFiltro.ForeColor = Color.Black;
             lblRpmFiltro.Location = new Point(9, 203);
             lblRpmFiltro.Name = "lblRpmFiltro";
-            lblRpmFiltro.Size = new Size(42, 20);
+            lblRpmFiltro.Size = new Size(46, 20);
             lblRpmFiltro.TabIndex = 5;
             lblRpmFiltro.Text = "RPM:";
             // 
@@ -448,9 +450,8 @@
             MainMenuStrip = menuStrip1;
             Name = "frmDashboard";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Dashboard";
+            Text = "Supervisão";
             WindowState = FormWindowState.Maximized;
-            Activated += frmDashboard_Activated;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);

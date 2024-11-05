@@ -69,7 +69,7 @@ namespace iAxxMES0
             axisX.LabelStyle.Format = "HH:mm"; // Formato mais enxuto para intervalos menores
             axisX.Title = "Tempo";
             axisX.IntervalType = DateTimeIntervalType.Minutes;
-            axisX.Interval = 10;
+            axisX.Interval = 5;
             axisX.MajorGrid.LineDashStyle = ChartDashStyle.Solid;
             axisX.LabelStyle.Angle = -45;
             axisX.LabelStyle.IsEndLabelVisible = true;
