@@ -263,8 +263,8 @@ namespace iAxxMES0
                 }
 
                 // Monta o comando para chamar o script Python
-                string scriptPath = @"C:\caminho\para\seu\script\relatorio.py"; // Ajuste o caminho para o script Python
-                string pythonPath = @"C:\caminho\para\python.exe"; // Ajuste para o executável Python
+                string scriptPath = @"C:\Users\sergi\coisas\iAxx\dist\main.exe"; // Caminho para o script Python
+                string pythonPath = @"C:\Users\sergi\AppData\Local\Programs\Python\Python312\python.exe"; // Caminho para o executável Python
                 string argumentos = $"--tipo_relatorio \"{tipoRelatorio}\" --data_inicio \"{dataInicio}\" --data_fim \"{dataFim}\" --formatos {string.Join(" ", formatos)}";
 
                 if (agrupamento == "Máquina específica" && !string.IsNullOrEmpty(maquinaId))
