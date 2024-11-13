@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             menuStrip1 = new MenuStrip();
+            gerenciarGruposToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeUsuárioToolStripMenuItem = new ToolStripMenuItem();
             consultarUsuáriosToolStripMenuItem = new ToolStripMenuItem();
-            gerenciarGruposToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             cbxStatusFiltro = new ComboBox();
             panel1 = new Panel();
@@ -63,6 +63,7 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             flowLayoutPanelMaquinas = new FlowLayoutPanel();
             lblStatusBanco = new Label();
+            relatórioToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -77,12 +78,19 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.FromArgb(197, 202, 208);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { gerenciarGruposToolStripMenuItem, cadastroDeUsuárioToolStripMenuItem, consultarUsuáriosToolStripMenuItem, sairToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { gerenciarGruposToolStripMenuItem, cadastroDeUsuárioToolStripMenuItem, consultarUsuáriosToolStripMenuItem, relatórioToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1289, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
+            // 
+            // gerenciarGruposToolStripMenuItem
+            // 
+            gerenciarGruposToolStripMenuItem.Name = "gerenciarGruposToolStripMenuItem";
+            gerenciarGruposToolStripMenuItem.Size = new Size(110, 20);
+            gerenciarGruposToolStripMenuItem.Text = "Gerenciar Grupos";
+            gerenciarGruposToolStripMenuItem.Click += gerenciarGruposToolStripMenuItem_Click;
             // 
             // cadastroDeUsuárioToolStripMenuItem
             // 
@@ -99,13 +107,6 @@
             consultarUsuáriosToolStripMenuItem.Size = new Size(118, 20);
             consultarUsuáriosToolStripMenuItem.Text = "Consultar Usuários";
             consultarUsuáriosToolStripMenuItem.Click += consultarUsuáriosToolStripMenuItem_Click;
-            // 
-            // gerenciarGruposToolStripMenuItem
-            // 
-            gerenciarGruposToolStripMenuItem.Name = "gerenciarGruposToolStripMenuItem";
-            gerenciarGruposToolStripMenuItem.Size = new Size(110, 20);
-            gerenciarGruposToolStripMenuItem.Text = "Gerenciar Grupos";
-            gerenciarGruposToolStripMenuItem.Click += gerenciarGruposToolStripMenuItem_Click;
             // 
             // sairToolStripMenuItem
             // 
@@ -439,6 +440,13 @@
             lblStatusBanco.Text = "Status Banco";
             lblStatusBanco.Visible = false;
             // 
+            // relatórioToolStripMenuItem
+            // 
+            relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
+            relatórioToolStripMenuItem.Size = new Size(66, 20);
+            relatórioToolStripMenuItem.Text = "Relatório";
+            relatórioToolStripMenuItem.Click += relatórioToolStripMenuItem_Click;
+            // 
             // frmDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -504,5 +512,6 @@
         private Panel panel5;
         private ToolStripMenuItem consultarUsuáriosToolStripMenuItem;
         private ToolStripMenuItem gerenciarGruposToolStripMenuItem;
+        private ToolStripMenuItem relatórioToolStripMenuItem;
     }
 }

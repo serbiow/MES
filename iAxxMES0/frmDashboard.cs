@@ -321,6 +321,12 @@ namespace iAxxMES0
             this.Close();
         }
 
+        private void relatórioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRelatorio relatorio = new frmRelatorio();
+            relatorio.ShowDialog();
+        }
+
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

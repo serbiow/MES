@@ -171,5 +171,11 @@ namespace iAxxMES0
             frmViewUser consultar = new frmViewUser();
             consultar.ShowDialog();
         }
+
+        private void relatórioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRelatorio relatorio = new frmRelatorio();
+            relatorio.ShowDialog();
+        }
     }
 }

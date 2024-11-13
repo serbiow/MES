@@ -51,6 +51,7 @@
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
+            relatórioToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvGrupos).BeginInit();
             menuStrip1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -184,9 +185,9 @@
             // 
             clbMaquinas.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             clbMaquinas.FormattingEnabled = true;
-            clbMaquinas.Location = new Point(71, 41);
+            clbMaquinas.Location = new Point(71, 37);
             clbMaquinas.Name = "clbMaquinas";
-            clbMaquinas.Size = new Size(376, 202);
+            clbMaquinas.Size = new Size(376, 310);
             clbMaquinas.TabIndex = 10;
             // 
             // btnEditar
@@ -210,7 +211,7 @@
             btnSalvar.FlatStyle = FlatStyle.Flat;
             btnSalvar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSalvar.ForeColor = Color.White;
-            btnSalvar.Location = new Point(342, 249);
+            btnSalvar.Location = new Point(342, 353);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(105, 32);
             btnSalvar.TabIndex = 11;
@@ -221,7 +222,7 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.FromArgb(197, 202, 208);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { supervisaoToolStripMenuItem, cadastroDeUsuárioToolStripMenuItem, consultarUsuáriosToolStripMenuItem, sairToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { supervisaoToolStripMenuItem, cadastroDeUsuárioToolStripMenuItem, consultarUsuáriosToolStripMenuItem, relatórioToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(924, 24);
@@ -325,6 +326,13 @@
             panel3.Size = new Size(918, 277);
             panel3.TabIndex = 1;
             // 
+            // relatórioToolStripMenuItem
+            // 
+            relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
+            relatórioToolStripMenuItem.Size = new Size(66, 20);
+            relatórioToolStripMenuItem.Text = "Relatório";
+            relatórioToolStripMenuItem.Click += relatórioToolStripMenuItem_Click;
+            // 
             // frmGerenciarGrupos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -379,5 +387,6 @@
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
+        private ToolStripMenuItem relatórioToolStripMenuItem;
     }
 }
