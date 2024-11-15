@@ -56,6 +56,7 @@ namespace iAxxMES0
             cbxTipoRelatorio.Name = "cbxTipoRelatorio";
             cbxTipoRelatorio.Size = new Size(121, 23);
             cbxTipoRelatorio.TabIndex = 1;
+            cbxTipoRelatorio.SelectedIndexChanged += cbxTipoRelatorio_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -74,6 +75,7 @@ namespace iAxxMES0
             cbxAgrupamento.Name = "cbxAgrupamento";
             cbxAgrupamento.Size = new Size(121, 23);
             cbxAgrupamento.TabIndex = 3;
+            cbxAgrupamento.SelectedIndexChanged += cbxAgrupamento_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -91,6 +93,7 @@ namespace iAxxMES0
             txtApelidoMaquina.Name = "txtApelidoMaquina";
             txtApelidoMaquina.Size = new Size(121, 23);
             txtApelidoMaquina.TabIndex = 5;
+            txtApelidoMaquina.Visible = false;
             // 
             // dtpDataInicial
             // 
@@ -187,7 +190,7 @@ namespace iAxxMES0
             // 
             // btnGerarRelatorio
             // 
-            btnGerarRelatorio.Location = new Point(170, 172);
+            btnGerarRelatorio.Location = new Point(155, 172);
             btnGerarRelatorio.Name = "btnGerarRelatorio";
             btnGerarRelatorio.Size = new Size(150, 268);
             btnGerarRelatorio.TabIndex = 18;
@@ -239,12 +242,25 @@ namespace iAxxMES0
         private ComboBox cbxAgrupamento;
 
 
-        private void btnGerarRelatorio_Click(object sender, EventArgs e)
+        private async void btnGerarRelatorio_Click(object sender, EventArgs e)
         {
             try
             {
                 // Obtém os valores dos campos do formulário
-                string tipoRelatorio = cbxTipoRelatorio.SelectedItem?.ToString();
+                string tipoRelatorio = cbxTipoRelatorio.SelectedIndex.ToString();
+                switch (tipoRelatorio)
+                {
+                    case "0":
+                        tipoRelatorio = "RPM";
+                        break;
+                    case "1":
+                        tipoRelatorio = "Status";
+                        break;
+                    case "2":
+                        tipoRelatorio = "Eficiência";
+                        break;
+                }
+
                 string agrupamento = cbxAgrupamento.SelectedItem?.ToString();
                 string maquinaId = txtApelidoMaquina.Text;
                 string dataInicio = dtpDataInicial.Value.ToString("yyyy-MM-dd") + " " + dtpTimeInicial.Value.ToString("HH:mm:ss");
@@ -263,8 +279,7 @@ namespace iAxxMES0
                 }
 
                 // Monta o comando para chamar o script Python
-                string scriptPath = @"C:\Users\sergi\coisas\iAxx\dist\main.exe"; // Caminho para o script Python
-                string pythonPath = @"C:\Users\sergi\AppData\Local\Programs\Python\Python312\python.exe"; // Caminho para o executável Python
+                string scriptPath = @"C:\Users\sergi\Documents\GitHub\iAxxMES_Relatorios\dist\main.exe"; // Caminho para o script Python
                 string argumentos = $"--tipo_relatorio \"{tipoRelatorio}\" --data_inicio \"{dataInicio}\" --data_fim \"{dataFim}\" --formatos {string.Join(" ", formatos)}";
 
                 if (agrupamento == "Máquina específica" && !string.IsNullOrEmpty(maquinaId))
@@ -275,36 +290,86 @@ namespace iAxxMES0
                 // Configura o processo para executar o script Python
                 ProcessStartInfo start = new ProcessStartInfo
                 {
-                    FileName = pythonPath,
-                    Arguments = $"\"{scriptPath}\" {argumentos}",
+                    FileName = scriptPath,
+                    Arguments = argumentos,
                     UseShellExecute = false,
                     RedirectStandardOutput = true,
                     RedirectStandardError = true,
                     CreateNoWindow = true
                 };
 
-                using (Process process = Process.Start(start))
+                using (Process process = new Process { StartInfo = start, EnableRaisingEvents = true })
                 {
-                    using (StreamReader reader = process.StandardOutput)
+                    process.OutputDataReceived += (sender, args) =>
                     {
-                        string output = reader.ReadToEnd();
-                        MessageBox.Show("Relatório gerado com sucesso:\n" + output);
-                    }
-
-                    using (StreamReader errorReader = process.StandardError)
-                    {
-                        string error = errorReader.ReadToEnd();
-                        if (!string.IsNullOrEmpty(error))
+                        if (!string.IsNullOrEmpty(args.Data))
                         {
-                            MessageBox.Show("Erro ao gerar o relatório:\n" + error);
+                            Invoke(new Action(() =>
+                            {
+                                // Pode mostrar no console ou em um controle TextBox se desejar
+                                Console.WriteLine(args.Data);
+                            }));
                         }
-                    }
+                    };
+
+                    process.ErrorDataReceived += (sender, args) =>
+                    {
+                        if (!string.IsNullOrEmpty(args.Data))
+                        {
+                            Invoke(new Action(() =>
+                            {
+                                MessageBox.Show("Erro ao gerar o relatório:\n" + args.Data);
+                            }));
+                        }
+                    };
+
+                    process.Start();
+                    process.BeginOutputReadLine();
+                    process.BeginErrorReadLine();
+
+                    await process.WaitForExitAsync(); // Aguarda o término do processo
                 }
+
+                MessageBox.Show("Relatório gerado com sucesso.");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao gerar o relatório: " + ex.Message);
             }
+        }
+
+        private void ConfigurarCampos()
+        {
+            if (cbxAgrupamento.SelectedIndex == 1)
+            {
+                label3.Visible = true;
+                txtApelidoMaquina.Visible = true;
+            }
+            else
+            {
+                label3.Visible = false;
+                txtApelidoMaquina.Visible = false;
+            }
+
+            if (cbxTipoRelatorio.SelectedIndex == 2 || cbxAgrupamento.SelectedIndex == 0)
+            {
+                chbPDF.Enabled = false;
+                chbPDF.Checked = false;
+            }
+            else
+            {
+                chbPDF.Enabled = true;
+            }
+        }
+
+        private void cbxAgrupamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ConfigurarCampos();
+        }
+
+        private void cbxTipoRelatorio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ConfigurarCampos();
         }
     }
 }
