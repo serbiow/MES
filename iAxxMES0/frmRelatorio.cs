@@ -239,7 +239,10 @@ namespace iAxxMES0
             Controls.Add(label2);
             Controls.Add(cbxTipoRelatorio);
             Controls.Add(label1);
+            MaximumSize = new Size(348, 489);
+            MinimumSize = new Size(348, 489);
             Name = "frmRelatorio";
+            StartPosition = FormStartPosition.CenterScreen;
             ResumeLayout(false);
             PerformLayout();
         }
