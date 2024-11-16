@@ -172,3 +172,7 @@
 04/11/2024 21:24:35: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
 04/11/2024 21:24:36: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
 04/11/2024 21:24:37: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+15/11/2024 20:44:18: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+15/11/2024 21:05:42: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+15/11/2024 21:30:55: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+15/11/2024 21:31:24: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.

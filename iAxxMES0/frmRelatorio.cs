@@ -42,9 +42,11 @@ namespace iAxxMES0
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(10, 3);
             label1.Name = "label1";
-            label1.Size = new Size(96, 15);
+            label1.Size = new Size(141, 21);
             label1.TabIndex = 0;
             label1.Text = "Tipo de Relatório";
             // 
@@ -54,16 +56,18 @@ namespace iAxxMES0
             cbxTipoRelatorio.Items.AddRange(new object[] { "Relatório de RPM", "Relatório de Status", "Relatório de Eficiência" });
             cbxTipoRelatorio.Location = new Point(12, 27);
             cbxTipoRelatorio.Name = "cbxTipoRelatorio";
-            cbxTipoRelatorio.Size = new Size(121, 23);
+            cbxTipoRelatorio.Size = new Size(139, 23);
             cbxTipoRelatorio.TabIndex = 1;
             cbxTipoRelatorio.SelectedIndexChanged += cbxTipoRelatorio_SelectedIndexChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 83);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(10, 79);
             label2.Name = "label2";
-            label2.Size = new Size(81, 15);
+            label2.Size = new Size(116, 21);
             label2.TabIndex = 2;
             label2.Text = "Agrupamento";
             // 
@@ -73,23 +77,25 @@ namespace iAxxMES0
             cbxAgrupamento.Items.AddRange(new object[] { "Todas as Máquinas", "Máquina específica" });
             cbxAgrupamento.Location = new Point(12, 101);
             cbxAgrupamento.Name = "cbxAgrupamento";
-            cbxAgrupamento.Size = new Size(121, 23);
+            cbxAgrupamento.Size = new Size(139, 23);
             cbxAgrupamento.TabIndex = 3;
             cbxAgrupamento.SelectedIndexChanged += cbxAgrupamento_SelectedIndexChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(155, 83);
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(199, 79);
             label3.Name = "label3";
-            label3.Size = new Size(54, 15);
+            label3.Size = new Size(78, 21);
             label3.TabIndex = 4;
             label3.Text = "Maquina";
             label3.Visible = false;
             // 
             // txtApelidoMaquina
             // 
-            txtApelidoMaquina.Location = new Point(155, 101);
+            txtApelidoMaquina.Location = new Point(199, 101);
             txtApelidoMaquina.Name = "txtApelidoMaquina";
             txtApelidoMaquina.Size = new Size(121, 23);
             txtApelidoMaquina.TabIndex = 5;
@@ -107,9 +113,11 @@ namespace iAxxMES0
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 154);
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(10, 148);
             label4.Name = "label4";
-            label4.Size = new Size(103, 15);
+            label4.Size = new Size(151, 21);
             label4.TabIndex = 7;
             label4.Text = "Data e Hora Inicial";
             // 
@@ -125,9 +133,11 @@ namespace iAxxMES0
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(12, 255);
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(10, 249);
             label5.Name = "label5";
-            label5.Size = new Size(97, 15);
+            label5.Size = new Size(141, 21);
             label5.TabIndex = 9;
             label5.Text = "Data e Hora Final";
             // 
@@ -152,9 +162,11 @@ namespace iAxxMES0
             // chbWord
             // 
             chbWord.AutoSize = true;
+            chbWord.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            chbWord.ForeColor = Color.White;
             chbWord.Location = new Point(12, 371);
             chbWord.Name = "chbWord";
-            chbWord.Size = new Size(55, 19);
+            chbWord.Size = new Size(71, 25);
             chbWord.TabIndex = 14;
             chbWord.Text = "Word";
             chbWord.UseVisualStyleBackColor = true;
@@ -162,9 +174,11 @@ namespace iAxxMES0
             // chbExcel
             // 
             chbExcel.AutoSize = true;
+            chbExcel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            chbExcel.ForeColor = Color.White;
             chbExcel.Location = new Point(12, 396);
             chbExcel.Name = "chbExcel";
-            chbExcel.Size = new Size(53, 19);
+            chbExcel.Size = new Size(69, 25);
             chbExcel.TabIndex = 15;
             chbExcel.Text = "Excel";
             chbExcel.UseVisualStyleBackColor = true;
@@ -172,9 +186,11 @@ namespace iAxxMES0
             // chbPDF
             // 
             chbPDF.AutoSize = true;
+            chbPDF.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            chbPDF.ForeColor = Color.White;
             chbPDF.Location = new Point(12, 421);
             chbPDF.Name = "chbPDF";
-            chbPDF.Size = new Size(47, 19);
+            chbPDF.Size = new Size(59, 25);
             chbPDF.TabIndex = 16;
             chbPDF.Text = "PDF";
             chbPDF.UseVisualStyleBackColor = true;
@@ -182,25 +198,30 @@ namespace iAxxMES0
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(12, 353);
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(10, 347);
             label6.Name = "label6";
-            label6.Size = new Size(57, 15);
+            label6.Size = new Size(81, 21);
             label6.TabIndex = 17;
             label6.Text = "Formatos";
             // 
             // btnGerarRelatorio
             // 
-            btnGerarRelatorio.Location = new Point(155, 172);
+            btnGerarRelatorio.BackColor = Color.FromArgb(46, 53, 60);
+            btnGerarRelatorio.ForeColor = Color.White;
+            btnGerarRelatorio.Location = new Point(170, 388);
             btnGerarRelatorio.Name = "btnGerarRelatorio";
-            btnGerarRelatorio.Size = new Size(150, 268);
+            btnGerarRelatorio.Size = new Size(150, 52);
             btnGerarRelatorio.TabIndex = 18;
-            btnGerarRelatorio.Text = "button1";
-            btnGerarRelatorio.UseVisualStyleBackColor = true;
+            btnGerarRelatorio.Text = "Gerar Relatório";
+            btnGerarRelatorio.UseVisualStyleBackColor = false;
             btnGerarRelatorio.Click += btnGerarRelatorio_Click;
             // 
             // frmRelatorio
             // 
-            ClientSize = new Size(332, 570);
+            BackColor = Color.FromArgb(89, 105, 120);
+            ClientSize = new Size(332, 450);
             Controls.Add(btnGerarRelatorio);
             Controls.Add(label6);
             Controls.Add(chbPDF);
@@ -279,7 +300,7 @@ namespace iAxxMES0
                 }
 
                 // Monta o comando para chamar o script Python
-                string scriptPath = @"C:\Users\sergi\Documents\GitHub\iAxxMES_Relatorios\dist\main.exe"; // Caminho para o script Python
+                string scriptPath = @"C:\Users\theux viado\Documents\GitHub\iAxxMES_Relatorios\dist\main.exe"; // Caminho para o script Python
                 string argumentos = $"--tipo_relatorio \"{tipoRelatorio}\" --data_inicio \"{dataInicio}\" --data_fim \"{dataFim}\" --formatos {string.Join(" ", formatos)}";
 
                 if (agrupamento == "Máquina específica" && !string.IsNullOrEmpty(maquinaId))

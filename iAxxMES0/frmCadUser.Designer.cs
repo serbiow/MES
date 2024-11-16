@@ -105,11 +105,11 @@
             // 
             btnCadastrar.BackColor = Color.FromArgb(46, 53, 60);
             btnCadastrar.FlatStyle = FlatStyle.Flat;
-            btnCadastrar.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCadastrar.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = Color.White;
             btnCadastrar.Location = new Point(51, 436);
             btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(77, 32);
+            btnCadastrar.Size = new Size(88, 32);
             btnCadastrar.TabIndex = 9;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = false;
@@ -211,7 +211,7 @@
             // 
             btnLimpar.BackColor = Color.FromArgb(46, 53, 60);
             btnLimpar.FlatStyle = FlatStyle.Flat;
-            btnLimpar.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLimpar.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLimpar.ForeColor = Color.White;
             btnLimpar.Location = new Point(238, 436);
             btnLimpar.Name = "btnLimpar";
@@ -225,7 +225,7 @@
             // 
             btnAlterar.BackColor = Color.FromArgb(46, 53, 60);
             btnAlterar.FlatStyle = FlatStyle.Flat;
-            btnAlterar.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAlterar.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAlterar.ForeColor = Color.White;
             btnAlterar.Location = new Point(145, 436);
             btnAlterar.Name = "btnAlterar";
@@ -239,7 +239,7 @@
             // 
             btnExcluir.BackColor = Color.FromArgb(46, 53, 60);
             btnExcluir.FlatStyle = FlatStyle.Flat;
-            btnExcluir.Font = new Font("Arial Narrow", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExcluir.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnExcluir.ForeColor = Color.White;
             btnExcluir.Location = new Point(330, 436);
             btnExcluir.Name = "btnExcluir";
