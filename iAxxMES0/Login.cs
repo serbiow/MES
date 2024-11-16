@@ -1,25 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace iAxxMES0
 {
-    public partial class Login : Form
+    internal class Login
     {
-        public Login()
+        public int Id { get; set; }
+        public int UsuarioId { get; set; }
+        public string LoginNome { get; set; }
+        public string Senha { get; set; }
+
+        // Construtor
+        public Login(int id, int usuarioId, string loginNome, string senha)
         {
-            InitializeComponent();
+            Id = id;
+            UsuarioId = usuarioId;
+            LoginNome = loginNome;
+            Senha = senha;
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        // Construtor vazio
+        public Login() { }
     }
 }
