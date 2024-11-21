@@ -107,7 +107,7 @@
             btnCadastrar.FlatStyle = FlatStyle.Flat;
             btnCadastrar.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = Color.White;
-            btnCadastrar.Location = new Point(51, 436);
+            btnCadastrar.Location = new Point(65, 437);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(88, 32);
             btnCadastrar.TabIndex = 9;
@@ -204,7 +204,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(487, 528);
+            panel1.Size = new Size(484, 526);
             panel1.TabIndex = 16;
             // 
             // btnLimpar
@@ -213,7 +213,7 @@
             btnLimpar.FlatStyle = FlatStyle.Flat;
             btnLimpar.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLimpar.ForeColor = Color.White;
-            btnLimpar.Location = new Point(238, 436);
+            btnLimpar.Location = new Point(242, 437);
             btnLimpar.Name = "btnLimpar";
             btnLimpar.Size = new Size(77, 32);
             btnLimpar.TabIndex = 11;
@@ -227,7 +227,7 @@
             btnAlterar.FlatStyle = FlatStyle.Flat;
             btnAlterar.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAlterar.ForeColor = Color.White;
-            btnAlterar.Location = new Point(145, 436);
+            btnAlterar.Location = new Point(159, 437);
             btnAlterar.Name = "btnAlterar";
             btnAlterar.Size = new Size(77, 32);
             btnAlterar.TabIndex = 10;
@@ -241,7 +241,7 @@
             btnExcluir.FlatStyle = FlatStyle.Flat;
             btnExcluir.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnExcluir.ForeColor = Color.White;
-            btnExcluir.Location = new Point(330, 436);
+            btnExcluir.Location = new Point(325, 437);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(77, 32);
             btnExcluir.TabIndex = 12;
@@ -287,9 +287,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
-            ClientSize = new Size(487, 528);
+            ClientSize = new Size(484, 526);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximumSize = new Size(500, 565);
+            MinimumSize = new Size(500, 565);
             Name = "frmCadUser";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Usuário";

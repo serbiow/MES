@@ -45,13 +45,13 @@
             supervisaoToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeUsuárioToolStripMenuItem = new ToolStripMenuItem();
             consultarUsuáriosToolStripMenuItem = new ToolStripMenuItem();
+            relatórioToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
-            relatórioToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvGrupos).BeginInit();
             menuStrip1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -185,9 +185,9 @@
             // 
             clbMaquinas.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             clbMaquinas.FormattingEnabled = true;
-            clbMaquinas.Location = new Point(71, 37);
+            clbMaquinas.Location = new Point(3, 37);
             clbMaquinas.Name = "clbMaquinas";
-            clbMaquinas.Size = new Size(376, 310);
+            clbMaquinas.Size = new Size(444, 418);
             clbMaquinas.TabIndex = 10;
             // 
             // btnEditar
@@ -211,7 +211,7 @@
             btnSalvar.FlatStyle = FlatStyle.Flat;
             btnSalvar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSalvar.ForeColor = Color.White;
-            btnSalvar.Location = new Point(342, 353);
+            btnSalvar.Location = new Point(342, 466);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(105, 32);
             btnSalvar.TabIndex = 11;
@@ -251,6 +251,13 @@
             consultarUsuáriosToolStripMenuItem.Size = new Size(118, 20);
             consultarUsuáriosToolStripMenuItem.Text = "Consultar Usuários";
             consultarUsuáriosToolStripMenuItem.Click += consultarUsuáriosToolStripMenuItem_Click;
+            // 
+            // relatórioToolStripMenuItem
+            // 
+            relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
+            relatórioToolStripMenuItem.Size = new Size(66, 20);
+            relatórioToolStripMenuItem.Text = "Relatório";
+            relatórioToolStripMenuItem.Click += relatórioToolStripMenuItem_Click;
             // 
             // sairToolStripMenuItem
             // 
@@ -325,13 +332,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(918, 277);
             panel3.TabIndex = 1;
-            // 
-            // relatórioToolStripMenuItem
-            // 
-            relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
-            relatórioToolStripMenuItem.Size = new Size(66, 20);
-            relatórioToolStripMenuItem.Text = "Relatório";
-            relatórioToolStripMenuItem.Click += relatórioToolStripMenuItem_Click;
             // 
             // frmGerenciarGrupos
             // 

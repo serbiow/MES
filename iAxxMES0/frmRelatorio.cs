@@ -243,6 +243,7 @@ namespace iAxxMES0
             MinimumSize = new Size(348, 489);
             Name = "frmRelatorio";
             StartPosition = FormStartPosition.CenterScreen;
+            Text = "Relatórios";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -303,7 +304,7 @@ namespace iAxxMES0
                 }
 
                 // Monta o comando para chamar o script Python
-                string scriptPath = @"C:\Users\theux viado\Documents\GitHub\iAxxMES_Relatorios\dist\main.exe"; // Caminho para o script Python
+                string scriptPath = @"C:\Users\sergi\Documents\GitHub\iAxxMES_Relatorios\dist\main.exe"; // Caminho para o script Python
                 string argumentos = $"--tipo_relatorio \"{tipoRelatorio}\" --data_inicio \"{dataInicio}\" --data_fim \"{dataFim}\" --formatos {string.Join(" ", formatos)}";
 
                 if (agrupamento == "Máquina específica" && !string.IsNullOrEmpty(maquinaId))

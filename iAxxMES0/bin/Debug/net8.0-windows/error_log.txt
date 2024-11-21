@@ -176,3 +176,278 @@
 15/11/2024 21:05:42: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
 15/11/2024 21:30:55: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
 15/11/2024 21:31:24: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+18/11/2024 21:17:21: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/11/2024 21:17:23: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/11/2024 21:17:25: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/11/2024 21:17:27: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/11/2024 21:17:29: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/11/2024 21:17:31: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/11/2024 21:17:33: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/11/2024 21:17:36: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/11/2024 21:17:38: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/11/2024 21:17:40: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/11/2024 21:17:42: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/11/2024 21:17:44: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/11/2024 21:17:46: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/11/2024 21:17:48: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/11/2024 21:17:50: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+18/11/2024 21:17:52: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:43:27: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:28: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:28: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:43:30: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:31: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:31: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:43:33: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:34: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:34: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:43:37: Erro ao obter todos os grupos: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:43:37: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:37: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:38: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:38: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:39: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:39: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:43:40: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:41: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:41: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:42: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:42: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:43:43: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:44: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:44: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:45: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:45: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:43:47: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:47: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:47: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:47: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:48: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:48: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:48: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:43:49: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:49: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:50: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:50: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:51: Erro ao testar a conexão com o banco: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:43:51: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:43:51: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:37: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:38: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:38: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:44:40: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:41: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:41: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:44:43: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:44: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:44: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:44:46: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:47: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:47: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:44:48: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:48: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:49: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:49: Erro ao testar a conexão com o banco: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:44:50: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:51: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:51: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:52: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:52: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:44:53: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:54: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:54: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:55: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:55: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:44:56: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:57: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:57: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:58: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:58: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:58: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:44:59: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:59: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:44:59: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:00: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:00: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:00: Erro ao testar a conexão com o banco: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:45:01: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:01: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:02: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:02: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:03: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:03: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:03: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:45:04: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:04: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:05: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:05: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:06: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:06: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:06: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:45:07: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:07: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:08: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:08: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:09: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:09: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:09: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:45:10: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:10: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:10: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:10: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:11: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:11: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:11: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:11: Erro ao testar a conexão com o banco: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:45:12: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:12: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:13: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:13: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:13: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:14: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:14: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:14: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:45:15: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:15: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:16: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:16: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:16: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:16: Erro ao testar a conexão com o banco: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:45:17: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:17: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:18: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:18: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:18: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:19: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:19: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:19: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:45:20: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:20: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:20: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:20: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:21: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:21: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:21: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:21: Erro ao testar a conexão com o banco: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:45:21: Erro ao testar a conexão com o banco: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:45:22: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:22: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:23: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:23: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:23: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:23: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:23: Erro ao testar a conexão com o banco: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:45:24: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:24: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:25: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:25: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:25: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:26: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:26: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:26: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+19/11/2024 20:45:26: Erro ao obter dados atualizados: Unable to connect to any of the specified MySQL hosts.
+19/11/2024 20:45:26: Erro ao atualizar dados das máquinas: Connection must be valid and open.
+21/11/2024 19:02:55: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:00: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:04: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:14: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:17: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:19: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:20: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:21: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:23: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:24: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:25: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:26: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:27: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:28: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:29: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:30: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:31: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:32: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:33: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:34: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:35: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:36: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:37: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:38: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:39: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:40: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:41: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:42: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:43: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:44: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:45: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:46: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:47: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:48: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:49: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:50: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:51: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:52: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:53: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:54: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:55: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:56: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:57: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:58: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:03:59: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:00: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:02: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:03: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:04: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:05: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:06: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:07: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:08: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:09: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:10: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:11: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:13: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:13: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:13: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:14: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:14: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:15: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:15: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:16: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:16: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:17: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:17: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:18: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:18: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:19: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:19: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:20: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:20: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:21: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:21: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:22: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:22: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:23: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:23: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:24: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:24: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:25: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:25: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:26: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:26: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:27: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:27: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:28: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:28: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:29: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:29: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:30: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:30: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:31: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:31: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:32: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:32: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:33: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:33: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:34: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:34: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:35: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+21/11/2024 19:04:35: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.

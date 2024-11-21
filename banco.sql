@@ -7,6 +7,9 @@ use iAxxMES;
 grant all privileges on iaxxmes.* to 'user'@'%' with grant option;
 flush privileges;
 
+GRANT ALL PRIVILEGES ON iAxxMES.* TO 'root'@'localhost';
+FLUSH PRIVILEGES;
+
 /*CREATE TABLES*/
 
 CREATE TABLE usuario (
