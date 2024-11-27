@@ -267,6 +267,43 @@ namespace iAxxMES0
             return maquinasAtualizadas;
         }
 
+        public void EditarMaquina(int maquinaId, int finura, int numeroAlimentadores, int diametro, string apelido)
+        {
+            string query = @"
+            UPDATE maquina 
+            SET finura = @finura, 
+                numero_alimentadores = @numeroAlimentadores, 
+                diametro = @diametro, 
+                apelido = @apelido 
+            WHERE id = @maquinaId";
+
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@maquinaId", maquinaId);
+                    cmd.Parameters.AddWithValue("@finura", finura);
+                    cmd.Parameters.AddWithValue("@numeroAlimentadores", numeroAlimentadores);
+                    cmd.Parameters.AddWithValue("@diametro", diametro);
+                    cmd.Parameters.AddWithValue("@apelido", apelido);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                LogError($"Erro ao editar máquina com ID {maquinaId}: {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+        }
+
         public List<Tuple<DateTime, int>> ObterHistoricoRPMMaquina(int maquinaId)
         {
             List<Tuple<DateTime, int>> dadosHistorico = new List<Tuple<DateTime, int>>();

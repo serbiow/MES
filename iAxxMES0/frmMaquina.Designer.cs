@@ -34,14 +34,16 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             lblApelido = new Label();
             lblAlimentadoresTitle = new Label();
-            lblAlimentadores = new Label();
             lblDiametroTitle = new Label();
-            lblDiametro = new Label();
             lblFinuraTitle = new Label();
-            lblFinura = new Label();
             lblGrupo = new Label();
             pictureBox1 = new PictureBox();
             chartStatus = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            txtApelido = new TextBox();
+            txtAlimentadores = new TextBox();
+            txtDiametro = new TextBox();
+            txtFinura = new TextBox();
+            btnEditar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chartStatus).BeginInit();
             SuspendLayout();
@@ -51,68 +53,41 @@
             lblApelido.AutoSize = true;
             lblApelido.Location = new Point(12, 184);
             lblApelido.Name = "lblApelido";
-            lblApelido.Size = new Size(48, 15);
+            lblApelido.Size = new Size(54, 15);
             lblApelido.TabIndex = 0;
-            lblApelido.Text = "Apelido";
+            lblApelido.Text = "Maquina";
             // 
             // lblAlimentadoresTitle
             // 
             lblAlimentadoresTitle.AutoSize = true;
-            lblAlimentadoresTitle.Location = new Point(12, 242);
+            lblAlimentadoresTitle.Location = new Point(12, 308);
             lblAlimentadoresTitle.Name = "lblAlimentadoresTitle";
-            lblAlimentadoresTitle.Size = new Size(87, 15);
+            lblAlimentadoresTitle.Size = new Size(84, 15);
             lblAlimentadoresTitle.TabIndex = 1;
-            lblAlimentadoresTitle.Text = "Alimentadores:";
-            // 
-            // lblAlimentadores
-            // 
-            lblAlimentadores.AutoSize = true;
-            lblAlimentadores.Location = new Point(105, 242);
-            lblAlimentadores.Name = "lblAlimentadores";
-            lblAlimentadores.Size = new Size(13, 15);
-            lblAlimentadores.TabIndex = 2;
-            lblAlimentadores.Text = "0";
+            lblAlimentadoresTitle.Text = "Alimentadores";
             // 
             // lblDiametroTitle
             // 
             lblDiametroTitle.AutoSize = true;
-            lblDiametroTitle.Location = new Point(12, 267);
+            lblDiametroTitle.Location = new Point(12, 367);
             lblDiametroTitle.Name = "lblDiametroTitle";
-            lblDiametroTitle.Size = new Size(59, 15);
+            lblDiametroTitle.Size = new Size(56, 15);
             lblDiametroTitle.TabIndex = 3;
-            lblDiametroTitle.Text = "Diâmetro:";
-            // 
-            // lblDiametro
-            // 
-            lblDiametro.AutoSize = true;
-            lblDiametro.Location = new Point(105, 267);
-            lblDiametro.Name = "lblDiametro";
-            lblDiametro.Size = new Size(13, 15);
-            lblDiametro.TabIndex = 4;
-            lblDiametro.Text = "0";
+            lblDiametroTitle.Text = "Diâmetro";
             // 
             // lblFinuraTitle
             // 
             lblFinuraTitle.AutoSize = true;
-            lblFinuraTitle.Location = new Point(12, 291);
+            lblFinuraTitle.Location = new Point(12, 426);
             lblFinuraTitle.Name = "lblFinuraTitle";
-            lblFinuraTitle.Size = new Size(43, 15);
+            lblFinuraTitle.Size = new Size(40, 15);
             lblFinuraTitle.TabIndex = 5;
-            lblFinuraTitle.Text = "Finura:";
-            // 
-            // lblFinura
-            // 
-            lblFinura.AutoSize = true;
-            lblFinura.Location = new Point(105, 291);
-            lblFinura.Name = "lblFinura";
-            lblFinura.Size = new Size(13, 15);
-            lblFinura.TabIndex = 6;
-            lblFinura.Text = "0";
+            lblFinuraTitle.Text = "Finura";
             // 
             // lblGrupo
             // 
             lblGrupo.AutoSize = true;
-            lblGrupo.Location = new Point(12, 207);
+            lblGrupo.Location = new Point(12, 258);
             lblGrupo.Name = "lblGrupo";
             lblGrupo.Size = new Size(49, 15);
             lblGrupo.TabIndex = 7;
@@ -145,19 +120,59 @@
             chartStatus.TabIndex = 15;
             chartStatus.Text = "chart1";
             // 
+            // txtApelido
+            // 
+            txtApelido.Location = new Point(12, 206);
+            txtApelido.Name = "txtApelido";
+            txtApelido.Size = new Size(138, 23);
+            txtApelido.TabIndex = 16;
+            // 
+            // txtAlimentadores
+            // 
+            txtAlimentadores.Location = new Point(12, 326);
+            txtAlimentadores.Name = "txtAlimentadores";
+            txtAlimentadores.Size = new Size(84, 23);
+            txtAlimentadores.TabIndex = 17;
+            // 
+            // txtDiametro
+            // 
+            txtDiametro.Location = new Point(12, 385);
+            txtDiametro.Name = "txtDiametro";
+            txtDiametro.Size = new Size(84, 23);
+            txtDiametro.TabIndex = 18;
+            // 
+            // txtFinura
+            // 
+            txtFinura.Location = new Point(12, 444);
+            txtFinura.Name = "txtFinura";
+            txtFinura.Size = new Size(84, 23);
+            txtFinura.TabIndex = 19;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Location = new Point(50, 523);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(109, 23);
+            btnEditar.TabIndex = 20;
+            btnEditar.Text = "Salvar Alterações";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
+            // 
             // frmMaquina
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(898, 604);
+            Controls.Add(btnEditar);
+            Controls.Add(txtFinura);
+            Controls.Add(txtDiametro);
+            Controls.Add(txtAlimentadores);
+            Controls.Add(txtApelido);
             Controls.Add(chartStatus);
             Controls.Add(pictureBox1);
             Controls.Add(lblGrupo);
-            Controls.Add(lblFinura);
             Controls.Add(lblFinuraTitle);
-            Controls.Add(lblDiametro);
             Controls.Add(lblDiametroTitle);
-            Controls.Add(lblAlimentadores);
             Controls.Add(lblAlimentadoresTitle);
             Controls.Add(lblApelido);
             Name = "frmMaquina";
@@ -174,13 +189,15 @@
 
         private Label lblApelido;
         private Label lblAlimentadoresTitle;
-        private Label lblAlimentadores;
         private Label lblDiametroTitle;
-        private Label lblDiametro;
         private Label lblFinuraTitle;
-        private Label lblFinura;
         private Label lblGrupo;
         private PictureBox pictureBox1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartStatus;
+        private TextBox txtApelido;
+        private TextBox txtAlimentadores;
+        private TextBox txtDiametro;
+        private TextBox txtFinura;
+        private Button btnEditar;
     }
 }

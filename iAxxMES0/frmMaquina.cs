@@ -21,10 +21,10 @@ namespace iAxxMES0
             controleMaquinas = new ControleMaquinas(); // Inicializa o controle de máquinas
 
             // Exibe as informações da máquina nos controles da tela
-            lblApelido.Text = apelido;
-            lblFinura.Text = finura.ToString();
-            lblDiametro.Text = diametro.ToString("F2");
-            lblAlimentadores.Text = numeroAlimentadores.ToString();
+            txtApelido.Text = apelido;
+            txtFinura.Text = finura.ToString();
+            txtDiametro.Text = diametro.ToString("F2");
+            txtAlimentadores.Text = numeroAlimentadores.ToString();
             lblGrupo.Text = grupo;
 
             // Inicializa o gráfico de RPM
@@ -151,6 +151,47 @@ namespace iAxxMES0
         private void Timer_Tick(object sender, EventArgs e)
         {
             AdicionarDados(chartStatus.Series[0], maquinaId);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Validar entrada de dados
+                if (!int.TryParse(txtFinura.Text, out int finura))
+                {
+                    MessageBox.Show("Por favor, insira um valor válido para Finura.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (!int.TryParse(txtAlimentadores.Text, out int numeroAlimentadores))
+                {
+                    MessageBox.Show("Por favor, insira um valor válido para Número de Alimentadores.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (!int.TryParse(txtDiametro.Text, out int diametro))
+                {
+                    MessageBox.Show("Por favor, insira um valor válido para Diâmetro.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtApelido.Text))
+                {
+                    MessageBox.Show("O campo Apelido não pode estar vazio.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                controleMaquinas.EditarMaquina(maquinaId, finura, numeroAlimentadores, diametro, txtApelido.Text);
+
+                // Exibir mensagem de sucesso
+                MessageBox.Show("Informações da máquina atualizadas com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                // Tratamento de erro
+                MessageBox.Show($"Ocorreu um erro ao tentar salvar as informações da máquina: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

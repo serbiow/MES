@@ -33,6 +33,7 @@
             gerenciarGruposToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeUsuárioToolStripMenuItem = new ToolStripMenuItem();
             consultarUsuáriosToolStripMenuItem = new ToolStripMenuItem();
+            relatórioToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             cbxStatusFiltro = new ComboBox();
             panel1 = new Panel();
@@ -63,7 +64,6 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             flowLayoutPanelMaquinas = new FlowLayoutPanel();
             lblStatusBanco = new Label();
-            relatórioToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -108,6 +108,13 @@
             consultarUsuáriosToolStripMenuItem.Text = "Consultar Usuários";
             consultarUsuáriosToolStripMenuItem.Click += consultarUsuáriosToolStripMenuItem_Click;
             // 
+            // relatórioToolStripMenuItem
+            // 
+            relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
+            relatórioToolStripMenuItem.Size = new Size(66, 20);
+            relatórioToolStripMenuItem.Text = "Relatório";
+            relatórioToolStripMenuItem.Click += relatórioToolStripMenuItem_Click;
+            // 
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.BackColor = Color.FromArgb(197, 202, 208);
@@ -133,7 +140,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(264, 793);
+            panel1.Size = new Size(194, 793);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -162,7 +169,7 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 150F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 150F));
-            tableLayoutPanel2.Size = new Size(264, 793);
+            tableLayoutPanel2.Size = new Size(250, 793);
             tableLayoutPanel2.TabIndex = 18;
             // 
             // panel3
@@ -244,9 +251,9 @@
             btnAplicarFiltro.FlatStyle = FlatStyle.Flat;
             btnAplicarFiltro.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAplicarFiltro.ForeColor = Color.White;
-            btnAplicarFiltro.Location = new Point(156, 22);
+            btnAplicarFiltro.Location = new Point(3, 383);
             btnAplicarFiltro.Name = "btnAplicarFiltro";
-            btnAplicarFiltro.Size = new Size(90, 30);
+            btnAplicarFiltro.Size = new Size(121, 30);
             btnAplicarFiltro.TabIndex = 7;
             btnAplicarFiltro.Text = "Aplicar Filtros";
             btnAplicarFiltro.UseVisualStyleBackColor = false;
@@ -255,7 +262,7 @@
             // 
             txtRpmMax.Location = new Point(49, 255);
             txtRpmMax.Name = "txtRpmMax";
-            txtRpmMax.Size = new Size(100, 23);
+            txtRpmMax.Size = new Size(72, 23);
             txtRpmMax.TabIndex = 5;
             txtRpmMax.KeyPress += txtRpmMax_KeyPress;
             // 
@@ -313,7 +320,7 @@
             // 
             txtRpmMin.Location = new Point(49, 226);
             txtRpmMin.Name = "txtRpmMin";
-            txtRpmMin.Size = new Size(100, 23);
+            txtRpmMin.Size = new Size(72, 23);
             txtRpmMin.TabIndex = 4;
             txtRpmMin.KeyPress += txtRpmMin_KeyPress;
             // 
@@ -324,9 +331,9 @@
             lblRpmFiltro.ForeColor = Color.Black;
             lblRpmFiltro.Location = new Point(9, 203);
             lblRpmFiltro.Name = "lblRpmFiltro";
-            lblRpmFiltro.Size = new Size(46, 20);
+            lblRpmFiltro.Size = new Size(88, 20);
             lblRpmFiltro.TabIndex = 5;
-            lblRpmFiltro.Text = "RPM:";
+            lblRpmFiltro.Text = "Velocidade:";
             // 
             // panel2
             // 
@@ -406,7 +413,7 @@
             // 
             tableLayoutPanel1.BackColor = Color.FromArgb(197, 202, 208);
             tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 270F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(panel1, 0, 0);
             tableLayoutPanel1.Controls.Add(flowLayoutPanelMaquinas, 1, 0);
@@ -424,9 +431,9 @@
             flowLayoutPanelMaquinas.BackColor = Color.FromArgb(197, 202, 208);
             flowLayoutPanelMaquinas.Controls.Add(lblStatusBanco);
             flowLayoutPanelMaquinas.Dock = DockStyle.Fill;
-            flowLayoutPanelMaquinas.Location = new Point(273, 3);
+            flowLayoutPanelMaquinas.Location = new Point(203, 3);
             flowLayoutPanelMaquinas.Name = "flowLayoutPanelMaquinas";
-            flowLayoutPanelMaquinas.Size = new Size(1013, 793);
+            flowLayoutPanelMaquinas.Size = new Size(1083, 793);
             flowLayoutPanelMaquinas.TabIndex = 1;
             // 
             // lblStatusBanco
@@ -439,13 +446,6 @@
             lblStatusBanco.TabIndex = 0;
             lblStatusBanco.Text = "Status Banco";
             lblStatusBanco.Visible = false;
-            // 
-            // relatórioToolStripMenuItem
-            // 
-            relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
-            relatórioToolStripMenuItem.Size = new Size(66, 20);
-            relatórioToolStripMenuItem.Text = "Relatório";
-            relatórioToolStripMenuItem.Click += relatórioToolStripMenuItem_Click;
             // 
             // frmDashboard
             // 
