@@ -39,7 +39,7 @@ namespace iAxxMES0
             List<Maquina> maquinas = new List<Maquina>();
             string query = @"
             SELECT 
-                m.id, 
+                m.id,
                 m.apelido, 
                 GROUP_CONCAT(g.nome SEPARATOR ', ') AS grupos, -- Concatenar todos os grupos em uma única coluna
                 m.finura, 
@@ -56,28 +56,26 @@ namespace iAxxMES0
             JOIN grupo g ON gm.grupo_id = g.id
             JOIN (
                 SELECT 
-                    maquina_id, 
-                    MAX(id) AS max_id
+                    md1.maquina_id, 
+                    md1.id AS max_id
                 FROM 
-                    maquina_dados
-                WHERE 
-                    (maquina_id, data_hora) IN (
-                        SELECT 
-                            maquina_id, 
-                            MAX(data_hora)
-                        FROM 
-                            maquina_dados
-                        GROUP BY 
-                            maquina_id
-                    )
-                GROUP BY 
-                    maquina_id
+                    maquina_dados md1
+                JOIN (
+                    SELECT 
+                        maquina_id, 
+                        MAX(data_hora) AS max_data_hora
+                    FROM 
+                        maquina_dados
+                    GROUP BY 
+                        maquina_id
+                ) md2 
+                ON md1.maquina_id = md2.maquina_id AND md1.data_hora = md2.max_data_hora
             ) md_recent ON m.id = md_recent.maquina_id
             JOIN maquina_dados md ON md.id = md_recent.max_id
             LEFT JOIN maquina_status ms ON md.status = ms.id
             LEFT JOIN motivos_parada mp ON md.motivo_parada = mp.id
             GROUP BY 
-                m.id -- Agrupar por ID da máquina para evitar duplicatas
+                m.id, md.id, ms.descricao, mp.descricao
             ORDER BY 
                 m.apelido;";
 
@@ -175,7 +173,7 @@ namespace iAxxMES0
             List<Maquina> maquinasAtualizadas = new List<Maquina>();
             string query = @"
             SELECT 
-                m.id, 
+                m.id,
                 m.apelido, 
                 GROUP_CONCAT(g.nome SEPARATOR ', ') AS grupos, -- Concatenar todos os grupos em uma única coluna
                 m.finura, 
@@ -192,28 +190,26 @@ namespace iAxxMES0
             JOIN grupo g ON gm.grupo_id = g.id
             JOIN (
                 SELECT 
-                    maquina_id, 
-                    MAX(id) AS max_id
+                    md1.maquina_id, 
+                    md1.id AS max_id
                 FROM 
-                    maquina_dados
-                WHERE 
-                    (maquina_id, data_hora) IN (
-                        SELECT 
-                            maquina_id, 
-                            MAX(data_hora)
-                        FROM 
-                            maquina_dados
-                        GROUP BY 
-                            maquina_id
-                    )
-                GROUP BY 
-                    maquina_id
+                    maquina_dados md1
+                JOIN (
+                    SELECT 
+                        maquina_id, 
+                        MAX(data_hora) AS max_data_hora
+                    FROM 
+                        maquina_dados
+                    GROUP BY 
+                        maquina_id
+                ) md2 
+                ON md1.maquina_id = md2.maquina_id AND md1.data_hora = md2.max_data_hora
             ) md_recent ON m.id = md_recent.maquina_id
             JOIN maquina_dados md ON md.id = md_recent.max_id
             LEFT JOIN maquina_status ms ON md.status = ms.id
             LEFT JOIN motivos_parada mp ON md.motivo_parada = mp.id
             GROUP BY 
-                m.id -- Agrupar por ID da máquina para evitar duplicatas
+                m.id, md.id, ms.descricao, mp.descricao
             ORDER BY 
                 m.apelido;";
 
