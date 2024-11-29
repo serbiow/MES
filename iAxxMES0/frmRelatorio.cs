@@ -18,6 +18,9 @@ namespace iAxxMES0
             InitializeComponent();
         }
 
+        private ProgressBar progressBar;
+        private Label lblStatus;
+
         private void InitializeComponent()
         {
             label1 = new Label();
@@ -37,6 +40,8 @@ namespace iAxxMES0
             chbPDF = new CheckBox();
             label6 = new Label();
             btnGerarRelatorio = new Button();
+            progressBar = new ProgressBar();
+            lblStatus = new Label();
             SuspendLayout();
             // 
             // label1
@@ -108,7 +113,7 @@ namespace iAxxMES0
             dtpDataInicial.Name = "dtpDataInicial";
             dtpDataInicial.Size = new Size(121, 23);
             dtpDataInicial.TabIndex = 6;
-            dtpDataInicial.Value = new DateTime(2024, 11, 12, 20, 9, 0, 0);
+            dtpDataInicial.Value = new DateTime(2024, 1, 1, 0, 0, 0, 0);
             // 
             // label4
             // 
@@ -128,7 +133,7 @@ namespace iAxxMES0
             dtpDataFinal.Name = "dtpDataFinal";
             dtpDataFinal.Size = new Size(121, 23);
             dtpDataFinal.TabIndex = 8;
-            dtpDataFinal.Value = new DateTime(2024, 11, 12, 20, 9, 0, 0);
+            dtpDataFinal.Value = new DateTime(2024, 1, 1, 0, 0, 0, 0);
             // 
             // label5
             // 
@@ -149,6 +154,7 @@ namespace iAxxMES0
             dtpTimeInicial.ShowUpDown = true;
             dtpTimeInicial.Size = new Size(121, 23);
             dtpTimeInicial.TabIndex = 12;
+            dtpTimeInicial.Value = new DateTime(2024, 1, 1, 0, 0, 0, 0);
             // 
             // dtpTimeFinal
             // 
@@ -158,6 +164,7 @@ namespace iAxxMES0
             dtpTimeFinal.ShowUpDown = true;
             dtpTimeFinal.Size = new Size(121, 23);
             dtpTimeFinal.TabIndex = 13;
+            dtpTimeFinal.Value = new DateTime(2024, 1, 1, 0, 0, 0, 0);
             // 
             // chbWord
             // 
@@ -218,10 +225,30 @@ namespace iAxxMES0
             btnGerarRelatorio.UseVisualStyleBackColor = false;
             btnGerarRelatorio.Click += btnGerarRelatorio_Click;
             // 
+            // progressBar
+            // 
+            progressBar.Location = new Point(10, 482);
+            progressBar.Name = "progressBar";
+            progressBar.Size = new Size(300, 23);
+            progressBar.TabIndex = 19;
+            progressBar.Visible = false;
+            // 
+            // lblStatus
+            // 
+            lblStatus.AutoSize = true;
+            lblStatus.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblStatus.ForeColor = Color.White;
+            lblStatus.Location = new Point(10, 462);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(142, 19);
+            lblStatus.TabIndex = 20;
+            lblStatus.Text = "Gerando relatório...";
+            lblStatus.Visible = false;
+            // 
             // frmRelatorio
             // 
             BackColor = Color.FromArgb(89, 105, 120);
-            ClientSize = new Size(332, 450);
+            ClientSize = new Size(332, 523);
             Controls.Add(btnGerarRelatorio);
             Controls.Add(label6);
             Controls.Add(chbPDF);
@@ -239,8 +266,11 @@ namespace iAxxMES0
             Controls.Add(label2);
             Controls.Add(cbxTipoRelatorio);
             Controls.Add(label1);
-            MaximumSize = new Size(348, 489);
-            MinimumSize = new Size(348, 489);
+            Controls.Add(progressBar);
+            Controls.Add(lblStatus);
+            MaximizeBox = false;
+            MaximumSize = new Size(348, 562);
+            MinimumSize = new Size(348, 562);
             Name = "frmRelatorio";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Relatórios";
@@ -271,7 +301,7 @@ namespace iAxxMES0
         {
             try
             {
-                // Obtém os valores dos campos do formulário
+                // Validações antes de iniciar o processo
                 string tipoRelatorio = cbxTipoRelatorio.SelectedIndex.ToString();
                 switch (tipoRelatorio)
                 {
@@ -292,7 +322,7 @@ namespace iAxxMES0
                 string dataFim = dtpDataFinal.Value.ToString("yyyy-MM-dd") + " " + dtpTimeFinal.Value.ToString("HH:mm:ss");
 
                 // Formatos selecionados
-                var formatos = new System.Collections.Generic.List<string>();
+                var formatos = new List<string>();
                 if (chbPDF.Checked) formatos.Add("pdf");
                 if (chbExcel.Checked) formatos.Add("excel");
                 if (chbWord.Checked) formatos.Add("word");
@@ -303,8 +333,14 @@ namespace iAxxMES0
                     return;
                 }
 
+                // Validação concluída, agora exibe a barra de progresso
+                progressBar.Visible = true;
+                lblStatus.Visible = true;
+                progressBar.Style = ProgressBarStyle.Marquee; // Estilo animado contínuo
+                lblStatus.Text = "Gerando relatório, aguarde...";
+
                 // Monta o comando para chamar o script Python
-                string scriptPath = @"C:\Users\sergi\Documents\GitHub\iAxxMES_Relatorios\dist\main.exe"; // Caminho para o script Python
+                string scriptPath = @"C:\iAxx\dist\main.exe"; // Caminho para o script Python
                 string argumentos = $"--tipo_relatorio \"{tipoRelatorio}\" --data_inicio \"{dataInicio}\" --data_fim \"{dataFim}\" --formatos {string.Join(" ", formatos)}";
 
                 if (agrupamento == "Máquina específica" && !string.IsNullOrEmpty(maquinaId))
@@ -331,7 +367,6 @@ namespace iAxxMES0
                         {
                             Invoke(new Action(() =>
                             {
-                                // Pode mostrar no console ou em um controle TextBox se desejar
                                 Console.WriteLine(args.Data);
                             }));
                         }
@@ -355,11 +390,23 @@ namespace iAxxMES0
                     await process.WaitForExitAsync(); // Aguarda o término do processo
                 }
 
+                // Finaliza com sucesso
+                progressBar.Style = ProgressBarStyle.Blocks; // Muda para o estilo de preenchimento
+                progressBar.Value = 100; // Preenche a barra
+                lblStatus.Text = "Relatório gerado com sucesso.";
                 MessageBox.Show("Relatório gerado com sucesso.");
             }
             catch (Exception ex)
             {
+                // Exibe mensagem de erro, mas a barra de progresso não aparece
                 MessageBox.Show("Erro ao gerar o relatório: " + ex.Message);
+            }
+            finally
+            {
+                // Oculta a barra de progresso e o rótulo caso o processo termine com sucesso ou erro
+                progressBar.Visible = false;
+                lblStatus.Visible = false;
+                progressBar.Value = 0; // Reseta o valor da barra
             }
         }
 
