@@ -280,7 +280,14 @@ namespace iAxxMES0
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            // Chamar o Login e fechar o dashboard
+            using (frmLogin login = new frmLogin())
+            {
+                this.Hide();
+                login.ShowDialog();
+            }
+
+            this.Close();
         }
 
         // Keypress do txtFiltro (Enter)

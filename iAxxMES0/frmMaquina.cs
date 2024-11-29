@@ -193,5 +193,10 @@ namespace iAxxMES0
                 MessageBox.Show($"Ocorreu um erro ao tentar salvar as informações da máquina: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

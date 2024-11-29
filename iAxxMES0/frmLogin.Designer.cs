@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             btnCancelar = new Button();
             txtSenha = new TextBox();
             txtLogin = new TextBox();
@@ -49,7 +50,7 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(77, 33);
             btnCancelar.TabIndex = 4;
-            btnCancelar.Text = "Cancelar";
+            btnCancelar.Text = "Sair";
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
@@ -136,6 +137,7 @@
             ClientSize = new Size(563, 529);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";

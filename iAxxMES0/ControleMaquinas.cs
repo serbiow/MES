@@ -413,6 +413,50 @@ namespace iAxxMES0
             return grupos;
         }
 
+        // Método para buscar grupos por nome
+        public List<Grupo> ObterGruposPorNome(string nome)
+        {
+            List<Grupo> grupos = new List<Grupo>();
+            string query = "SELECT id, nome, descricao FROM grupo WHERE nome LIKE @nome";
+
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    // Usando LIKE para permitir busca parcial
+                    cmd.Parameters.AddWithValue("@nome", $"%{nome}%");
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Grupo grupo = new Grupo
+                            {
+                                Id = reader.GetInt32("id"),
+                                Nome = reader.GetString("nome"),
+                                Descricao = reader.IsDBNull(reader.GetOrdinal("descricao")) ? null : reader.GetString("descricao")
+                            };
+                            grupos.Add(grupo);
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                LogError($"Erro ao buscar grupos com nome '{nome}': {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+
+            return grupos;
+        }
+
         //Método para obter a máquina pelo apelido dela
         public Maquina ObterMaquinaPorApelido(string apelido)
         {

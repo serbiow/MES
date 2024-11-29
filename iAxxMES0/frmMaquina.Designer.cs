@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMaquina));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             lblApelido = new Label();
             lblAlimentadoresTitle = new Label();
             lblDiametroTitle = new Label();
@@ -99,6 +99,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(12, 12);
             pictureBox1.Name = "pictureBox1";
@@ -106,20 +107,21 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 14;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // chartStatus
             // 
             chartStatus.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            chartArea3.Name = "ChartArea1";
-            chartStatus.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            chartStatus.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            chartStatus.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chartStatus.Legends.Add(legend1);
             chartStatus.Location = new Point(217, 12);
             chartStatus.Name = "chartStatus";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            chartStatus.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chartStatus.Series.Add(series1);
             chartStatus.Size = new Size(669, 580);
             chartStatus.TabIndex = 15;
             chartStatus.Text = "chart1";
@@ -184,6 +186,7 @@
             Controls.Add(lblDiametroTitle);
             Controls.Add(lblAlimentadoresTitle);
             Controls.Add(lblApelido);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmMaquina";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Detalhes";

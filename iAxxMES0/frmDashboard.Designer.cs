@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             menuStrip1 = new MenuStrip();
             gerenciarGruposToolStripMenuItem = new ToolStripMenuItem();
-            cadastroDeUsuárioToolStripMenuItem = new ToolStripMenuItem();
             consultarUsuáriosToolStripMenuItem = new ToolStripMenuItem();
+            cadastroDeUsuárioToolStripMenuItem = new ToolStripMenuItem();
             relatórioToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             cbxStatusFiltro = new ComboBox();
@@ -78,7 +78,7 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.FromArgb(197, 202, 208);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { gerenciarGruposToolStripMenuItem, cadastroDeUsuárioToolStripMenuItem, consultarUsuáriosToolStripMenuItem, relatórioToolStripMenuItem, sairToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { gerenciarGruposToolStripMenuItem, consultarUsuáriosToolStripMenuItem, cadastroDeUsuárioToolStripMenuItem, relatórioToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1289, 24);
@@ -92,6 +92,13 @@
             gerenciarGruposToolStripMenuItem.Text = "Gerenciar Grupos";
             gerenciarGruposToolStripMenuItem.Click += gerenciarGruposToolStripMenuItem_Click;
             // 
+            // consultarUsuáriosToolStripMenuItem
+            // 
+            consultarUsuáriosToolStripMenuItem.Name = "consultarUsuáriosToolStripMenuItem";
+            consultarUsuáriosToolStripMenuItem.Size = new Size(118, 20);
+            consultarUsuáriosToolStripMenuItem.Text = "Consultar Usuários";
+            consultarUsuáriosToolStripMenuItem.Click += consultarUsuáriosToolStripMenuItem_Click;
+            // 
             // cadastroDeUsuárioToolStripMenuItem
             // 
             cadastroDeUsuárioToolStripMenuItem.BackColor = Color.FromArgb(197, 202, 208);
@@ -100,13 +107,6 @@
             cadastroDeUsuárioToolStripMenuItem.Size = new Size(125, 20);
             cadastroDeUsuárioToolStripMenuItem.Text = "Cadastro de Usuário";
             cadastroDeUsuárioToolStripMenuItem.Click += cadastroDeUsuárioToolStripMenuItem_Click;
-            // 
-            // consultarUsuáriosToolStripMenuItem
-            // 
-            consultarUsuáriosToolStripMenuItem.Name = "consultarUsuáriosToolStripMenuItem";
-            consultarUsuáriosToolStripMenuItem.Size = new Size(118, 20);
-            consultarUsuáriosToolStripMenuItem.Text = "Consultar Usuários";
-            consultarUsuáriosToolStripMenuItem.Click += consultarUsuáriosToolStripMenuItem_Click;
             // 
             // relatórioToolStripMenuItem
             // 

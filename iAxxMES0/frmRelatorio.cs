@@ -23,6 +23,7 @@ namespace iAxxMES0
 
         private void InitializeComponent()
         {
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(frmRelatorio));
             label1 = new Label();
             cbxTipoRelatorio = new ComboBox();
             label2 = new Label();
@@ -93,16 +94,17 @@ namespace iAxxMES0
             label3.ForeColor = Color.White;
             label3.Location = new Point(199, 79);
             label3.Name = "label3";
-            label3.Size = new Size(78, 21);
+            label3.Size = new Size(122, 21);
             label3.TabIndex = 4;
-            label3.Text = "Maquina";
+            label3.Text = "ID da Maquina";
             label3.Visible = false;
             // 
             // txtApelidoMaquina
             // 
             txtApelidoMaquina.Location = new Point(199, 101);
             txtApelidoMaquina.Name = "txtApelidoMaquina";
-            txtApelidoMaquina.Size = new Size(121, 23);
+            txtApelidoMaquina.PlaceholderText = "Ex.: 127";
+            txtApelidoMaquina.Size = new Size(122, 23);
             txtApelidoMaquina.TabIndex = 5;
             txtApelidoMaquina.Visible = false;
             // 
@@ -268,6 +270,7 @@ namespace iAxxMES0
             Controls.Add(label1);
             Controls.Add(progressBar);
             Controls.Add(lblStatus);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MaximumSize = new Size(348, 562);
             MinimumSize = new Size(348, 562);
@@ -340,7 +343,7 @@ namespace iAxxMES0
                 lblStatus.Text = "Gerando relatório, aguarde...";
 
                 // Monta o comando para chamar o script Python
-                string scriptPath = @"C:\iAxx\dist\main.exe"; // Caminho para o script Python
+                string scriptPath = @"C:\iAxxMES\dist\main.exe"; // Caminho para o script Python
                 string argumentos = $"--tipo_relatorio \"{tipoRelatorio}\" --data_inicio \"{dataInicio}\" --data_fim \"{dataFim}\" --formatos {string.Join(" ", formatos)}";
 
                 if (agrupamento == "Máquina específica" && !string.IsNullOrEmpty(maquinaId))

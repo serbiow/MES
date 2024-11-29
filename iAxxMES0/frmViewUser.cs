@@ -24,6 +24,7 @@ namespace iAxxMES0
 
         private void InitializeComponent()
         {
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(frmViewUser));
             cbxOpcao = new ComboBox();
             txtBusca = new TextBox();
             dgvUser = new DataGridView();
@@ -139,6 +140,7 @@ namespace iAxxMES0
             Controls.Add(dgvUser);
             Controls.Add(txtBusca);
             Controls.Add(cbxOpcao);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(672, 561);
             Name = "frmViewUser";
             StartPosition = FormStartPosition.CenterScreen;

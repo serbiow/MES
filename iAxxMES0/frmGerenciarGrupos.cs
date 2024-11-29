@@ -136,21 +136,23 @@ namespace iAxxMES0
             txtGrupo.Focus();
         }
 
-        // TODO: Terminar este método de busca
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtGrupo.Text))
+            if (string.IsNullOrWhiteSpace(txtNomeGrupo.Text))
             {
                 MessageBox.Show("Por favor, digite um valor para buscar.", "Busca", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string valor = txtGrupo.Text.Trim();
+            string nomeGrupo = txtNomeGrupo.Text.Trim();
+            List<Grupo> gruposEncontrados = controleMaquinas.ObterGruposPorNome(nomeGrupo);
+
+            dgvGrupos.DataSource = gruposEncontrados;
         }
 
         private void supervisaoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Chamar o Dashboard e fechar o formulário de login
+            // Chamar o Dashboard e fechar a tela de grupos
             using (frmDashboard dashboard = new frmDashboard())
             {
                 this.Hide();
@@ -176,6 +178,18 @@ namespace iAxxMES0
         {
             frmRelatorio relatorio = new frmRelatorio();
             relatorio.ShowDialog();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Chamar o Login e fechar a tela de grupos
+            using (frmLogin login = new frmLogin())
+            {
+                this.Hide();
+                login.ShowDialog();
+            }
+
+            this.Close();
         }
     }
 }

@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGerenciarGrupos));
             lblNomeGrupo = new Label();
             btnLimpar = new Button();
             btnListAll = new Button();
             btnBuscar = new Button();
             dgvGrupos = new DataGridView();
-            txtGrupo = new TextBox();
+            txtNomeGrupo = new TextBox();
             btnExcluir = new Button();
             btnAdicionar = new Button();
             txtDescGrupo = new TextBox();
@@ -43,13 +44,15 @@
             btnSalvar = new Button();
             menuStrip1 = new MenuStrip();
             supervisaoToolStripMenuItem = new ToolStripMenuItem();
-            cadastroDeUsuárioToolStripMenuItem = new ToolStripMenuItem();
             consultarUsuáriosToolStripMenuItem = new ToolStripMenuItem();
+            cadastroDeUsuárioToolStripMenuItem = new ToolStripMenuItem();
             relatórioToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel1 = new Panel();
+            label2 = new Label();
+            txtGrupo = new TextBox();
             panel2 = new Panel();
             panel3 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvGrupos).BeginInit();
@@ -68,9 +71,9 @@
             lblNomeGrupo.ForeColor = Color.Black;
             lblNomeGrupo.Location = new Point(6, 41);
             lblNomeGrupo.Name = "lblNomeGrupo";
-            lblNomeGrupo.Size = new Size(134, 19);
+            lblNomeGrupo.Size = new Size(116, 19);
             lblNomeGrupo.TabIndex = 20;
-            lblNomeGrupo.Text = "Nome do grupo:";
+            lblNomeGrupo.Text = "Buscar Grupo";
             // 
             // btnLimpar
             // 
@@ -78,7 +81,7 @@
             btnLimpar.FlatStyle = FlatStyle.Flat;
             btnLimpar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLimpar.ForeColor = Color.White;
-            btnLimpar.Location = new Point(228, 353);
+            btnLimpar.Location = new Point(228, 466);
             btnLimpar.Name = "btnLimpar";
             btnLimpar.Size = new Size(105, 32);
             btnLimpar.TabIndex = 6;
@@ -127,12 +130,13 @@
             dgvGrupos.Size = new Size(900, 226);
             dgvGrupos.TabIndex = 9;
             // 
-            // txtGrupo
+            // txtNomeGrupo
             // 
-            txtGrupo.Location = new Point(6, 63);
-            txtGrupo.Name = "txtGrupo";
-            txtGrupo.Size = new Size(216, 23);
-            txtGrupo.TabIndex = 1;
+            txtNomeGrupo.Location = new Point(6, 63);
+            txtNomeGrupo.Name = "txtNomeGrupo";
+            txtNomeGrupo.PlaceholderText = "Nome do Grupo";
+            txtNomeGrupo.Size = new Size(216, 23);
+            txtNomeGrupo.TabIndex = 1;
             // 
             // btnExcluir
             // 
@@ -140,7 +144,7 @@
             btnExcluir.FlatStyle = FlatStyle.Flat;
             btnExcluir.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnExcluir.ForeColor = Color.White;
-            btnExcluir.Location = new Point(339, 353);
+            btnExcluir.Location = new Point(339, 466);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(105, 32);
             btnExcluir.TabIndex = 7;
@@ -154,7 +158,7 @@
             btnAdicionar.FlatStyle = FlatStyle.Flat;
             btnAdicionar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAdicionar.ForeColor = Color.White;
-            btnAdicionar.Location = new Point(6, 353);
+            btnAdicionar.Location = new Point(6, 466);
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.Size = new Size(105, 32);
             btnAdicionar.TabIndex = 4;
@@ -164,9 +168,10 @@
             // 
             // txtDescGrupo
             // 
-            txtDescGrupo.Location = new Point(12, 191);
+            txtDescGrupo.Location = new Point(6, 298);
             txtDescGrupo.Multiline = true;
             txtDescGrupo.Name = "txtDescGrupo";
+            txtDescGrupo.PlaceholderText = "Descrição do Grupo";
             txtDescGrupo.Size = new Size(438, 162);
             txtDescGrupo.TabIndex = 3;
             // 
@@ -175,7 +180,7 @@
             lblDescGrupo.AutoSize = true;
             lblDescGrupo.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDescGrupo.ForeColor = Color.Black;
-            lblDescGrupo.Location = new Point(12, 169);
+            lblDescGrupo.Location = new Point(6, 276);
             lblDescGrupo.Name = "lblDescGrupo";
             lblDescGrupo.Size = new Size(166, 19);
             lblDescGrupo.TabIndex = 25;
@@ -196,7 +201,7 @@
             btnEditar.FlatStyle = FlatStyle.Flat;
             btnEditar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEditar.ForeColor = Color.White;
-            btnEditar.Location = new Point(117, 353);
+            btnEditar.Location = new Point(117, 466);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(105, 32);
             btnEditar.TabIndex = 5;
@@ -222,7 +227,7 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.FromArgb(197, 202, 208);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { supervisaoToolStripMenuItem, cadastroDeUsuárioToolStripMenuItem, consultarUsuáriosToolStripMenuItem, relatórioToolStripMenuItem, sairToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { supervisaoToolStripMenuItem, consultarUsuáriosToolStripMenuItem, cadastroDeUsuárioToolStripMenuItem, relatórioToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(924, 24);
@@ -236,6 +241,13 @@
             supervisaoToolStripMenuItem.Text = "Supervisão";
             supervisaoToolStripMenuItem.Click += supervisaoToolStripMenuItem_Click;
             // 
+            // consultarUsuáriosToolStripMenuItem
+            // 
+            consultarUsuáriosToolStripMenuItem.Name = "consultarUsuáriosToolStripMenuItem";
+            consultarUsuáriosToolStripMenuItem.Size = new Size(118, 20);
+            consultarUsuáriosToolStripMenuItem.Text = "Consultar Usuários";
+            consultarUsuáriosToolStripMenuItem.Click += consultarUsuáriosToolStripMenuItem_Click;
+            // 
             // cadastroDeUsuárioToolStripMenuItem
             // 
             cadastroDeUsuárioToolStripMenuItem.BackColor = Color.FromArgb(197, 202, 208);
@@ -244,13 +256,6 @@
             cadastroDeUsuárioToolStripMenuItem.Size = new Size(125, 20);
             cadastroDeUsuárioToolStripMenuItem.Text = "Cadastro de Usuário";
             cadastroDeUsuárioToolStripMenuItem.Click += cadastroDeUsuárioToolStripMenuItem_Click;
-            // 
-            // consultarUsuáriosToolStripMenuItem
-            // 
-            consultarUsuáriosToolStripMenuItem.Name = "consultarUsuáriosToolStripMenuItem";
-            consultarUsuáriosToolStripMenuItem.Size = new Size(118, 20);
-            consultarUsuáriosToolStripMenuItem.Text = "Consultar Usuários";
-            consultarUsuáriosToolStripMenuItem.Click += consultarUsuáriosToolStripMenuItem_Click;
             // 
             // relatórioToolStripMenuItem
             // 
@@ -266,6 +271,7 @@
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             sairToolStripMenuItem.Size = new Size(38, 20);
             sairToolStripMenuItem.Text = "Sair";
+            sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -301,18 +307,41 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(txtGrupo);
             panel1.Controls.Add(btnEditar);
+            panel1.Controls.Add(lblDescGrupo);
+            panel1.Controls.Add(btnBuscar);
             panel1.Controls.Add(btnLimpar);
+            panel1.Controls.Add(txtDescGrupo);
             panel1.Controls.Add(btnExcluir);
             panel1.Controls.Add(btnAdicionar);
             panel1.Controls.Add(lblNomeGrupo);
-            panel1.Controls.Add(btnBuscar);
-            panel1.Controls.Add(txtGrupo);
+            panel1.Controls.Add(txtNomeGrupo);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(453, 511);
             panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(6, 210);
+            label2.Name = "label2";
+            label2.Size = new Size(145, 19);
+            label2.TabIndex = 28;
+            label2.Text = "Manipular Grupos";
+            // 
+            // txtGrupo
+            // 
+            txtGrupo.Location = new Point(6, 232);
+            txtGrupo.Name = "txtGrupo";
+            txtGrupo.PlaceholderText = "Nome do Grupo";
+            txtGrupo.Size = new Size(216, 23);
+            txtGrupo.TabIndex = 26;
             // 
             // panel2
             // 
@@ -340,10 +369,9 @@
             BackColor = Color.FromArgb(197, 202, 208);
             ClientSize = new Size(924, 806);
             Controls.Add(menuStrip1);
-            Controls.Add(lblDescGrupo);
-            Controls.Add(txtDescGrupo);
             Controls.Add(dgvGrupos);
             Controls.Add(tableLayoutPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(940, 845);
             Name = "frmGerenciarGrupos";
             StartPosition = FormStartPosition.CenterScreen;
@@ -369,7 +397,7 @@
         private Button btnListAll;
         private Button btnBuscar;
         private DataGridView dgvGrupos;
-        private TextBox txtGrupo;
+        private TextBox txtNomeGrupo;
         private Button btnExcluir;
         private Button btnAdicionar;
         private TextBox txtDescGrupo;
@@ -388,5 +416,7 @@
         private Panel panel2;
         private Panel panel3;
         private ToolStripMenuItem relatórioToolStripMenuItem;
+        private Label label2;
+        private TextBox txtGrupo;
     }
 }

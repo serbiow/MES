@@ -1,12 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\README.md",
+              "RelativeDocumentMoniker": "iAxxMES0\\README.md",
+              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\README.md",
+              "RelativeToolTip": "iAxxMES0\\README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2024-11-29T16:19:24.902Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

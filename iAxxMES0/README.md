@@ -5,7 +5,7 @@
 # 2- (FEITO) Tela de detalhes da máquina com opção de update
 # 3- (FEITO) Read and Update Máquinas
 # 4- (FEITO) Gerar relatórios
-# 5- (FALTA MELHORAR A TELA) Gerar gráficos
+# 5- (FEITO) Gerar gráficos
 # 6- Privilégios
 # 7- (ANDANDO) Design geral
 
@@ -19,3 +19,9 @@
 # - (FEITO) mostrar o tempo que está em cada status (segundos são irrelevantes, 24h exibe 1d)
 # - tratativas de máquina e todas as máquinas (campos em branco, campos nulos, sem conexão)
 # - (FEITO) adicionar "TODOS" no filtro por grupo
+
+# - (FEITO) consertar o buscar do grupo
+# - (FEITO) adicionar uma outra caixa para busca de grupo
+# - (FEITO) mudar a ordem de consulta e cadastro de usuário no menu
+# - (FEITO) btn sair deve mandar para a tela de login
+# - (FEITO) colocar o ícone em tudo
