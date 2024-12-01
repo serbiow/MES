@@ -14,9 +14,40 @@ namespace iAxxMES0
 {
     public partial class frmCadUser : Form
     {
-        public frmCadUser()
+        // Nível de permissão do usuário
+        private string nivelPermissao;
+
+        public frmCadUser(string nivelPermissao)
         {
             InitializeComponent();
+            this.nivelPermissao = nivelPermissao;
+            AjustarComboBoxPorPermissao();
+        }
+
+        // Método para ajustar o comboBox do nível de permissão
+        private void AjustarComboBoxPorPermissao()
+        {
+            switch (nivelPermissao)
+            {
+                case "master":
+                    break;
+
+                case "admin":
+                    // Remove o item "Master" do ComboBox
+                    if (cbxNivelPermissao.Items.Contains("Master"))
+                    {
+                        cbxNivelPermissao.Items.Remove("Master");
+                    }
+                    break;
+
+                default:
+                    // Remove o item "Master" do ComboBox
+                    if (cbxNivelPermissao.Items.Contains("Master"))
+                    {
+                        cbxNivelPermissao.Items.Remove("Master");
+                    }
+                    break;
+            }
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -66,7 +97,7 @@ namespace iAxxMES0
                 Nome = nome,
                 Nivel_Permissao = ConvertNivelPermissaoIndexToString(nivel_permissao),
                 Registro_Matricula = registro_matricula
-            };
+            };  
 
             Login novoLogin = new Login
             {

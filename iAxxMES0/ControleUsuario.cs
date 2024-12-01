@@ -266,6 +266,56 @@ namespace iAxxMES0
             }
         }
 
+        //Método para buscar usuário pelo login
+        public Usuario BuscarUsuarioPorLogin(string loginNome)
+        {
+            Usuario usuario = null;
+
+            try
+            {
+                if (connection.State == System.Data.ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+
+                string query = @"
+                SELECT u.id, u.nome, u.nivel_permissao, u.registro_matricula 
+                FROM usuario u
+                JOIN login l ON u.id = l.usuario_id
+                WHERE l.login_nome = @login_nome";
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@login_nome", loginNome);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        usuario = new Usuario
+                        {
+                            Id = reader.GetInt32("id"),
+                            Nome = reader.GetString("nome"),
+                            Nivel_Permissao = reader.GetString("nivel_permissao"),
+                            Registro_Matricula = reader.GetString("registro_matricula")
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao buscar informações do usuário: {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == System.Data.ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+
+            return usuario;
+        }
+
         public List<Usuario> BuscarUsuarios(string opcao, string valor)
         {
             List<Usuario> usuarios = new List<Usuario>();

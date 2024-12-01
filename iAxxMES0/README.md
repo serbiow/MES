@@ -6,7 +6,7 @@
 # 3- (FEITO) Read and Update Máquinas
 # 4- (FEITO) Gerar relatórios
 # 5- (FEITO) Gerar gráficos
-# 6- Privilégios
+# 6- (FEITO) Privilégios
 # 7- (ANDANDO) Design geral
 
 # - (FEITO) símbolo iAxx na tela de login (tirar o cadeado)

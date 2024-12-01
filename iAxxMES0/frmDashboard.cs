@@ -17,11 +17,18 @@ namespace iAxxMES0
         // Cache para armazenar os dados anteriores
         private List<Maquina> cacheMaquinas = new List<Maquina>();
 
-        public frmDashboard()
+        // Nível de permissão do usuário
+        private string nivelPermissao;
+
+        public frmDashboard(string nivelPermissao)
         {
             InitializeComponent();
             controleMaquinas = new ControleMaquinas();
             listaMaquinas = new List<MaquinaControl>();
+            
+            // Controla a permissão do usuário
+            this.nivelPermissao = nivelPermissao;
+            AjustarMenuPorPermissao();
 
             // Atualizar lista de grupos ao abrir o dashboard
             AtualizarListaGrupos();
@@ -174,6 +181,45 @@ namespace iAxxMES0
             }
         }
 
+        // Método para ajudar o Menu conforme o nível de privilégio
+        private void AjustarMenuPorPermissao()
+        {
+            switch (nivelPermissao)
+            {
+                case "master":
+                    // Todos os itens disponíveis para masters
+                    cadastroDeUsuárioToolStripMenuItem.Visible = true;
+                    consultarUsuáriosToolStripMenuItem.Visible = true;
+                    gerenciarGruposToolStripMenuItem.Visible = true;
+                    relatórioToolStripMenuItem.Visible = true;
+                    break;
+
+                case "admin":
+                    // Todos os itens disponíveis para masters
+                    cadastroDeUsuárioToolStripMenuItem.Visible = true;
+                    consultarUsuáriosToolStripMenuItem.Visible = true;
+                    gerenciarGruposToolStripMenuItem.Visible = true;
+                    relatórioToolStripMenuItem.Visible = true;
+                    break;
+
+                case "operator":
+                    // Apenas relatórios acessíveis para operadores
+                    cadastroDeUsuárioToolStripMenuItem.Visible = false;
+                    consultarUsuáriosToolStripMenuItem.Visible = false;
+                    gerenciarGruposToolStripMenuItem.Visible = false;
+                    relatórioToolStripMenuItem.Visible = true;
+                    break;
+
+                default:
+                    // Nenhuma permissão
+                    cadastroDeUsuárioToolStripMenuItem.Visible = false;
+                    consultarUsuáriosToolStripMenuItem.Visible = false;
+                    gerenciarGruposToolStripMenuItem.Visible = false;
+                    relatórioToolStripMenuItem.Visible = false;
+                    break;
+            }
+        }
+
         private void AtualizarListaGrupos()
         {
             var grupos = controleMaquinas.ObterTodosGrupos();
@@ -250,7 +296,7 @@ namespace iAxxMES0
 
         private void cadastroDeUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCadUser cadastro = new frmCadUser();
+            frmCadUser cadastro = new frmCadUser(nivelPermissao);
             cadastro.ShowDialog();
         }
 
@@ -263,7 +309,7 @@ namespace iAxxMES0
         private void gerenciarGruposToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Chamar o Gerenciar Grupos e fechar o Dashboard
-            using (frmGerenciarGrupos gerenciarGrupos = new frmGerenciarGrupos(controleMaquinas))
+            using (frmGerenciarGrupos gerenciarGrupos = new frmGerenciarGrupos(controleMaquinas, nivelPermissao))
             {
                 this.Hide();
                 gerenciarGrupos.ShowDialog();

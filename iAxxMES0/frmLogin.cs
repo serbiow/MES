@@ -45,22 +45,24 @@ namespace iAxxMES0
                 // Chamando o método de validação de login da classe ControleUsuario
                 if (controleUsuario.ValidarLogin(loginNome, senha))
                 {
-                    MessageBox.Show("Login realizado com sucesso!", "Bem-vindo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    // Chamar o Dashboard e fechar o formulário de login
-                    using (frmDashboard dashboard = new frmDashboard())
+                    var usuario = controleUsuario.BuscarUsuarioPorLogin(loginNome);
+                    if (usuario != null)
                     {
-                        this.Hide();
-                        dashboard.ShowDialog();
-                    }
+                        MessageBox.Show("Login realizado com sucesso!", "Bem-vindo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Login ou senha incorretos.", "Erro de Autenticação", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtSenha.Clear();
-                    txtSenha.Focus();
+                        // Passando os privilégios para o Dashboard
+                        using (frmDashboard dashboard = new frmDashboard(usuario.Nivel_Permissao))
+                        {
+                            this.Hide();
+                            dashboard.ShowDialog();
+                        }
+
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao carregar informações do usuário.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)

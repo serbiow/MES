@@ -14,7 +14,10 @@ namespace iAxxMES0
     {
         private ControleMaquinas controleMaquinas;
 
-        public frmGerenciarGrupos(ControleMaquinas controle)
+        // Nível de permissão do usuário
+        private string nivelPermissao;
+
+        public frmGerenciarGrupos(ControleMaquinas controle, string nivelPermissao)
         {
             InitializeComponent();
             controleMaquinas = controle;
@@ -24,6 +27,10 @@ namespace iAxxMES0
 
             // Configura evento para carregar as máquinas do grupo selecionado
             dgvGrupos.SelectionChanged += DgvGrupos_SelectionChanged;
+
+            // Controla a permissão do usuário
+            this.nivelPermissao = nivelPermissao;
+            AjustarMenuPorPermissao();
         }
 
         private void CarregarGrupos()
@@ -53,6 +60,45 @@ namespace iAxxMES0
                 // Adiciona a máquina na lista e marca se ela está no grupo
                 bool isInGroup = maquinasDoGrupo.Any(m => m.Id == maquina.Id);
                 clbMaquinas.Items.Add(maquina.Apelido, isInGroup);
+            }
+        }
+
+        // Método para ajudar o Menu conforme o nível de privilégio
+        private void AjustarMenuPorPermissao()
+        {
+            switch (nivelPermissao)
+            {
+                case "master":
+                    // Todos os itens disponíveis para masters
+                    cadastroDeUsuárioToolStripMenuItem.Visible = true;
+                    consultarUsuáriosToolStripMenuItem.Visible = true;
+                    supervisaoToolStripMenuItem.Visible = true;
+                    relatórioToolStripMenuItem.Visible = true;
+                    break;
+
+                case "admin":
+                    // Todos os itens disponíveis para masters
+                    cadastroDeUsuárioToolStripMenuItem.Visible = true;
+                    consultarUsuáriosToolStripMenuItem.Visible = true;
+                    supervisaoToolStripMenuItem.Visible = true;
+                    relatórioToolStripMenuItem.Visible = true;
+                    break;
+
+                case "operator":
+                    // Apenas relatórios acessíveis para operadores
+                    cadastroDeUsuárioToolStripMenuItem.Visible = false;
+                    consultarUsuáriosToolStripMenuItem.Visible = false;
+                    supervisaoToolStripMenuItem.Visible = false;
+                    relatórioToolStripMenuItem.Visible = true;
+                    break;
+
+                default:
+                    // Nenhuma permissão
+                    cadastroDeUsuárioToolStripMenuItem.Visible = false;
+                    consultarUsuáriosToolStripMenuItem.Visible = false;
+                    supervisaoToolStripMenuItem.Visible = false;
+                    relatórioToolStripMenuItem.Visible = false;
+                    break;
             }
         }
 
@@ -153,7 +199,7 @@ namespace iAxxMES0
         private void supervisaoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Chamar o Dashboard e fechar a tela de grupos
-            using (frmDashboard dashboard = new frmDashboard())
+            using (frmDashboard dashboard = new frmDashboard(nivelPermissao))
             {
                 this.Hide();
                 dashboard.ShowDialog();
@@ -164,7 +210,7 @@ namespace iAxxMES0
 
         private void cadastroDeUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCadUser cadastro = new frmCadUser();
+            frmCadUser cadastro = new frmCadUser(nivelPermissao);
             cadastro.ShowDialog();
         }
 
