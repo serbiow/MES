@@ -64,6 +64,11 @@ namespace iAxxMES0
                         MessageBox.Show("Erro ao carregar informações do usuário.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+                else
+                {
+                    // Caso login ou senha sejam inválidos
+                    MessageBox.Show("Login ou senha incorretos. Tente novamente.", "Credenciais Inválidas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             catch (Exception ex)
             {
