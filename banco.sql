@@ -73,6 +73,17 @@ CREATE TABLE maquina_dados (
     FOREIGN KEY (status) REFERENCES maquina_status(id)
 );
 
+CREATE TABLE IndisponibilidadeMaquinas (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Tipo ENUM('Semanal', 'Específico') NOT NULL,
+    DiaSemana ENUM('Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo') NULL,
+    DataEspecifica DATE NULL,
+    HorarioInicio TIME NOT NULL,
+    HorarioFim TIME NOT NULL,
+    Motivo VARCHAR(255),
+    DataCriacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 /*INSERTS*/
 
 INSERT INTO usuario (nome, nivel_permissao, registro_matricula)
