@@ -21,6 +21,7 @@ namespace iAxxMES0
 
         private void InitializeComponent()
         {
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(frmCadCalendario));
             cbxTipo = new ComboBox();
             label1 = new Label();
             cbxDiaSemana = new ComboBox();
@@ -41,18 +42,19 @@ namespace iAxxMES0
             // 
             cbxTipo.FormattingEnabled = true;
             cbxTipo.Items.AddRange(new object[] { "Semanal", "Específico" });
-            cbxTipo.Location = new Point(12, 27);
+            cbxTipo.Location = new Point(12, 32);
             cbxTipo.Name = "cbxTipo";
-            cbxTipo.Size = new Size(143, 23);
+            cbxTipo.Size = new Size(189, 23);
             cbxTipo.TabIndex = 0;
             cbxTipo.SelectedIndexChanged += cbxTipo_SelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(143, 15);
+            label1.Size = new Size(189, 20);
             label1.TabIndex = 1;
             label1.Text = "Tipo de Indisponibillidade";
             // 
@@ -60,18 +62,19 @@ namespace iAxxMES0
             // 
             cbxDiaSemana.FormattingEnabled = true;
             cbxDiaSemana.Items.AddRange(new object[] { "Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado" });
-            cbxDiaSemana.Location = new Point(12, 80);
+            cbxDiaSemana.Location = new Point(12, 81);
             cbxDiaSemana.Name = "cbxDiaSemana";
-            cbxDiaSemana.Size = new Size(143, 23);
+            cbxDiaSemana.Size = new Size(189, 23);
             cbxDiaSemana.TabIndex = 2;
             cbxDiaSemana.Visible = false;
             // 
             // lblDiaSemana
             // 
             lblDiaSemana.AutoSize = true;
-            lblDiaSemana.Location = new Point(12, 62);
+            lblDiaSemana.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblDiaSemana.Location = new Point(12, 58);
             lblDiaSemana.Name = "lblDiaSemana";
-            lblDiaSemana.Size = new Size(85, 15);
+            lblDiaSemana.Size = new Size(112, 20);
             lblDiaSemana.TabIndex = 3;
             lblDiaSemana.Text = "Dia da Semana";
             lblDiaSemana.Visible = false;
@@ -79,9 +82,9 @@ namespace iAxxMES0
             // dtpDataEspecifica
             // 
             dtpDataEspecifica.Format = DateTimePickerFormat.Short;
-            dtpDataEspecifica.Location = new Point(12, 80);
+            dtpDataEspecifica.Location = new Point(12, 81);
             dtpDataEspecifica.Name = "dtpDataEspecifica";
-            dtpDataEspecifica.Size = new Size(143, 23);
+            dtpDataEspecifica.Size = new Size(189, 23);
             dtpDataEspecifica.TabIndex = 4;
             dtpDataEspecifica.Value = new DateTime(2024, 1, 1, 0, 0, 0, 0);
             dtpDataEspecifica.Visible = false;
@@ -89,9 +92,10 @@ namespace iAxxMES0
             // lblDataEspecifica
             // 
             lblDataEspecifica.AutoSize = true;
-            lblDataEspecifica.Location = new Point(12, 62);
+            lblDataEspecifica.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblDataEspecifica.Location = new Point(12, 58);
             lblDataEspecifica.Name = "lblDataEspecifica";
-            lblDataEspecifica.Size = new Size(86, 15);
+            lblDataEspecifica.Size = new Size(114, 20);
             lblDataEspecifica.TabIndex = 5;
             lblDataEspecifica.Text = "Data Específica";
             lblDataEspecifica.Visible = false;
@@ -99,45 +103,49 @@ namespace iAxxMES0
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(209, 9);
+            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label2.Location = new Point(253, 9);
             label2.Name = "label2";
-            label2.Size = new Size(36, 15);
+            label2.Size = new Size(47, 20);
             label2.TabIndex = 16;
             label2.Text = "Início";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(209, 53);
+            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label3.Location = new Point(253, 58);
             label3.Name = "label3";
-            label3.Size = new Size(27, 15);
+            label3.Size = new Size(35, 20);
             label3.TabIndex = 17;
             label3.Text = "Fim";
             // 
             // txtMotivo
             // 
-            txtMotivo.Location = new Point(388, 27);
+            txtMotivo.Location = new Point(12, 165);
             txtMotivo.Multiline = true;
             txtMotivo.Name = "txtMotivo";
             txtMotivo.PlaceholderText = "Motivo da indisponibilidade...";
-            txtMotivo.Size = new Size(289, 120);
+            txtMotivo.Size = new Size(341, 120);
             txtMotivo.TabIndex = 18;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(388, 9);
+            label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            label4.Location = new Point(12, 142);
             label4.Name = "label4";
-            label4.Size = new Size(102, 15);
+            label4.Size = new Size(134, 20);
             label4.TabIndex = 19;
             label4.Text = "Motivo (opcional)";
             // 
             // chbDiaInteiro
             // 
             chbDiaInteiro.AutoSize = true;
-            chbDiaInteiro.Location = new Point(209, 106);
+            chbDiaInteiro.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            chbDiaInteiro.Location = new Point(251, 110);
             chbDiaInteiro.Name = "chbDiaInteiro";
-            chbDiaInteiro.Size = new Size(80, 19);
+            chbDiaInteiro.Size = new Size(102, 24);
             chbDiaInteiro.TabIndex = 20;
             chbDiaInteiro.Text = "Dia Inteiro";
             chbDiaInteiro.UseVisualStyleBackColor = true;
@@ -147,7 +155,7 @@ namespace iAxxMES0
             // 
             btnSalvar.BackColor = Color.FromArgb(46, 53, 60);
             btnSalvar.ForeColor = Color.White;
-            btnSalvar.Location = new Point(276, 213);
+            btnSalvar.Location = new Point(106, 291);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(150, 52);
             btnSalvar.TabIndex = 21;
@@ -157,7 +165,7 @@ namespace iAxxMES0
             // 
             // mtxtInicio
             // 
-            mtxtInicio.Location = new Point(209, 27);
+            mtxtInicio.Location = new Point(253, 32);
             mtxtInicio.Mask = "00:00";
             mtxtInicio.Name = "mtxtInicio";
             mtxtInicio.Size = new Size(100, 23);
@@ -166,7 +174,7 @@ namespace iAxxMES0
             // 
             // mtxtFinal
             // 
-            mtxtFinal.Location = new Point(209, 71);
+            mtxtFinal.Location = new Point(253, 81);
             mtxtFinal.Mask = "00:00";
             mtxtFinal.Name = "mtxtFinal";
             mtxtFinal.Size = new Size(100, 23);
@@ -175,7 +183,8 @@ namespace iAxxMES0
             // 
             // frmCadCalendario
             // 
-            ClientSize = new Size(709, 310);
+            BackColor = Color.FromArgb(197, 202, 208);
+            ClientSize = new Size(365, 356);
             Controls.Add(mtxtFinal);
             Controls.Add(mtxtInicio);
             Controls.Add(btnSalvar);
@@ -190,6 +199,10 @@ namespace iAxxMES0
             Controls.Add(cbxDiaSemana);
             Controls.Add(label1);
             Controls.Add(cbxTipo);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MaximumSize = new Size(381, 395);
+            MinimumSize = new Size(381, 395);
             Name = "frmCadCalendario";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Indisponibilidade";

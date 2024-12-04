@@ -66,7 +66,7 @@ namespace iAxxMES0
         private void AtualizarCalendario()
         {
             // Atualiza o texto do Label para exibir o mês e ano atuais
-            lblMesAno.Text = $"{ObterNomeDoMes(mesAtual)} de {anoAtual}";
+            lblMesAno.Text = $"{ObterNomeDoMes(mesAtual).ToUpper()} de {anoAtual}";
 
             dgvCalendario.Rows.Clear(); // Limpa as linhas do calendário
 

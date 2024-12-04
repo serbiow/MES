@@ -57,6 +57,7 @@
             // 
             dataGridViewIndisponibilidades.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewIndisponibilidades.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewIndisponibilidades.BackgroundColor = Color.White;
             dataGridViewIndisponibilidades.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewIndisponibilidades.Location = new Point(12, 452);
             dataGridViewIndisponibilidades.Name = "dataGridViewIndisponibilidades";
@@ -98,7 +99,7 @@
             dgvCalendario.AllowUserToAddRows = false;
             dgvCalendario.AllowUserToDeleteRows = false;
             dgvCalendario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvCalendario.BackgroundColor = SystemColors.Control;
+            dgvCalendario.BackgroundColor = Color.FromArgb(197, 202, 208);
             dgvCalendario.BorderStyle = BorderStyle.None;
             dgvCalendario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCalendario.Columns.AddRange(new DataGridViewColumn[] { domingo, segunda, Terça, quarta, quinta, sexta, sabado });
@@ -208,7 +209,7 @@
             btnAnoAnterior.Name = "btnAnoAnterior";
             btnAnoAnterior.Size = new Size(105, 32);
             btnAnoAnterior.TabIndex = 15;
-            btnAnoAnterior.Text = "Mês Anterior";
+            btnAnoAnterior.Text = "Ano Anterior";
             btnAnoAnterior.UseVisualStyleBackColor = false;
             btnAnoAnterior.Click += btnAnoAnterior_Click;
             // 
@@ -246,6 +247,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(197, 202, 208);
             ClientSize = new Size(721, 614);
             Controls.Add(btnProximoAno);
             Controls.Add(btnAnoAnterior);
@@ -257,6 +259,9 @@
             Controls.Add(panel1);
             Controls.Add(panel2);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MaximumSize = new Size(737, 653);
+            MinimumSize = new Size(737, 653);
             Name = "frmCalendario";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Calendário de Disponibilidade";

@@ -49,7 +49,7 @@ namespace iAxxMES0
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label1.ForeColor = Color.White;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(10, 3);
             label1.Name = "label1";
             label1.Size = new Size(141, 21);
@@ -70,7 +70,7 @@ namespace iAxxMES0
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label2.ForeColor = Color.White;
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(10, 79);
             label2.Name = "label2";
             label2.Size = new Size(116, 21);
@@ -91,7 +91,7 @@ namespace iAxxMES0
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label3.ForeColor = Color.White;
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(199, 79);
             label3.Name = "label3";
             label3.Size = new Size(122, 21);
@@ -121,7 +121,7 @@ namespace iAxxMES0
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label4.ForeColor = Color.White;
+            label4.ForeColor = Color.Black;
             label4.Location = new Point(10, 148);
             label4.Name = "label4";
             label4.Size = new Size(151, 21);
@@ -141,7 +141,7 @@ namespace iAxxMES0
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label5.ForeColor = Color.White;
+            label5.ForeColor = Color.Black;
             label5.Location = new Point(10, 249);
             label5.Name = "label5";
             label5.Size = new Size(141, 21);
@@ -172,7 +172,7 @@ namespace iAxxMES0
             // 
             chbWord.AutoSize = true;
             chbWord.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            chbWord.ForeColor = Color.White;
+            chbWord.ForeColor = Color.Black;
             chbWord.Location = new Point(12, 371);
             chbWord.Name = "chbWord";
             chbWord.Size = new Size(71, 25);
@@ -184,7 +184,7 @@ namespace iAxxMES0
             // 
             chbExcel.AutoSize = true;
             chbExcel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            chbExcel.ForeColor = Color.White;
+            chbExcel.ForeColor = Color.Black;
             chbExcel.Location = new Point(12, 396);
             chbExcel.Name = "chbExcel";
             chbExcel.Size = new Size(69, 25);
@@ -196,7 +196,7 @@ namespace iAxxMES0
             // 
             chbPDF.AutoSize = true;
             chbPDF.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            chbPDF.ForeColor = Color.White;
+            chbPDF.ForeColor = Color.Black;
             chbPDF.Location = new Point(12, 421);
             chbPDF.Name = "chbPDF";
             chbPDF.Size = new Size(59, 25);
@@ -208,7 +208,7 @@ namespace iAxxMES0
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label6.ForeColor = Color.White;
+            label6.ForeColor = Color.Black;
             label6.Location = new Point(10, 347);
             label6.Name = "label6";
             label6.Size = new Size(81, 21);
@@ -239,7 +239,7 @@ namespace iAxxMES0
             // 
             lblStatus.AutoSize = true;
             lblStatus.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblStatus.ForeColor = Color.White;
+            lblStatus.ForeColor = Color.Black;
             lblStatus.Location = new Point(10, 462);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(142, 19);
@@ -249,7 +249,7 @@ namespace iAxxMES0
             // 
             // frmRelatorio
             // 
-            BackColor = Color.FromArgb(89, 105, 120);
+            BackColor = Color.FromArgb(197, 202, 208);
             ClientSize = new Size(332, 523);
             Controls.Add(btnGerarRelatorio);
             Controls.Add(label6);

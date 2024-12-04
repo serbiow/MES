@@ -57,6 +57,8 @@ namespace iAxxMES0
             dgvUser.AllowUserToAddRows = false;
             dgvUser.AllowUserToDeleteRows = false;
             dgvUser.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvUser.BackgroundColor = Color.White;
             dgvUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUser.Location = new Point(12, 292);
             dgvUser.Name = "dgvUser";
@@ -110,7 +112,7 @@ namespace iAxxMES0
             // 
             lblOptBusca.AutoSize = true;
             lblOptBusca.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblOptBusca.ForeColor = Color.White;
+            lblOptBusca.ForeColor = Color.Black;
             lblOptBusca.Location = new Point(25, 34);
             lblOptBusca.Name = "lblOptBusca";
             lblOptBusca.Size = new Size(139, 19);
@@ -121,7 +123,7 @@ namespace iAxxMES0
             // 
             lblBusca.AutoSize = true;
             lblBusca.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBusca.ForeColor = Color.White;
+            lblBusca.ForeColor = Color.Black;
             lblBusca.Location = new Point(25, 99);
             lblBusca.Name = "lblBusca";
             lblBusca.Size = new Size(64, 19);
@@ -130,7 +132,7 @@ namespace iAxxMES0
             // 
             // frmViewUser
             // 
-            BackColor = Color.FromArgb(89, 105, 120);
+            BackColor = Color.FromArgb(197, 202, 208);
             ClientSize = new Size(656, 522);
             Controls.Add(lblBusca);
             Controls.Add(lblOptBusca);
@@ -141,6 +143,8 @@ namespace iAxxMES0
             Controls.Add(txtBusca);
             Controls.Add(cbxOpcao);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MaximumSize = new Size(672, 561);
             MinimumSize = new Size(672, 561);
             Name = "frmViewUser";
             StartPosition = FormStartPosition.CenterScreen;

@@ -55,11 +55,11 @@
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNome.ForeColor = Color.White;
-            lblNome.Location = new Point(30, 145);
+            lblNome.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblNome.ForeColor = Color.Black;
+            lblNome.Location = new Point(30, 144);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(60, 19);
+            lblNome.Size = new Size(56, 20);
             lblNome.TabIndex = 0;
             lblNome.Text = "Nome:";
             // 
@@ -73,22 +73,22 @@
             // lblCargo
             // 
             lblCargo.AutoSize = true;
-            lblCargo.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCargo.ForeColor = Color.White;
-            lblCargo.Location = new Point(30, 189);
+            lblCargo.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblCargo.ForeColor = Color.Black;
+            lblCargo.Location = new Point(30, 188);
             lblCargo.Name = "lblCargo";
-            lblCargo.Size = new Size(161, 19);
+            lblCargo.Size = new Size(146, 20);
             lblCargo.TabIndex = 2;
             lblCargo.Text = "Nível de Permissão:";
             // 
             // lblCPF
             // 
             lblCPF.AutoSize = true;
-            lblCPF.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCPF.ForeColor = Color.White;
-            lblCPF.Location = new Point(30, 232);
+            lblCPF.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblCPF.ForeColor = Color.Black;
+            lblCPF.Location = new Point(30, 231);
             lblCPF.Name = "lblCPF";
-            lblCPF.Size = new Size(84, 19);
+            lblCPF.Size = new Size(79, 20);
             lblCPF.TabIndex = 4;
             lblCPF.Text = "Matrícula:";
             // 
@@ -126,33 +126,33 @@
             // lblLogin
             // 
             lblLogin.AutoSize = true;
-            lblLogin.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogin.ForeColor = Color.White;
-            lblLogin.Location = new Point(30, 274);
+            lblLogin.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblLogin.ForeColor = Color.Black;
+            lblLogin.Location = new Point(30, 273);
             lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(59, 19);
+            lblLogin.Size = new Size(52, 20);
             lblLogin.TabIndex = 13;
             lblLogin.Text = "Login:";
             // 
             // lblSenha
             // 
             lblSenha.AutoSize = true;
-            lblSenha.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSenha.ForeColor = Color.White;
-            lblSenha.Location = new Point(30, 318);
+            lblSenha.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblSenha.ForeColor = Color.Black;
+            lblSenha.Location = new Point(30, 317);
             lblSenha.Name = "lblSenha";
-            lblSenha.Size = new Size(64, 19);
+            lblSenha.Size = new Size(55, 20);
             lblSenha.TabIndex = 14;
             lblSenha.Text = "Senha:";
             // 
             // lblConfirmaSenha
             // 
             lblConfirmaSenha.AutoSize = true;
-            lblConfirmaSenha.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblConfirmaSenha.ForeColor = Color.White;
-            lblConfirmaSenha.Location = new Point(30, 362);
+            lblConfirmaSenha.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblConfirmaSenha.ForeColor = Color.Black;
+            lblConfirmaSenha.Location = new Point(30, 360);
             lblConfirmaSenha.Name = "lblConfirmaSenha";
-            lblConfirmaSenha.Size = new Size(131, 18);
+            lblConfirmaSenha.Size = new Size(130, 20);
             lblConfirmaSenha.TabIndex = 15;
             lblConfirmaSenha.Text = "Confirmar Senha:";
             // 
@@ -181,7 +181,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(89, 105, 120);
+            panel1.BackColor = Color.FromArgb(197, 202, 208);
             panel1.Controls.Add(btnLimpar);
             panel1.Controls.Add(btnAlterar);
             panel1.Controls.Add(btnExcluir);
@@ -252,11 +252,11 @@
             // lblCodigo
             // 
             lblCodigo.AutoSize = true;
-            lblCodigo.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCodigo.ForeColor = Color.White;
+            lblCodigo.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            lblCodigo.ForeColor = Color.Black;
             lblCodigo.Location = new Point(30, 35);
             lblCodigo.Name = "lblCodigo";
-            lblCodigo.Size = new Size(69, 19);
+            lblCodigo.Size = new Size(63, 20);
             lblCodigo.TabIndex = 19;
             lblCodigo.Text = "User Id:";
             // 
@@ -286,10 +286,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDark;
+            BackColor = Color.FromArgb(197, 202, 208);
             ClientSize = new Size(484, 526);
             Controls.Add(panel1);
+            ForeColor = Color.Black;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             MaximumSize = new Size(500, 565);
             MinimumSize = new Size(500, 565);
             Name = "frmCadUser";
