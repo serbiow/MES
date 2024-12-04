@@ -30,6 +30,6 @@
 # - Fazer o CRUD completo de ARTIGOS (deve ter Filtro e Ordenação por Artigo no dashboard)
 # - Fazer o artigo poder ser atribuído a máquinas especificas
 # - CALCULO DE EFICIÊNCIA
-	# - Fazer o calendário de disponibilidade da máquina
-	# - Fazer os relatórios de eficiência corretos
+	# - (FEITO) Fazer o calendário de disponibilidade da máquina
+	# - Fazer os cálculos e relatórios de eficiência corretos
 # - Fazer opções para importar e exportar dados pelo excel (Update de Maquinas e Artigos)

@@ -13,7 +13,7 @@ namespace iAxxMES0
 
         public ControleArtigo()
         {
-            connection = new MySqlConnection();
+            connection = Conexao.GetConnection();
         }
 
         // Função de log para gravar erros

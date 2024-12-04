@@ -47,6 +47,9 @@
             usuáriosToolStripMenuItem = new ToolStripMenuItem();
             consultarToolStripMenuItem = new ToolStripMenuItem();
             cadastrarToolStripMenuItem = new ToolStripMenuItem();
+            calendárioDeDisponibilidadeToolStripMenuItem = new ToolStripMenuItem();
+            visualizarCalendárioToolStripMenuItem = new ToolStripMenuItem();
+            cadastroDeIndisponibilidadeToolStripMenuItem = new ToolStripMenuItem();
             relatórioToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -56,7 +59,6 @@
             txtGrupo = new TextBox();
             panel2 = new Panel();
             panel3 = new Panel();
-            calendárioDeDisponibilidadeToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvGrupos).BeginInit();
             menuStrip1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -264,6 +266,27 @@
             cadastrarToolStripMenuItem.Text = "Cadastrar";
             cadastrarToolStripMenuItem.Click += cadastrarToolStripMenuItem_Click;
             // 
+            // calendárioDeDisponibilidadeToolStripMenuItem
+            // 
+            calendárioDeDisponibilidadeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { visualizarCalendárioToolStripMenuItem, cadastroDeIndisponibilidadeToolStripMenuItem });
+            calendárioDeDisponibilidadeToolStripMenuItem.Name = "calendárioDeDisponibilidadeToolStripMenuItem";
+            calendárioDeDisponibilidadeToolStripMenuItem.Size = new Size(177, 20);
+            calendárioDeDisponibilidadeToolStripMenuItem.Text = "Calendário de Disponibilidade";
+            // 
+            // visualizarCalendárioToolStripMenuItem
+            // 
+            visualizarCalendárioToolStripMenuItem.Name = "visualizarCalendárioToolStripMenuItem";
+            visualizarCalendárioToolStripMenuItem.Size = new Size(231, 22);
+            visualizarCalendárioToolStripMenuItem.Text = "Visualizar Calendário";
+            visualizarCalendárioToolStripMenuItem.Click += visualizarCalendárioToolStripMenuItem_Click;
+            // 
+            // cadastroDeIndisponibilidadeToolStripMenuItem
+            // 
+            cadastroDeIndisponibilidadeToolStripMenuItem.Name = "cadastroDeIndisponibilidadeToolStripMenuItem";
+            cadastroDeIndisponibilidadeToolStripMenuItem.Size = new Size(231, 22);
+            cadastroDeIndisponibilidadeToolStripMenuItem.Text = "Cadastro de Indisponibilidade";
+            cadastroDeIndisponibilidadeToolStripMenuItem.Click += cadastroDeIndisponibilidadeToolStripMenuItem_Click;
+            // 
             // relatórioToolStripMenuItem
             // 
             relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
@@ -369,13 +392,6 @@
             panel3.Size = new Size(918, 277);
             panel3.TabIndex = 1;
             // 
-            // calendárioDeDisponibilidadeToolStripMenuItem
-            // 
-            calendárioDeDisponibilidadeToolStripMenuItem.Name = "calendárioDeDisponibilidadeToolStripMenuItem";
-            calendárioDeDisponibilidadeToolStripMenuItem.Size = new Size(177, 20);
-            calendárioDeDisponibilidadeToolStripMenuItem.Text = "Calendário de Disponibilidade";
-            calendárioDeDisponibilidadeToolStripMenuItem.Click += calendárioDeDisponibilidadeToolStripMenuItem_Click;
-            // 
             // frmGerenciarGrupos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -434,5 +450,7 @@
         private ToolStripMenuItem consultarToolStripMenuItem;
         private ToolStripMenuItem cadastrarToolStripMenuItem;
         private ToolStripMenuItem calendárioDeDisponibilidadeToolStripMenuItem;
+        private ToolStripMenuItem visualizarCalendárioToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeIndisponibilidadeToolStripMenuItem;
     }
 }

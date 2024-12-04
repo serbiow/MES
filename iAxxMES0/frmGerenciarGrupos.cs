@@ -220,10 +220,16 @@ namespace iAxxMES0
             cadastro.ShowDialog();
         }
 
-        private void calendárioDeDisponibilidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void visualizarCalendárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCalendario calendario = new frmCalendario();
             calendario.ShowDialog();
+        }
+
+        private void cadastroDeIndisponibilidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCadCalendario cadCalendario = new frmCadCalendario();
+            cadCalendario.ShowDialog();
         }
 
         private void relatórioToolStripMenuItem_Click(object sender, EventArgs e)

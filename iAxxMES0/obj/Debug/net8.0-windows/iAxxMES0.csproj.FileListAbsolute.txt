@@ -167,3 +167,4 @@ C:\Users\iAxx\Documents\GitHub\iAxxMES\iAxxMES0\obj\Debug\net8.0-windows\iAxxMES
 C:\Users\iAxx\Documents\GitHub\iAxxMES\iAxxMES0\obj\Debug\net8.0-windows\ref\iAxxMES0.dll
 C:\Users\sergi\Documents\GitHub\iAxxMES\iAxxMES0\obj\Debug\net8.0-windows\iAxxMES0.frmArtigo.resources
 C:\Users\sergi\Documents\GitHub\iAxxMES\iAxxMES0\obj\Debug\net8.0-windows\iAxxMES0.frmCalendario.resources
+C:\Users\sergi\Documents\GitHub\iAxxMES\iAxxMES0\obj\Debug\net8.0-windows\iAxxMES0.frmCadCalendario.resources

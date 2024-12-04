@@ -35,6 +35,8 @@
             consultaToolStripMenuItem = new ToolStripMenuItem();
             cadastroToolStripMenuItem = new ToolStripMenuItem();
             calendárioDeDisponibilidadeToolStripMenuItem = new ToolStripMenuItem();
+            visualizarCalendárioToolStripMenuItem = new ToolStripMenuItem();
+            cadastroDeIndisponibilidadeToolStripMenuItem = new ToolStripMenuItem();
             relatórioToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             cbxStatusFiltro = new ComboBox();
@@ -117,10 +119,24 @@
             // 
             // calendárioDeDisponibilidadeToolStripMenuItem
             // 
+            calendárioDeDisponibilidadeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { visualizarCalendárioToolStripMenuItem, cadastroDeIndisponibilidadeToolStripMenuItem });
             calendárioDeDisponibilidadeToolStripMenuItem.Name = "calendárioDeDisponibilidadeToolStripMenuItem";
             calendárioDeDisponibilidadeToolStripMenuItem.Size = new Size(177, 20);
             calendárioDeDisponibilidadeToolStripMenuItem.Text = "Calendário de Disponibilidade";
-            calendárioDeDisponibilidadeToolStripMenuItem.Click += calendárioDeDisponibilidadeToolStripMenuItem_Click;
+            // 
+            // visualizarCalendárioToolStripMenuItem
+            // 
+            visualizarCalendárioToolStripMenuItem.Name = "visualizarCalendárioToolStripMenuItem";
+            visualizarCalendárioToolStripMenuItem.Size = new Size(231, 22);
+            visualizarCalendárioToolStripMenuItem.Text = "Visualizar Calendário";
+            visualizarCalendárioToolStripMenuItem.Click += visualizarCalendárioToolStripMenuItem_Click;
+            // 
+            // cadastroDeIndisponibilidadeToolStripMenuItem
+            // 
+            cadastroDeIndisponibilidadeToolStripMenuItem.Name = "cadastroDeIndisponibilidadeToolStripMenuItem";
+            cadastroDeIndisponibilidadeToolStripMenuItem.Size = new Size(231, 22);
+            cadastroDeIndisponibilidadeToolStripMenuItem.Text = "Cadastro de Indisponibilidade";
+            cadastroDeIndisponibilidadeToolStripMenuItem.Click += cadastroDeIndisponibilidadeToolStripMenuItem_Click;
             // 
             // relatórioToolStripMenuItem
             // 
@@ -529,5 +545,7 @@
         private ToolStripMenuItem consultaToolStripMenuItem;
         private ToolStripMenuItem cadastroToolStripMenuItem;
         private ToolStripMenuItem calendárioDeDisponibilidadeToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeIndisponibilidadeToolStripMenuItem;
+        private ToolStripMenuItem visualizarCalendárioToolStripMenuItem;
     }
 }

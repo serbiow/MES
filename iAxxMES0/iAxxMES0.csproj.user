@@ -7,6 +7,9 @@
     <Compile Update="frmArtigo.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmCadCalendario.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmCadUser.cs">
       <SubType>Form</SubType>
     </Compile>
