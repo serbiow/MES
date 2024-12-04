@@ -144,7 +144,7 @@ namespace iAxxMES0
             MinimumSize = new Size(672, 561);
             Name = "frmViewUser";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Consultar Usuários";
+            Text = "Consulta de Usuários";
             ((ISupportInitialize)dgvUser).EndInit();
             ResumeLayout(false);
             PerformLayout();

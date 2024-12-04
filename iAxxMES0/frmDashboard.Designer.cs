@@ -31,8 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             menuStrip1 = new MenuStrip();
             gerenciarGruposToolStripMenuItem = new ToolStripMenuItem();
-            consultarUsuáriosToolStripMenuItem = new ToolStripMenuItem();
-            cadastroDeUsuárioToolStripMenuItem = new ToolStripMenuItem();
+            usuáriosToolStripMenuItem = new ToolStripMenuItem();
+            consultaToolStripMenuItem = new ToolStripMenuItem();
+            cadastroToolStripMenuItem = new ToolStripMenuItem();
+            calendárioDeDisponibilidadeToolStripMenuItem = new ToolStripMenuItem();
             relatórioToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             cbxStatusFiltro = new ComboBox();
@@ -78,7 +80,7 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.FromArgb(197, 202, 208);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { gerenciarGruposToolStripMenuItem, consultarUsuáriosToolStripMenuItem, cadastroDeUsuárioToolStripMenuItem, relatórioToolStripMenuItem, sairToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { gerenciarGruposToolStripMenuItem, usuáriosToolStripMenuItem, calendárioDeDisponibilidadeToolStripMenuItem, relatórioToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1289, 24);
@@ -92,21 +94,33 @@
             gerenciarGruposToolStripMenuItem.Text = "Gerenciar Grupos";
             gerenciarGruposToolStripMenuItem.Click += gerenciarGruposToolStripMenuItem_Click;
             // 
-            // consultarUsuáriosToolStripMenuItem
+            // usuáriosToolStripMenuItem
             // 
-            consultarUsuáriosToolStripMenuItem.Name = "consultarUsuáriosToolStripMenuItem";
-            consultarUsuáriosToolStripMenuItem.Size = new Size(118, 20);
-            consultarUsuáriosToolStripMenuItem.Text = "Consultar Usuários";
-            consultarUsuáriosToolStripMenuItem.Click += consultarUsuáriosToolStripMenuItem_Click;
+            usuáriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { consultaToolStripMenuItem, cadastroToolStripMenuItem });
+            usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
+            usuáriosToolStripMenuItem.Size = new Size(64, 20);
+            usuáriosToolStripMenuItem.Text = "Usuários";
             // 
-            // cadastroDeUsuárioToolStripMenuItem
+            // consultaToolStripMenuItem
             // 
-            cadastroDeUsuárioToolStripMenuItem.BackColor = Color.FromArgb(197, 202, 208);
-            cadastroDeUsuárioToolStripMenuItem.ForeColor = Color.Black;
-            cadastroDeUsuárioToolStripMenuItem.Name = "cadastroDeUsuárioToolStripMenuItem";
-            cadastroDeUsuárioToolStripMenuItem.Size = new Size(125, 20);
-            cadastroDeUsuárioToolStripMenuItem.Text = "Cadastro de Usuário";
-            cadastroDeUsuárioToolStripMenuItem.Click += cadastroDeUsuárioToolStripMenuItem_Click;
+            consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
+            consultaToolStripMenuItem.Size = new Size(121, 22);
+            consultaToolStripMenuItem.Text = "Consulta";
+            consultaToolStripMenuItem.Click += consultaToolStripMenuItem_Click;
+            // 
+            // cadastroToolStripMenuItem
+            // 
+            cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
+            cadastroToolStripMenuItem.Size = new Size(121, 22);
+            cadastroToolStripMenuItem.Text = "Cadastro";
+            cadastroToolStripMenuItem.Click += cadastroToolStripMenuItem_Click;
+            // 
+            // calendárioDeDisponibilidadeToolStripMenuItem
+            // 
+            calendárioDeDisponibilidadeToolStripMenuItem.Name = "calendárioDeDisponibilidadeToolStripMenuItem";
+            calendárioDeDisponibilidadeToolStripMenuItem.Size = new Size(177, 20);
+            calendárioDeDisponibilidadeToolStripMenuItem.Text = "Calendário de Disponibilidade";
+            calendárioDeDisponibilidadeToolStripMenuItem.Click += calendárioDeDisponibilidadeToolStripMenuItem_Click;
             // 
             // relatórioToolStripMenuItem
             // 
@@ -479,7 +493,6 @@
         #endregion
 
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem cadastroDeUsuárioToolStripMenuItem;
         private ToolStripMenuItem sairToolStripMenuItem;
         private ComboBox cbxStatusFiltro;
         private Panel panel1;
@@ -510,8 +523,11 @@
         private Label lblNumParada;
         private Label lblNumRodando;
         private Panel panel5;
-        private ToolStripMenuItem consultarUsuáriosToolStripMenuItem;
+        private ToolStripMenuItem usuáriosToolStripMenuItem;
         private ToolStripMenuItem gerenciarGruposToolStripMenuItem;
         private ToolStripMenuItem relatórioToolStripMenuItem;
+        private ToolStripMenuItem consultaToolStripMenuItem;
+        private ToolStripMenuItem cadastroToolStripMenuItem;
+        private ToolStripMenuItem calendárioDeDisponibilidadeToolStripMenuItem;
     }
 }

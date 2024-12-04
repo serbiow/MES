@@ -25,7 +25,7 @@ namespace iAxxMES0
             InitializeComponent();
             controleMaquinas = new ControleMaquinas();
             listaMaquinas = new List<MaquinaControl>();
-            
+
             // Controla a permissão do usuário
             this.nivelPermissao = nivelPermissao;
             AjustarMenuPorPermissao();
@@ -188,33 +188,33 @@ namespace iAxxMES0
             {
                 case "master":
                     // Todos os itens disponíveis para masters
-                    cadastroDeUsuárioToolStripMenuItem.Visible = true;
-                    consultarUsuáriosToolStripMenuItem.Visible = true;
+                    usuáriosToolStripMenuItem.Visible = true;
                     gerenciarGruposToolStripMenuItem.Visible = true;
+                    calendárioDeDisponibilidadeToolStripMenuItem.Visible = true;
                     relatórioToolStripMenuItem.Visible = true;
                     break;
 
                 case "admin":
                     // Todos os itens disponíveis para masters
-                    cadastroDeUsuárioToolStripMenuItem.Visible = true;
-                    consultarUsuáriosToolStripMenuItem.Visible = true;
+                    usuáriosToolStripMenuItem.Visible = true;
                     gerenciarGruposToolStripMenuItem.Visible = true;
+                    calendárioDeDisponibilidadeToolStripMenuItem.Visible = true;
                     relatórioToolStripMenuItem.Visible = true;
                     break;
 
                 case "operator":
                     // Apenas relatórios acessíveis para operadores
-                    cadastroDeUsuárioToolStripMenuItem.Visible = false;
-                    consultarUsuáriosToolStripMenuItem.Visible = false;
+                    usuáriosToolStripMenuItem.Visible = false;
                     gerenciarGruposToolStripMenuItem.Visible = false;
+                    calendárioDeDisponibilidadeToolStripMenuItem.Visible = false;
                     relatórioToolStripMenuItem.Visible = true;
                     break;
 
                 default:
                     // Nenhuma permissão
-                    cadastroDeUsuárioToolStripMenuItem.Visible = false;
-                    consultarUsuáriosToolStripMenuItem.Visible = false;
+                    usuáriosToolStripMenuItem.Visible = false;
                     gerenciarGruposToolStripMenuItem.Visible = false;
+                    calendárioDeDisponibilidadeToolStripMenuItem.Visible = false;
                     relatórioToolStripMenuItem.Visible = false;
                     break;
             }
@@ -294,18 +294,6 @@ namespace iAxxMES0
             ExibirMaquinas(maquinasFiltradas);
         }
 
-        private void cadastroDeUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCadUser cadastro = new frmCadUser(nivelPermissao);
-            cadastro.ShowDialog();
-        }
-
-        private void consultarUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmViewUser consultar = new frmViewUser();
-            consultar.ShowDialog();
-        }
-
         private void gerenciarGruposToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Chamar o Gerenciar Grupos e fechar o Dashboard
@@ -316,6 +304,24 @@ namespace iAxxMES0
             }
 
             this.Close();
+        }
+
+        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCadUser cadastro = new frmCadUser(nivelPermissao);
+            cadastro.ShowDialog();
+        }
+
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmViewUser consultar = new frmViewUser();
+            consultar.ShowDialog();
+        }
+
+        private void calendárioDeDisponibilidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCalendario calendario = new frmCalendario();
+            calendario.ShowDialog();
         }
 
         private void relatórioToolStripMenuItem_Click(object sender, EventArgs e)

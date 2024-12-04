@@ -70,33 +70,33 @@ namespace iAxxMES0
             {
                 case "master":
                     // Todos os itens disponíveis para masters
-                    cadastroDeUsuárioToolStripMenuItem.Visible = true;
-                    consultarUsuáriosToolStripMenuItem.Visible = true;
+                    usuáriosToolStripMenuItem.Visible = true;
                     supervisaoToolStripMenuItem.Visible = true;
+                    calendárioDeDisponibilidadeToolStripMenuItem.Visible = true;
                     relatórioToolStripMenuItem.Visible = true;
                     break;
 
                 case "admin":
                     // Todos os itens disponíveis para masters
-                    cadastroDeUsuárioToolStripMenuItem.Visible = true;
-                    consultarUsuáriosToolStripMenuItem.Visible = true;
+                    usuáriosToolStripMenuItem.Visible = true;
                     supervisaoToolStripMenuItem.Visible = true;
+                    calendárioDeDisponibilidadeToolStripMenuItem.Visible = true;
                     relatórioToolStripMenuItem.Visible = true;
                     break;
 
                 case "operator":
                     // Apenas relatórios acessíveis para operadores
-                    cadastroDeUsuárioToolStripMenuItem.Visible = false;
-                    consultarUsuáriosToolStripMenuItem.Visible = false;
+                    usuáriosToolStripMenuItem.Visible = false;
                     supervisaoToolStripMenuItem.Visible = false;
+                    calendárioDeDisponibilidadeToolStripMenuItem.Visible = false;
                     relatórioToolStripMenuItem.Visible = true;
                     break;
 
                 default:
                     // Nenhuma permissão
-                    cadastroDeUsuárioToolStripMenuItem.Visible = false;
-                    consultarUsuáriosToolStripMenuItem.Visible = false;
+                    usuáriosToolStripMenuItem.Visible = false;
                     supervisaoToolStripMenuItem.Visible = false;
+                    calendárioDeDisponibilidadeToolStripMenuItem.Visible = false;
                     relatórioToolStripMenuItem.Visible = false;
                     break;
             }
@@ -208,16 +208,22 @@ namespace iAxxMES0
             this.Close();
         }
 
-        private void cadastroDeUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmViewUser consultar = new frmViewUser();
+            consultar.ShowDialog();
+        }
+
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCadUser cadastro = new frmCadUser(nivelPermissao);
             cadastro.ShowDialog();
         }
 
-        private void consultarUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void calendárioDeDisponibilidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmViewUser consultar = new frmViewUser();
-            consultar.ShowDialog();
+            frmCalendario calendario = new frmCalendario();
+            calendario.ShowDialog();
         }
 
         private void relatórioToolStripMenuItem_Click(object sender, EventArgs e)

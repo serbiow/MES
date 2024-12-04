@@ -1,6 +1,7 @@
 # iAxxMES0
 
-# TODO
+# TODO:
+
 # 1- (FEITO) CRUD usuário
 # 2- (FEITO) Tela de detalhes da máquina com opção de update
 # 3- (FEITO) Read and Update Máquinas
@@ -25,3 +26,10 @@
 # - (FEITO) mudar a ordem de consulta e cadastro de usuário no menu
 # - (FEITO) btn sair deve mandar para a tela de login
 # - (FEITO) colocar o ícone em tudo
+
+# - Fazer o CRUD completo de ARTIGOS (deve ter Filtro e Ordenação por Artigo no dashboard)
+# - Fazer o artigo poder ser atribuído a máquinas especificas
+# - CALCULO DE EFICIÊNCIA
+	# - Fazer o calendário de disponibilidade da máquina
+	# - Fazer os relatórios de eficiência corretos
+# - Fazer opções para importar e exportar dados pelo excel (Update de Maquinas e Artigos)
