@@ -36,6 +36,7 @@
             cadastroToolStripMenuItem = new ToolStripMenuItem();
             calendárioDeDisponibilidadeToolStripMenuItem = new ToolStripMenuItem();
             visualizarCalendárioToolStripMenuItem = new ToolStripMenuItem();
+            gerenciarCalendáriosToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeIndisponibilidadeToolStripMenuItem = new ToolStripMenuItem();
             relatórioToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
@@ -119,7 +120,7 @@
             // 
             // calendárioDeDisponibilidadeToolStripMenuItem
             // 
-            calendárioDeDisponibilidadeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { visualizarCalendárioToolStripMenuItem, cadastroDeIndisponibilidadeToolStripMenuItem });
+            calendárioDeDisponibilidadeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { visualizarCalendárioToolStripMenuItem, gerenciarCalendáriosToolStripMenuItem, cadastroDeIndisponibilidadeToolStripMenuItem });
             calendárioDeDisponibilidadeToolStripMenuItem.Name = "calendárioDeDisponibilidadeToolStripMenuItem";
             calendárioDeDisponibilidadeToolStripMenuItem.Size = new Size(177, 20);
             calendárioDeDisponibilidadeToolStripMenuItem.Text = "Calendário de Disponibilidade";
@@ -130,6 +131,13 @@
             visualizarCalendárioToolStripMenuItem.Size = new Size(231, 22);
             visualizarCalendárioToolStripMenuItem.Text = "Visualizar Calendário";
             visualizarCalendárioToolStripMenuItem.Click += visualizarCalendárioToolStripMenuItem_Click;
+            // 
+            // gerenciarCalendáriosToolStripMenuItem
+            // 
+            gerenciarCalendáriosToolStripMenuItem.Name = "gerenciarCalendáriosToolStripMenuItem";
+            gerenciarCalendáriosToolStripMenuItem.Size = new Size(231, 22);
+            gerenciarCalendáriosToolStripMenuItem.Text = "Gerenciar Calendários";
+            gerenciarCalendáriosToolStripMenuItem.Click += gerenciarCalendáriosToolStripMenuItem_Click;
             // 
             // cadastroDeIndisponibilidadeToolStripMenuItem
             // 
@@ -547,5 +555,6 @@
         private ToolStripMenuItem calendárioDeDisponibilidadeToolStripMenuItem;
         private ToolStripMenuItem cadastroDeIndisponibilidadeToolStripMenuItem;
         private ToolStripMenuItem visualizarCalendárioToolStripMenuItem;
+        private ToolStripMenuItem gerenciarCalendáriosToolStripMenuItem;
     }
 }

@@ -33,12 +33,33 @@ CREATE TABLE grupo (
     descricao VARCHAR(255)
 );
 
+CREATE TABLE Calendario (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    descricao VARCHAR(255)
+);
+
+CREATE TABLE indisponibilidade (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Calendario_id INT,
+    Tipo ENUM('Semanal', 'Específico') NOT NULL,
+    DiaSemana ENUM('Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo') NULL,
+    DataEspecifica DATE NULL,
+    HorarioInicio TIME NOT NULL,
+    HorarioFim TIME NOT NULL,
+    Motivo VARCHAR(255),
+    DataCriacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (calendario_id) REFERENCES Calendario(id)
+);
+
 CREATE TABLE maquina (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    calendario_id INT,
     apelido VARCHAR(50) NOT NULL,
     finura INT(4) NOT NULL,
     diametro DECIMAL(6,2) NOT NULL,
-    numero_alimentadores INT(4) NOT NULL
+    numero_alimentadores INT(4) NOT NULL,
+    FOREIGN KEY (calendario_id) REFERENCES Calendario(id)    
 );
 
 -- Tabela de associação grupo_maquina para representar a relação muitos-para-muitos
@@ -73,16 +94,6 @@ CREATE TABLE maquina_dados (
     FOREIGN KEY (status) REFERENCES maquina_status(id)
 );
 
-CREATE TABLE IndisponibilidadeMaquinas (
-    Id INT AUTO_INCREMENT PRIMARY KEY,
-    Tipo ENUM('Semanal', 'Específico') NOT NULL,
-    DiaSemana ENUM('Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo') NULL,
-    DataEspecifica DATE NULL,
-    HorarioInicio TIME NOT NULL,
-    HorarioFim TIME NOT NULL,
-    Motivo VARCHAR(255),
-    DataCriacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
 
 /*INSERTS*/
 
@@ -111,6 +122,9 @@ INSERT INTO maquina_status (descricao) VALUES ('Parada');
 INSERT INTO maquina_status (descricao) VALUES ('Setup');
 INSERT INTO maquina_status (descricao) VALUES ('Carga de fio');
 INSERT INTO maquina_status (descricao) VALUES ('Sem programação');
+
+-- Insert de calendário
+insert into calendario (nome, descricao) values ("Feriados 2025", "Feriados oficiais e confirmados de 2025");
 
 -- Inserts para tabela grupo
 INSERT INTO grupo (nome, descricao) VALUES ('Grupo 1', 'Descrição do Grupo 1');

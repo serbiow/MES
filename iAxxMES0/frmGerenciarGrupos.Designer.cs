@@ -49,6 +49,7 @@
             cadastrarToolStripMenuItem = new ToolStripMenuItem();
             calendárioDeDisponibilidadeToolStripMenuItem = new ToolStripMenuItem();
             visualizarCalendárioToolStripMenuItem = new ToolStripMenuItem();
+            gerenciarCalendáriosToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeIndisponibilidadeToolStripMenuItem = new ToolStripMenuItem();
             relatórioToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
@@ -127,6 +128,7 @@
             dgvGrupos.AllowUserToAddRows = false;
             dgvGrupos.AllowUserToDeleteRows = false;
             dgvGrupos.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvGrupos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvGrupos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvGrupos.Location = new Point(12, 568);
             dgvGrupos.Name = "dgvGrupos";
@@ -192,9 +194,10 @@
             // 
             // clbMaquinas
             // 
-            clbMaquinas.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            clbMaquinas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             clbMaquinas.FormattingEnabled = true;
-            clbMaquinas.Location = new Point(3, 37);
+            clbMaquinas.Location = new Point(2, 37);
+            clbMaquinas.MultiColumn = true;
             clbMaquinas.Name = "clbMaquinas";
             clbMaquinas.Size = new Size(444, 418);
             clbMaquinas.TabIndex = 10;
@@ -220,7 +223,7 @@
             btnSalvar.FlatStyle = FlatStyle.Flat;
             btnSalvar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSalvar.ForeColor = Color.White;
-            btnSalvar.Location = new Point(342, 466);
+            btnSalvar.Location = new Point(341, 466);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(105, 32);
             btnSalvar.TabIndex = 11;
@@ -268,7 +271,7 @@
             // 
             // calendárioDeDisponibilidadeToolStripMenuItem
             // 
-            calendárioDeDisponibilidadeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { visualizarCalendárioToolStripMenuItem, cadastroDeIndisponibilidadeToolStripMenuItem });
+            calendárioDeDisponibilidadeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { visualizarCalendárioToolStripMenuItem, gerenciarCalendáriosToolStripMenuItem, cadastroDeIndisponibilidadeToolStripMenuItem });
             calendárioDeDisponibilidadeToolStripMenuItem.Name = "calendárioDeDisponibilidadeToolStripMenuItem";
             calendárioDeDisponibilidadeToolStripMenuItem.Size = new Size(177, 20);
             calendárioDeDisponibilidadeToolStripMenuItem.Text = "Calendário de Disponibilidade";
@@ -279,6 +282,13 @@
             visualizarCalendárioToolStripMenuItem.Size = new Size(231, 22);
             visualizarCalendárioToolStripMenuItem.Text = "Visualizar Calendário";
             visualizarCalendárioToolStripMenuItem.Click += visualizarCalendárioToolStripMenuItem_Click;
+            // 
+            // gerenciarCalendáriosToolStripMenuItem
+            // 
+            gerenciarCalendáriosToolStripMenuItem.Name = "gerenciarCalendáriosToolStripMenuItem";
+            gerenciarCalendáriosToolStripMenuItem.Size = new Size(231, 22);
+            gerenciarCalendáriosToolStripMenuItem.Text = "Gerenciar Calendários";
+            gerenciarCalendáriosToolStripMenuItem.Click += gerenciarCalendáriosToolStripMenuItem_Click;
             // 
             // cadastroDeIndisponibilidadeToolStripMenuItem
             // 
@@ -321,8 +331,8 @@
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 460F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Controls.Add(panel1, 0, 0);
             tableLayoutPanel2.Controls.Add(panel2, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
@@ -331,7 +341,6 @@
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Size = new Size(918, 517);
             tableLayoutPanel2.TabIndex = 0;
             // 
@@ -351,7 +360,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(453, 511);
+            panel1.Size = new Size(454, 511);
             panel1.TabIndex = 0;
             // 
             // label2
@@ -378,9 +387,9 @@
             panel2.Controls.Add(btnSalvar);
             panel2.Controls.Add(clbMaquinas);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(462, 3);
+            panel2.Location = new Point(463, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(453, 511);
+            panel2.Size = new Size(452, 511);
             panel2.TabIndex = 1;
             // 
             // panel3
@@ -452,5 +461,6 @@
         private ToolStripMenuItem calendárioDeDisponibilidadeToolStripMenuItem;
         private ToolStripMenuItem visualizarCalendárioToolStripMenuItem;
         private ToolStripMenuItem cadastroDeIndisponibilidadeToolStripMenuItem;
+        private ToolStripMenuItem gerenciarCalendáriosToolStripMenuItem;
     }
 }

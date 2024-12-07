@@ -29,7 +29,7 @@ namespace iAxxMES0
 
                 // Query para inserir a indisponibilidade
                 string query = @"
-                INSERT INTO IndisponibilidadeMaquinas 
+                INSERT INTO indisponibilidade 
                 (Tipo, DiaSemana, DataEspecifica, HorarioInicio, HorarioFim, Motivo) 
                 VALUES (@Tipo, @DiaSemana, @DataEspecifica, @HorarioInicio, @HorarioFim, @Motivo)";
 
@@ -70,7 +70,7 @@ namespace iAxxMES0
                     connection.Open();
                 }
 
-                string query = "SELECT * FROM IndisponibilidadeMaquinas";
+                string query = "SELECT * FROM indisponibilidade";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -116,7 +116,7 @@ namespace iAxxMES0
                     connection.Open();
                 }
 
-                string query = "DELETE FROM IndisponibilidadeMaquinas WHERE Id = @Id";
+                string query = "DELETE FROM indisponibilidade WHERE Id = @Id";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {

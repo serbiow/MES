@@ -226,6 +226,12 @@ namespace iAxxMES0
             calendario.ShowDialog();
         }
 
+        private void gerenciarCalendáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGerenciarCalendarios gerenciarCalendarios = new frmGerenciarCalendarios();
+            gerenciarCalendarios.ShowDialog();
+        }
+
         private void cadastroDeIndisponibilidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCadCalendario cadCalendario = new frmCadCalendario();

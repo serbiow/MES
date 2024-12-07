@@ -129,6 +129,50 @@ namespace iAxxMES0
             return maquinas;
         }
 
+        //Método para obter a máquina pelo apelido dela
+        public Maquina ObterMaquinaPorApelido(string apelido)
+        {
+            Maquina maquina = null;
+            string query = "SELECT id, apelido, finura, diametro, numero_alimentadores FROM maquina WHERE apelido = @apelido LIMIT 1";
+
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@apelido", apelido);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            maquina = new Maquina
+                            {
+                                Id = reader.GetInt32("id"),
+                                Apelido = reader.GetString("apelido"),
+                                Finura = reader.GetInt32("finura"),
+                                Diametro = reader.GetInt32("diametro"),
+                                NumeroAlimentadores = reader.GetInt32("numero_alimentadores")
+                            };
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                LogError($"Erro ao obter máquina com apelido '{apelido}': {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+
+            return maquina;
+        }
+
         // Método para obter as máquina de forma simplificada (apenas id e apelido)
         public List<Maquina> ObterMaquinasSimplificado()
         {
@@ -455,50 +499,6 @@ namespace iAxxMES0
             }
 
             return grupos;
-        }
-
-        //Método para obter a máquina pelo apelido dela
-        public Maquina ObterMaquinaPorApelido(string apelido)
-        {
-            Maquina maquina = null;
-            string query = "SELECT id, apelido, finura, diametro, numero_alimentadores FROM maquina WHERE apelido = @apelido LIMIT 1";
-
-            try
-            {
-                if (connection.State == ConnectionState.Closed)
-                    connection.Open();
-
-                using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                {
-                    cmd.Parameters.AddWithValue("@apelido", apelido);
-
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            maquina = new Maquina
-                            {
-                                Id = reader.GetInt32("id"),
-                                Apelido = reader.GetString("apelido"),
-                                Finura = reader.GetInt32("finura"),
-                                Diametro = reader.GetInt32("diametro"),
-                                NumeroAlimentadores = reader.GetInt32("numero_alimentadores")
-                            };
-                        }
-                    }
-                }
-            }
-            catch (MySqlException ex)
-            {
-                LogError($"Erro ao obter máquina com apelido '{apelido}': {ex.Message}");
-            }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
-                    connection.Close();
-            }
-
-            return maquina;
         }
 
         // Método para adicionar um grupo
