@@ -20,7 +20,7 @@ namespace iAxxMES0
         // Função de log para gravar erros
         private void LogError(string errorMessage)
         {
-            string logFilePath = "error_log.txt"; // Caminho para o arquivo de log
+            string logFilePath = "C:/iAxx/log/error_log.txt"; // Caminho para o arquivo de log
             string logEntry = $"{DateTime.Now}: {errorMessage}\n"; // Log de erro com data e mensagem
 
             try
@@ -34,7 +34,7 @@ namespace iAxxMES0
         }
 
         // Método para obter todos os calendários
-        public List<Calendario> ObterTodosCalendaris()
+        public List<Calendario> ObterTodosCalendarios()
         {
             List<Calendario> calendarios = new List<Calendario>();
             string query = "SELECT id, nome, descricao FROM calendario";
@@ -122,6 +122,50 @@ namespace iAxxMES0
             return maquinas;
         }
 
+        // Método para buscar calendários por nome
+        public List<Calendario> ObterCalendariosPorNome(string nome)
+        {
+            List<Calendario> calendarios = new List<Calendario>();
+            string query = "SELECT id, nome, descricao FROM calendario WHERE nome LIKE @nome";
+
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    // Usando LIKE para permitir busca parcial
+                    cmd.Parameters.AddWithValue("@nome", $"%{nome}%");
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Calendario calendario = new Calendario
+                            {
+                                Id = reader.GetInt32("id"),
+                                Nome = reader.GetString("nome"),
+                                Descricao = reader.IsDBNull(reader.GetOrdinal("descricao")) ? null : reader.GetString("descricao")
+                            };
+                            calendarios.Add(calendario);
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                LogError($"Erro ao buscar calendários com nome '{nome}': {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+
+            return calendarios;
+        }
+
         // Método para adicionar um calendário
         public void AdicionarCalendario(string nome, string descricao = null)
         {
@@ -207,7 +251,7 @@ namespace iAxxMES0
         }
 
         // Método para associar máquinas a um calendário específico
-        public void AssociarMaquinaAoCalendario(int maquinaId, int calendarioId)
+        public void AssociarMaquinaAoCalendario(int calendarioId, int maquinaId)
         {
             string query = "UPDATE maquina SET calendario_id = @calendarioId WHERE id = @maquinaId";
 

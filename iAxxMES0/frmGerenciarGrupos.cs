@@ -43,7 +43,14 @@ namespace iAxxMES0
         {
             if (dgvGrupos.SelectedRows.Count > 0)
             {
+                // Obter o ID do grupo selecionado
                 int grupoId = (int)dgvGrupos.SelectedRows[0].Cells["Id"].Value;
+
+                // Preencher os campos de texto com o nome e a descrição do grupo selecionado
+                txtGrupo.Text = dgvGrupos.SelectedRows[0].Cells["Nome"].Value.ToString();
+                txtDescGrupo.Text = dgvGrupos.SelectedRows[0].Cells["Descricao"].Value?.ToString();
+
+                // Carregar máquinas associadas ao grupo selecionado
                 CarregarMaquinasDoGrupo(grupoId);
             }
         }
@@ -175,11 +182,12 @@ namespace iAxxMES0
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             txtGrupo.Clear();
+            txtNomeGrupo.Clear();
             txtDescGrupo.Clear();
             dgvGrupos.DataSource = null;
             clbMaquinas.Items.Clear();
 
-            txtGrupo.Focus();
+            txtNomeGrupo.Focus();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

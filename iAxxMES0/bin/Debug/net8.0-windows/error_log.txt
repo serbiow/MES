@@ -687,3 +687,18 @@
 06/12/2024 23:06:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
 06/12/2024 23:06:01: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
 06/12/2024 23:31:37: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
+09/12/2024 18:51:05: Erro ao editar calendario com ID 1: There is already an open DataReader associated with this Connection which must be closed first.
+09/12/2024 18:51:05: Erro ao obter dados atualizados: Invalid attempt to Read when reader is closed.
+09/12/2024 18:52:11: Erro ao excluir calendario com ID 1: Cannot delete or update a parent row: a foreign key constraint fails (`iaxxmes`.`maquina`, CONSTRAINT `maquina_ibfk_1` FOREIGN KEY (`calendario_id`) REFERENCES `calendario` (`id`))
+09/12/2024 18:52:18: Erro ao excluir calendario com ID 1: Cannot delete or update a parent row: a foreign key constraint fails (`iaxxmes`.`maquina`, CONSTRAINT `maquina_ibfk_1` FOREIGN KEY (`calendario_id`) REFERENCES `calendario` (`id`))
+09/12/2024 19:02:58: Erro ao associar máquina 2 ao calendário 33: Cannot add or update a child row: a foreign key constraint fails (`iaxxmes`.`maquina`, CONSTRAINT `maquina_ibfk_1` FOREIGN KEY (`calendario_id`) REFERENCES `calendario` (`id`))
+09/12/2024 19:02:58: Erro ao associar máquina 2 ao calendário 58: Cannot add or update a child row: a foreign key constraint fails (`iaxxmes`.`maquina`, CONSTRAINT `maquina_ibfk_1` FOREIGN KEY (`calendario_id`) REFERENCES `calendario` (`id`))
+09/12/2024 19:02:58: Erro ao associar máquina 2 ao calendário 81: Cannot add or update a child row: a foreign key constraint fails (`iaxxmes`.`maquina`, CONSTRAINT `maquina_ibfk_1` FOREIGN KEY (`calendario_id`) REFERENCES `calendario` (`id`))
+09/12/2024 19:02:58: Erro ao associar máquina 2 ao calendário 101: Cannot add or update a child row: a foreign key constraint fails (`iaxxmes`.`maquina`, CONSTRAINT `maquina_ibfk_1` FOREIGN KEY (`calendario_id`) REFERENCES `calendario` (`id`))
+09/12/2024 19:03:17: Erro ao associar máquina 2 ao calendário 125: Cannot add or update a child row: a foreign key constraint fails (`iaxxmes`.`maquina`, CONSTRAINT `maquina_ibfk_1` FOREIGN KEY (`calendario_id`) REFERENCES `calendario` (`id`))
+09/12/2024 19:04:49: Erro ao associar máquina 1 ao calendário 2: Cannot add or update a child row: a foreign key constraint fails (`iaxxmes`.`maquina`, CONSTRAINT `maquina_ibfk_1` FOREIGN KEY (`calendario_id`) REFERENCES `calendario` (`id`))
+09/12/2024 19:04:49: Erro ao associar máquina 1 ao calendário 3: Cannot add or update a child row: a foreign key constraint fails (`iaxxmes`.`maquina`, CONSTRAINT `maquina_ibfk_1` FOREIGN KEY (`calendario_id`) REFERENCES `calendario` (`id`))
+09/12/2024 19:04:49: Erro ao associar máquina 1 ao calendário 4: Cannot add or update a child row: a foreign key constraint fails (`iaxxmes`.`maquina`, CONSTRAINT `maquina_ibfk_1` FOREIGN KEY (`calendario_id`) REFERENCES `calendario` (`id`))
+09/12/2024 19:04:49: Erro ao associar máquina 1 ao calendário 80: Cannot add or update a child row: a foreign key constraint fails (`iaxxmes`.`maquina`, CONSTRAINT `maquina_ibfk_1` FOREIGN KEY (`calendario_id`) REFERENCES `calendario` (`id`))
+09/12/2024 19:05:00: Erro ao obter lista simplificada de máquinas: There is already an open DataReader associated with this Connection which must be closed first.
+09/12/2024 19:05:00: Erro ao obter dados atualizados: Invalid attempt to Read when reader is closed.

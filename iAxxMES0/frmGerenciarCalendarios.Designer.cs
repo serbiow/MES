@@ -32,7 +32,7 @@
             btnListAll = new Button();
             dgvCalendarios = new DataGridView();
             label2 = new Label();
-            txtGrupo = new TextBox();
+            txtCalendario = new TextBox();
             panel1 = new Panel();
             btnEditar = new Button();
             lblDescCalemdario = new Label();
@@ -79,6 +79,7 @@
             btnListAll.TabIndex = 31;
             btnListAll.Text = "Listar Todos";
             btnListAll.UseVisualStyleBackColor = false;
+            btnListAll.Click += btnListAll_Click;
             // 
             // dgvCalendarios
             // 
@@ -105,18 +106,18 @@
             label2.TabIndex = 28;
             label2.Text = "Manipular Calendários";
             // 
-            // txtGrupo
+            // txtCalendario
             // 
-            txtGrupo.Location = new Point(9, 196);
-            txtGrupo.Name = "txtGrupo";
-            txtGrupo.PlaceholderText = "Nome do Grupo";
-            txtGrupo.Size = new Size(216, 23);
-            txtGrupo.TabIndex = 26;
+            txtCalendario.Location = new Point(9, 196);
+            txtCalendario.Name = "txtCalendario";
+            txtCalendario.PlaceholderText = "Nome do Calendário";
+            txtCalendario.Size = new Size(216, 23);
+            txtCalendario.TabIndex = 26;
             // 
             // panel1
             // 
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(txtGrupo);
+            panel1.Controls.Add(txtCalendario);
             panel1.Controls.Add(btnEditar);
             panel1.Controls.Add(lblDescCalemdario);
             panel1.Controls.Add(btnBuscar);
@@ -144,6 +145,7 @@
             btnEditar.TabIndex = 5;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // lblDescCalemdario
             // 
@@ -168,6 +170,7 @@
             btnBuscar.TabIndex = 2;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // btnLimpar
             // 
@@ -181,6 +184,7 @@
             btnLimpar.TabIndex = 6;
             btnLimpar.Text = "Limpar";
             btnLimpar.UseVisualStyleBackColor = false;
+            btnLimpar.Click += btnLimpar_Click;
             // 
             // txtDescCalendario
             // 
@@ -203,6 +207,7 @@
             btnExcluir.TabIndex = 7;
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = false;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // btnAdicionar
             // 
@@ -216,6 +221,7 @@
             btnAdicionar.TabIndex = 4;
             btnAdicionar.Text = "Adicionar";
             btnAdicionar.UseVisualStyleBackColor = false;
+            btnAdicionar.Click += btnAdicionar_Click;
             // 
             // lblNomeCalendario
             // 
@@ -275,6 +281,7 @@
             btnSalvar.TabIndex = 11;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = false;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // clbMaquinas
             // 
@@ -328,7 +335,7 @@
 
         private Panel panel3;
         private Label label2;
-        private TextBox txtGrupo;
+        private TextBox txtCalendario;
         private Panel panel1;
         private Button btnEditar;
         private Label lblDescCalemdario;
