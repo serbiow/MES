@@ -128,7 +128,11 @@ namespace iAxxMES0
                     }
                 }
 
-                MessageBox.Show("Máquinas atualizadas para o grupo selecionado.");
+                MessageBox.Show("Máquinas atualizadas para o grupo selecionado.", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Selecione um grupo.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

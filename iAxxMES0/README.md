@@ -15,8 +15,8 @@
 # - Exibir a linha do tempo dos artigos
 
 #Calendário
-# - Vários calendários diferentes, mas uma máquina só pode ter um calendário
-# - Dias anteriores não podem mais ser alterados
+# - (FEITO) Vários calendários diferentes, mas uma máquina só pode ter um calendário
+# - *Dias anteriores não podem mais ser alterados* - OBS.: DEVE SER CONVERSADO
 # - Poder definir exceções para as datas que ja tem indisponibilidade (exemplo: algum domingo a máquina vai rodar)
 # - Colocar opções e definições para cargos (manhã, tarde e noite)
 
@@ -28,8 +28,8 @@
 		# - Tipos de fibra:
 		# - (Vão mandar no zap)
 # - RPM mímino, máximo e ponderado
-# - Rendimento por quilos *(1000 voltas)*
-# - Rendimento por metros *(1000 voltas)*
+# - Rendimento por quilos *(1000 voltas)* OBS.: Deve ser conversado
+# - Rendimento por metros *(1000 voltas)* OBS.: Deve ser conversado
 
 # - As máquinas devem ter bloqueios de artigos (artigos que não podem rodar na máquina) (pq, quem e quando?)
 # - Essas definições podem ser feitas em várias máuqinas ao mesmo tempo

@@ -286,6 +286,7 @@
             // clbMaquinas
             // 
             clbMaquinas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            clbMaquinas.ColumnWidth = 250;
             clbMaquinas.FormattingEnabled = true;
             clbMaquinas.Location = new Point(1, 6);
             clbMaquinas.MultiColumn = true;

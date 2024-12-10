@@ -37,7 +37,17 @@ namespace iAxxMES0
         public List<Calendario> ObterTodosCalendarios()
         {
             List<Calendario> calendarios = new List<Calendario>();
-            string query = "SELECT id, nome, descricao FROM calendario";
+            string query = @"SELECT 
+                                c.id,
+                                c.nome,
+                                c.descricao,
+                                COUNT(m.id) AS total_maquinas
+                            FROM 
+                                calendario c
+                            LEFT JOIN 
+                                maquina m ON c.id = m.calendario_id
+                            GROUP BY 
+                                c.id, c.nome, c.descricao;";
 
             try
             {
@@ -53,7 +63,8 @@ namespace iAxxMES0
                         {
                             Id = reader.GetInt32("id"),
                             Nome = reader.GetString("nome"),
-                            Descricao = reader.IsDBNull(reader.GetOrdinal("descricao")) ? null : reader.GetString("descricao")
+                            Descricao = reader.IsDBNull(reader.GetOrdinal("descricao")) ? null : reader.GetString("descricao"),
+                            Total_Maquinas = reader.GetInt32("total_maquinas")
                         };
                         calendarios.Add(calendario);
                     }
@@ -102,7 +113,7 @@ namespace iAxxMES0
                                 Finura = reader.GetInt32("finura"),
                                 Diametro = reader.GetInt32("diametro"),
                                 NumeroAlimentadores = reader.GetInt32("numero_alimentadores"),
-                                Calendario = reader.GetInt32("calendario_id")
+                                Calendario_Id = reader.GetInt32("calendario_id")
                             };
                             maquinas.Add(maquina);
                         }
@@ -164,6 +175,45 @@ namespace iAxxMES0
             }
 
             return calendarios;
+        }
+
+        // Método para obter as máquina de forma simplificada (apenas id, apelido e nome de calendário)
+        public List<Maquina> ObterMaquinasSimplificado()
+        {
+            List<Maquina> maquinas = new List<Maquina>();
+            string query = "SELECT m.id, m.apelido, c.nome FROM maquina m LEFT JOIN calendario c ON m.calendario_id = c.id;";
+
+            try
+            {
+                if (connection.State == System.Data.ConnectionState.Closed)
+                    connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Maquina maquina = new Maquina
+                        {
+                            Id = reader.GetInt32("id"),
+                            Apelido = reader.GetString("apelido"),
+                            Calendario = reader.IsDBNull(reader.GetOrdinal("nome")) ? null : reader.GetString("nome")
+                        };
+                        maquinas.Add(maquina);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                LogError($"Erro ao obter lista simplificada de máquinas: {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == System.Data.ConnectionState.Open)
+                    connection.Close();
+            }
+
+            return maquinas;
         }
 
         // Método para adicionar um calendário

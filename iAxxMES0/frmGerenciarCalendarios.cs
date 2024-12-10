@@ -36,14 +36,14 @@ namespace iAxxMES0
         {
             clbMaquinas.Items.Clear(); // Limpar a lista de máquinas
 
-            var todasMaquinas = controleMaquinas.ObterMaquinasSimplificado(); // Obter apenas Id e Apelido
+            var todasMaquinas = controleCalendario.ObterMaquinasSimplificado(); // Obter apenas Id, Apelido e Calendário
             var maquinasDoCalendario = controleCalendario.ObterMaquinasDoCalendario(calendarioId); // Obter máquinas do calendário
 
             foreach (var maquina in todasMaquinas)
             {
                 // Adiciona a máquina na lista e marca se ela está no calendário
                 bool isInCalendar = maquinasDoCalendario.Any(m => m.Id == maquina.Id);
-                clbMaquinas.Items.Add(maquina.Apelido, isInCalendar);
+                clbMaquinas.Items.Add(maquina.Apelido + " | " + maquina.Calendario, isInCalendar);
             }
         }
 
@@ -135,12 +135,18 @@ namespace iAxxMES0
                 {
                     if (clbMaquinas.GetItemChecked(i))
                     {
-                        var maquina = controleMaquinas.ObterMaquinaPorApelido(clbMaquinas.Items[i].ToString());
+                        string[] substring = clbMaquinas.Items[i].ToString().Split(' ');
+                        var maquina = controleMaquinas.ObterMaquinaPorApelido(substring[0]);
                         controleCalendario.AssociarMaquinaAoCalendario(calendarioId, maquina.Id);
                     }
                 }
 
-                MessageBox.Show("Máquinas atualizadas para o calendário selecionado.");
+                MessageBox.Show("Máquinas atualizadas para o calendário selecionado.", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CarregarCalendarios();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um calendário.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

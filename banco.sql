@@ -52,6 +52,32 @@ CREATE TABLE indisponibilidade (
     FOREIGN KEY (calendario_id) REFERENCES Calendario(id)
 );
 
+CREATE TABLE fibras (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    sigla VARCHAR(10) UNIQUE NOT NULL,
+    nome VARCHAR(50) NOT NULL,
+    tipo VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE artigo (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    descricao VARCHAR(255) NOT NULL,
+    rpm_min INT(3) NOT NULL,
+    rpm_max INT(3) NOT NULL,
+    rpm_media INT(3) AS ((rpm_min + rpm_max) / 2) STORED
+);
+
+CREATE TABLE composicao_artigo (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    artigo_id INT NOT NULL,
+    fibra_id INT NOT NULL,
+    porcentagem DECIMAL(5,2) NOT NULL,
+    FOREIGN KEY (artigo_id) REFERENCES artigo(id) ON DELETE CASCADE,
+    FOREIGN KEY (fibra_id) REFERENCES fibras(id) ON DELETE CASCADE,
+    UNIQUE (artigo_id, fibra_id)
+);
+
 CREATE TABLE maquina (
     id INT AUTO_INCREMENT PRIMARY KEY,
     calendario_id INT,
@@ -68,6 +94,15 @@ CREATE TABLE grupo_maquina (
     maquina_id INT,
     PRIMARY KEY (grupo_id, maquina_id),
     FOREIGN KEY (grupo_id) REFERENCES grupo(id) ON DELETE CASCADE,
+    FOREIGN KEY (maquina_id) REFERENCES maquina(id) ON DELETE CASCADE
+);
+
+CREATE TABLE artigo_maquina (
+	artigo_id INT,
+    maquina_id INT,
+    data_hora DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    PRIMARY KEY (artigo_id, maquina_id),
+    FOREIGN KEY (artigo_id) REFERENCES artigo(id) ON DELETE CASCADE,
     FOREIGN KEY (maquina_id) REFERENCES maquina(id) ON DELETE CASCADE
 );
 
@@ -132,6 +167,50 @@ INSERT INTO grupo (nome, descricao) VALUES ('Grupo 2', 'Descrição do Grupo 2')
 INSERT INTO grupo (nome, descricao) VALUES ('Grupo 3', 'Descrição do Grupo 3');
 INSERT INTO grupo (nome, descricao) VALUES ('Grupo 4', 'Descrição do Grupo 4');
 INSERT INTO grupo (nome, descricao) VALUES ('Grupo 5', 'Descrição do Grupo 5');
+
+-- Inserts para a tabela fibras
+INSERT INTO fibras (sigla, nome, tipo) VALUES
+('CO', 'Algodão', 'Natural - Vegetal'),
+('LI', 'Linho', 'Natural - Vegetal'),
+('CA', 'Cânhamo', 'Natural - Vegetal'),
+('JU', 'Juta', 'Natural - Vegetal'),
+('SI', 'Sisal', 'Natural - Vegetal'),
+('COIR', 'Coco', 'Natural - Vegetal'),
+('RA', 'Rami', 'Natural - Vegetal'),
+('KP', 'Kapok', 'Natural - Vegetal'),
+('AB', 'Abacá', 'Natural - Vegetal'),
+('BN', 'Bananeira', 'Natural - Vegetal'),
+('WO', 'Lã', 'Natural - Animal'),
+('WS', 'Caxemira', 'Natural - Animal'),
+('WM', 'Mohair', 'Natural - Animal'),
+('WA', 'Angorá', 'Natural - Animal'),
+('WP', 'Alpaca', 'Natural - Animal'),
+('WL', 'Llama', 'Natural - Animal'),
+('WV', 'Vicunha', 'Natural - Animal'),
+('SE', 'Seda', 'Natural - Animal'),
+('AS', 'Asbesto', 'Natural - Mineral'),
+('CV', 'Viscose', 'Artificial - Celulose'),
+('CMD', 'Modal', 'Artificial - Celulose'),
+('CLY', 'Lyocell', 'Artificial - Celulose'),
+('AC', 'Acetato', 'Artificial - Celulose'),
+('CTA', 'Triacetato', 'Artificial - Celulose'),
+('PB', 'Fibrolana', 'Artificial - Proteínas Regenerada'),
+('PS', 'Soia', 'Artificial - Proteínas Regenerada'),
+('PES', 'Poliéster', 'Sintéticas'),
+('PA', 'Poliamida', 'Sintéticas'),
+('PAN', 'Acrílico', 'Sintéticas'),
+('EL', 'Elastano', 'Sintéticas'),
+('PP', 'Polipropileno', 'Sintéticas'),
+('PE', 'Polietileno', 'Sintéticas'),
+('AR', 'Aramida', 'Sintéticas'),
+('PTFE', 'Fluorcarbono', 'Sintéticas'),
+('CLF', 'Clorofibra', 'Minerais e Técnicas'),
+('GF', 'Vidro', 'Minerais e Técnicas'),
+('CF', 'Carbono', 'Minerais e Técnicas'),
+('BF', 'Basalto', 'Minerais e Técnicas'),
+('GR', 'Grafeno', 'Sintética/Avançada'),
+('CER', 'Cerâmica', 'Inorgânicas'),
+('MT', 'Metal', 'Inorgânicas');
 
 -- Inserts para a tabela maquina
 INSERT INTO maquina (apelido, finura, diametro, numero_alimentadores) VALUES ('Maquina_001', 121, 62.94, 4);

@@ -702,3 +702,6 @@
 09/12/2024 19:04:49: Erro ao associar máquina 1 ao calendário 80: Cannot add or update a child row: a foreign key constraint fails (`iaxxmes`.`maquina`, CONSTRAINT `maquina_ibfk_1` FOREIGN KEY (`calendario_id`) REFERENCES `calendario` (`id`))
 09/12/2024 19:05:00: Erro ao obter lista simplificada de máquinas: There is already an open DataReader associated with this Connection which must be closed first.
 09/12/2024 19:05:00: Erro ao obter dados atualizados: Invalid attempt to Read when reader is closed.
+09/12/2024 20:32:16: Erro ao obter lista simplificada de máquinas: There is already an open DataReader associated with this Connection which must be closed first.
+09/12/2024 20:32:16: Erro ao obter dados atualizados: Invalid attempt to Read when reader is closed.
+09/12/2024 21:10:40: Erro ao obter dados atualizados: Invalid attempt to Read when reader is closed.
