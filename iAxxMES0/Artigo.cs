@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace iAxxMES0
 {
-    internal class Artigo
+    public class Artigo
     {
         public int Id { get; set; }
         public string Nome { get; set; }
@@ -16,5 +16,9 @@ namespace iAxxMES0
         public int RPM_Min { get; set; }
         public int RPM_Max { get; set; }
         public int RPM_Media { get; set; }
+        public int Fibra_Id { get; set; }
+        public string Fibra_Nome { get; set; }
+        public string Fibra_Sigla { get; set; }
+        public string Fibra_Tipo { get; set; }
     }
 }

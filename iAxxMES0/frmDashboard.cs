@@ -306,6 +306,18 @@ namespace iAxxMES0
             this.Close();
         }
 
+        private void gerenciarArtigoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Chamar o Gerenciar Artigos e fechar o Dashboard
+            using (frmGerenciarArtigos gerenciarArtigos = new frmGerenciarArtigos(nivelPermissao))
+            {
+                this.Hide();
+                gerenciarArtigos.ShowDialog();
+            }
+
+            this.Close();
+        }
+
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCadUser cadastro = new frmCadUser(nivelPermissao);

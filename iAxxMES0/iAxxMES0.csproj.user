@@ -19,6 +19,9 @@
     <Compile Update="frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmGerenciarArtigos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmGerenciarCalendarios.cs">
       <SubType>Form</SubType>
     </Compile>

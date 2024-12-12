@@ -705,3 +705,4 @@
 09/12/2024 20:32:16: Erro ao obter lista simplificada de máquinas: There is already an open DataReader associated with this Connection which must be closed first.
 09/12/2024 20:32:16: Erro ao obter dados atualizados: Invalid attempt to Read when reader is closed.
 09/12/2024 21:10:40: Erro ao obter dados atualizados: Invalid attempt to Read when reader is closed.
+12/12/2024 10:40:52: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.

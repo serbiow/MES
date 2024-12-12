@@ -3,16 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iaxxmes0\\frmgerenciarartigos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmgerenciarartigos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\controleartigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\controleartigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\frmgerenciargrupos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmgerenciargrupos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\frmgerenciarartigos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmgerenciarartigos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\artigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\artigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\controlecalendario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\controlecalendario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\artigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\artigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iaxxmes0\\frmgerenciargrupos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmgerenciargrupos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\fibra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\fibra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
@@ -26,50 +46,109 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ControleCalendario.cs",
               "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\ControleCalendario.cs",
               "RelativeDocumentMoniker": "iAxxMES0\\ControleCalendario.cs",
               "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\ControleCalendario.cs",
               "RelativeToolTip": "iAxxMES0\\ControleCalendario.cs",
-              "ViewState": "AgIAAOkAAAAAAAAAAAAuwPYAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAIwIUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T01:14:47.015Z",
+              "WhenOpened": "2024-12-12T16:24:10.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmGerenciarArtigos.cs",
+              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmGerenciarArtigos.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\frmGerenciarArtigos.cs",
+              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmGerenciarArtigos.cs",
+              "RelativeToolTip": "iAxxMES0\\frmGerenciarArtigos.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAtwGsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T13:05:17.211Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "frmGerenciarArtigos.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmGerenciarArtigos.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\frmGerenciarArtigos.cs",
+              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmGerenciarArtigos.cs [Projeto]",
+              "RelativeToolTip": "iAxxMES0\\frmGerenciarArtigos.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T14:13:47.955Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmGerenciarGrupos.cs",
+              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmGerenciarGrupos.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\frmGerenciarGrupos.cs",
+              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmGerenciarGrupos.cs",
+              "RelativeToolTip": "iAxxMES0\\frmGerenciarGrupos.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowDkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T13:05:12.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmGerenciarGrupos.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmGerenciarGrupos.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\frmGerenciarGrupos.cs",
+              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmGerenciarGrupos.cs [Projeto]",
+              "RelativeToolTip": "iAxxMES0\\frmGerenciarGrupos.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T12:46:08.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ControleArtigo.cs",
               "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\ControleArtigo.cs",
               "RelativeDocumentMoniker": "iAxxMES0\\ControleArtigo.cs",
               "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\ControleArtigo.cs",
               "RelativeToolTip": "iAxxMES0\\ControleArtigo.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAgwE8AAABPAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAqwGEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-10T01:12:40.031Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Artigo.cs",
               "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Artigo.cs",
               "RelativeDocumentMoniker": "iAxxMES0\\Artigo.cs",
               "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Artigo.cs",
               "RelativeToolTip": "iAxxMES0\\Artigo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T01:09:02.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-12T16:03:04.587Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
+              "Title": "Fibra.cs",
+              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Fibra.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\Fibra.cs",
+              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Fibra.cs",
+              "RelativeToolTip": "iAxxMES0\\Fibra.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T15:36:47.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "README.md",
               "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\README.md",
               "RelativeDocumentMoniker": "iAxxMES0\\README.md",
@@ -77,8 +156,7 @@
               "RelativeToolTip": "iAxxMES0\\README.md",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-11-29T16:19:24.902Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-29T16:19:24.902Z"
             }
           ]
         }

@@ -44,6 +44,8 @@
             btnSalvar = new Button();
             menuStrip1 = new MenuStrip();
             supervisaoToolStripMenuItem = new ToolStripMenuItem();
+            artigoToolStripMenuItem = new ToolStripMenuItem();
+            gerenciarArtigosToolStripMenuItem = new ToolStripMenuItem();
             usuáriosToolStripMenuItem = new ToolStripMenuItem();
             consultarToolStripMenuItem = new ToolStripMenuItem();
             cadastrarToolStripMenuItem = new ToolStripMenuItem();
@@ -234,7 +236,7 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.FromArgb(197, 202, 208);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { supervisaoToolStripMenuItem, usuáriosToolStripMenuItem, calendárioDeDisponibilidadeToolStripMenuItem, relatórioToolStripMenuItem, sairToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { supervisaoToolStripMenuItem, artigoToolStripMenuItem, usuáriosToolStripMenuItem, calendárioDeDisponibilidadeToolStripMenuItem, relatórioToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(924, 24);
@@ -247,6 +249,20 @@
             supervisaoToolStripMenuItem.Size = new Size(76, 20);
             supervisaoToolStripMenuItem.Text = "Supervisão";
             supervisaoToolStripMenuItem.Click += supervisaoToolStripMenuItem_Click;
+            // 
+            // artigoToolStripMenuItem
+            // 
+            artigoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gerenciarArtigosToolStripMenuItem });
+            artigoToolStripMenuItem.Name = "artigoToolStripMenuItem";
+            artigoToolStripMenuItem.Size = new Size(52, 20);
+            artigoToolStripMenuItem.Text = "Artigo";
+            // 
+            // gerenciarArtigosToolStripMenuItem
+            // 
+            gerenciarArtigosToolStripMenuItem.Name = "gerenciarArtigosToolStripMenuItem";
+            gerenciarArtigosToolStripMenuItem.Size = new Size(180, 22);
+            gerenciarArtigosToolStripMenuItem.Text = "Gerenciar Artigos";
+            gerenciarArtigosToolStripMenuItem.Click += gerenciarArtigosToolStripMenuItem_Click;
             // 
             // usuáriosToolStripMenuItem
             // 
@@ -462,5 +478,7 @@
         private ToolStripMenuItem visualizarCalendárioToolStripMenuItem;
         private ToolStripMenuItem cadastroDeIndisponibilidadeToolStripMenuItem;
         private ToolStripMenuItem gerenciarCalendáriosToolStripMenuItem;
+        private ToolStripMenuItem artigoToolStripMenuItem;
+        private ToolStripMenuItem gerenciarArtigosToolStripMenuItem;
     }
 }
