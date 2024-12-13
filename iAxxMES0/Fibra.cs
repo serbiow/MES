@@ -13,15 +13,12 @@ namespace iAxxMES0
         public string Sigla { get; set; }
         public string Tipo { get; set; }
 
-        public Fibra(int id, string nome)
-        {
-            Id = id;
-            Nome = nome;
-        }
+        // Construtor Vazio
+        public Fibra() { }
 
         public override string ToString()
         {
-            return Nome;
+            return $"{Nome}";
         }
     }
 }

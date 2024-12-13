@@ -84,7 +84,7 @@ namespace iAxxMES0
 
                 foreach (var fibra in fibras)
                 {
-                    clbFibras.Items.Add(new Fibra(fibra.id, fibra.nome), false);
+                    clbFibras.Items.Add(fibra, false); // Adiciona o objeto Fibra diretamente
                 }
             }
             catch (Exception ex)
@@ -93,25 +93,25 @@ namespace iAxxMES0
             }
         }
 
+        private void CarregarFibrasDoArtigo(int artigoId)
+        {
+            clbFibras.Items.Clear();
+
+            var todasFibras = controleArtigo.BuscarFibras();
+            var fibrasDoArtigo = controleArtigo.ObterFibrasDoArtigo(artigoId);
+
+            foreach (var fibra in todasFibras)
+            {
+                bool isInArtigo = fibrasDoArtigo.Any(f => f.Id == fibra.Id);
+                clbFibras.Items.Add(fibra, isInArtigo); // Adiciona o objeto Fibra diretamente
+            }
+      
+        }
+
         private void CarregarArtigos()
         {
             var artigos = controleArtigo.ObterTodosArtigos();
             dgvArtigos.DataSource = artigos;
-        }
-
-        private void CarregarMaquinasDoArtigo(int artigoId)
-        {
-            //clbMaquinas.Items.Clear(); // Limpar a lista de máquinas
-
-            //var todasMaquinas = controleArtigo.ObterMaquinasSimplificado(); // Obter apenas Id, Apelido e Artigo
-            //var maquinasDoArtigo = controleArtigo.ObterMaquinasDoArtigo(artigoId); // Obter máquinas do artigo
-
-            //foreach (var maquina in todasMaquinas)
-            //{
-            //    // Adiciona a máquina na lista e marca se ela está no artigo
-            //    bool isInArtigo = maquinasDoArtigo.Any(m => m.Id == maquina.Id);
-            //    clbMaquinas.Items.Add(maquina.Apelido + " | " + maquina.Artigo, isInArtigo);
-            //}
         }
 
         // Método para limpar os campos após o cadastro
@@ -145,13 +145,16 @@ namespace iAxxMES0
                 // Preencher os campos de texto com o nome e a descrição do grupo selecionado
                 txtArtigo.Text = dgvArtigos.SelectedRows[0].Cells["Nome"].Value.ToString();
                 txtDescArtigo.Text = dgvArtigos.SelectedRows[0].Cells["Descricao"].Value?.ToString();
+                numRpmMin.Value = (int)dgvArtigos.SelectedRows[0].Cells["Rpm_Min"].Value;
+                txtRpmMedio.Text = dgvArtigos.SelectedRows[0].Cells["Rpm_Media"].Value.ToString();
+                numRpmMax.Value = (int)dgvArtigos.SelectedRows[0].Cells["Rpm_Max"].Value;
 
-                // Carregar máquinas associadas ao grupo selecionado
-                CarregarMaquinasDoArtigo(artigoId);
+                // Carrega as fibras daquele artigo
+                CarregarFibrasDoArtigo(artigoId);
             }
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        private void btnAdicionar_Click_1(object sender, EventArgs e)
         {
             string nome = txtArtigo.Text;
             string descricao = txtDescArtigo.Text;
@@ -197,11 +200,112 @@ namespace iAxxMES0
                 controleArtigo.AdicionarArtigo(nome, rpmMin, rpmMax, composicao, descricao);
                 MessageBox.Show("Artigo cadastrado com sucesso!");
                 LimparCampos();
+                CarregarArtigos();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao cadastrar artigo: {ex.Message}");
             }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dgvArtigos.SelectedRows.Count > 0)
+            {
+                int artigoId = (int)dgvArtigos.SelectedRows[0].Cells["Id"].Value;
+                string novoNome = txtArtigo.Text;
+                string novaDesc = txtDescArtigo.Text;
+                int novoRpmMin = (int)numRpmMin.Value;
+                int novoRpmMax = (int)numRpmMax.Value;
+
+                // Validação dos campos de entrada
+                if (string.IsNullOrWhiteSpace(novoNome) || string.IsNullOrWhiteSpace(novaDesc))
+                {
+                    MessageBox.Show("Nome e descrição não podem estar vazios.");
+                    return;
+                }
+
+                // Lista para armazenar a composição (fibraId e porcentagem)
+                var composicao = new List<(int fibraId, decimal porcentagem)>();
+
+                foreach (var item in clbFibras.CheckedItems)
+                {
+                    Fibra fibraItem = (Fibra)item;
+                    int fibraId = fibraItem.Id;
+
+                    string input = Microsoft.VisualBasic.Interaction.InputBox(
+                        $"Informe a porcentagem para a fibra '{fibraItem.Nome}':",
+                        "Porcentagem",
+                        "0"
+                    );
+
+                    if (decimal.TryParse(input, out decimal porcentagem) && porcentagem > 0)
+                    {
+                        composicao.Add((fibraId, porcentagem));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Porcentagem inválida!");
+                        return;
+                    }
+                }
+
+                // Validar se a soma das porcentagens é igual a 100%
+                decimal totalPorcentagem = composicao.Sum(c => c.porcentagem);
+                if (totalPorcentagem != 100)
+                {
+                    MessageBox.Show("A soma das porcentagens deve ser igual a 100%.");
+                    return;
+                }
+
+                try
+                {
+                    // Chamar o método para editar o artigo e a composição associada
+                    controleArtigo.EditarArtigo(artigoId, novoNome, novoRpmMin, novoRpmMax, novaDesc, composicao);
+
+                    MessageBox.Show("Artigo editado com sucesso!");
+                    LimparCampos();    // Limpar os campos após a edição
+                    CarregarArtigos(); // Atualizar a lista de artigos no DataGridView
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao editar artigo: {ex.Message}");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um artigo para editar.");
+            }
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNomeArtigo.Text))
+            {
+                MessageBox.Show("Por favor, digite um valor para buscar.", "Busca", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string nomeArtigo = txtNomeArtigo.Text.Trim();
+            List<Artigo> artigosEncontrados = controleArtigo.ObterArtigosPorNome(nomeArtigo);
+
+            dgvArtigos.DataSource = artigosEncontrados;
+        }
+
+        private void btnListAll_Click(object sender, EventArgs e)
+        {
+            var artigos = controleArtigo.ObterTodosArtigos();
+            dgvArtigos.DataSource = artigos;
         }
 
         private void supervisaoToolStripMenuItem_Click_1(object sender, EventArgs e)

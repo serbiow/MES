@@ -36,8 +36,14 @@
             txtNomeArtigo = new TextBox();
             lblNomeArtigo = new Label();
             label2 = new Label();
-            txtArtigo = new TextBox();
+            tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
+            label6 = new Label();
+            panel2 = new Panel();
+            btnAdicionar = new Button();
+            btnExcluir = new Button();
+            btnLimpar = new Button();
+            btnEditar = new Button();
             label5 = new Label();
             clbFibras = new CheckedListBox();
             numRpmMax = new NumericUpDown();
@@ -45,17 +51,9 @@
             label4 = new Label();
             label3 = new Label();
             label1 = new Label();
-            btnEditar = new Button();
+            txtArtigo = new TextBox();
             lblDescArtigo = new Label();
-            btnLimpar = new Button();
             txtDescArtigo = new TextBox();
-            btnExcluir = new Button();
-            btnAdicionar = new Button();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            panel2 = new Panel();
-            btnSalvar = new Button();
-            clbMaquinas = new CheckedListBox();
-            tableLayoutPanel1 = new TableLayoutPanel();
             sairToolStripMenuItem = new ToolStripMenuItem();
             relatórioToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeIndisponibilidadeToolStripMenuItem = new ToolStripMenuItem();
@@ -68,14 +66,14 @@
             menuStrip1 = new MenuStrip();
             supervisaoToolStripMenuItem = new ToolStripMenuItem();
             gerenciarGruposToolStripMenuItem = new ToolStripMenuItem();
+            txtRpmMedio = new TextBox();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvArtigos).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numRpmMax).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numRpmMin).BeginInit();
-            tableLayoutPanel2.SuspendLayout();
-            panel2.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -87,9 +85,9 @@
             panel3.Controls.Add(txtNomeArtigo);
             panel3.Controls.Add(lblNomeArtigo);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(3, 671);
+            panel3.Location = new Point(3, 390);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1011, 338);
+            panel3.Size = new Size(988, 344);
             panel3.TabIndex = 1;
             // 
             // btnListAll
@@ -99,12 +97,13 @@
             btnListAll.FlatStyle = FlatStyle.Flat;
             btnListAll.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnListAll.ForeColor = Color.White;
-            btnListAll.Location = new Point(113, 65);
+            btnListAll.Location = new Point(113, 71);
             btnListAll.Name = "btnListAll";
             btnListAll.Size = new Size(98, 32);
-            btnListAll.TabIndex = 8;
+            btnListAll.TabIndex = 12;
             btnListAll.Text = "Listar Todos";
             btnListAll.UseVisualStyleBackColor = false;
+            btnListAll.Click += btnListAll_Click;
             // 
             // dgvArtigos
             // 
@@ -113,10 +112,10 @@
             dgvArtigos.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvArtigos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvArtigos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvArtigos.Location = new Point(9, 103);
+            dgvArtigos.Location = new Point(9, 109);
             dgvArtigos.Name = "dgvArtigos";
             dgvArtigos.ReadOnly = true;
-            dgvArtigos.Size = new Size(993, 226);
+            dgvArtigos.Size = new Size(970, 226);
             dgvArtigos.TabIndex = 30;
             dgvArtigos.SelectionChanged += dgvArtigos_SelectionChanged;
             // 
@@ -127,21 +126,22 @@
             btnBuscar.FlatStyle = FlatStyle.Flat;
             btnBuscar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBuscar.ForeColor = Color.White;
-            btnBuscar.Location = new Point(9, 65);
+            btnBuscar.Location = new Point(9, 71);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(98, 32);
-            btnBuscar.TabIndex = 2;
+            btnBuscar.TabIndex = 11;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // txtNomeArtigo
             // 
             txtNomeArtigo.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            txtNomeArtigo.Location = new Point(9, 36);
+            txtNomeArtigo.Location = new Point(9, 42);
             txtNomeArtigo.Name = "txtNomeArtigo";
             txtNomeArtigo.PlaceholderText = "Nome do Artigo";
             txtNomeArtigo.Size = new Size(202, 23);
-            txtNomeArtigo.TabIndex = 1;
+            txtNomeArtigo.TabIndex = 10;
             // 
             // lblNomeArtigo
             // 
@@ -149,7 +149,7 @@
             lblNomeArtigo.AutoSize = true;
             lblNomeArtigo.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNomeArtigo.ForeColor = Color.Black;
-            lblNomeArtigo.Location = new Point(9, 14);
+            lblNomeArtigo.Location = new Point(9, 20);
             lblNomeArtigo.Name = "lblNomeArtigo";
             lblNomeArtigo.Size = new Size(113, 19);
             lblNomeArtigo.TabIndex = 20;
@@ -162,21 +162,33 @@
             label2.ForeColor = Color.Black;
             label2.Location = new Point(3, 0);
             label2.Name = "label2";
-            label2.Size = new Size(1011, 30);
+            label2.Size = new Size(988, 30);
             label2.TabIndex = 28;
             label2.Text = "Gerenciar Artigos";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // txtArtigo
+            // tableLayoutPanel1
             // 
-            txtArtigo.Location = new Point(6, 31);
-            txtArtigo.Name = "txtArtigo";
-            txtArtigo.PlaceholderText = "Nome do Artigo";
-            txtArtigo.Size = new Size(216, 23);
-            txtArtigo.TabIndex = 26;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(panel3, 0, 2);
+            tableLayoutPanel1.Controls.Add(label2, 0, 0);
+            tableLayoutPanel1.Controls.Add(panel1, 0, 1);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 24);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 350F));
+            tableLayoutPanel1.Size = new Size(994, 737);
+            tableLayoutPanel1.TabIndex = 32;
             // 
             // panel1
             // 
+            panel1.Controls.Add(txtRpmMedio);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(panel2);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(clbFibras);
             panel1.Controls.Add(numRpmMax);
@@ -185,146 +197,36 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(txtArtigo);
-            panel1.Controls.Add(btnEditar);
             panel1.Controls.Add(lblDescArtigo);
-            panel1.Controls.Add(btnLimpar);
             panel1.Controls.Add(txtDescArtigo);
-            panel1.Controls.Add(btnExcluir);
-            panel1.Controls.Add(btnAdicionar);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(3, 3);
+            panel1.Location = new Point(3, 33);
             panel1.Name = "panel1";
-            panel1.Size = new Size(454, 626);
-            panel1.TabIndex = 0;
+            panel1.Size = new Size(988, 351);
+            panel1.TabIndex = 29;
             // 
-            // label5
+            // label6
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.Black;
-            label5.Location = new Point(165, 293);
-            label5.Name = "label5";
-            label5.Size = new Size(63, 19);
-            label5.TabIndex = 37;
-            label5.Text = "Fibras:";
+            label6.AutoSize = true;
+            label6.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(749, 9);
+            label6.Name = "label6";
+            label6.Size = new Size(101, 19);
+            label6.TabIndex = 54;
+            label6.Text = "RPM Médio:";
             // 
-            // clbFibras
+            // panel2
             // 
-            clbFibras.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            clbFibras.FormattingEnabled = true;
-            clbFibras.Location = new Point(165, 315);
-            clbFibras.MultiColumn = true;
-            clbFibras.Name = "clbFibras";
-            clbFibras.Size = new Size(266, 94);
-            clbFibras.TabIndex = 12;
-            // 
-            // numRpmMax
-            // 
-            numRpmMax.Location = new Point(6, 383);
-            numRpmMax.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
-            numRpmMax.Name = "numRpmMax";
-            numRpmMax.Size = new Size(110, 23);
-            numRpmMax.TabIndex = 36;
-            // 
-            // numRpmMin
-            // 
-            numRpmMin.Location = new Point(6, 315);
-            numRpmMin.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
-            numRpmMin.Name = "numRpmMin";
-            numRpmMin.Size = new Size(110, 23);
-            numRpmMin.TabIndex = 35;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(6, 361);
-            label4.Name = "label4";
-            label4.Size = new Size(114, 19);
-            label4.TabIndex = 32;
-            label4.Text = "RPM Máximo:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(6, 293);
-            label3.Name = "label3";
-            label3.Size = new Size(110, 19);
-            label3.TabIndex = 31;
-            label3.Text = "RPM Mínimo:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(6, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(132, 19);
-            label1.TabIndex = 30;
-            label1.Text = "Nome do artigo:";
-            // 
-            // btnEditar
-            // 
-            btnEditar.BackColor = Color.FromArgb(46, 53, 60);
-            btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEditar.ForeColor = Color.White;
-            btnEditar.Location = new Point(117, 572);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(105, 32);
-            btnEditar.TabIndex = 5;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // lblDescArtigo
-            // 
-            lblDescArtigo.AutoSize = true;
-            lblDescArtigo.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDescArtigo.ForeColor = Color.Black;
-            lblDescArtigo.Location = new Point(6, 75);
-            lblDescArtigo.Name = "lblDescArtigo";
-            lblDescArtigo.Size = new Size(164, 19);
-            lblDescArtigo.TabIndex = 25;
-            lblDescArtigo.Text = "Descrição do artigo:";
-            // 
-            // btnLimpar
-            // 
-            btnLimpar.BackColor = Color.FromArgb(46, 53, 60);
-            btnLimpar.FlatStyle = FlatStyle.Flat;
-            btnLimpar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnLimpar.ForeColor = Color.White;
-            btnLimpar.Location = new Point(228, 572);
-            btnLimpar.Name = "btnLimpar";
-            btnLimpar.Size = new Size(105, 32);
-            btnLimpar.TabIndex = 6;
-            btnLimpar.Text = "Limpar";
-            btnLimpar.UseVisualStyleBackColor = false;
-            // 
-            // txtDescArtigo
-            // 
-            txtDescArtigo.Location = new Point(6, 97);
-            txtDescArtigo.Multiline = true;
-            txtDescArtigo.Name = "txtDescArtigo";
-            txtDescArtigo.PlaceholderText = "Descrição do Artigo";
-            txtDescArtigo.Size = new Size(438, 162);
-            txtDescArtigo.TabIndex = 3;
-            // 
-            // btnExcluir
-            // 
-            btnExcluir.BackColor = Color.FromArgb(46, 53, 60);
-            btnExcluir.FlatStyle = FlatStyle.Flat;
-            btnExcluir.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnExcluir.ForeColor = Color.White;
-            btnExcluir.Location = new Point(339, 572);
-            btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(105, 32);
-            btnExcluir.TabIndex = 7;
-            btnExcluir.Text = "Excluir";
-            btnExcluir.UseVisualStyleBackColor = false;
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.Controls.Add(btnAdicionar);
+            panel2.Controls.Add(btnExcluir);
+            panel2.Controls.Add(btnLimpar);
+            panel2.Controls.Add(btnEditar);
+            panel2.Location = new Point(9, 275);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(970, 73);
+            panel2.TabIndex = 52;
             // 
             // btnAdicionar
             // 
@@ -332,80 +234,154 @@
             btnAdicionar.FlatStyle = FlatStyle.Flat;
             btnAdicionar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAdicionar.ForeColor = Color.White;
-            btnAdicionar.Location = new Point(6, 572);
+            btnAdicionar.Location = new Point(259, 22);
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.Size = new Size(105, 32);
-            btnAdicionar.TabIndex = 4;
+            btnAdicionar.TabIndex = 6;
             btnAdicionar.Text = "Adicionar";
             btnAdicionar.UseVisualStyleBackColor = false;
-            btnAdicionar.Click += btnAdicionar_Click;
+            btnAdicionar.Click += btnAdicionar_Click_1;
             // 
-            // tableLayoutPanel2
+            // btnExcluir
             // 
-            tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 460F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Controls.Add(panel1, 0, 0);
-            tableLayoutPanel2.Controls.Add(panel2, 1, 0);
-            tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(3, 33);
-            tableLayoutPanel2.MinimumSize = new Size(0, 500);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1011, 632);
-            tableLayoutPanel2.TabIndex = 0;
+            btnExcluir.BackColor = Color.FromArgb(46, 53, 60);
+            btnExcluir.FlatStyle = FlatStyle.Flat;
+            btnExcluir.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExcluir.ForeColor = Color.White;
+            btnExcluir.Location = new Point(592, 22);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(105, 32);
+            btnExcluir.TabIndex = 9;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = false;
+            btnExcluir.Click += btnExcluir_Click;
             // 
-            // panel2
+            // btnLimpar
             // 
-            panel2.Controls.Add(btnSalvar);
-            panel2.Controls.Add(clbMaquinas);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(463, 3);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(545, 626);
-            panel2.TabIndex = 1;
+            btnLimpar.BackColor = Color.FromArgb(46, 53, 60);
+            btnLimpar.FlatStyle = FlatStyle.Flat;
+            btnLimpar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLimpar.ForeColor = Color.White;
+            btnLimpar.Location = new Point(481, 22);
+            btnLimpar.Name = "btnLimpar";
+            btnLimpar.Size = new Size(105, 32);
+            btnLimpar.TabIndex = 8;
+            btnLimpar.Text = "Limpar";
+            btnLimpar.UseVisualStyleBackColor = false;
+            btnLimpar.Click += btnLimpar_Click;
             // 
-            // btnSalvar
+            // btnEditar
             // 
-            btnSalvar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnSalvar.BackColor = Color.FromArgb(46, 53, 60);
-            btnSalvar.FlatStyle = FlatStyle.Flat;
-            btnSalvar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSalvar.ForeColor = Color.White;
-            btnSalvar.Location = new Point(434, 466);
-            btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(105, 32);
-            btnSalvar.TabIndex = 11;
-            btnSalvar.Text = "Salvar";
-            btnSalvar.UseVisualStyleBackColor = false;
+            btnEditar.BackColor = Color.FromArgb(46, 53, 60);
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEditar.ForeColor = Color.White;
+            btnEditar.Location = new Point(370, 22);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(105, 32);
+            btnEditar.TabIndex = 7;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
-            // clbMaquinas
+            // label5
             // 
-            clbMaquinas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            clbMaquinas.FormattingEnabled = true;
-            clbMaquinas.Location = new Point(3, 9);
-            clbMaquinas.MultiColumn = true;
-            clbMaquinas.Name = "clbMaquinas";
-            clbMaquinas.Size = new Size(536, 454);
-            clbMaquinas.TabIndex = 10;
+            label5.AutoSize = true;
+            label5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(376, 75);
+            label5.Name = "label5";
+            label5.Size = new Size(63, 19);
+            label5.TabIndex = 51;
+            label5.Text = "Fibras:";
             // 
-            // tableLayoutPanel1
+            // clbFibras
             // 
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 1);
-            tableLayoutPanel1.Controls.Add(panel3, 0, 2);
-            tableLayoutPanel1.Controls.Add(label2, 0, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 24);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 65F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
-            tableLayoutPanel1.Size = new Size(1017, 1012);
-            tableLayoutPanel1.TabIndex = 32;
+            clbFibras.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            clbFibras.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            clbFibras.FormattingEnabled = true;
+            clbFibras.Location = new Point(376, 97);
+            clbFibras.MultiColumn = true;
+            clbFibras.Name = "clbFibras";
+            clbFibras.Size = new Size(603, 172);
+            clbFibras.TabIndex = 5;
+            // 
+            // numRpmMax
+            // 
+            numRpmMax.Location = new Point(865, 31);
+            numRpmMax.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
+            numRpmMax.Name = "numRpmMax";
+            numRpmMax.Size = new Size(110, 23);
+            numRpmMax.TabIndex = 3;
+            // 
+            // numRpmMin
+            // 
+            numRpmMin.Location = new Point(633, 31);
+            numRpmMin.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
+            numRpmMin.Name = "numRpmMin";
+            numRpmMin.Size = new Size(110, 23);
+            numRpmMin.TabIndex = 2;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(865, 9);
+            label4.Name = "label4";
+            label4.Size = new Size(114, 19);
+            label4.TabIndex = 48;
+            label4.Text = "RPM Máximo:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(633, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(110, 19);
+            label3.TabIndex = 47;
+            label3.Text = "RPM Mínimo:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(9, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(132, 19);
+            label1.TabIndex = 46;
+            label1.Text = "Nome do artigo:";
+            // 
+            // txtArtigo
+            // 
+            txtArtigo.Location = new Point(9, 31);
+            txtArtigo.Name = "txtArtigo";
+            txtArtigo.PlaceholderText = "Nome do Artigo";
+            txtArtigo.Size = new Size(235, 23);
+            txtArtigo.TabIndex = 1;
+            // 
+            // lblDescArtigo
+            // 
+            lblDescArtigo.AutoSize = true;
+            lblDescArtigo.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDescArtigo.ForeColor = Color.Black;
+            lblDescArtigo.Location = new Point(9, 75);
+            lblDescArtigo.Name = "lblDescArtigo";
+            lblDescArtigo.Size = new Size(164, 19);
+            lblDescArtigo.TabIndex = 44;
+            lblDescArtigo.Text = "Descrição do artigo:";
+            // 
+            // txtDescArtigo
+            // 
+            txtDescArtigo.Location = new Point(9, 97);
+            txtDescArtigo.Multiline = true;
+            txtDescArtigo.Name = "txtDescArtigo";
+            txtDescArtigo.PlaceholderText = "Descrição do Artigo";
+            txtDescArtigo.Size = new Size(352, 172);
+            txtDescArtigo.TabIndex = 4;
             // 
             // sairToolStripMenuItem
             // 
@@ -478,7 +454,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { supervisaoToolStripMenuItem, gerenciarGruposToolStripMenuItem, usuáriosToolStripMenuItem, calendárioDeDisponibilidadeToolStripMenuItem, relatórioToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1017, 24);
+            menuStrip1.Size = new Size(994, 24);
             menuStrip1.TabIndex = 31;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -496,30 +472,40 @@
             gerenciarGruposToolStripMenuItem.Text = "Gerenciar Grupos";
             gerenciarGruposToolStripMenuItem.Click += gerenciarGruposToolStripMenuItem_Click;
             // 
+            // txtRpmMedio
+            // 
+            txtRpmMedio.Enabled = false;
+            txtRpmMedio.Location = new Point(749, 31);
+            txtRpmMedio.Name = "txtRpmMedio";
+            txtRpmMedio.ReadOnly = true;
+            txtRpmMedio.Size = new Size(110, 23);
+            txtRpmMedio.TabIndex = 55;
+            // 
             // frmGerenciarArtigos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(197, 202, 208);
-            ClientSize = new Size(1017, 1036);
+            ClientSize = new Size(994, 761);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MaximumSize = new Size(1010, 800);
+            MinimumSize = new Size(1010, 800);
             Name = "frmGerenciarArtigos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmGerenciarArtigo";
-            WindowState = FormWindowState.Maximized;
             Load += frmGerenciarArtigos_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvArtigos).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numRpmMax).EndInit();
             ((System.ComponentModel.ISupportInitialize)numRpmMin).EndInit();
-            tableLayoutPanel2.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -531,21 +517,9 @@
         private Panel panel3;
         private Button btnListAll;
         private Label label2;
-        private TextBox txtArtigo;
-        private Panel panel1;
-        private Button btnEditar;
-        private Label lblDescArtigo;
         private Button btnBuscar;
-        private Button btnLimpar;
-        private TextBox txtDescArtigo;
-        private Button btnExcluir;
-        private Button btnAdicionar;
         private Label lblNomeArtigo;
         private TextBox txtNomeArtigo;
-        private TableLayoutPanel tableLayoutPanel2;
-        private Panel panel2;
-        private Button btnSalvar;
-        private CheckedListBox clbMaquinas;
         private TableLayoutPanel tableLayoutPanel1;
         private ToolStripMenuItem sairToolStripMenuItem;
         private ToolStripMenuItem relatórioToolStripMenuItem;
@@ -560,12 +534,23 @@
         private ToolStripMenuItem supervisaoToolStripMenuItem;
         private DataGridView dgvArtigos;
         private ToolStripMenuItem gerenciarGruposToolStripMenuItem;
-        private Label label1;
-        private Label label4;
-        private Label label3;
+        private Panel panel1;
+        private Label label5;
+        private CheckedListBox clbFibras;
         private NumericUpDown numRpmMax;
         private NumericUpDown numRpmMin;
-        private CheckedListBox clbFibras;
-        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label1;
+        private TextBox txtArtigo;
+        private Button btnEditar;
+        private Label lblDescArtigo;
+        private Button btnLimpar;
+        private TextBox txtDescArtigo;
+        private Button btnExcluir;
+        private Button btnAdicionar;
+        private Panel panel2;
+        private Label label6;
+        private TextBox txtRpmMedio;
     }
 }
