@@ -18,7 +18,7 @@ namespace iAxxMES0
         // Nível de permissão do usuário
         private string nivelPermissao;
 
-        public frmGerenciarArtigos(string nivelPermissao)
+        public frmGerenciarArtigos()
         {
             InitializeComponent();
             controleMaquinas = new ControleMaquinas();
@@ -29,49 +29,6 @@ namespace iAxxMES0
 
             // Configura evento para carregar as máquinas do artigo selecionado
             dgvArtigos.SelectionChanged += dgvArtigos_SelectionChanged;
-
-            // Controla a permissão do usuário
-            this.nivelPermissao = nivelPermissao;
-            AjustarMenuPorPermissao();
-        }
-
-        // Método para ajudar o Menu conforme o nível de privilégio
-        private void AjustarMenuPorPermissao()
-        {
-            switch (nivelPermissao)
-            {
-                case "master":
-                    // Todos os itens disponíveis para masters
-                    usuáriosToolStripMenuItem.Visible = true;
-                    supervisaoToolStripMenuItem.Visible = true;
-                    calendárioDeDisponibilidadeToolStripMenuItem.Visible = true;
-                    relatórioToolStripMenuItem.Visible = true;
-                    break;
-
-                case "admin":
-                    // Todos os itens disponíveis para masters
-                    usuáriosToolStripMenuItem.Visible = true;
-                    supervisaoToolStripMenuItem.Visible = true;
-                    calendárioDeDisponibilidadeToolStripMenuItem.Visible = true;
-                    relatórioToolStripMenuItem.Visible = true;
-                    break;
-
-                case "operator":
-                    // Apenas relatórios acessíveis para operadores
-                    usuáriosToolStripMenuItem.Visible = false;
-                    supervisaoToolStripMenuItem.Visible = false;
-                    calendárioDeDisponibilidadeToolStripMenuItem.Visible = false;
-                    relatórioToolStripMenuItem.Visible = true;
-                    break;
-
-                default:
-                    // Nenhuma permissão
-                    usuáriosToolStripMenuItem.Visible = false;
-                    supervisaoToolStripMenuItem.Visible = false;
-                    calendárioDeDisponibilidadeToolStripMenuItem.Visible = false;
-                    relatórioToolStripMenuItem.Visible = false;
-                    break;
-            }
         }
 
         // Método para carregar fibras no CheckedListBox
@@ -121,6 +78,7 @@ namespace iAxxMES0
             txtNomeArtigo.Clear();
             txtDescArtigo.Clear();
             numRpmMin.Value = 0;
+            txtRpmMedio.Clear();
             numRpmMax.Value = 0;
             foreach (int i in clbFibras.CheckedIndices)
             {
@@ -285,7 +243,43 @@ namespace iAxxMES0
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            if (dgvArtigos.SelectedRows.Count > 0)
+            {
+                // Obter o ID do artigo selecionado
+                int artigoId = (int)dgvArtigos.SelectedRows[0].Cells["Id"].Value;
+                string artigoNome = dgvArtigos.SelectedRows[0].Cells["Nome"].Value.ToString();
 
+                // Confirmar exclusão com o usuário
+                var confirmResult = MessageBox.Show(
+                    $"Tem certeza que deseja excluir o artigo '{artigoNome}' (ID: {artigoId})?",
+                    "Confirmar Exclusão",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // Chamar o método de exclusão da ControleArtigo
+                        controleArtigo.ExcluirArtigo(artigoId);
+
+                        MessageBox.Show($"Artigo '{artigoNome}' excluído com sucesso!");
+
+                        // Atualizar o DataGridView após a exclusão
+                        CarregarArtigos();
+                        LimparCampos();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Erro ao excluir artigo: {ex.Message}");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecione um artigo para excluir.");
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -306,78 +300,6 @@ namespace iAxxMES0
         {
             var artigos = controleArtigo.ObterTodosArtigos();
             dgvArtigos.DataSource = artigos;
-        }
-
-        private void supervisaoToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            // Chamar o Dashboard e fechar a tela de grupos
-            using (frmDashboard dashboard = new frmDashboard(nivelPermissao))
-            {
-                this.Hide();
-                dashboard.ShowDialog();
-            }
-
-            this.Close();
-        }
-
-        private void gerenciarGruposToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Chamar o Gerenciar Grupos e fechar o Dashboard
-            using (frmGerenciarGrupos gerenciarGrupos = new frmGerenciarGrupos(controleMaquinas, nivelPermissao))
-            {
-                this.Hide();
-                gerenciarGrupos.ShowDialog();
-            }
-
-            this.Close();
-        }
-
-        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmViewUser consultar = new frmViewUser();
-            consultar.ShowDialog();
-        }
-
-        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCadUser cadastro = new frmCadUser(nivelPermissao);
-            cadastro.ShowDialog();
-        }
-
-        private void visualizarCalendárioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCalendario calendario = new frmCalendario();
-            calendario.ShowDialog();
-        }
-
-        private void gerenciarCalendáriosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmGerenciarCalendarios gerenciarCalendarios = new frmGerenciarCalendarios();
-            gerenciarCalendarios.ShowDialog();
-        }
-
-        private void cadastroDeIndisponibilidadeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCadCalendario cadCalendario = new frmCadCalendario();
-            cadCalendario.ShowDialog();
-        }
-
-        private void relatórioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmRelatorio relatorio = new frmRelatorio();
-            relatorio.ShowDialog();
-        }
-
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Chamar o Login e fechar a tela de grupos
-            using (frmLogin login = new frmLogin())
-            {
-                this.Hide();
-                login.ShowDialog();
-            }
-
-            this.Close();
         }
     }
 }

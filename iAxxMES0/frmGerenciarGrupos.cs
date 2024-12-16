@@ -222,14 +222,8 @@ namespace iAxxMES0
 
         private void gerenciarArtigosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Chamar o Gerenciar Artigos e fechar o Gerenciar Grupos
-            using (frmGerenciarArtigos gerenciarArtigos = new frmGerenciarArtigos(nivelPermissao))
-            {
-                this.Hide();
-                gerenciarArtigos.ShowDialog();
-            }
-
-            this.Close();
+            frmGerenciarArtigos gerenciarArtigos = new frmGerenciarArtigos();
+            gerenciarArtigos.ShowDialog();
         }
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)

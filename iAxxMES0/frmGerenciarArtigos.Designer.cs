@@ -38,6 +38,7 @@
             label2 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
+            txtRpmMedio = new TextBox();
             label6 = new Label();
             panel2 = new Panel();
             btnAdicionar = new Button();
@@ -54,19 +55,6 @@
             txtArtigo = new TextBox();
             lblDescArtigo = new Label();
             txtDescArtigo = new TextBox();
-            sairToolStripMenuItem = new ToolStripMenuItem();
-            relatórioToolStripMenuItem = new ToolStripMenuItem();
-            cadastroDeIndisponibilidadeToolStripMenuItem = new ToolStripMenuItem();
-            gerenciarCalendáriosToolStripMenuItem = new ToolStripMenuItem();
-            visualizarCalendárioToolStripMenuItem = new ToolStripMenuItem();
-            calendárioDeDisponibilidadeToolStripMenuItem = new ToolStripMenuItem();
-            cadastrarToolStripMenuItem = new ToolStripMenuItem();
-            consultarToolStripMenuItem = new ToolStripMenuItem();
-            usuáriosToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip1 = new MenuStrip();
-            supervisaoToolStripMenuItem = new ToolStripMenuItem();
-            gerenciarGruposToolStripMenuItem = new ToolStripMenuItem();
-            txtRpmMedio = new TextBox();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvArtigos).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -74,7 +62,6 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numRpmMax).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numRpmMin).BeginInit();
-            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // panel3
@@ -85,7 +72,7 @@
             panel3.Controls.Add(txtNomeArtigo);
             panel3.Controls.Add(lblNomeArtigo);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(3, 390);
+            panel3.Location = new Point(3, 414);
             panel3.Name = "panel3";
             panel3.Size = new Size(988, 344);
             panel3.TabIndex = 1;
@@ -175,13 +162,13 @@
             tableLayoutPanel1.Controls.Add(label2, 0, 0);
             tableLayoutPanel1.Controls.Add(panel1, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 24);
+            tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 350F));
-            tableLayoutPanel1.Size = new Size(994, 737);
+            tableLayoutPanel1.Size = new Size(994, 761);
             tableLayoutPanel1.TabIndex = 32;
             // 
             // panel1
@@ -202,8 +189,17 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 33);
             panel1.Name = "panel1";
-            panel1.Size = new Size(988, 351);
+            panel1.Size = new Size(988, 375);
             panel1.TabIndex = 29;
+            // 
+            // txtRpmMedio
+            // 
+            txtRpmMedio.Enabled = false;
+            txtRpmMedio.Location = new Point(749, 31);
+            txtRpmMedio.Name = "txtRpmMedio";
+            txtRpmMedio.ReadOnly = true;
+            txtRpmMedio.Size = new Size(110, 23);
+            txtRpmMedio.TabIndex = 55;
             // 
             // label6
             // 
@@ -383,104 +379,6 @@
             txtDescArtigo.Size = new Size(352, 172);
             txtDescArtigo.TabIndex = 4;
             // 
-            // sairToolStripMenuItem
-            // 
-            sairToolStripMenuItem.BackColor = Color.FromArgb(197, 202, 208);
-            sairToolStripMenuItem.ForeColor = Color.Black;
-            sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(38, 20);
-            sairToolStripMenuItem.Text = "Sair";
-            sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
-            // 
-            // relatórioToolStripMenuItem
-            // 
-            relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
-            relatórioToolStripMenuItem.Size = new Size(66, 20);
-            relatórioToolStripMenuItem.Text = "Relatório";
-            relatórioToolStripMenuItem.Click += relatórioToolStripMenuItem_Click;
-            // 
-            // cadastroDeIndisponibilidadeToolStripMenuItem
-            // 
-            cadastroDeIndisponibilidadeToolStripMenuItem.Name = "cadastroDeIndisponibilidadeToolStripMenuItem";
-            cadastroDeIndisponibilidadeToolStripMenuItem.Size = new Size(231, 22);
-            cadastroDeIndisponibilidadeToolStripMenuItem.Text = "Cadastro de Indisponibilidade";
-            cadastroDeIndisponibilidadeToolStripMenuItem.Click += cadastroDeIndisponibilidadeToolStripMenuItem_Click;
-            // 
-            // gerenciarCalendáriosToolStripMenuItem
-            // 
-            gerenciarCalendáriosToolStripMenuItem.Name = "gerenciarCalendáriosToolStripMenuItem";
-            gerenciarCalendáriosToolStripMenuItem.Size = new Size(231, 22);
-            gerenciarCalendáriosToolStripMenuItem.Text = "Gerenciar Calendários";
-            gerenciarCalendáriosToolStripMenuItem.Click += gerenciarCalendáriosToolStripMenuItem_Click;
-            // 
-            // visualizarCalendárioToolStripMenuItem
-            // 
-            visualizarCalendárioToolStripMenuItem.Name = "visualizarCalendárioToolStripMenuItem";
-            visualizarCalendárioToolStripMenuItem.Size = new Size(231, 22);
-            visualizarCalendárioToolStripMenuItem.Text = "Visualizar Calendário";
-            visualizarCalendárioToolStripMenuItem.Click += visualizarCalendárioToolStripMenuItem_Click;
-            // 
-            // calendárioDeDisponibilidadeToolStripMenuItem
-            // 
-            calendárioDeDisponibilidadeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { visualizarCalendárioToolStripMenuItem, gerenciarCalendáriosToolStripMenuItem, cadastroDeIndisponibilidadeToolStripMenuItem });
-            calendárioDeDisponibilidadeToolStripMenuItem.Name = "calendárioDeDisponibilidadeToolStripMenuItem";
-            calendárioDeDisponibilidadeToolStripMenuItem.Size = new Size(177, 20);
-            calendárioDeDisponibilidadeToolStripMenuItem.Text = "Calendário de Disponibilidade";
-            // 
-            // cadastrarToolStripMenuItem
-            // 
-            cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(125, 22);
-            cadastrarToolStripMenuItem.Text = "Cadastrar";
-            cadastrarToolStripMenuItem.Click += cadastrarToolStripMenuItem_Click;
-            // 
-            // consultarToolStripMenuItem
-            // 
-            consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            consultarToolStripMenuItem.Size = new Size(125, 22);
-            consultarToolStripMenuItem.Text = "Consultar";
-            consultarToolStripMenuItem.Click += consultarToolStripMenuItem_Click;
-            // 
-            // usuáriosToolStripMenuItem
-            // 
-            usuáriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { consultarToolStripMenuItem, cadastrarToolStripMenuItem });
-            usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            usuáriosToolStripMenuItem.Size = new Size(64, 20);
-            usuáriosToolStripMenuItem.Text = "Usuários";
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.BackColor = Color.FromArgb(197, 202, 208);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { supervisaoToolStripMenuItem, gerenciarGruposToolStripMenuItem, usuáriosToolStripMenuItem, calendárioDeDisponibilidadeToolStripMenuItem, relatórioToolStripMenuItem, sairToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(994, 24);
-            menuStrip1.TabIndex = 31;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // supervisaoToolStripMenuItem
-            // 
-            supervisaoToolStripMenuItem.Name = "supervisaoToolStripMenuItem";
-            supervisaoToolStripMenuItem.Size = new Size(76, 20);
-            supervisaoToolStripMenuItem.Text = "Supervisão";
-            supervisaoToolStripMenuItem.Click += supervisaoToolStripMenuItem_Click_1;
-            // 
-            // gerenciarGruposToolStripMenuItem
-            // 
-            gerenciarGruposToolStripMenuItem.Name = "gerenciarGruposToolStripMenuItem";
-            gerenciarGruposToolStripMenuItem.Size = new Size(110, 20);
-            gerenciarGruposToolStripMenuItem.Text = "Gerenciar Grupos";
-            gerenciarGruposToolStripMenuItem.Click += gerenciarGruposToolStripMenuItem_Click;
-            // 
-            // txtRpmMedio
-            // 
-            txtRpmMedio.Enabled = false;
-            txtRpmMedio.Location = new Point(749, 31);
-            txtRpmMedio.Name = "txtRpmMedio";
-            txtRpmMedio.ReadOnly = true;
-            txtRpmMedio.Size = new Size(110, 23);
-            txtRpmMedio.TabIndex = 55;
-            // 
             // frmGerenciarArtigos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -488,7 +386,6 @@
             BackColor = Color.FromArgb(197, 202, 208);
             ClientSize = new Size(994, 761);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MaximumSize = new Size(1010, 800);
@@ -506,10 +403,7 @@
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numRpmMax).EndInit();
             ((System.ComponentModel.ISupportInitialize)numRpmMin).EndInit();
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -521,19 +415,7 @@
         private Label lblNomeArtigo;
         private TextBox txtNomeArtigo;
         private TableLayoutPanel tableLayoutPanel1;
-        private ToolStripMenuItem sairToolStripMenuItem;
-        private ToolStripMenuItem relatórioToolStripMenuItem;
-        private ToolStripMenuItem cadastroDeIndisponibilidadeToolStripMenuItem;
-        private ToolStripMenuItem gerenciarCalendáriosToolStripMenuItem;
-        private ToolStripMenuItem visualizarCalendárioToolStripMenuItem;
-        private ToolStripMenuItem calendárioDeDisponibilidadeToolStripMenuItem;
-        private ToolStripMenuItem cadastrarToolStripMenuItem;
-        private ToolStripMenuItem consultarToolStripMenuItem;
-        private ToolStripMenuItem usuáriosToolStripMenuItem;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem supervisaoToolStripMenuItem;
         private DataGridView dgvArtigos;
-        private ToolStripMenuItem gerenciarGruposToolStripMenuItem;
         private Panel panel1;
         private Label label5;
         private CheckedListBox clbFibras;

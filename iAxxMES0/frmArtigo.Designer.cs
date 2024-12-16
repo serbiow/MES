@@ -29,65 +29,139 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArtigo));
-            label1 = new Label();
-            textBox1 = new TextBox();
-            label2 = new Label();
-            textBox2 = new TextBox();
+            menuStrip1 = new MenuStrip();
+            supervisaoToolStripMenuItem = new ToolStripMenuItem();
+            gerenciarGruposToolStripMenuItem = new ToolStripMenuItem();
+            usuáriosToolStripMenuItem = new ToolStripMenuItem();
+            consultarToolStripMenuItem = new ToolStripMenuItem();
+            cadastrarToolStripMenuItem = new ToolStripMenuItem();
+            calendárioDeDisponibilidadeToolStripMenuItem = new ToolStripMenuItem();
+            visualizarCalendárioToolStripMenuItem = new ToolStripMenuItem();
+            gerenciarCalendáriosToolStripMenuItem = new ToolStripMenuItem();
+            cadastroDeIndisponibilidadeToolStripMenuItem = new ToolStripMenuItem();
+            relatórioToolStripMenuItem = new ToolStripMenuItem();
+            sairToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // menuStrip1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            menuStrip1.BackColor = Color.FromArgb(197, 202, 208);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { supervisaoToolStripMenuItem, gerenciarGruposToolStripMenuItem, usuáriosToolStripMenuItem, calendárioDeDisponibilidadeToolStripMenuItem, relatórioToolStripMenuItem, sairToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.TabIndex = 32;
+            menuStrip1.Text = "menuStrip1";
             // 
-            // textBox1
+            // supervisaoToolStripMenuItem
             // 
-            textBox1.Location = new Point(12, 27);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 1;
+            supervisaoToolStripMenuItem.Name = "supervisaoToolStripMenuItem";
+            supervisaoToolStripMenuItem.Size = new Size(76, 20);
+            supervisaoToolStripMenuItem.Text = "Supervisão";
+            supervisaoToolStripMenuItem.Click += supervisaoToolStripMenuItem_Click;
             // 
-            // label2
+            // gerenciarGruposToolStripMenuItem
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(12, 101);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 2;
-            label2.Text = "label2";
+            gerenciarGruposToolStripMenuItem.Name = "gerenciarGruposToolStripMenuItem";
+            gerenciarGruposToolStripMenuItem.Size = new Size(110, 20);
+            gerenciarGruposToolStripMenuItem.Text = "Gerenciar Grupos";
+            gerenciarGruposToolStripMenuItem.Click += gerenciarGruposToolStripMenuItem_Click;
             // 
-            // textBox2
+            // usuáriosToolStripMenuItem
             // 
-            textBox2.Location = new Point(12, 119);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 3;
+            usuáriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { consultarToolStripMenuItem, cadastrarToolStripMenuItem });
+            usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
+            usuáriosToolStripMenuItem.Size = new Size(64, 20);
+            usuáriosToolStripMenuItem.Text = "Usuários";
+            // 
+            // consultarToolStripMenuItem
+            // 
+            consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
+            consultarToolStripMenuItem.Size = new Size(180, 22);
+            consultarToolStripMenuItem.Text = "Consultar";
+            consultarToolStripMenuItem.Click += consultarToolStripMenuItem_Click;
+            // 
+            // cadastrarToolStripMenuItem
+            // 
+            cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
+            cadastrarToolStripMenuItem.Size = new Size(180, 22);
+            cadastrarToolStripMenuItem.Text = "Cadastrar";
+            cadastrarToolStripMenuItem.Click += cadastrarToolStripMenuItem_Click;
+            // 
+            // calendárioDeDisponibilidadeToolStripMenuItem
+            // 
+            calendárioDeDisponibilidadeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { visualizarCalendárioToolStripMenuItem, gerenciarCalendáriosToolStripMenuItem, cadastroDeIndisponibilidadeToolStripMenuItem });
+            calendárioDeDisponibilidadeToolStripMenuItem.Name = "calendárioDeDisponibilidadeToolStripMenuItem";
+            calendárioDeDisponibilidadeToolStripMenuItem.Size = new Size(177, 20);
+            calendárioDeDisponibilidadeToolStripMenuItem.Text = "Calendário de Disponibilidade";
+            // 
+            // visualizarCalendárioToolStripMenuItem
+            // 
+            visualizarCalendárioToolStripMenuItem.Name = "visualizarCalendárioToolStripMenuItem";
+            visualizarCalendárioToolStripMenuItem.Size = new Size(231, 22);
+            visualizarCalendárioToolStripMenuItem.Text = "Visualizar Calendário";
+            visualizarCalendárioToolStripMenuItem.Click += visualizarCalendárioToolStripMenuItem_Click;
+            // 
+            // gerenciarCalendáriosToolStripMenuItem
+            // 
+            gerenciarCalendáriosToolStripMenuItem.Name = "gerenciarCalendáriosToolStripMenuItem";
+            gerenciarCalendáriosToolStripMenuItem.Size = new Size(231, 22);
+            gerenciarCalendáriosToolStripMenuItem.Text = "Gerenciar Calendários";
+            gerenciarCalendáriosToolStripMenuItem.Click += gerenciarCalendáriosToolStripMenuItem_Click;
+            // 
+            // cadastroDeIndisponibilidadeToolStripMenuItem
+            // 
+            cadastroDeIndisponibilidadeToolStripMenuItem.Name = "cadastroDeIndisponibilidadeToolStripMenuItem";
+            cadastroDeIndisponibilidadeToolStripMenuItem.Size = new Size(231, 22);
+            cadastroDeIndisponibilidadeToolStripMenuItem.Text = "Cadastro de Indisponibilidade";
+            cadastroDeIndisponibilidadeToolStripMenuItem.Click += cadastroDeIndisponibilidadeToolStripMenuItem_Click;
+            // 
+            // relatórioToolStripMenuItem
+            // 
+            relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
+            relatórioToolStripMenuItem.Size = new Size(66, 20);
+            relatórioToolStripMenuItem.Text = "Relatório";
+            relatórioToolStripMenuItem.Click += relatórioToolStripMenuItem_Click;
+            // 
+            // sairToolStripMenuItem
+            // 
+            sairToolStripMenuItem.BackColor = Color.FromArgb(197, 202, 208);
+            sairToolStripMenuItem.ForeColor = Color.Black;
+            sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            sairToolStripMenuItem.Size = new Size(38, 20);
+            sairToolStripMenuItem.Text = "Sair";
+            sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
             // frmArtigo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(197, 202, 208);
             ClientSize = new Size(800, 450);
-            Controls.Add(textBox2);
-            Controls.Add(label2);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
+            Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmArtigo";
             Text = "frmArtigo";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private TextBox textBox1;
-        private Label label2;
-        private TextBox textBox2;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem supervisaoToolStripMenuItem;
+        private ToolStripMenuItem gerenciarGruposToolStripMenuItem;
+        private ToolStripMenuItem usuáriosToolStripMenuItem;
+        private ToolStripMenuItem consultarToolStripMenuItem;
+        private ToolStripMenuItem cadastrarToolStripMenuItem;
+        private ToolStripMenuItem calendárioDeDisponibilidadeToolStripMenuItem;
+        private ToolStripMenuItem visualizarCalendárioToolStripMenuItem;
+        private ToolStripMenuItem gerenciarCalendáriosToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeIndisponibilidadeToolStripMenuItem;
+        private ToolStripMenuItem relatórioToolStripMenuItem;
+        private ToolStripMenuItem sairToolStripMenuItem;
     }
 }
