@@ -34,7 +34,7 @@ namespace iAxxMES0
             AtualizarListaGrupos();
 
             // Definir a opção padrão como "Ordenar por Apelido"
-            cbxOrdenacao.SelectedIndex = 0;
+            cbxOrdenacao.SelectedIndex = 1;
 
             // Define a opção padrão do Filtro de Status para "Todos"
             cbxStatusFiltro.SelectedIndex = 0;
@@ -94,8 +94,13 @@ namespace iAxxMES0
                     }
                 }
 
-                // Atualizar os contadores de status
-                AtualizarContadores(maquinasAtualizadas);
+                // Atualizar os contadores com os dados completos e os dados filtrados atualmente exibidos
+                List<Maquina> maquinasFiltradas = listaMaquinas
+                    .Select(mc => maquinasAtualizadas.FirstOrDefault(m => m.Id == mc.MaquinaId))
+                    .Where(m => m != null)
+                    .ToList();
+
+                AtualizarContadores(maquinasAtualizadas, maquinasFiltradas);
 
                 lblStatusBanco.Visible = false; // Esconde o aviso de erro se tudo estiver ok
             }
@@ -129,19 +134,28 @@ namespace iAxxMES0
             }
         }
 
-        private void AtualizarContadores(List<Maquina> maquinas)
+        private void AtualizarContadores(List<Maquina> maquinas, List<Maquina> maquinasFiltradas)
         {
+            // Contadores gerais
             int numParada = maquinas.Count(m => m.Status == "Parada");
             int numRodando = maquinas.Count(m => m.Status == "Rodando");
             int numCarga = maquinas.Count(m => m.Status == "Carga de fio");
             int numSetup = maquinas.Count(m => m.Status == "Setup");
             int numSemProg = maquinas.Count(m => m.Status == "Sem programação");
 
-            lblNumParada.Text = "Parada(a): " + numParada;
-            lblNumRodando.Text = "Rodando: " + numRodando;
-            lblNumCarga.Text = "Carga de fio: " + numCarga;
-            lblNumSetup.Text = "Setup: " + numSetup;
-            lblNumSemProg.Text = "Sem programação: " + numSemProg;
+            // Contadores filtrados
+            int numParadaFiltrado = maquinasFiltradas.Count(m => m.Status == "Parada");
+            int numRodandoFiltrado = maquinasFiltradas.Count(m => m.Status == "Rodando");
+            int numCargaFiltrado = maquinasFiltradas.Count(m => m.Status == "Carga de fio");
+            int numSetupFiltrado = maquinasFiltradas.Count(m => m.Status == "Setup");
+            int numSemProgFiltrado = maquinasFiltradas.Count(m => m.Status == "Sem programação");
+
+            // Atualizar os Labels com contadores gerais e filtrados
+            lblNumParada.Text = $"Parada(s): {numParada}\nFiltrado: {numParadaFiltrado}";
+            lblNumRodando.Text = $"Rodando: {numRodando}\nFiltrado: {numRodandoFiltrado}";
+            lblNumCarga.Text = $"Carga de fio: {numCarga}\nFiltrado: {numCargaFiltrado}";
+            lblNumSetup.Text = $"Setup: {numSetup}\nFiltrado: {numSetupFiltrado}";
+            lblNumSemProg.Text = $"Sem programação: {numSemProg}\nFiltrado: {numSemProgFiltrado}";
         }
 
         // Função para carregar as máquinas inicialmente
@@ -290,8 +304,11 @@ namespace iAxxMES0
                     break;
             }
 
-            // Exibir as máquinas filtradas e ordenadas
+            // Exibir as máquinas filtradas
             ExibirMaquinas(maquinasFiltradas);
+
+            // Atualizar os contadores com a lista completa e a lista filtrada
+            AtualizarContadores(maquinasOriginais, maquinasFiltradas);
         }
 
         private void gerenciarGruposToolStripMenuItem_Click(object sender, EventArgs e)

@@ -1496,3 +1496,4 @@
 13/12/2024 12:16:07: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
 13/12/2024 12:16:07: Erro ao obter dados atualizados: There is already an open DataReader associated with this Connection which must be closed first.
 13/12/2024 12:22:34: Erro ao obter dados atualizados: Invalid attempt to Read when reader is closed.
+17/12/2024 14:42:06: Erro ao obter dados atualizados: Invalid attempt to Read when reader is closed.

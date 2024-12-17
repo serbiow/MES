@@ -47,6 +47,7 @@
             lblMesAno = new Label();
             panel1 = new Panel();
             panel2 = new Panel();
+            cmbCalendarios = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewIndisponibilidades).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCalendario).BeginInit();
             panel1.SuspendLayout();
@@ -227,6 +228,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(cmbCalendarios);
             panel1.Controls.Add(lblMesAno);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
@@ -242,6 +244,15 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(697, 354);
             panel2.TabIndex = 19;
+            // 
+            // cmbCalendarios
+            // 
+            cmbCalendarios.FormattingEnabled = true;
+            cmbCalendarios.Location = new Point(3, 3);
+            cmbCalendarios.Name = "cmbCalendarios";
+            cmbCalendarios.Size = new Size(121, 23);
+            cmbCalendarios.TabIndex = 18;
+            cmbCalendarios.SelectedIndexChanged += cmbCalendarios_SelectedIndexChanged;
             // 
             // frmCalendario
             // 
@@ -291,5 +302,6 @@
         private Label lblMesAno;
         private Panel panel1;
         private Panel panel2;
+        private ComboBox cmbCalendarios;
     }
 }

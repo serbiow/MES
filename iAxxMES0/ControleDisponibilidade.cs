@@ -1,9 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace iAxxMES0
 {
@@ -16,31 +14,28 @@ namespace iAxxMES0
             connection = Conexao.GetConnection();
         }
 
-        // Método para adicionar uma indisponibilidade
-        public void AdicionarIndisponibilidade(Indisponibilidade indisponibilidade)
+        // Método para adicionar uma indisponibilidade com Calendario_id
+        public void AdicionarIndisponibilidade(Indisponibilidade indisponibilidade, int calendarioId)
         {
             try
             {
-                // Verifica se a conexão está fechada antes de abri-la
                 if (connection.State == System.Data.ConnectionState.Closed)
                 {
                     connection.Open();
                 }
 
-                // Query para inserir a indisponibilidade
                 string query = @"
                 INSERT INTO indisponibilidade 
-                (Tipo, DiaSemana, DataEspecifica, HorarioInicio, HorarioFim, Motivo) 
-                VALUES (@Tipo, @DiaSemana, @DataEspecifica, @HorarioInicio, @HorarioFim, @Motivo)";
+                (Calendario_id, DataEspecifica, HorarioInicio, HorarioFim, Motivo) 
+                VALUES (@CalendarioId, @DataEspecifica, @HorarioInicio, @HorarioFim, @Motivo)";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
-                    cmd.Parameters.AddWithValue("@Tipo", indisponibilidade.Tipo);
-                    cmd.Parameters.AddWithValue("@DiaSemana", (object)indisponibilidade.DiaSemana ?? DBNull.Value);
-                    cmd.Parameters.AddWithValue("@DataEspecifica", (object)indisponibilidade.DataEspecifica ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@CalendarioId", calendarioId);
+                    cmd.Parameters.AddWithValue("@DataEspecifica", indisponibilidade.DataEspecifica);
                     cmd.Parameters.AddWithValue("@HorarioInicio", indisponibilidade.HorarioInicio);
                     cmd.Parameters.AddWithValue("@HorarioFim", indisponibilidade.HorarioFim);
-                    cmd.Parameters.AddWithValue("@Motivo", indisponibilidade.Motivo);
+                    cmd.Parameters.AddWithValue("@Motivo", (object)indisponibilidade.Motivo ?? DBNull.Value);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -58,8 +53,8 @@ namespace iAxxMES0
             }
         }
 
-        // Método para buscar todas as indisponibilidades
-        public List<Indisponibilidade> BuscarTodasIndisponibilidades()
+        // Método para buscar todas as indisponibilidades de um Calendario específico
+        public List<Indisponibilidade> BuscarIndisponibilidadesPorCalendario(int calendarioId)
         {
             List<Indisponibilidade> indisponibilidades = new List<Indisponibilidade>();
 
@@ -70,24 +65,26 @@ namespace iAxxMES0
                     connection.Open();
                 }
 
-                string query = "SELECT * FROM indisponibilidade";
+                string query = "SELECT * FROM indisponibilidade WHERE Calendario_id = @CalendarioId";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    while (reader.Read())
+                    cmd.Parameters.AddWithValue("@CalendarioId", calendarioId);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
-                        var indisponibilidade = new Indisponibilidade
+                        while (reader.Read())
                         {
-                            Id = reader.GetInt32("Id"),
-                            Tipo = reader.GetString("Tipo"),
-                            DiaSemana = reader["DiaSemana"] != DBNull.Value ? reader.GetString("DiaSemana") : null,
-                            DataEspecifica = reader["DataEspecifica"] != DBNull.Value ? reader.GetDateTime("DataEspecifica") : (DateTime?)null,
-                            HorarioInicio = reader.GetTimeSpan("HorarioInicio"),
-                            HorarioFim = reader.GetTimeSpan("HorarioFim"),
-                            Motivo = reader.GetString("Motivo")
-                        };
-                        indisponibilidades.Add(indisponibilidade);
+                            var indisponibilidade = new Indisponibilidade
+                            {
+                                Id = reader.GetInt32("Id"),
+                                DataEspecifica = reader.GetDateTime("DataEspecifica"),
+                                HorarioInicio = reader.GetTimeSpan("HorarioInicio"),
+                                HorarioFim = reader.GetTimeSpan("HorarioFim"),
+                                Motivo = reader["Motivo"] != DBNull.Value ? reader.GetString("Motivo") : null
+                            };
+                            indisponibilidades.Add(indisponibilidade);
+                        }
                     }
                 }
             }

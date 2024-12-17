@@ -10,29 +10,17 @@
 # - CALCULO DE EFICIÊNCIA
 	# - Fazer os cálculos e relatórios de eficiência corretos
 	# - Fazer a indisponibilidade de máquinas específicas
-# - Fazer o CRUD completo de ARTIGOS (deve ter Filtro e Ordenação por Artigo no dashboard)
+# - (FEITO - Falta os filtros) Fazer o CRUD completo de ARTIGOS (deve ter Filtro e Ordenação por Artigo no dashboard)
 # - Fazer o artigo poder ser atribuído a máquinas especificas
 # - Exibir a linha do tempo dos artigos
+# - As máquinas devem ter bloqueios de artigos (artigos que não podem rodar na máquina) (pq, quem e quando?)
+# - Essas definições podem ser feitas em várias máquinas ao mesmo tempo
 
 #Calendário
 # - (FEITO) Vários calendários diferentes, mas uma máquina só pode ter um calendário
 # - *Dias anteriores não podem mais ser alterados* - OBS.: DEVE SER CONVERSADO
-# - Poder definir exceções para as datas que ja tem indisponibilidade (exemplo: algum domingo a máquina vai rodar)
+# - (FEITO) Poder definir exceções para as datas que ja tem indisponibilidade (exemplo: algum domingo a máquina vai rodar)
 # - Colocar opções e definições para cargos (manhã, tarde e noite)
-
-#Informações do Artigo
-# - ID
-# - Descrição
-# - Composição (opções, a soma tem que ser IGUAL 100%) - Deciamal com 2 casas
-	# - Precisa ter uma tabela para o tipo de fibra
-		# - Tipos de fibra:
-		# - (Vão mandar no zap)
-# - RPM mímino, máximo e ponderado
-# - Rendimento por quilos *(1000 voltas)* OBS.: Deve ser conversado
-# - Rendimento por metros *(1000 voltas)* OBS.: Deve ser conversado
-
-# - As máquinas devem ter bloqueios de artigos (artigos que não podem rodar na máquina) (pq, quem e quando?)
-# - Essas definições podem ser feitas em várias máuqinas ao mesmo tempo
 
 #Extra
 # - Fazer opções para importar e exportar dados pelo excel (Update de Maquinas e Artigos)

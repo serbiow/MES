@@ -194,7 +194,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(194, 793);
+            panel1.Size = new Size(170, 793);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -222,7 +222,7 @@
             tableLayoutPanel2.RowCount = 3;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 150F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 150F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 218F));
             tableLayoutPanel2.Size = new Size(250, 793);
             tableLayoutPanel2.TabIndex = 18;
             // 
@@ -255,7 +255,7 @@
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(3, 153);
             panel4.Name = "panel4";
-            panel4.Size = new Size(258, 487);
+            panel4.Size = new Size(258, 419);
             panel4.TabIndex = 2;
             // 
             // lblOderBy
@@ -272,7 +272,7 @@
             // cbxOrdenacao
             // 
             cbxOrdenacao.FormattingEnabled = true;
-            cbxOrdenacao.Items.AddRange(new object[] { "Maquina", "Status" });
+            cbxOrdenacao.Items.AddRange(new object[] { "Artigo", "Maquina", "Status" });
             cbxOrdenacao.Location = new Point(3, 329);
             cbxOrdenacao.Name = "cbxOrdenacao";
             cbxOrdenacao.Size = new Size(121, 23);
@@ -305,7 +305,7 @@
             btnAplicarFiltro.FlatStyle = FlatStyle.Flat;
             btnAplicarFiltro.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAplicarFiltro.ForeColor = Color.White;
-            btnAplicarFiltro.Location = new Point(3, 383);
+            btnAplicarFiltro.Location = new Point(3, 371);
             btnAplicarFiltro.Name = "btnAplicarFiltro";
             btnAplicarFiltro.Size = new Size(121, 30);
             btnAplicarFiltro.TabIndex = 7;
@@ -393,9 +393,9 @@
             // 
             panel2.Controls.Add(panel5);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(3, 646);
+            panel2.Location = new Point(3, 578);
             panel2.Name = "panel2";
-            panel2.Size = new Size(258, 144);
+            panel2.Size = new Size(258, 212);
             panel2.TabIndex = 3;
             // 
             // panel5
@@ -406,9 +406,9 @@
             panel5.Controls.Add(lblNumCarga);
             panel5.Controls.Add(lblNumSetup);
             panel5.Dock = DockStyle.Bottom;
-            panel5.Location = new Point(0, 15);
+            panel5.Location = new Point(0, 3);
             panel5.Name = "panel5";
-            panel5.Size = new Size(258, 129);
+            panel5.Size = new Size(258, 209);
             panel5.TabIndex = 5;
             // 
             // lblNumRodando
@@ -416,9 +416,9 @@
             lblNumRodando.BackColor = Color.Green;
             lblNumRodando.Font = new Font("Segoe UI", 11.25F);
             lblNumRodando.ForeColor = Color.White;
-            lblNumRodando.Location = new Point(0, 18);
+            lblNumRodando.Location = new Point(0, 9);
             lblNumRodando.Name = "lblNumRodando";
-            lblNumRodando.Size = new Size(161, 22);
+            lblNumRodando.Size = new Size(161, 40);
             lblNumRodando.TabIndex = 0;
             lblNumRodando.Text = "Rodando: 0";
             // 
@@ -426,9 +426,9 @@
             // 
             lblNumSemProg.BackColor = Color.Gray;
             lblNumSemProg.Font = new Font("Segoe UI", 11.25F);
-            lblNumSemProg.Location = new Point(0, 106);
+            lblNumSemProg.Location = new Point(0, 169);
             lblNumSemProg.Name = "lblNumSemProg";
-            lblNumSemProg.Size = new Size(161, 22);
+            lblNumSemProg.Size = new Size(161, 40);
             lblNumSemProg.TabIndex = 4;
             lblNumSemProg.Text = "Sem programação: 0";
             // 
@@ -437,9 +437,9 @@
             lblNumParada.BackColor = Color.Red;
             lblNumParada.Font = new Font("Segoe UI", 11.25F);
             lblNumParada.ForeColor = Color.White;
-            lblNumParada.Location = new Point(0, 40);
+            lblNumParada.Location = new Point(0, 49);
             lblNumParada.Name = "lblNumParada";
-            lblNumParada.Size = new Size(161, 22);
+            lblNumParada.Size = new Size(161, 40);
             lblNumParada.TabIndex = 1;
             lblNumParada.Text = "Parada(s): 0";
             // 
@@ -447,9 +447,9 @@
             // 
             lblNumCarga.BackColor = Color.Orange;
             lblNumCarga.Font = new Font("Segoe UI", 11.25F);
-            lblNumCarga.Location = new Point(0, 84);
+            lblNumCarga.Location = new Point(0, 129);
             lblNumCarga.Name = "lblNumCarga";
-            lblNumCarga.Size = new Size(161, 22);
+            lblNumCarga.Size = new Size(161, 40);
             lblNumCarga.TabIndex = 3;
             lblNumCarga.Text = "Carga de Fio: 0";
             // 
@@ -457,9 +457,9 @@
             // 
             lblNumSetup.BackColor = Color.LightBlue;
             lblNumSetup.Font = new Font("Segoe UI", 11.25F);
-            lblNumSetup.Location = new Point(0, 62);
+            lblNumSetup.Location = new Point(0, 89);
             lblNumSetup.Name = "lblNumSetup";
-            lblNumSetup.Size = new Size(161, 22);
+            lblNumSetup.Size = new Size(161, 40);
             lblNumSetup.TabIndex = 2;
             lblNumSetup.Text = "Setup: 0";
             // 
@@ -467,7 +467,7 @@
             // 
             tableLayoutPanel1.BackColor = Color.FromArgb(197, 202, 208);
             tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 176F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(panel1, 0, 0);
             tableLayoutPanel1.Controls.Add(flowLayoutPanelMaquinas, 1, 0);
@@ -485,9 +485,9 @@
             flowLayoutPanelMaquinas.BackColor = Color.FromArgb(197, 202, 208);
             flowLayoutPanelMaquinas.Controls.Add(lblStatusBanco);
             flowLayoutPanelMaquinas.Dock = DockStyle.Fill;
-            flowLayoutPanelMaquinas.Location = new Point(203, 3);
+            flowLayoutPanelMaquinas.Location = new Point(179, 3);
             flowLayoutPanelMaquinas.Name = "flowLayoutPanelMaquinas";
-            flowLayoutPanelMaquinas.Size = new Size(1083, 793);
+            flowLayoutPanelMaquinas.Size = new Size(1107, 793);
             flowLayoutPanelMaquinas.TabIndex = 1;
             // 
             // lblStatusBanco

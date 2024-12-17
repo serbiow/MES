@@ -9,41 +9,60 @@ namespace iAxxMES0
     public partial class frmCalendario : Form
     {
         private ControleDisponibilidade controleDisponibilidade;
+        private ControleCalendario controleCalendario;
         private int anoAtual;
         private int mesAtual;
+        private int calendarioIdAtual;
 
         public frmCalendario()
         {
             InitializeComponent();
             controleDisponibilidade = new ControleDisponibilidade();
-            anoAtual = DateTime.Today.Year; // Ano atual
-            mesAtual = DateTime.Today.Month; // Mês atual
+            controleCalendario = new ControleCalendario();
+            anoAtual = DateTime.Today.Year;
+            mesAtual = DateTime.Today.Month;
             InicializarCalendario();
-            CarregarIndisponibilidades();
+            CarregarCalendarios();
+        }
+
+        // Método para carregar os calendários disponíveis no ComboBox
+        private void CarregarCalendarios()
+        {
+            try
+            {
+                List<Calendario> calendarios = controleCalendario.ObterTodosCalendarios();
+
+                cmbCalendarios.DisplayMember = "Nome";
+                cmbCalendarios.ValueMember = "Id";
+                cmbCalendarios.DataSource = calendarios;
+
+                cmbCalendarios.SelectedIndexChanged += cmbCalendarios_SelectedIndexChanged;
+
+                if (calendarios.Count > 0)
+                {
+                    calendarioIdAtual = calendarios[0].Id;
+                    CarregarIndisponibilidades();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar calendários: {ex.Message}");
+            }
         }
 
         // Inicializa o calendário personalizado (DataGridView)
         private void InicializarCalendario()
         {
-            dgvCalendario.ColumnCount = 7; // 7 colunas para os dias da semana
-
-            // Define os cabeçalhos das colunas
+            dgvCalendario.ColumnCount = 7;
             string[] diasSemana = { "Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb" };
             for (int i = 0; i < 7; i++)
             {
                 dgvCalendario.Columns[i].HeaderText = diasSemana[i];
-                //dgvCalendario.Columns[i].Width = 50; // Largura de cada coluna
-                //dgvCalendario.RowTemplate.Height = 50; // Altura de cada linha
             }
 
-            dgvCalendario.RowHeadersVisible = false; // Oculta a coluna de cabeçalho das linhas
-            dgvCalendario.AllowUserToResizeColumns = false;
-            dgvCalendario.AllowUserToResizeRows = false;
+            dgvCalendario.RowHeadersVisible = false;
             dgvCalendario.SelectionMode = DataGridViewSelectionMode.CellSelect;
             dgvCalendario.ReadOnly = true;
-
-            // Configura o evento de clique no calendário
-            dgvCalendario.CellClick += dgvCalendario_CellClick;
         }
 
         // Método auxiliar para obter o nome do mês
@@ -53,55 +72,36 @@ namespace iAxxMES0
             return culturaBrasileira.DateTimeFormat.GetMonthName(mes);
         }
 
-        // Verifica se há indisponibilidade para uma data específica
-        private bool TemIndisponibilidade(DateTime data, List<Indisponibilidade> indisponibilidades)
-        {
-            return indisponibilidades.Any(ind =>
-                (ind.Tipo == "Específico" && ind.DataEspecifica.HasValue && ind.DataEspecifica.Value.Date == data.Date) ||
-                (ind.Tipo == "Semanal" && DiaSemanaParaDayOfWeek(ind.DiaSemana) == data.DayOfWeek)
-            );
-        }
-
         // Atualiza o calendário para o mês atual
-        private void AtualizarCalendario()
+        private void AtualizarCalendario(List<Indisponibilidade> indisponibilidades)
         {
-            // Atualiza o texto do Label para exibir o mês e ano atuais
             lblMesAno.Text = $"{ObterNomeDoMes(mesAtual)} de {anoAtual}";
-
-            dgvCalendario.Rows.Clear(); // Limpa as linhas do calendário
+            dgvCalendario.Rows.Clear();
 
             DateTime primeiroDiaDoMes = new DateTime(anoAtual, mesAtual, 1);
             int diasNoMes = DateTime.DaysInMonth(anoAtual, mesAtual);
 
-            // Busca as indisponibilidades
-            List<Indisponibilidade> indisponibilidades = controleDisponibilidade.BuscarTodasIndisponibilidades();
-
-            // Adiciona as células ao calendário
             int diaAtual = 1;
             int diaDaSemana = (int)primeiroDiaDoMes.DayOfWeek;
+
             for (int semana = 0; diaAtual <= diasNoMes; semana++)
             {
                 dgvCalendario.Rows.Add();
-                dgvCalendario.Rows[semana].Height = 60;
                 for (int dia = 0; dia < 7; dia++)
                 {
                     if (semana == 0 && dia < diaDaSemana || diaAtual > diasNoMes)
                     {
-                        dgvCalendario.Rows[semana].Cells[dia].Value = ""; // Célula vazia
+                        dgvCalendario.Rows[semana].Cells[dia].Value = "";
                     }
                     else
                     {
                         DateTime dataAtual = new DateTime(anoAtual, mesAtual, diaAtual);
-                        dgvCalendario.Rows[semana].Cells[dia].Value = diaAtual.ToString(); // Número do dia
-                        dgvCalendario.Rows[semana].Cells[dia].Tag = dataAtual; // Associa a data à célula
+                        dgvCalendario.Rows[semana].Cells[dia].Value = diaAtual.ToString();
+                        dgvCalendario.Rows[semana].Cells[dia].Tag = dataAtual;
 
-                        // Verifica se há indisponibilidade para esse dia
-                        if (TemIndisponibilidade(dataAtual, indisponibilidades))
+                        if (indisponibilidades.Any(ind => ind.DataEspecifica == dataAtual.Date))
                         {
-                            // Aplica estilo à célula com indisponibilidade
-                            dgvCalendario.Rows[semana].Cells[dia].Style.BackColor = Color.LightGray; // Cor de fundo
-                            dgvCalendario.Rows[semana].Cells[dia].Style.ForeColor = Color.Black;      // Cor do texto
-                            dgvCalendario.Rows[semana].Cells[dia].Style.Font = new Font(dgvCalendario.Font, FontStyle.Bold); // Negrito
+                            dgvCalendario.Rows[semana].Cells[dia].Style.BackColor = Color.LightGray;
                         }
 
                         diaAtual++;
@@ -114,11 +114,8 @@ namespace iAxxMES0
         {
             try
             {
-                // Busca as indisponibilidades
-                List<Indisponibilidade> indisponibilidades = controleDisponibilidade.BuscarTodasIndisponibilidades();
-
-                // Atualiza o calendário personalizado e o DataGridView de indisponibilidades
-                AtualizarCalendario();
+                List<Indisponibilidade> indisponibilidades = controleDisponibilidade.BuscarIndisponibilidadesPorCalendario(calendarioIdAtual);
+                AtualizarCalendario(indisponibilidades);
                 AtualizarGrid(indisponibilidades);
             }
             catch (Exception ex)
@@ -142,12 +139,10 @@ namespace iAxxMES0
 
         private void AtualizarGrid(List<Indisponibilidade> indisponibilidades)
         {
-            // Configura as colunas do DataGridView (caso não estejam configuradas)
             if (dataGridViewIndisponibilidades.Columns.Count == 0)
             {
                 dataGridViewIndisponibilidades.Columns.Add("Id", "Id");
                 dataGridViewIndisponibilidades.Columns.Add("Data", "Data");
-                dataGridViewIndisponibilidades.Columns.Add("DiaSemana", "Dia da Semana");
                 dataGridViewIndisponibilidades.Columns.Add("HorarioInicio", "Início");
                 dataGridViewIndisponibilidades.Columns.Add("HorarioFim", "Fim");
                 dataGridViewIndisponibilidades.Columns.Add("Motivo", "Motivo");
@@ -155,20 +150,13 @@ namespace iAxxMES0
                 dataGridViewIndisponibilidades.Columns["Id"].Visible = false;
             }
 
-            // Limpa os dados do DataGridView
             dataGridViewIndisponibilidades.Rows.Clear();
 
-            // Preenche com os dados
             foreach (var indisponibilidade in indisponibilidades)
             {
-                string dataOuDia = indisponibilidade.Tipo == "Específico"
-                    ? indisponibilidade.DataEspecifica?.ToString("dd/MM/yyyy")
-                    : indisponibilidade.DiaSemana;
-
                 dataGridViewIndisponibilidades.Rows.Add(
                     indisponibilidade.Id,
-                    dataOuDia,
-                    indisponibilidade.DiaSemana,
+                    indisponibilidade.DataEspecifica.ToString("dd/MM/yyyy"),
                     indisponibilidade.HorarioInicio.ToString(@"hh\:mm"),
                     indisponibilidade.HorarioFim.ToString(@"hh\:mm"),
                     indisponibilidade.Motivo
@@ -180,16 +168,12 @@ namespace iAxxMES0
         {
             try
             {
-                // Busca todas as indisponibilidades
-                List<Indisponibilidade> todasIndisponibilidades = controleDisponibilidade.BuscarTodasIndisponibilidades();
+                List<Indisponibilidade> todasIndisponibilidades = controleDisponibilidade.BuscarIndisponibilidadesPorCalendario(calendarioIdAtual);
 
-                // Filtra as indisponibilidades para a data selecionada
-                var indisponibilidadesFiltradas = todasIndisponibilidades.Where(ind =>
-                    (ind.Tipo == "Específico" && ind.DataEspecifica.HasValue && ind.DataEspecifica.Value.Date == dataSelecionada) ||
-                    (ind.Tipo == "Semanal" && DiaSemanaParaDayOfWeek(ind.DiaSemana) == dataSelecionada.DayOfWeek)
-                ).ToList();
+                var indisponibilidadesFiltradas = todasIndisponibilidades
+                    .Where(ind => ind.DataEspecifica == dataSelecionada.Date)
+                    .ToList();
 
-                // Atualiza o DataGridView com os dados filtrados
                 AtualizarGrid(indisponibilidadesFiltradas);
             }
             catch (Exception ex)
@@ -238,7 +222,7 @@ namespace iAxxMES0
             }
         }
 
-        // Converte o nome do dia da semana para DayOfWeek
+        // Converte dia da semana para DayOfWeek
         private DayOfWeek DiaSemanaParaDayOfWeek(string diaSemana)
         {
             return diaSemana switch
@@ -257,7 +241,7 @@ namespace iAxxMES0
         private void btnAnoAnterior_Click(object sender, EventArgs e)
         {
             anoAtual--;
-            AtualizarCalendario();
+            CarregarIndisponibilidades();
         }
 
         private void btnMesAnterior_Click(object sender, EventArgs e)
@@ -268,7 +252,7 @@ namespace iAxxMES0
                 mesAtual = 12;
                 anoAtual--;
             }
-            AtualizarCalendario();
+            CarregarIndisponibilidades();
         }
 
         private void btnProximoMes_Click(object sender, EventArgs e)
@@ -279,13 +263,22 @@ namespace iAxxMES0
                 mesAtual = 1;
                 anoAtual++;
             }
-            AtualizarCalendario();
+            CarregarIndisponibilidades();
         }
 
         private void btnProximoAno_Click(object sender, EventArgs e)
         {
             anoAtual++;
-            AtualizarCalendario();
+            CarregarIndisponibilidades();
+        }
+
+        private void cmbCalendarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCalendarios.SelectedValue is int selectedId)
+            {
+                calendarioIdAtual = selectedId;
+                CarregarIndisponibilidades();
+            }
         }
     }
 }

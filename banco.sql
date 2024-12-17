@@ -42,8 +42,6 @@ CREATE TABLE Calendario (
 CREATE TABLE indisponibilidade (
     Id INT AUTO_INCREMENT PRIMARY KEY,
     Calendario_id INT,
-    Tipo ENUM('Semanal', 'Específico') NOT NULL,
-    DiaSemana ENUM('Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo') NULL,
     DataEspecifica DATE NULL,
     HorarioInicio TIME NOT NULL,
     HorarioFim TIME NOT NULL,
