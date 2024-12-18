@@ -208,7 +208,7 @@ namespace iAxxMES0
             dgvGrupos.DataSource = gruposEncontrados;
         }
 
-        private void supervisaoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void supervisaoToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             // Chamar o Dashboard e fechar a tela de grupos
             using (frmDashboard dashboard = new frmDashboard(nivelPermissao))
@@ -220,49 +220,49 @@ namespace iAxxMES0
             this.Close();
         }
 
-        private void gerenciarArtigosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void gerenciarArtigosToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             frmGerenciarArtigos gerenciarArtigos = new frmGerenciarArtigos();
             gerenciarArtigos.ShowDialog();
         }
 
-        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void consultarToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             frmViewUser consultar = new frmViewUser();
             consultar.ShowDialog();
         }
 
-        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cadastrarToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             frmCadUser cadastro = new frmCadUser(nivelPermissao);
             cadastro.ShowDialog();
         }
 
-        private void visualizarCalendárioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void visualizarCalendárioToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             frmCalendario calendario = new frmCalendario();
             calendario.ShowDialog();
         }
 
-        private void gerenciarCalendáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void gerenciarCalendáriosToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             frmGerenciarCalendarios gerenciarCalendarios = new frmGerenciarCalendarios();
             gerenciarCalendarios.ShowDialog();
         }
 
-        private void cadastroDeIndisponibilidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cadastroDeIndisponibilidadeToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             frmCadCalendario cadCalendario = new frmCadCalendario();
             cadCalendario.ShowDialog();
         }
 
-        private void relatórioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void relatórioToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             frmRelatorio relatorio = new frmRelatorio();
             relatorio.ShowDialog();
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        private void sairToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             // Chamar o Login e fechar a tela de grupos
             using (frmLogin login = new frmLogin())

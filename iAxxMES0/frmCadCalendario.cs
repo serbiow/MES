@@ -25,6 +25,9 @@ namespace iAxxMES0
         {
             InitializeComponent();
             CarregarCalendarios();
+            dtpPeriodoInicio.Value = DateTime.Today;
+            dtpPeriodoFim.Value = DateTime.Today;
+            dtpDataEspecifica.Value = DateTime.Today;
         }
 
         private void InitializeComponent()
@@ -170,7 +173,7 @@ namespace iAxxMES0
             // 
             btnSalvar.BackColor = Color.FromArgb(46, 53, 60);
             btnSalvar.ForeColor = Color.White;
-            btnSalvar.Location = new Point(203, 342);
+            btnSalvar.Location = new Point(103, 342);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(150, 52);
             btnSalvar.TabIndex = 21;
@@ -228,16 +231,15 @@ namespace iAxxMES0
             label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             label5.Location = new Point(12, 64);
             label5.Name = "label5";
-            label5.Size = new Size(114, 20);
+            label5.Size = new Size(83, 20);
             label5.TabIndex = 27;
-            label5.Text = "Data Específica";
-            label5.Visible = false;
+            label5.Text = "Calendário";
             // 
             // btnGerarDatas
             // 
             btnGerarDatas.BackColor = Color.FromArgb(46, 53, 60);
             btnGerarDatas.ForeColor = Color.White;
-            btnGerarDatas.Location = new Point(12, 342);
+            btnGerarDatas.Location = new Point(405, 342);
             btnGerarDatas.Name = "btnGerarDatas";
             btnGerarDatas.Size = new Size(150, 52);
             btnGerarDatas.TabIndex = 28;
@@ -251,7 +253,7 @@ namespace iAxxMES0
             lstDatasSelecionadas.ItemHeight = 15;
             lstDatasSelecionadas.Location = new Point(388, 32);
             lstDatasSelecionadas.Name = "lstDatasSelecionadas";
-            lstDatasSelecionadas.Size = new Size(296, 304);
+            lstDatasSelecionadas.Size = new Size(185, 304);
             lstDatasSelecionadas.TabIndex = 29;
             // 
             // label6
@@ -267,7 +269,7 @@ namespace iAxxMES0
             // frmCadCalendario
             // 
             BackColor = Color.FromArgb(197, 202, 208);
-            ClientSize = new Size(742, 408);
+            ClientSize = new Size(588, 408);
             Controls.Add(label6);
             Controls.Add(lstDatasSelecionadas);
             Controls.Add(btnGerarDatas);
@@ -291,6 +293,8 @@ namespace iAxxMES0
             Controls.Add(cbxTipo);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
+            MaximumSize = new Size(604, 447);
+            MinimumSize = new Size(604, 447);
             Name = "frmCadCalendario";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Indisponibilidade";

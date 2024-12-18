@@ -1,30 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\",
+  "WorkspaceRootPath": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\iaxx\\documents\\github\\iaxxmes\\iaxxmes0\\frmviewuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmviewuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\iaxx\\documents\\github\\iaxxmes\\iaxxmes0\\frmcaduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmcaduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\iaxx\\documents\\github\\iaxxmes\\iaxxmes0\\frmcaduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmcaduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\iaxx\\documents\\github\\iaxxmes\\iaxxmes0\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\indisponibilidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\indisponibilidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\frmcalendario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmcalendario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\controledisponibilidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\controledisponibilidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\frmcadcalendario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmcadcalendario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\sergi\\documents\\github\\iaxxmes\\iaxxmes0\\frmcadcalendario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmcadcalendario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,81 +26,54 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Indisponibilidade.cs",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Indisponibilidade.cs",
-              "RelativeDocumentMoniker": "iAxxMES0\\Indisponibilidade.cs",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\Indisponibilidade.cs",
-              "RelativeToolTip": "iAxxMES0\\Indisponibilidade.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "frmViewUser.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmViewUser.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\frmViewUser.cs",
+              "ToolTip": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmViewUser.cs [Projeto]",
+              "RelativeToolTip": "iAxxMES0\\frmViewUser.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T16:36:00.677Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmCadCalendario.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCadCalendario.cs",
-              "RelativeDocumentMoniker": "iAxxMES0\\frmCadCalendario.cs",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCadCalendario.cs [Projeto]",
-              "RelativeToolTip": "iAxxMES0\\frmCadCalendario.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T15:31:57.936Z",
+              "WhenOpened": "2024-12-18T14:07:51.314Z",
               "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmCadCalendario.cs",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCadCalendario.cs",
-              "RelativeDocumentMoniker": "iAxxMES0\\frmCadCalendario.cs",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCadCalendario.cs",
-              "RelativeToolTip": "iAxxMES0\\frmCadCalendario.cs",
-              "ViewState": "AgIAAGABAAAAAAAAAAA4wJUBAAARAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "frmCadUser.cs",
+              "DocumentMoniker": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCadUser.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\frmCadUser.cs",
+              "ToolTip": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCadUser.cs",
+              "RelativeToolTip": "iAxxMES0\\frmCadUser.cs",
+              "ViewState": "AgIAABYBAAAAAAAAAAAAwCUAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T16:10:11.816Z",
+              "WhenOpened": "2024-12-18T14:05:09.565Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmCadUser.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCadUser.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\frmCadUser.cs",
+              "ToolTip": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCadUser.cs [Projeto]",
+              "RelativeToolTip": "iAxxMES0\\frmCadUser.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T14:01:45.256Z",
+              "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ControleDisponibilidade.cs",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\ControleDisponibilidade.cs",
-              "RelativeDocumentMoniker": "iAxxMES0\\ControleDisponibilidade.cs",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\ControleDisponibilidade.cs",
-              "RelativeToolTip": "iAxxMES0\\ControleDisponibilidade.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T15:36:11.986Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmCalendario.cs",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCalendario.cs",
-              "RelativeDocumentMoniker": "iAxxMES0\\frmCalendario.cs",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCalendario.cs",
-              "RelativeToolTip": "iAxxMES0\\frmCalendario.cs",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAIwIsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T15:34:03.834Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "README.md",
-              "DocumentMoniker": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\README.md",
+              "DocumentMoniker": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\README.md",
               "RelativeDocumentMoniker": "iAxxMES0\\README.md",
-              "ToolTip": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\README.md",
+              "ToolTip": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\README.md",
               "RelativeToolTip": "iAxxMES0\\README.md",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2024-11-29T16:19:24.902Z",
               "EditorCaption": ""

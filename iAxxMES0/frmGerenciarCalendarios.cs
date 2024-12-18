@@ -123,7 +123,7 @@ namespace iAxxMES0
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if(dgvCalendarios.SelectedRows.Count > 0)
+            if (dgvCalendarios.SelectedRows.Count > 0)
             {
                 int calendarioId = (int)dgvCalendarios.SelectedRows[0].Cells["Id"].Value;
 
@@ -159,7 +159,7 @@ namespace iAxxMES0
             }
 
             string nomeCalendario = txtNomeCalendario.Text.Trim();
-            
+
             List<Calendario> calendariosEncontrados = controleCalendario.ObterCalendariosPorNome(nomeCalendario);
 
             dgvCalendarios.DataSource = calendariosEncontrados;

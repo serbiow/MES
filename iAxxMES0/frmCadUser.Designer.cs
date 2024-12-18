@@ -107,7 +107,7 @@
             btnCadastrar.FlatStyle = FlatStyle.Flat;
             btnCadastrar.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = Color.White;
-            btnCadastrar.Location = new Point(65, 437);
+            btnCadastrar.Location = new Point(52, 435);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(88, 32);
             btnCadastrar.TabIndex = 9;
@@ -213,9 +213,9 @@
             btnLimpar.FlatStyle = FlatStyle.Flat;
             btnLimpar.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLimpar.ForeColor = Color.White;
-            btnLimpar.Location = new Point(242, 437);
+            btnLimpar.Location = new Point(240, 435);
             btnLimpar.Name = "btnLimpar";
-            btnLimpar.Size = new Size(77, 32);
+            btnLimpar.Size = new Size(88, 32);
             btnLimpar.TabIndex = 11;
             btnLimpar.Text = "Limpar";
             btnLimpar.UseVisualStyleBackColor = false;
@@ -227,9 +227,9 @@
             btnAlterar.FlatStyle = FlatStyle.Flat;
             btnAlterar.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAlterar.ForeColor = Color.White;
-            btnAlterar.Location = new Point(159, 437);
+            btnAlterar.Location = new Point(146, 435);
             btnAlterar.Name = "btnAlterar";
-            btnAlterar.Size = new Size(77, 32);
+            btnAlterar.Size = new Size(88, 32);
             btnAlterar.TabIndex = 10;
             btnAlterar.Text = "Alterar";
             btnAlterar.UseVisualStyleBackColor = false;
@@ -241,9 +241,9 @@
             btnExcluir.FlatStyle = FlatStyle.Flat;
             btnExcluir.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnExcluir.ForeColor = Color.White;
-            btnExcluir.Location = new Point(325, 437);
+            btnExcluir.Location = new Point(334, 435);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(77, 32);
+            btnExcluir.Size = new Size(88, 32);
             btnExcluir.TabIndex = 12;
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = false;
