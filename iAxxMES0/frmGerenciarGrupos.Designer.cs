@@ -55,6 +55,7 @@
             supervisaoToolStripMenuItem = new ToolStripMenuItem();
             artigoToolStripMenuItem = new ToolStripMenuItem();
             gerenciarArtigosToolStripMenuItem = new ToolStripMenuItem();
+            associaçãoDeArtigosToolStripMenuItem = new ToolStripMenuItem();
             usuáriosToolStripMenuItem = new ToolStripMenuItem();
             consultarToolStripMenuItem = new ToolStripMenuItem();
             cadastrarToolStripMenuItem = new ToolStripMenuItem();
@@ -295,9 +296,9 @@
             label2.ForeColor = Color.Black;
             label2.Location = new Point(6, 21);
             label2.Name = "label2";
-            label2.Size = new Size(145, 19);
+            label2.Size = new Size(130, 19);
             label2.TabIndex = 28;
-            label2.Text = "Manipular Grupos";
+            label2.Text = "Nome do Grupo";
             // 
             // txtGrupo
             // 
@@ -369,7 +370,7 @@
             // 
             // artigoToolStripMenuItem
             // 
-            artigoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gerenciarArtigosToolStripMenuItem });
+            artigoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gerenciarArtigosToolStripMenuItem, associaçãoDeArtigosToolStripMenuItem });
             artigoToolStripMenuItem.Name = "artigoToolStripMenuItem";
             artigoToolStripMenuItem.Size = new Size(52, 20);
             artigoToolStripMenuItem.Text = "Artigo";
@@ -377,9 +378,16 @@
             // gerenciarArtigosToolStripMenuItem
             // 
             gerenciarArtigosToolStripMenuItem.Name = "gerenciarArtigosToolStripMenuItem";
-            gerenciarArtigosToolStripMenuItem.Size = new Size(165, 22);
+            gerenciarArtigosToolStripMenuItem.Size = new Size(190, 22);
             gerenciarArtigosToolStripMenuItem.Text = "Gerenciar Artigos";
             gerenciarArtigosToolStripMenuItem.Click += gerenciarArtigosToolStripMenuItem_Click_1;
+            // 
+            // associaçãoDeArtigosToolStripMenuItem
+            // 
+            associaçãoDeArtigosToolStripMenuItem.Name = "associaçãoDeArtigosToolStripMenuItem";
+            associaçãoDeArtigosToolStripMenuItem.Size = new Size(190, 22);
+            associaçãoDeArtigosToolStripMenuItem.Text = "Associação de Artigos";
+            associaçãoDeArtigosToolStripMenuItem.Click += associaçãoDeArtigosToolStripMenuItem_Click;
             // 
             // usuáriosToolStripMenuItem
             // 
@@ -514,5 +522,6 @@
         private ToolStripMenuItem sairToolStripMenuItem;
         private Panel panel4;
         private Label label1;
+        private ToolStripMenuItem associaçãoDeArtigosToolStripMenuItem;
     }
 }

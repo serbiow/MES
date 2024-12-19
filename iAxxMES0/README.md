@@ -12,9 +12,9 @@
 	# - Fazer a indisponibilidade de máquinas específicas
 # - (FEITO - Falta os filtros) Fazer o CRUD completo de ARTIGOS (deve ter Filtro e Ordenação por Artigo no dashboard)
 # - Fazer o artigo poder ser atribuído a máquinas especificas
+	# - Essas definições podem ser feitas em várias máquinas ao mesmo tempo
 # - Exibir a linha do tempo dos artigos
 # - As máquinas devem ter bloqueios de artigos (artigos que não podem rodar na máquina) (pq, quem e quando?)
-# - Essas definições podem ser feitas em várias máquinas ao mesmo tempo
 
 #Calendário
 # - (FEITO) Vários calendários diferentes, mas uma máquina só pode ter um calendário

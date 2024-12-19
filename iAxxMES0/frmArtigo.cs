@@ -25,6 +25,10 @@ namespace iAxxMES0
             // Controla a permissão do usuário
             this.nivelPermissao = nivelPermissao;
             AjustarMenuPorPermissao();
+
+            // Atribui o a data atual nos campos de data
+            dtpDataInicial.Value = DateTime.Now;
+            dtpDataFinal.Value = DateTime.Now;
         }
 
         // Método para ajudar o Menu conforme o nível de privilégio
@@ -81,7 +85,7 @@ namespace iAxxMES0
         private void gerenciarGruposToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Chamar o Gerenciar Grupos e fechar o Dashboard
-            using (frmGerenciarGrupos gerenciarGrupos = new frmGerenciarGrupos(controleMaquinas, nivelPermissao))
+            using (frmGerenciarGrupos gerenciarGrupos = new frmGerenciarGrupos(nivelPermissao))
             {
                 this.Hide();
                 gerenciarGrupos.ShowDialog();

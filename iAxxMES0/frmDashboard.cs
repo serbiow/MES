@@ -314,7 +314,7 @@ namespace iAxxMES0
         private void gerenciarGruposToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Chamar o Gerenciar Grupos e fechar o Dashboard
-            using (frmGerenciarGrupos gerenciarGrupos = new frmGerenciarGrupos(controleMaquinas, nivelPermissao))
+            using (frmGerenciarGrupos gerenciarGrupos = new frmGerenciarGrupos(nivelPermissao))
             {
                 this.Hide();
                 gerenciarGrupos.ShowDialog();
@@ -325,8 +325,21 @@ namespace iAxxMES0
 
         private void gerenciarArtigoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             frmGerenciarArtigos gerenciarArtigos = new frmGerenciarArtigos();
             gerenciarArtigos.ShowDialog();
+        }
+
+        private void associaçãoDeArtigosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Chamar o Associar Artigos e fechar o Dashboard
+            using (frmArtigo associacaoAritigos = new frmArtigo(nivelPermissao))
+            {
+                this.Hide();
+                associacaoAritigos.ShowDialog();
+            }
+
+            this.Close();
         }
 
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)

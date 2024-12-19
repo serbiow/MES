@@ -16,6 +16,10 @@ namespace iAxxMES0
         public frmRelatorio()
         {
             InitializeComponent();
+
+            // Atribui o a data atual nos campos de data
+            dtpDataInicial.Value = DateTime.Now;
+            dtpDataFinal.Value = DateTime.Now;
         }
 
         private ProgressBar progressBar;

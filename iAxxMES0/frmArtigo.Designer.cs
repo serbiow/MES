@@ -41,7 +41,27 @@
             cadastroDeIndisponibilidadeToolStripMenuItem = new ToolStripMenuItem();
             relatórioToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
+            btnListAll = new Button();
+            dgvArtigos = new DataGridView();
+            lblNomeArtigo = new Label();
+            txtNomeArtigo = new TextBox();
+            btnBuscar = new Button();
+            btnSalvar = new Button();
+            clbMaquinas = new CheckedListBox();
+            dtpTimeFinal = new DateTimePicker();
+            dtpTimeInicial = new DateTimePicker();
+            label5 = new Label();
+            dtpDataFinal = new DateTimePicker();
+            label4 = new Label();
+            dtpDataInicial = new DateTimePicker();
+            panel1 = new Panel();
+            label1 = new Label();
+            label2 = new Label();
+            panel2 = new Panel();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvArtigos).BeginInit();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -50,7 +70,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { supervisaoToolStripMenuItem, gerenciarGruposToolStripMenuItem, usuáriosToolStripMenuItem, calendárioDeDisponibilidadeToolStripMenuItem, relatórioToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Size = new Size(647, 24);
             menuStrip1.TabIndex = 32;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -78,14 +98,14 @@
             // consultarToolStripMenuItem
             // 
             consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            consultarToolStripMenuItem.Size = new Size(180, 22);
+            consultarToolStripMenuItem.Size = new Size(125, 22);
             consultarToolStripMenuItem.Text = "Consultar";
             consultarToolStripMenuItem.Click += consultarToolStripMenuItem_Click;
             // 
             // cadastrarToolStripMenuItem
             // 
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(180, 22);
+            cadastrarToolStripMenuItem.Size = new Size(125, 22);
             cadastrarToolStripMenuItem.Text = "Cadastrar";
             cadastrarToolStripMenuItem.Click += cadastrarToolStripMenuItem_Click;
             // 
@@ -133,18 +153,228 @@
             sairToolStripMenuItem.Text = "Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
+            // btnListAll
+            // 
+            btnListAll.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnListAll.BackColor = Color.FromArgb(46, 53, 60);
+            btnListAll.FlatStyle = FlatStyle.Flat;
+            btnListAll.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnListAll.ForeColor = Color.White;
+            btnListAll.Location = new Point(123, 442);
+            btnListAll.Name = "btnListAll";
+            btnListAll.Size = new Size(105, 32);
+            btnListAll.TabIndex = 37;
+            btnListAll.Text = "Listar Todos";
+            btnListAll.UseVisualStyleBackColor = false;
+            // 
+            // dgvArtigos
+            // 
+            dgvArtigos.AllowUserToAddRows = false;
+            dgvArtigos.AllowUserToDeleteRows = false;
+            dgvArtigos.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvArtigos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvArtigos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvArtigos.Location = new Point(12, 480);
+            dgvArtigos.Name = "dgvArtigos";
+            dgvArtigos.ReadOnly = true;
+            dgvArtigos.Size = new Size(623, 220);
+            dgvArtigos.TabIndex = 36;
+            // 
+            // lblNomeArtigo
+            // 
+            lblNomeArtigo.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            lblNomeArtigo.AutoSize = true;
+            lblNomeArtigo.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNomeArtigo.ForeColor = Color.Black;
+            lblNomeArtigo.Location = new Point(12, 391);
+            lblNomeArtigo.Name = "lblNomeArtigo";
+            lblNomeArtigo.Size = new Size(113, 19);
+            lblNomeArtigo.TabIndex = 35;
+            lblNomeArtigo.Text = "Buscar Artigo";
+            // 
+            // txtNomeArtigo
+            // 
+            txtNomeArtigo.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            txtNomeArtigo.Location = new Point(12, 413);
+            txtNomeArtigo.Name = "txtNomeArtigo";
+            txtNomeArtigo.PlaceholderText = "Nome do Artigo";
+            txtNomeArtigo.Size = new Size(216, 23);
+            txtNomeArtigo.TabIndex = 33;
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnBuscar.BackColor = Color.FromArgb(46, 53, 60);
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBuscar.ForeColor = Color.White;
+            btnBuscar.Location = new Point(12, 442);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(105, 32);
+            btnBuscar.TabIndex = 34;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // btnSalvar
+            // 
+            btnSalvar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnSalvar.BackColor = Color.FromArgb(46, 53, 60);
+            btnSalvar.FlatStyle = FlatStyle.Flat;
+            btnSalvar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSalvar.ForeColor = Color.White;
+            btnSalvar.Location = new Point(515, 174);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(105, 32);
+            btnSalvar.TabIndex = 39;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.UseVisualStyleBackColor = false;
+            // 
+            // clbMaquinas
+            // 
+            clbMaquinas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            clbMaquinas.ColumnWidth = 250;
+            clbMaquinas.FormattingEnabled = true;
+            clbMaquinas.Location = new Point(0, 24);
+            clbMaquinas.MultiColumn = true;
+            clbMaquinas.Name = "clbMaquinas";
+            clbMaquinas.Size = new Size(623, 148);
+            clbMaquinas.TabIndex = 38;
+            // 
+            // dtpTimeFinal
+            // 
+            dtpTimeFinal.Format = DateTimePickerFormat.Time;
+            dtpTimeFinal.Location = new Point(180, 116);
+            dtpTimeFinal.Name = "dtpTimeFinal";
+            dtpTimeFinal.ShowUpDown = true;
+            dtpTimeFinal.Size = new Size(141, 23);
+            dtpTimeFinal.TabIndex = 45;
+            dtpTimeFinal.Value = new DateTime(2024, 1, 1, 0, 0, 0, 0);
+            // 
+            // dtpTimeInicial
+            // 
+            dtpTimeInicial.Format = DateTimePickerFormat.Time;
+            dtpTimeInicial.Location = new Point(12, 116);
+            dtpTimeInicial.Name = "dtpTimeInicial";
+            dtpTimeInicial.ShowUpDown = true;
+            dtpTimeInicial.Size = new Size(149, 23);
+            dtpTimeInicial.TabIndex = 44;
+            dtpTimeInicial.Value = new DateTime(2024, 1, 1, 0, 0, 0, 0);
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(180, 63);
+            label5.Name = "label5";
+            label5.Size = new Size(141, 21);
+            label5.TabIndex = 43;
+            label5.Text = "Data e Hora Final";
+            // 
+            // dtpDataFinal
+            // 
+            dtpDataFinal.Format = DateTimePickerFormat.Short;
+            dtpDataFinal.Location = new Point(180, 87);
+            dtpDataFinal.Name = "dtpDataFinal";
+            dtpDataFinal.Size = new Size(141, 23);
+            dtpDataFinal.TabIndex = 42;
+            dtpDataFinal.Value = new DateTime(2024, 1, 1, 0, 0, 0, 0);
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(12, 63);
+            label4.Name = "label4";
+            label4.Size = new Size(151, 21);
+            label4.TabIndex = 41;
+            label4.Text = "Data e Hora Inicial";
+            // 
+            // dtpDataInicial
+            // 
+            dtpDataInicial.Format = DateTimePickerFormat.Short;
+            dtpDataInicial.Location = new Point(12, 87);
+            dtpDataInicial.Name = "dtpDataInicial";
+            dtpDataInicial.Size = new Size(149, 23);
+            dtpDataInicial.TabIndex = 40;
+            dtpDataInicial.Value = new DateTime(2024, 1, 1, 0, 0, 0, 0);
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(12, 27);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(623, 33);
+            panel1.TabIndex = 46;
+            // 
+            // label1
+            // 
+            label1.Dock = DockStyle.Fill;
+            label1.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(623, 33);
+            label1.TabIndex = 30;
+            label1.Text = "Associação de Artigos";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(3, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(85, 21);
+            label2.TabIndex = 47;
+            label2.Text = "Máquinas";
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(clbMaquinas);
+            panel2.Controls.Add(btnSalvar);
+            panel2.Location = new Point(12, 145);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(623, 209);
+            panel2.TabIndex = 48;
+            // 
             // frmArtigo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(197, 202, 208);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(647, 712);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Controls.Add(dtpTimeFinal);
+            Controls.Add(dtpTimeInicial);
+            Controls.Add(label5);
+            Controls.Add(dtpDataFinal);
+            Controls.Add(label4);
+            Controls.Add(dtpDataInicial);
+            Controls.Add(btnListAll);
+            Controls.Add(dgvArtigos);
+            Controls.Add(lblNomeArtigo);
+            Controls.Add(txtNomeArtigo);
+            Controls.Add(btnBuscar);
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MinimumSize = new Size(663, 751);
             Name = "frmArtigo";
-            Text = "frmArtigo";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Associação de Artigos";
+            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvArtigos).EndInit();
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -163,5 +393,22 @@
         private ToolStripMenuItem cadastroDeIndisponibilidadeToolStripMenuItem;
         private ToolStripMenuItem relatórioToolStripMenuItem;
         private ToolStripMenuItem sairToolStripMenuItem;
+        private Button btnListAll;
+        private DataGridView dgvArtigos;
+        private Label lblNomeArtigo;
+        private TextBox txtNomeArtigo;
+        private Button btnBuscar;
+        private Button btnSalvar;
+        private CheckedListBox clbMaquinas;
+        private DateTimePicker dtpTimeFinal;
+        private DateTimePicker dtpTimeInicial;
+        private Label label5;
+        private DateTimePicker dtpDataFinal;
+        private Label label4;
+        private DateTimePicker dtpDataInicial;
+        private Panel panel1;
+        private Label label1;
+        private Label label2;
+        private Panel panel2;
     }
 }

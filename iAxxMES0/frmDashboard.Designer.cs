@@ -33,6 +33,7 @@
             gerenciarGruposToolStripMenuItem = new ToolStripMenuItem();
             artigoToolStripMenuItem = new ToolStripMenuItem();
             gerenciarArtigoToolStripMenuItem = new ToolStripMenuItem();
+            associaçãoDeArtigosToolStripMenuItem = new ToolStripMenuItem();
             usuáriosToolStripMenuItem = new ToolStripMenuItem();
             consultaToolStripMenuItem = new ToolStripMenuItem();
             cadastroToolStripMenuItem = new ToolStripMenuItem();
@@ -101,7 +102,7 @@
             // 
             // artigoToolStripMenuItem
             // 
-            artigoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gerenciarArtigoToolStripMenuItem });
+            artigoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gerenciarArtigoToolStripMenuItem, associaçãoDeArtigosToolStripMenuItem });
             artigoToolStripMenuItem.Name = "artigoToolStripMenuItem";
             artigoToolStripMenuItem.Size = new Size(52, 20);
             artigoToolStripMenuItem.Text = "Artigo";
@@ -109,9 +110,16 @@
             // gerenciarArtigoToolStripMenuItem
             // 
             gerenciarArtigoToolStripMenuItem.Name = "gerenciarArtigoToolStripMenuItem";
-            gerenciarArtigoToolStripMenuItem.Size = new Size(165, 22);
+            gerenciarArtigoToolStripMenuItem.Size = new Size(190, 22);
             gerenciarArtigoToolStripMenuItem.Text = "Gerenciar Artigos";
             gerenciarArtigoToolStripMenuItem.Click += gerenciarArtigoToolStripMenuItem_Click;
+            // 
+            // associaçãoDeArtigosToolStripMenuItem
+            // 
+            associaçãoDeArtigosToolStripMenuItem.Name = "associaçãoDeArtigosToolStripMenuItem";
+            associaçãoDeArtigosToolStripMenuItem.Size = new Size(190, 22);
+            associaçãoDeArtigosToolStripMenuItem.Text = "Associação de Artigos";
+            associaçãoDeArtigosToolStripMenuItem.Click += associaçãoDeArtigosToolStripMenuItem_Click;
             // 
             // usuáriosToolStripMenuItem
             // 
@@ -574,5 +582,6 @@
         private ToolStripMenuItem gerenciarCalendáriosToolStripMenuItem;
         private ToolStripMenuItem artigoToolStripMenuItem;
         private ToolStripMenuItem gerenciarArtigoToolStripMenuItem;
+        private ToolStripMenuItem associaçãoDeArtigosToolStripMenuItem;
     }
 }

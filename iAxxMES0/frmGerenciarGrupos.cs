@@ -17,10 +17,10 @@ namespace iAxxMES0
         // Nível de permissão do usuário
         private string nivelPermissao;
 
-        public frmGerenciarGrupos(ControleMaquinas controle, string nivelPermissao)
+        public frmGerenciarGrupos(string nivelPermissao)
         {
             InitializeComponent();
-            controleMaquinas = controle;
+            controleMaquinas = new ControleMaquinas();
 
             // Carregar os grupos no DataGridView
             CarregarGrupos();
@@ -224,6 +224,18 @@ namespace iAxxMES0
         {
             frmGerenciarArtigos gerenciarArtigos = new frmGerenciarArtigos();
             gerenciarArtigos.ShowDialog();
+        }
+
+        private void associaçãoDeArtigosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Chamar o Gerenciar Grupos e fechar o Dashboard
+            using (frmArtigo associacaoAritigos = new frmArtigo(nivelPermissao))
+            {
+                this.Hide();
+                associacaoAritigos.ShowDialog();
+            }
+
+            this.Close();
         }
 
         private void consultarToolStripMenuItem_Click_1(object sender, EventArgs e)
