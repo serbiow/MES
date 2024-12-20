@@ -59,7 +59,7 @@ namespace iAxxMES0
             // cbxTipo
             // 
             cbxTipo.FormattingEnabled = true;
-            cbxTipo.Items.AddRange(new object[] { "Semanal", "Específico" });
+            cbxTipo.Items.AddRange(new object[] { "Semanal", "Específico", "Dias úteis (incluso sábados)", "Todos os dias" });
             cbxTipo.Location = new Point(12, 32);
             cbxTipo.Name = "cbxTipo";
             cbxTipo.Size = new Size(189, 23);
@@ -364,13 +364,23 @@ namespace iAxxMES0
                 lblDataEspecifica.Visible = false;
                 dtpDataEspecifica.Visible = false;
             }
+            else if (cbxTipo.SelectedItem?.ToString() == "Específico")
+            {
+                lblDiaSemana.Visible = false;
+                cbxDiaSemana.Visible = false;
+                cbxDiaSemana.SelectedIndex = -1;
+
+                lblDataEspecifica.Visible = true;
+                dtpDataEspecifica.Visible = true;
+            }
             else
             {
                 lblDiaSemana.Visible = false;
                 cbxDiaSemana.Visible = false;
+                cbxDiaSemana.SelectedIndex = -1;
 
-                lblDataEspecifica.Visible = true;
-                dtpDataEspecifica.Visible = true;
+                lblDataEspecifica.Visible = false;
+                dtpDataEspecifica.Visible = false;
             }
         }
 
@@ -399,6 +409,12 @@ namespace iAxxMES0
             if (cbxCalendario.SelectedValue == null)
             {
                 MessageBox.Show("Por favor, selecione um calendário.");
+                return;
+            }
+
+            if (lstDatasSelecionadas.Items.Count == 0)
+            {
+                MessageBox.Show("Sem datas geradas!");
                 return;
             }
 
@@ -431,13 +447,6 @@ namespace iAxxMES0
         {
             lstDatasSelecionadas.Items.Clear();
 
-            if (cbxDiaSemana.SelectedItem == null)
-            {
-                MessageBox.Show("Por favor, selecione um dia da semana.");
-                return;
-            }
-
-            DayOfWeek diaSelecionado = DiaSemanaParaDayOfWeek(cbxDiaSemana.SelectedItem.ToString());
             DateTime dataInicio = dtpPeriodoInicio.Value.Date;
             DateTime dataFim = dtpPeriodoFim.Value.Date;
 
@@ -447,19 +456,57 @@ namespace iAxxMES0
                 return;
             }
 
-            DateTime dataAtual = dataInicio;
-            while (dataAtual <= dataFim)
+            string tipoSelecionado = cbxTipo.SelectedItem?.ToString();
+
+            if (tipoSelecionado == "Semanal")
             {
-                if (dataAtual.DayOfWeek == diaSelecionado)
+                if (cbxDiaSemana.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor, selecione um dia da semana.");
+                    return;
+                }
+
+                DayOfWeek diaSelecionado = DiaSemanaParaDayOfWeek(cbxDiaSemana.SelectedItem.ToString());
+
+                DateTime dataAtual = dataInicio;
+                while (dataAtual <= dataFim)
+                {
+                    if (dataAtual.DayOfWeek == diaSelecionado)
+                    {
+                        lstDatasSelecionadas.Items.Add(dataAtual);
+                    }
+                    dataAtual = dataAtual.AddDays(1);
+                }
+            }
+            else if (tipoSelecionado == "Dias úteis (incluso sábados)")
+            {
+                DateTime dataAtual = dataInicio;
+                while (dataAtual <= dataFim)
+                {
+                    if (dataAtual.DayOfWeek != DayOfWeek.Sunday) // Inclui segunda a sábado
+                    {
+                        lstDatasSelecionadas.Items.Add(dataAtual);
+                    }
+                    dataAtual = dataAtual.AddDays(1);
+                }
+            }
+            else if (tipoSelecionado == "Todos os dias")
+            {
+                DateTime dataAtual = dataInicio;
+                while (dataAtual <= dataFim)
                 {
                     lstDatasSelecionadas.Items.Add(dataAtual);
+                    dataAtual = dataAtual.AddDays(1);
                 }
-                dataAtual = dataAtual.AddDays(1);
+            }
+            else if (tipoSelecionado == "Específico")
+            {
+                lstDatasSelecionadas.Items.Add(dtpDataEspecifica.Value.Date);
             }
 
             if (lstDatasSelecionadas.Items.Count == 0)
             {
-                MessageBox.Show("Nenhuma data encontrada para o dia da semana selecionado no período informado.");
+                MessageBox.Show("Nenhuma data encontrada para o tipo selecionado no período informado.");
             }
         }
     }

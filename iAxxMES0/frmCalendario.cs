@@ -72,6 +72,64 @@ namespace iAxxMES0
             return culturaBrasileira.DateTimeFormat.GetMonthName(mes);
         }
 
+        // Método para determinar a cor com base na duração
+        private Color DeterminarCorPorDuracao(TimeSpan duracao)
+        {
+            if (duracao.TotalHours >= 23.59)
+                return Color.Gray; // Dia inteiro
+            else if (duracao.TotalHours >= 18)
+                return Color.DarkRed; // >= 18 horas: Vermelho Escuro
+            else if (duracao.TotalHours >= 12)
+                return Color.Red; // >= 12 horas: Vermelho
+            else if (duracao.TotalHours >= 8)
+                return Color.OrangeRed; // >= 8 horas: Laranja Escuro ou Vermelho Claro
+            else if (duracao.TotalHours >= 4)
+                return Color.Orange; // >= 4 horas: Laranja
+            else if (duracao.TotalHours >= 2)
+                return Color.DarkOrange; // >= 2 horas: Amarelo Escuro ou Laranja Claro
+            else
+                return Color.LightYellow; // < 2 horas: Amarelo Claro
+        }
+
+        // Método para calcular a duração total mesclando intervalos sobrepostos
+        private TimeSpan CalcularDuracaoMesclada(List<Indisponibilidade> indisponibilidades)
+        {
+            var intervalos = indisponibilidades
+                .Select(ind => new Tuple<TimeSpan, TimeSpan>(ind.HorarioInicio, ind.HorarioFim))
+                .OrderBy(t => t.Item1)
+                .ToList();
+
+            Stack<Tuple<TimeSpan, TimeSpan>> stack = new Stack<Tuple<TimeSpan, TimeSpan>>();
+            stack.Push(intervalos[0]);
+
+            for (int i = 1; i < intervalos.Count; i++)
+            {
+                var topo = stack.Peek();
+                var atual = intervalos[i];
+
+                if (atual.Item1 <= topo.Item2) // Sobreposição
+                {
+                    // Mescla os intervalos
+                    stack.Pop();
+                    stack.Push(new Tuple<TimeSpan, TimeSpan>(topo.Item1,
+                        topo.Item2 > atual.Item2 ? topo.Item2 : atual.Item2));
+                }
+                else
+                {
+                    stack.Push(atual);
+                }
+            }
+
+            // Soma as durações dos intervalos mesclados
+            TimeSpan duracaoTotal = TimeSpan.Zero;
+            foreach (var intervalo in stack)
+            {
+                duracaoTotal += intervalo.Item2 - intervalo.Item1;
+            }
+
+            return duracaoTotal;
+        }
+
         // Atualiza o calendário para o mês atual
         private void AtualizarCalendario(List<Indisponibilidade> indisponibilidades)
         {
@@ -99,9 +157,22 @@ namespace iAxxMES0
                         dgvCalendario.Rows[semana].Cells[dia].Value = diaAtual.ToString();
                         dgvCalendario.Rows[semana].Cells[dia].Tag = dataAtual;
 
-                        if (indisponibilidades.Any(ind => ind.DataEspecifica == dataAtual.Date))
+                        var indisponibilidadesDoDia = indisponibilidades
+                            .Where(ind => ind.DataEspecifica.Date == dataAtual.Date)
+                            .ToList();
+
+                        if (indisponibilidadesDoDia.Any())
                         {
-                            dgvCalendario.Rows[semana].Cells[dia].Style.BackColor = Color.LightGray;
+                            // Calcular a duração total mesclando intervalos
+                            TimeSpan totalDuracao = CalcularDuracaoMesclada(indisponibilidadesDoDia);
+
+                            // Determinar a cor com base na duração total
+                            Color cor = DeterminarCorPorDuracao(totalDuracao);
+                            dgvCalendario.Rows[semana].Cells[dia].Style.BackColor = cor;
+
+                            // Adicionar tooltip com detalhes
+                            dgvCalendario.Rows[semana].Cells[dia].ToolTipText =
+                                $"Total de Indisponibilidade: {totalDuracao.Hours}h {totalDuracao.Minutes}min";
                         }
 
                         diaAtual++;
