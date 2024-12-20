@@ -293,6 +293,7 @@
             // 
             clbMaquinas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             clbMaquinas.ColumnWidth = 250;
+            clbMaquinas.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             clbMaquinas.FormattingEnabled = true;
             clbMaquinas.Location = new Point(1, 6);
             clbMaquinas.MultiColumn = true;

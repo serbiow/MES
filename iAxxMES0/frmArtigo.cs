@@ -22,6 +22,9 @@ namespace iAxxMES0
         {
             InitializeComponent();
 
+            controleArtigo = new ControleArtigo();
+            controleMaquinas = new ControleMaquinas();
+
             // Controla a permissão do usuário
             this.nivelPermissao = nivelPermissao;
             AjustarMenuPorPermissao();
@@ -67,6 +70,78 @@ namespace iAxxMES0
                     calendárioDeDisponibilidadeToolStripMenuItem.Visible = false;
                     relatórioToolStripMenuItem.Visible = false;
                     break;
+            }
+        }
+
+        private void RecarregarMaquinas()
+        {
+            clbMaquinas.Items.Clear(); // Limpar a lista de máquinas
+
+            var todasMaquinas = controleMaquinas.ObterMaquinasSimplificado(); // Obter apenas Id e Apelido
+
+            foreach (var maquina in todasMaquinas)
+            {
+                // Adiciona a máquina na lista
+                clbMaquinas.Items.Add(maquina.Apelido);
+            }
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            if (dgvArtigos.SelectedRows.Count > 0)
+            {
+                int artigoId = (int)dgvArtigos.SelectedRows[0].Cells["Id"].Value;
+
+                try
+                {
+                    // Verificar se a máquina tem algum calendário
+
+                    // Verificar se o período de tempo possui indisponibilidade
+
+                    // Verificar se a máquina já vai rodar outro artigo dentro do período
+
+                    // Fazer tratativas adequadas
+
+                    // Associar o artigo na máquina
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao associar artigo na(s) máquina(s): {ex.Message}");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um artigo.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNomeArtigo.Text))
+            {
+                MessageBox.Show("Por favor, digite um valor para buscar.", "Busca", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string nomeArtigo = txtNomeArtigo.Text.Trim();
+
+            List<Artigo> artigosEncontrados = controleArtigo.ObterArtigosPorNome(nomeArtigo);
+
+            dgvArtigos.DataSource = artigosEncontrados;
+        }
+
+        private void btnListAll_Click(object sender, EventArgs e)
+        {
+            var artigos = controleArtigo.ObterTodosArtigos();
+            dgvArtigos.DataSource = artigos;
+        }
+
+        private void dgvArtigos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvArtigos.SelectedRows.Count > 0)
+            {
+                // Recarregar lista de máquinas
+                RecarregarMaquinas();
             }
         }
 

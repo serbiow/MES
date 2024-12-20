@@ -8,11 +8,11 @@
 
 #Implementações
 # - CALCULO DE EFICIÊNCIA
-	# - Fazer os cálculos e relatórios de eficiência corretos
-	# - Fazer a indisponibilidade de máquinas específicas
+	- Fazer os cálculos e relatórios de eficiência corretos
+	- Fazer a indisponibilidade de máquinas específicas
 # - (FEITO - Falta os filtros) Fazer o CRUD completo de ARTIGOS (deve ter Filtro e Ordenação por Artigo no dashboard)
 # - Fazer o artigo poder ser atribuído a máquinas especificas
-	# - Essas definições podem ser feitas em várias máquinas ao mesmo tempo
+	- Essas definições podem ser feitas em várias máquinas ao mesmo tempo
 # - Exibir a linha do tempo dos artigos
 # - As máquinas devem ter bloqueios de artigos (artigos que não podem rodar na máquina) (pq, quem e quando?)
 
@@ -20,7 +20,11 @@
 # - (FEITO) Vários calendários diferentes, mas uma máquina só pode ter um calendário
 # - *Dias anteriores não podem mais ser alterados* - OBS.: DEVE SER CONVERSADO
 # - (FEITO) Poder definir exceções para as datas que ja tem indisponibilidade (exemplo: algum domingo a máquina vai rodar)
-# - Colocar opções e definições para cargos (manhã, tarde e noite)
+# - Colocar outros tipos de indisponibilidade
+	- Dias úteis (De segunda 5h até sábado 18h)
+	- Todos os dias (Domingo a domingo)
+# - Melhorar a exbição do calendário para indisponibilidades de diferentes tempos *(possivelmente usar cores para diferenciar)*
+# - Colocar opções e definições para turnos (manhã, tarde e noite)
 
 #Extra
 # - Fazer opções para importar e exportar dados pelo excel (Update de Maquinas e Artigos)

@@ -47,7 +47,6 @@
             txtNomeArtigo = new TextBox();
             btnBuscar = new Button();
             btnSalvar = new Button();
-            clbMaquinas = new CheckedListBox();
             dtpTimeFinal = new DateTimePicker();
             dtpTimeInicial = new DateTimePicker();
             label5 = new Label();
@@ -58,10 +57,13 @@
             label1 = new Label();
             label2 = new Label();
             panel2 = new Panel();
+            clbMaquinas = new CheckedListBox();
+            panel3 = new Panel();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvArtigos).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -166,6 +168,7 @@
             btnListAll.TabIndex = 37;
             btnListAll.Text = "Listar Todos";
             btnListAll.UseVisualStyleBackColor = false;
+            btnListAll.Click += btnListAll_Click;
             // 
             // dgvArtigos
             // 
@@ -179,6 +182,7 @@
             dgvArtigos.ReadOnly = true;
             dgvArtigos.Size = new Size(623, 220);
             dgvArtigos.TabIndex = 36;
+            dgvArtigos.SelectionChanged += dgvArtigos_SelectionChanged;
             // 
             // lblNomeArtigo
             // 
@@ -214,36 +218,27 @@
             btnBuscar.TabIndex = 34;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // btnSalvar
             // 
-            btnSalvar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnSalvar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnSalvar.BackColor = Color.FromArgb(46, 53, 60);
             btnSalvar.FlatStyle = FlatStyle.Flat;
             btnSalvar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSalvar.ForeColor = Color.White;
-            btnSalvar.Location = new Point(515, 174);
+            btnSalvar.Location = new Point(9, 192);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(105, 32);
             btnSalvar.TabIndex = 39;
-            btnSalvar.Text = "Salvar";
+            btnSalvar.Text = "Associar";
             btnSalvar.UseVisualStyleBackColor = false;
-            // 
-            // clbMaquinas
-            // 
-            clbMaquinas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            clbMaquinas.ColumnWidth = 250;
-            clbMaquinas.FormattingEnabled = true;
-            clbMaquinas.Location = new Point(0, 24);
-            clbMaquinas.MultiColumn = true;
-            clbMaquinas.Name = "clbMaquinas";
-            clbMaquinas.Size = new Size(623, 148);
-            clbMaquinas.TabIndex = 38;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // dtpTimeFinal
             // 
             dtpTimeFinal.Format = DateTimePickerFormat.Time;
-            dtpTimeFinal.Location = new Point(180, 116);
+            dtpTimeFinal.Location = new Point(180, 53);
             dtpTimeFinal.Name = "dtpTimeFinal";
             dtpTimeFinal.ShowUpDown = true;
             dtpTimeFinal.Size = new Size(141, 23);
@@ -253,7 +248,7 @@
             // dtpTimeInicial
             // 
             dtpTimeInicial.Format = DateTimePickerFormat.Time;
-            dtpTimeInicial.Location = new Point(12, 116);
+            dtpTimeInicial.Location = new Point(12, 53);
             dtpTimeInicial.Name = "dtpTimeInicial";
             dtpTimeInicial.ShowUpDown = true;
             dtpTimeInicial.Size = new Size(149, 23);
@@ -265,7 +260,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(180, 63);
+            label5.Location = new Point(180, 0);
             label5.Name = "label5";
             label5.Size = new Size(141, 21);
             label5.TabIndex = 43;
@@ -274,7 +269,7 @@
             // dtpDataFinal
             // 
             dtpDataFinal.Format = DateTimePickerFormat.Short;
-            dtpDataFinal.Location = new Point(180, 87);
+            dtpDataFinal.Location = new Point(180, 24);
             dtpDataFinal.Name = "dtpDataFinal";
             dtpDataFinal.Size = new Size(141, 23);
             dtpDataFinal.TabIndex = 42;
@@ -285,7 +280,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(12, 63);
+            label4.Location = new Point(12, 0);
             label4.Name = "label4";
             label4.Size = new Size(151, 21);
             label4.TabIndex = 41;
@@ -294,7 +289,7 @@
             // dtpDataInicial
             // 
             dtpDataInicial.Format = DateTimePickerFormat.Short;
-            dtpDataInicial.Location = new Point(12, 87);
+            dtpDataInicial.Location = new Point(12, 24);
             dtpDataInicial.Name = "dtpDataInicial";
             dtpDataInicial.Size = new Size(149, 23);
             dtpDataInicial.TabIndex = 40;
@@ -326,7 +321,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(3, 0);
+            label2.Location = new Point(9, 0);
             label2.Name = "label2";
             label2.Size = new Size(85, 21);
             label2.TabIndex = 47;
@@ -335,13 +330,39 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel2.Controls.Add(label2);
             panel2.Controls.Add(clbMaquinas);
+            panel2.Controls.Add(label2);
             panel2.Controls.Add(btnSalvar);
-            panel2.Location = new Point(12, 145);
+            panel2.Location = new Point(3, 82);
             panel2.Name = "panel2";
-            panel2.Size = new Size(623, 209);
+            panel2.Size = new Size(641, 227);
             panel2.TabIndex = 48;
+            // 
+            // clbMaquinas
+            // 
+            clbMaquinas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            clbMaquinas.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            clbMaquinas.FormattingEnabled = true;
+            clbMaquinas.Location = new Point(9, 24);
+            clbMaquinas.MultiColumn = true;
+            clbMaquinas.Name = "clbMaquinas";
+            clbMaquinas.Size = new Size(623, 166);
+            clbMaquinas.TabIndex = 48;
+            // 
+            // panel3
+            // 
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel3.Controls.Add(panel2);
+            panel3.Controls.Add(label4);
+            panel3.Controls.Add(dtpDataInicial);
+            panel3.Controls.Add(dtpTimeFinal);
+            panel3.Controls.Add(dtpDataFinal);
+            panel3.Controls.Add(dtpTimeInicial);
+            panel3.Controls.Add(label5);
+            panel3.Location = new Point(0, 66);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(647, 322);
+            panel3.TabIndex = 49;
             // 
             // frmArtigo
             // 
@@ -349,20 +370,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(197, 202, 208);
             ClientSize = new Size(647, 712);
-            Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(dtpTimeFinal);
-            Controls.Add(dtpTimeInicial);
-            Controls.Add(label5);
-            Controls.Add(dtpDataFinal);
-            Controls.Add(label4);
-            Controls.Add(dtpDataInicial);
             Controls.Add(btnListAll);
             Controls.Add(dgvArtigos);
             Controls.Add(lblNomeArtigo);
             Controls.Add(txtNomeArtigo);
             Controls.Add(btnBuscar);
             Controls.Add(menuStrip1);
+            Controls.Add(panel3);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(663, 751);
             Name = "frmArtigo";
@@ -375,6 +390,8 @@
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -399,7 +416,6 @@
         private TextBox txtNomeArtigo;
         private Button btnBuscar;
         private Button btnSalvar;
-        private CheckedListBox clbMaquinas;
         private DateTimePicker dtpTimeFinal;
         private DateTimePicker dtpTimeInicial;
         private Label label5;
@@ -410,5 +426,7 @@
         private Label label1;
         private Label label2;
         private Panel panel2;
+        private CheckedListBox clbMaquinas;
+        private Panel panel3;
     }
 }

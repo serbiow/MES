@@ -204,11 +204,12 @@
             // clbMaquinas
             // 
             clbMaquinas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            clbMaquinas.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             clbMaquinas.FormattingEnabled = true;
             clbMaquinas.Location = new Point(2, 21);
             clbMaquinas.MultiColumn = true;
             clbMaquinas.Name = "clbMaquinas";
-            clbMaquinas.Size = new Size(444, 418);
+            clbMaquinas.Size = new Size(444, 412);
             clbMaquinas.TabIndex = 10;
             // 
             // btnEditar
