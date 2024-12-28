@@ -208,9 +208,9 @@
             label6.ForeColor = Color.Black;
             label6.Location = new Point(749, 9);
             label6.Name = "label6";
-            label6.Size = new Size(101, 19);
+            label6.Size = new Size(95, 19);
             label6.TabIndex = 54;
-            label6.Text = "RPM Médio:";
+            label6.Text = "rpm Médio:";
             // 
             // panel2
             // 
@@ -325,9 +325,9 @@
             label4.ForeColor = Color.Black;
             label4.Location = new Point(865, 9);
             label4.Name = "label4";
-            label4.Size = new Size(114, 19);
+            label4.Size = new Size(108, 19);
             label4.TabIndex = 48;
-            label4.Text = "RPM Máximo:";
+            label4.Text = "rpm Máximo:";
             // 
             // label3
             // 
@@ -336,9 +336,9 @@
             label3.ForeColor = Color.Black;
             label3.Location = new Point(633, 9);
             label3.Name = "label3";
-            label3.Size = new Size(110, 19);
+            label3.Size = new Size(104, 19);
             label3.TabIndex = 47;
-            label3.Text = "RPM Mínimo:";
+            label3.Text = "rpm Mínimo:";
             // 
             // label1
             // 

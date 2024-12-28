@@ -1,12 +1,87 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\sergi\\Documents\\GitHub\\iAxxMES\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\iaxx\\documents\\github\\iaxxmes\\iaxxmes0\\controledisponibilidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\controledisponibilidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\iaxx\\documents\\github\\iaxxmes\\iaxxmes0\\controlecalendario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\controlecalendario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\iaxx\\documents\\github\\iaxxmes\\iaxxmes0\\frmcalendario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmcalendario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|c:\\users\\iaxx\\documents\\github\\iaxxmes\\iaxxmes0\\frmcalendario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E056436D-5800-49C4-BA13-46F43464D965}|iAxxMES0\\iAxxMES0.csproj|solutionrelative:iaxxmes0\\frmcalendario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ControleCalendario.cs",
+              "DocumentMoniker": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\ControleCalendario.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\ControleCalendario.cs",
+              "ToolTip": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\ControleCalendario.cs",
+              "RelativeToolTip": "iAxxMES0\\ControleCalendario.cs",
+              "ViewState": "AgIAAF0BAAAAAAAAAAAqwIEBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T12:56:02.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmCalendario.cs",
+              "DocumentMoniker": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCalendario.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\frmCalendario.cs",
+              "ToolTip": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCalendario.cs",
+              "RelativeToolTip": "iAxxMES0\\frmCalendario.cs",
+              "ViewState": "AgIAAEIBAAAAAAAAAADwv1QBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T12:50:38.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmCalendario.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCalendario.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\frmCalendario.cs",
+              "ToolTip": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\frmCalendario.cs [Projeto]",
+              "RelativeToolTip": "iAxxMES0\\frmCalendario.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T12:50:31.86Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ControleDisponibilidade.cs",
+              "DocumentMoniker": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\ControleDisponibilidade.cs",
+              "RelativeDocumentMoniker": "iAxxMES0\\ControleDisponibilidade.cs",
+              "ToolTip": "C:\\Users\\iAxx\\Documents\\GitHub\\iAxxMES\\iAxxMES0\\ControleDisponibilidade.cs",
+              "RelativeToolTip": "iAxxMES0\\ControleDisponibilidade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T12:36:52.356Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
