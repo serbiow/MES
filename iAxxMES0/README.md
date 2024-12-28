@@ -17,13 +17,7 @@
 # - As máquinas devem ter bloqueios de artigos (artigos que não podem rodar na máquina) (pq, quem e quando?)
 
 #Calendário
-# - (FEITO) Vários calendários diferentes, mas uma máquina só pode ter um calendário
 # - *Dias anteriores não podem mais ser alterados* - OBS.: DEVE SER CONVERSADO
-# - (FEITO) Poder definir exceções para as datas que ja tem indisponibilidade (exemplo: algum domingo a máquina vai rodar)
-# - Colocar outros tipos de indisponibilidade
-	- Dias úteis (De segunda 5h até sábado 18h)
-	- Todos os dias (Domingo a domingo)
-# - Melhorar a exbição do calendário para indisponibilidades de diferentes tempos *(possivelmente usar cores para diferenciar)*
 # - Colocar opções e definições para turnos (manhã, tarde e noite)
 
 #Extra

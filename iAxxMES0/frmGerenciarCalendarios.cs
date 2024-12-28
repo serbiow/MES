@@ -110,7 +110,9 @@ namespace iAxxMES0
                 {
                     int calendarioId = (int)dgvCalendarios.SelectedRows[0].Cells["Id"].Value;
                     controleCalendario.ExcluirCalendario(calendarioId);
+                    MessageBox.Show("Calendário deletado com sucesso!");
                     CarregarCalendarios(); // Atualizar lista
+                    clbMaquinas.Items.Clear(); // Limpa lista de máquinas
                 }
             }
         }

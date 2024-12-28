@@ -47,7 +47,7 @@ CREATE TABLE indisponibilidade (
     HorarioFim TIME NOT NULL,
     Motivo VARCHAR(255),
     DataCriacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (calendario_id) REFERENCES Calendario(id)
+    FOREIGN KEY (calendario_id) REFERENCES Calendario(id) ON DELETE CASCADE
 );
 
 CREATE TABLE fibras (
@@ -83,7 +83,7 @@ CREATE TABLE maquina (
     finura INT(4) NOT NULL,
     diametro DECIMAL(6,2) NOT NULL,
     numero_alimentadores INT(4) NOT NULL,
-    FOREIGN KEY (calendario_id) REFERENCES Calendario(id)    
+    FOREIGN KEY (calendario_id) REFERENCES Calendario(id)
 );
 
 -- Tabela de associação grupo_maquina para representar a relação muitos-para-muitos

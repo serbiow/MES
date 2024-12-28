@@ -20,7 +20,7 @@ namespace iAxxMES0
         // Função de log para gravar erros
         private void LogError(string errorMessage)
         {
-            string logFilePath = "C:/iAxx/log/error_log.txt"; // Caminho para o arquivo de log
+            string logFilePath = "C:/iAxxMES/log/error_log.txt"; // Caminho para o arquivo de log
             string logEntry = $"{DateTime.Now}: {errorMessage}\n"; // Log de erro com data e mensagem
 
             try
@@ -273,25 +273,44 @@ namespace iAxxMES0
             }
         }
 
-        // Método para excluir um calendário
+        // Método para excluir um calendário com remoção das dependências
         public void ExcluirCalendario(int id)
         {
-            string query = "DELETE FROM calendario WHERE id = @id";
-
             try
             {
                 if (connection.State == ConnectionState.Closed)
                     connection.Open();
 
-                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                // Primeiro, exclua os registros relacionados na tabela `indisponibilidade`
+                string deleteIndisponibilidadeQuery = "DELETE FROM indisponibilidade WHERE Calendario_id = @id";
+
+                using (MySqlCommand cmdIndisponibilidade = new MySqlCommand(deleteIndisponibilidadeQuery, connection))
                 {
-                    cmd.Parameters.AddWithValue("@id", id);
-                    cmd.ExecuteNonQuery();
+                    cmdIndisponibilidade.Parameters.AddWithValue("@id", id);
+                    cmdIndisponibilidade.ExecuteNonQuery();
+                }
+
+                // Em seguida, remova o calendário das máquinas
+                string updateMaquinaQuery = "UPDATE maquina SET calendario_id = NULL WHERE calendario_id = @id";
+
+                using (MySqlCommand cmdCalendario = new MySqlCommand(updateMaquinaQuery, connection))
+                {
+                    cmdCalendario.Parameters.AddWithValue("@id", id);
+                    cmdCalendario.ExecuteNonQuery();
+                }
+
+                // Por fim, exclua o calendário
+                string deleteCalendarioQuery = "DELETE FROM calendario WHERE id = @id";
+
+                using (MySqlCommand cmdCalendario = new MySqlCommand(deleteCalendarioQuery, connection))
+                {
+                    cmdCalendario.Parameters.AddWithValue("@id", id);
+                    cmdCalendario.ExecuteNonQuery();
                 }
             }
             catch (MySqlException ex)
             {
-                LogError($"Erro ao excluir calendario com ID {id}: {ex.Message}");
+                LogError($"Erro ao excluir calendário com ID {id}: {ex.Message}");
             }
             finally
             {
@@ -299,6 +318,7 @@ namespace iAxxMES0
                     connection.Close();
             }
         }
+
 
         // Método para associar máquinas a um calendário específico
         public void AssociarMaquinaAoCalendario(int calendarioId, int maquinaId)
